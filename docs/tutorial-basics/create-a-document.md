@@ -14,7 +14,7 @@ Documents are **groups of pages** connected through:
 
 Create a markdown file at `docs/hello.md`:
 
-```md title="docs/hello.md"
+```md
 # Hello
 
 This is my **first Docusaurus document**!
@@ -28,7 +28,7 @@ Docusaurus automatically **creates a sidebar** from the `docs` folder.
 
 Add metadata to customize the sidebar label and position:
 
-```md title="docs/hello.md" {1-4}
+```md
 ---
 sidebar_label: 'Hi!'
 sidebar_position: 3
