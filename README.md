@@ -1,4 +1,6 @@
-# Website
+# OCPI Development Platform
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4d8ebf71-99de-497c-81bb-a1d028ae95d4/deploy-status)](https://app.netlify.com/sites/preeminent-kulfi-e11c7e/deploys)
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 

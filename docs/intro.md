@@ -2,48 +2,53 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction and background
 
-Let's discover **Docusaurus in less than 5 minutes**.
+The Open Charge Point Interface (OCPI) enables a scalable, automated EV roaming setup between Charge Point Operators and
+e-Mobility Service Providers. It supports authorization, charge point information exchange (including live status
+updates and transaction events), charge detail record exchange, remote charge point commands and the exchange of
+smart-charging related information between parties.
 
-## Getting Started
+It offers market participants in EV an attractive and scalable solution for (international) roaming between networks,
+avoiding the costs and innovation-limiting complexities involved with today's non-automated solutions or with central
+roaming hubs. It helps to enable EV drivers to charge everywhere in a fully-informed way, helps the market develop
+quickly, and allows market players to execute their business models in the best way.
 
-Get started by **creating a new site**.
+What does it offer (main functionality):
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+* A good roaming system (for bilateral usage and/or via a hub).
+* Real-time information about location, availability and price.
+* A uniform way of exchanging data (Notification Data Records and Charge Data Records) before, during and after the
+  transaction.
+* Remote mobile support to access any Charge Point without pre-registration.
 
-### What you'll need
+An international group of over 400 companies from all over the world already supports OCPI. Initiators are
+[EV Box](https://evbox.com), New Motion, [ElaadNL](https://elaad.nl), [BeCharged](https://www.becharge.es),
+[GreenFlux](https://www.greenflux.com) and [Last Mile Solutions](https://www.lastmilesolutions.com).
 
-- [Node.js](https://nodejs.org/en/download/) version 14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Other participants include: [Next Charge](https://nextcharge.app), [Freshmile](https://www.freshmile.com),
+[E55C](https://www.e55c.com/en/), GIREVE, OCN, ihomer, Rexel, Stromnetz Hamburg, Enervalis, Place to plug,
+Plugsurfing, Ecomovement, Allego, Gronn Kontakt Norway, ENIO, Fastned, AvantIT, Chargemap, Involtum, Capitol Region Denmark,
+Vattenfall, EON, ECY Conseil Emeric Chardiny, Eneco Mobility, Google, Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge,
+Service House, Alfen / ICU, PI2 Consultancy, Pitpoint, Blue Corner, Building Energy, Chargestorm, Chargepoint, ESARJ, Chargelab.co,
+MUVEXT, Next Green Car / Zap Map, Be Mo Tech, Parking Eagle, GraphDefined, Chargecloud, Rutgerplantengaconsulting, Everon, Tanqyou,
+Electric Vehicle Association Scotland (EVA NCS), EV-Tech, Plugin Power, Last Mile Solutions, BIA Power, IBIL, Gridscape, Maxem, Virta,
+EasyCharger, Total EV Charge, Gowithflow, EKAROS, Rexel US, Stekker App, Travelcard, Emobility Consulting.
+The EVRoaming foundation supported by the Netherlands Knowledge Platform for Charging Infrastructure (NKL)
+facilitates and coordinates this protocol to guarantee progress and ensure development and results.
 
-## Generate a new site
+This document describes a combined set of standards based on the work done in the past. Next to that,
+the evolution of these standards and their use are taken into account and some elements have been updated to match nowadays use.
 
-Generate a new Docusaurus site using the **classic template**.
+*OCPI is developed with the support of:*
 
-The classic template will automatically be added to your project after you run the command:
+evRoaming4EU project and its partners: +
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+image::images/evroamingeu_logo.png[evRoaming4EU logo,scale=50%]
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+ECISS project and its partners: +
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+image::images/eciss_logo.png[ECISS logo]
 
-## Start your site
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site,
-you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view
-at [http://localhost:3000/](http://localhost:3000/).
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+The latest version of this specification can be found here: https://github.com/ocpi/ocpi[https://github.com/ocpi/ocpi]

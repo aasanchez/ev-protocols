@@ -23,7 +23,8 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.21"
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
+    "standard": "^17.0.0"
   },
   "browserslist": {
     "production": [
