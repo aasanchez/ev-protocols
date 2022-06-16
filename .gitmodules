@@ -1,0 +1,3 @@
+[submodule "ocpi"]
+	path = ocpi
+	url = https://github.com/ocpi/ocpi.git

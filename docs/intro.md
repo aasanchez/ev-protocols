@@ -27,28 +27,42 @@ An international group of over 400 companies from all over the world already sup
 [GreenFlux](https://www.greenflux.com) and [Last Mile Solutions](https://www.lastmilesolutions.com).
 
 Other participants include: [Next Charge](https://nextcharge.app), [Freshmile](https://www.freshmile.com),
-[E55C](https://www.e55c.com/en/), GIREVE, OCN, ihomer, Rexel, Stromnetz Hamburg, Enervalis, Place to plug,
-Plugsurfing, Ecomovement, Allego, Gronn Kontakt Norway, ENIO, Fastned, AvantIT, Chargemap, Involtum, Capitol Region Denmark,
-Vattenfall, EON, ECY Conseil Emeric Chardiny, Eneco Mobility, Google, Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge,
-Service House, Alfen / ICU, PI2 Consultancy, Pitpoint, Blue Corner, Building Energy, Chargestorm, Chargepoint, ESARJ, Chargelab.co,
-MUVEXT, Next Green Car / Zap Map, Be Mo Tech, Parking Eagle, GraphDefined, Chargecloud, Rutgerplantengaconsulting, Everon, Tanqyou,
-Electric Vehicle Association Scotland (EVA NCS), EV-Tech, Plugin Power, Last Mile Solutions, BIA Power, IBIL, Gridscape, Maxem, Virta,
-EasyCharger, Total EV Charge, Gowithflow, EKAROS, Rexel US, Stekker App, Travelcard, Emobility Consulting.
+[E55C](https://www.e55c.com), [GIREVE](https://www.gireve.com), OCN, [ihomer](https://ihomer.nl),
+[Rexel](https://www.rexel.com), [Stromnetz Hamburg](https://www.stromnetz-hamburg.de), [Enervalis](https://enervalis.com),
+[Place to plug](https://placetoplug.com), [Plugsurfing](https://plugsurfing.com), [Ecomovement](https://www.eco-movement.com),
+[Allego](https://www.allego.eu), [Gronn Kontakt Norway](https://no.mer.eco), [ENIO](https://www.enio-management.com),
+[Fastned](https://fastnedcharging.com), [AvantIT](https://www.avantit.no), [Chargemap](https://chargemap.com),
+[Involtum](https://involtum.com), Capitol Region Denmark, [Vattenfall](https://group.vattenfall.com),
+[EON](https://www.eonenergy.com), ECY Conseil Emeric Chardiny, [Eneco Mobility](https://www.eneco-emobility.com),
+[Google](https://abc.xyz), [Jedlix](https://www.jedlix.com), MTC, Smartlab, [Sodetrel](https://www.izivia.com),
+[XXIMO](https://www.xximo.nl), Mnemonics, [Share & Charge](https://shareandcharge.com), Service House, [Alfen / ICU](https://alfen.com),
+PI2 Consultancy, [Pitpoint](https://www.pitpointcleanfuels.com), [Blue Corner](https://www.bluecorner.nl), Building Energy,
+Chargestorm, [Chargepoint](https://www.chargepoint.com), [ESARJ](https://esarj.com), [Chargelab.co](https://www.chargelab.co),
+MUVEXT, [Next Green Car](https://www.nextgreencar.com) / [Zap Map](https://www.zap-map.com), [Be Mo Tech](https://be-mo.io),
+[Parking Eagle](https://www.parkingeagle.com), GraphDefined, [Chargecloud](https://www.chargecloud.de),
+Rutgerplantengaconsulting, [Everon](https://everon.io), [Tanqyou](https://www.tanqyou.com),
+[Electric Vehicle Association Scotland (EVA NCS)](https://www.eva.scot), [EV-Tech](https://evtech.us),
+[Plugin Power](https://plugin-power.com), [Last Mile Solutions](https://www.lastmilesolutions.com),
+[BIA Power](https://www.biapower.io), [IBIL](https://www.ibil.es), [Gridscape](https://grid-scape.com),
+[Maxem](https://maxem.io), [Virta](https://www.virta.global), EasyCharger, Total EV Charge, [Gowithflow](https://gowithflow.io),
+EKAROS, [Rexel US](https://www.rexelusa.com), [Stekker App](https://www.stekker.com), Travelcard,
+[Emobility Consulting](http://www.emobilityconsulting.com).
+
 The EVRoaming foundation supported by the Netherlands Knowledge Platform for Charging Infrastructure (NKL)
 facilitates and coordinates this protocol to guarantee progress and ensure development and results.
 
 This document describes a combined set of standards based on the work done in the past. Next to that,
-the evolution of these standards and their use are taken into account and some elements have been updated to match nowadays use.
+the evolution of these standards and their use are taken into account and some elements have been updated to match
+nowadays use.
 
 *OCPI is developed with the support of:*
 
-evRoaming4EU project and its partners: +
+evRoaming4EU project and its partners:
 
-image::images/evroamingeu_logo.png[evRoaming4EU logo,scale=50%]
+![evRoaming4EU logo](img/evroamingeu_logo.png)
 
-ECISS project and its partners: +
+ECISS project and its partners:
 
-image::images/eciss_logo.png[ECISS logo]
+![ECISS logo](img/eciss_logo.png)
 
-
-The latest version of this specification can be found here: https://github.com/ocpi/ocpi[https://github.com/ocpi/ocpi]
+The latest version of this specification can be found here: [https://github.com/ocpi/ocpi](https://github.com/ocpi/ocpi)
