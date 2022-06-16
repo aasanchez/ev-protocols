@@ -55,7 +55,7 @@ This document describes a combined set of standards based on the work done in th
 the evolution of these standards and their use are taken into account and some elements have been updated to match
 nowadays use.
 
-*OCPI is developed with the support of:*
+**OCPI is developed with the support of:**
 
 evRoaming4EU project and its partners:
 
