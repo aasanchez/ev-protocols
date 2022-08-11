@@ -36,17 +36,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.dev/aasanchez/ocpi.dev'
+          editUrl: 'https://github.dev/aasanchez/ocpi.dev'
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.dev/aasanchez/ocpi.dev'
+          editUrl: 'https://github.dev/aasanchez/ocpi.dev'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -68,14 +62,14 @@ const config = {
           background: '#BADA55',
           scrollOffset: 0,
           container: '#zoom-container',
-          template: '#zoom-template',
-        },
+          template: '#zoom-template'
+        }
       },
       navbar: {
         title: 'OCPI.dev',
         logo: {
-          alt: 'OCP logo',
-          src: 'img/logo.svg'
+          alt: 'OCPI logo',
+          src: 'img/ocpi.svg'
         },
         items: [
           {
@@ -84,7 +78,11 @@ const config = {
             position: 'left',
             label: 'Tutorial'
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
           {
             href: 'https://github.com/aasanchez/ocpi.dev',
             label: 'GitHub',
@@ -135,7 +133,7 @@ const config = {
             ]
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OpenChargePlatform, Inc. Built with Docusaurus.`
+        copyright: `Copyright © ${new Date().getFullYear()} OCPI Development Platform. Built with Docusaurus.<br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.`
       },
       prism: {
         theme: lightCodeTheme,
