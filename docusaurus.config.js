@@ -6,6 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+
   title: 'OCPI.dev',
   tagline: 'OCPI Documentation',
   url: 'https://ocpi.dev',
@@ -142,4 +143,21 @@ const config = {
     })
 }
 
+async function createConfig () {
+  const mdxMermaid = await import('mdx-mermaid')
+
+  return {
+    presets: [
+      [
+        'classic',
+        {
+          docs: {
+            remarkPlugins: [mdxMermaid.default]
+          }
+        }
+      ]
+    ]
+  }
+}
+module.exports = createConfig
 module.exports = config
