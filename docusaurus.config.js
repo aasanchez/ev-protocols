@@ -4,53 +4,49 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+async function createConfig () {
+  const mdxMermaid = await import('mdx-mermaid')
 
-  title: 'OCPI.dev',
-  tagline: 'OCPI Documentation',
-  url: 'https://ocpi.dev',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  /** @type {import('@docusaurus/types').Config} */
+  return {
+    title: 'OCPI.dev',
+    tagline: 'OCPI Documentation',
+    url: 'https://ocpi.dev',
+    baseUrl: '/',
+    onBrokenLinks: 'throw',
+    onBrokenMarkdownLinks: 'warn',
+    favicon: 'img/favicon.ico',
+    organizationName: 'aasanchez', // Usually your GitHub org/user name.
+    projectName: 'ocpi.dev', // Usually your repo name.
+    i18n: {
+      defaultLocale: 'en',
+      locales: ['en']
+    },
+    plugins: [
+      'plugin-image-zoom'
+    ],
+    presets: [
+      [
+        'classic',
+        /** @type {import('@docusaurus/preset-classic').Options} */
+        ({
+          docs: {
+            remarkPlugins: [mdxMermaid.default],
+            sidebarPath: require.resolve('./sidebars.js'),
+            editUrl: 'https://github.dev/aasanchez/ocpi.dev'
+          },
+          blog: {
+            showReadingTime: true,
+            editUrl: 'https://github.dev/aasanchez/ocpi.dev'
+          },
+          theme: {
+            customCss: require.resolve('./src/css/custom.css')
+          }
+        })
+      ]
+    ],
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'aasanchez', // Usually your GitHub org/user name.
-  projectName: 'ocpi.dev', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en']
-  },
-  plugins: [
-    'plugin-image-zoom'
-  ],
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.dev/aasanchez/ocpi.dev'
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.dev/aasanchez/ocpi.dev'
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css')
-        }
-      })
-    ]
-  ],
-
-  themeConfig:
+    themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       imageZoom: {
@@ -141,23 +137,6 @@ const config = {
         darkTheme: darkCodeTheme
       }
     })
-}
-
-async function createConfig () {
-  const mdxMermaid = await import('mdx-mermaid')
-
-  return {
-    presets: [
-      [
-        'classic',
-        {
-          docs: {
-            remarkPlugins: [mdxMermaid.default]
-          }
-        }
-      ]
-    ]
   }
 }
 module.exports = createConfig
-module.exports = config
