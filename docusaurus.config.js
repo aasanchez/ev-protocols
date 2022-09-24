@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github')
 const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+const simplePlantUML = require("@akebifiky/remark-simple-plantuml");
 
 async function createConfig () {
   const mdxMermaid = await import('mdx-mermaid')
@@ -31,7 +32,7 @@ async function createConfig () {
         /** @type {import('@docusaurus/preset-classic').Options} */
         ({
           docs: {
-            remarkPlugins: [mdxMermaid.default],
+            remarkPlugins: [simplePlantUML, mdxMermaid.default],
             sidebarPath: require.resolve('./sidebars.js'),
             editUrl: 'https://github.dev/aasanchez/ocpi.dev'
           },
