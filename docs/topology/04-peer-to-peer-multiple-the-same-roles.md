@@ -8,5 +8,20 @@ Some parties provide for example CPO or eMSP services for other companies. So th
 the same role. This topology is a bilateral connection: peer-to-peer between two platforms, and both platforms can have
 multiple roles.
 
-.peer-to-peer with multiple roles topology example
-image::images/architecture_platform_same_direct.svg[peer-to-peer with multiple roles topology example]
+```mermaid
+flowchart LR
+  subgraph platform-a
+    direction LR
+    eMSP1
+    eMSP2
+    eMSP3
+  end
+
+  subgraph platform-b
+    direction LR
+    CPO1
+    CPO2
+  end
+
+  platform-a ---OCPI--- platform-b
+```

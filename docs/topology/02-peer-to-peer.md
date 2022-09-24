@@ -9,5 +9,5 @@ and in the most simple version each platform only has 1 role.
 
 ```mermaid
 graph LR
-    A[eMSP] --OCPI--> B[CPO]
+    eMSP --OCPI--> CPO
 ```
