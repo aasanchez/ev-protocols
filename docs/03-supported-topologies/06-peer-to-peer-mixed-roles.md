@@ -8,36 +8,40 @@ Some parties have dual roles, or provide them to other parties and then connect 
 This topology is a bilateral connection: peer-to-peer between two platforms,
 and both platforms have multiple different and also the same roles.
 
-```mermaid
-flowchart TB
-  subgraph platform-a
-    direction LR
-    eMSP1
-    eMSP2
-  end
+```plantuml
+@startuml
 
-  subgraph platform-b
-    direction LR
-    eMSP3
-    CPO3
-  end
+skinparam agent {
+  roundCorner 8
+}
 
-  subgraph platform-c
-    direction LR
-    CPO1
-    CPO2
-  end
+skinparam rectangle {
+  roundCorner 8
+}
 
-  subgraph platform-d
-    direction LR
-    eMSP4
-    CPO4
-  end
 
-  platform-a --- |OCPI|platform-b
-  platform-a --- |OCPI|platform-c
-  platform-a --- |OCPI|platform-d
-  platform-b --- |OCPI|platform-c
-  platform-b --- |OCPI|platform-d
-  platform-c --- |OCPI|platform-d
+left to right direction
+
+rectangle PLATFORM as CPOMSP1 {
+  agent eMSP1
+  agent eMSP2
+  agent CPO1
+  agent CPO2
+}
+
+rectangle PLATFORM as CPOMSP2 {
+  agent eMSP4
+  agent CPO5
+  agent CPO6
+  agent CPO7
+}
+
+CPOMSP1 -- CPOMSP2: OCPI
+
+
+'following is only to fix layout
+eMSP1 -[hidden]- eMSP4
+CPO2 -[hidden]- CPO7
+
+@enduml
 ```

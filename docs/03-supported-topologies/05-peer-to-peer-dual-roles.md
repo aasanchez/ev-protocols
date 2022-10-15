@@ -8,23 +8,36 @@ Some parties have dual roles, most of the companies are CPO and eMSP.
 This topology is a bilateral connection: peer-to-peer between two platforms,
 and both platforms have the CPO and the eMSP roles.
 
-```mermaid
-flowchart LR
-  subgraph platform-a
-    direction LR
-    eMSP1
-    eMSP2
-    CPO1
-    CPO2
-  end
+```plantuml
+@startuml
 
-  subgraph platform-b
-    direction LR
-    eMSP4
-    CPO5
-    CPO6
-    CPO7
-  end
+skinparam agent {
+  roundCorner 8
+}
 
-  platform-a ---OCPI--- platform-b
+skinparam rectangle {
+  roundCorner 8
+}
+
+
+left to right direction
+
+rectangle PLATFORM as CPOMSP1 {
+  agent eMSP1
+  agent CPO1
+}
+
+rectangle PLATFORM as CPOMSP2 {
+  agent eMSP2
+  agent CPO2
+}
+
+CPOMSP1 -- CPOMSP2: OCPI
+
+
+'following is only to fix layout
+CPO1 -[hidden]- CPO1
+eMSP1 -[hidden]- eMSP2
+
+@enduml
 ```

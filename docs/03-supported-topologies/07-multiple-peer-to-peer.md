@@ -9,5 +9,43 @@ multiple roles.
 
 Disadvantage of this: requires a lot of connections between platforms to be setup, tested and maintained.
 
-.peer-to-peer with mixed roles topology example
-image::images/architecture_mutiple_platform_direct_modified.svg[peer-to-peer with mixed roles topology example]
+```plantuml
+@startuml
+
+skinparam agentRoundCorner 8
+skinparam rectangleRoundCorner 8
+skinparam rectangleRoundCorner 8
+
+left to right direction
+
+  rectangle PLATFORM as MSPP1 {
+    agent eMSP1
+    agent eMSP2
+  }
+
+  rectangle PLATFORM as CPOP1 {
+    agent CPO1
+    agent CPO2
+  }
+
+
+  rectangle PLATFORM as CPOMSP1 {
+    agent eMSP3
+    agent CPO3
+  }
+
+  rectangle PLATFORM as CPOMSP2 {
+    agent eMSP4
+    agent CPO4
+  }
+
+
+MSPP1 -- CPOP1
+MSPP1 -- CPOMSP1
+MSPP1 -- CPOMSP2
+CPOP1 -- CPOMSP1
+CPOP1 -- CPOMSP2
+CPOMSP1 -- CPOMSP2
+
+@enduml
+```

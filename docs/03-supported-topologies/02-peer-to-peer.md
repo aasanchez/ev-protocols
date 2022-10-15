@@ -7,20 +7,15 @@ sidebar_position: 2
 The simplest topology is a bilateral connection: peer-to-peer between two platforms,
 and in the most simple version each platform only has 1 role.
 
-```mermaid
-graph LR
-    eMSP --OCPI--> CPO
-```
-
-```plantuml Your title
+```plantuml Figure 1. peer-to-peer topology example
 @startuml
 
 skinparam agent {
-	roundCorner 8
+  roundCorner 8
 }
 
 skinparam rectangle {
-	roundCorner 8
+  roundCorner 8
 }
 
 left to right direction
