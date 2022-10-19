@@ -10,12 +10,20 @@ and in the most simple version each platform only has 1 role.
 ```plantuml Figure 1. peer-to-peer topology example
 @startuml
 
+skinparam backgroundColor transparent
+skinparam ArrowColor      #c13830
+skinparam ArrowThickness  2
+
 skinparam agent {
-  roundCorner 8
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
 }
 
 skinparam rectangle {
-  roundCorner 8
+  BackgroundColor #fff
+  roundCorner     8
 }
 
 left to right direction

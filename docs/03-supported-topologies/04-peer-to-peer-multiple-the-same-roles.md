@@ -11,11 +11,19 @@ multiple roles.
 ```plantuml Figure 4. peer-to-peer with multiple roles topology example
 @startuml
 
+skinparam backgroundColor transparent
+skinparam ArrowColor      #c13830
+skinparam ArrowThickness  2
+
 skinparam agent {
-  roundCorner 8
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
 }
 
 skinparam rectangle {
+  BackgroundColor #fff
   roundCorner 8
 }
 

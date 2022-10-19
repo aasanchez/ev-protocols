@@ -8,11 +8,20 @@ This topology has all Platforms only connect via a Hub, all communication goes v
 
 ```plantuml
 @startuml
+
+skinparam backgroundColor transparent
+skinparam ArrowColor      #c13830
+skinparam ArrowThickness  2
+
 skinparam agent {
-  roundCorner 8
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
 }
 
 skinparam rectangle {
+  BackgroundColor #fff
   roundCorner 8
 }
 

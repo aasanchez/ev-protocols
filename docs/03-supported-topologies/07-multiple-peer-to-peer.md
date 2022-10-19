@@ -16,8 +16,14 @@ skinparam agentRoundCorner 8
 skinparam rectangleRoundCorner 8
 skinparam rectangleRoundCorner 8
 
-left to right direction
+skinparam agent {
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
+}
 
+left to right direction
   rectangle PLATFORM as MSPP1 {
     agent eMSP1
     agent eMSP2
@@ -42,10 +48,9 @@ left to right direction
 
 MSPP1 -- CPOP1
 MSPP1 -- CPOMSP1
-MSPP1 -- CPOMSP2
-CPOP1 -- CPOMSP1
 CPOP1 -- CPOMSP2
 CPOMSP1 -- CPOMSP2
-
+MSPP1 -- CPOMSP2
+CPOP1 -- CPOMSP1
 @enduml
 ```

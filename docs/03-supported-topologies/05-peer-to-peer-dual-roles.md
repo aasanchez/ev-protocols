@@ -11,11 +11,19 @@ and both platforms have the CPO and the eMSP roles.
 ```plantuml
 @startuml
 
+skinparam backgroundColor transparent
+skinparam ArrowColor      #c13830
+skinparam ArrowThickness  2
+
 skinparam agent {
-  roundCorner 8
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
 }
 
 skinparam rectangle {
+  BackgroundColor #fff
   roundCorner 8
 }
 

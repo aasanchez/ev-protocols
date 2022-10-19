@@ -11,11 +11,21 @@ and each platform only has 1 role.
 ```plantuml Figure 2. Multiple peer-to-peer topology example
 @startuml
 
+skinparam backgroundColor transparent
+skinparam ArrowColor      #c13830
+skinparam ArrowThickness  2
+skinparam ranksep 250
+
 skinparam agent {
+  BackgroundColor   #fefdca
+  BorderColor       #c13830
+  BorderThickness   2
+  roundCorner       8
   roundCorner 8
 }
 
 skinparam rectangle {
+  BackgroundColor #fff
   roundCorner 8
 }
 
@@ -54,6 +64,7 @@ eMSPP2 -- CPOP1
 eMSPP2 -- CPOP3
 eMSPP3 -- CPOP1
 eMSPP3 -- CPOP2
+eMSPP3 -- CPOP3
 eMSPP4 -- CPOP1
 eMSPP4 -- CPOP2
 eMSPP4 -- CPOP3
