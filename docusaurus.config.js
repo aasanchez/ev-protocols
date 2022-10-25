@@ -10,7 +10,7 @@ async function createConfig () {
 
   /** @type {import('@docusaurus/types').Config} */
   return {
-    title: 'OCPI.dev',
+    title: 'OCPI',
     tagline: 'OCPI Documentation',
     url: 'https://ocpi.dev',
     baseUrl: '/',
@@ -34,10 +34,6 @@ async function createConfig () {
           docs: {
             remarkPlugins: [simplePlantUML, mdxMermaid.default],
             sidebarPath: require.resolve('./sidebars.js'),
-            editUrl: 'https://github.dev/aasanchez/ocpi.dev'
-          },
-          blog: {
-            showReadingTime: true,
             editUrl: 'https://github.dev/aasanchez/ocpi.dev'
           },
           theme: {
@@ -77,11 +73,6 @@ async function createConfig () {
             label: 'Tutorial'
           },
           {
-            to: '/blog',
-            label: 'Blog',
-            position: 'left'
-          },
-          {
             href: 'https://github.com/aasanchez/ocpi.dev',
             label: 'GitHub',
             position: 'right'
@@ -106,24 +97,12 @@ async function createConfig () {
               {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/questions/tagged/ocpi'
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/openchargeplatform'
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/openchargeplatform'
               }
             ]
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog'
-              },
               {
                 label: 'GitHub',
                 href: 'https://github.com/aasanchez/ocpi.dev'
