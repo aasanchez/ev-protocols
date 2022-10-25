@@ -15,12 +15,20 @@ function HomepageHeader () {
         <h1 className='hero__title'>{siteConfig.title}</h1>
         <p className='hero__subtitle'>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className='button button--secondary button--lg'
-            to='/docs/intro'
-          >
-            OCPI Documentation
+          <Link className='button button--secondary button--lg' to='/docs/intro'>
+            Get Started
           </Link>
+        </div>
+        <br></br>
+        <div className={styles.buttons}>
+          <iframe
+            src={"https://ghbtns.com/github-btn.html?user=aasanchez&repo=ocpi.dev&type=star&count=true"}
+            frameBorder="0"
+            scrolling="0"
+            width="80px"
+            height="30px"
+            style={{ marginTop: '8px' }}
+          />
         </div>
       </div>
     </header>

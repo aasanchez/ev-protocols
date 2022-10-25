@@ -11,7 +11,7 @@ async function createConfig () {
   /** @type {import('@docusaurus/types').Config} */
   return {
     title: 'OCPI',
-    tagline: 'OCPI Documentation',
+    tagline: 'A scalable, automated EV roaming setup between CPOs and e-MSPs',
     url: 'https://ocpi.dev',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -60,7 +60,7 @@ async function createConfig () {
         }
       },
       navbar: {
-        title: 'OCPI.dev',
+        title: 'OCPI',
         logo: {
           alt: 'OCPI logo',
           src: 'img/ocpi.svg'
@@ -70,7 +70,7 @@ async function createConfig () {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial'
+            label: 'Docs'
           },
           {
             href: 'https://github.com/aasanchez/ocpi.dev',
@@ -86,7 +86,7 @@ async function createConfig () {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs/intro'
               }
             ]
