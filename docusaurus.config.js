@@ -43,6 +43,11 @@ async function createConfig () {
             trackingID: 'G-T3L8Q7QCG3',
             anonymizeIP: true,
           },
+          sitemap: {
+            changefreq: 'weekly',
+            priority: 0.5,
+            filename: 'sitemap.xml',
+          },
         })
       ]
     ],
