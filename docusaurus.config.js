@@ -38,7 +38,11 @@ async function createConfig () {
           },
           theme: {
             customCss: require.resolve('./src/css/custom.css')
-          }
+          },
+          gtag: {
+            trackingID: 'G-T3L8Q7QCG3',
+            anonymizeIP: true,
+          },
         })
       ]
     ],
