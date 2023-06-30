@@ -6,18 +6,6 @@ function clean_markdown(){
   $SED -i 's|^- |* |g' "$file"
   $SED -i '/figure\>/d'   "$file"
   $SED -i '/figcaption/d' "$file"
-  $SED -i 's|(credentials.md#credentials-object)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(credentials.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(mod_cdrs.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(mod_locations.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(mod_sessions.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(mod_tariffs.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(mod_tokens.md)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(status_codes.md#status-codes)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(types.md#12_datetime_type)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(types.md#13_decimal_type)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(types.md#14_url_type)|(https://ocpi.dev)|g' "$file"
-  $SED -i 's|(types.md#14_url)|(https://ocpi.dev)|g' "$file"
   echo "" > "$file.tmp"
   while read -r line; do
     if [[ $line =~ ^#  ]]; then

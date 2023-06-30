@@ -1,8 +1,6 @@
 ---
 sidebar_position: 1
-last_update:
-  date: 1/1/2000
-  author: custom author name
+slug: /
 ---
 # OCPI
 
@@ -19,7 +17,7 @@ The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 
 During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
 minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
 
-For more information on detailed changes see [Changelog](https://ocpi.dev).
+For more information on detailed changes see [changelog](https://ocpi.dev).
 
 ## OCPI 2.2
 
@@ -30,19 +28,20 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
 * Support for Hubs
   * [Message routing headers](https://ocpi.dev)
   * [Hub Client Info](https://ocpi.dev)
-* [Support Platforms with multiple/different roles, additional roles](https://ocpi.dev)
+* [Support Platforms with multiple/different roles](https://ocpi.dev)
 * [Charging Profiles](https://ocpi.dev)
 * [Preference based Smart Charging](https://ocpi.dev)
 * Improvements:
-  * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id, AuthorizationReference,
-    CdrLocation, CdrToken
+  * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
+    AuthorizationReference, CdrLocation, CdrToken
   * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
-  * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much more examples
+  * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
+    more examples
   * [Locations](https://ocpi.dev): Multiple Tariffs, Lots of small improvements
   * [Tokens](https://ocpi.dev): Group_id, energy contract
   * [Commands](https://ocpi.dev): Cancel Reservation added
 
-For more information on detailed changes see [Changelog](https://ocpi.dev).
+For more information on detailed changes see [changelog](https://ocpi.dev).
 
 ## Introduction and background
 
@@ -52,7 +51,7 @@ updates and transaction events), charge detail record exchange, remote charge po
 smart-charging related information between parties.
 
 It offers market participants in EV an attractive and scalable solution for (international) roaming between networks,
-avoiding the costs and innovation-limiting complexities involved with today’s non-automated solutions or with central
+avoiding the costs and innovation-limiting complexities involved with today's non-automated solutions or with central
 roaming hubs. As such it helps to enable EV drivers to charge everywhere in a fully-informed way, helps the market to
 develop quickly and helps market players to execute their business models in the best way.
 

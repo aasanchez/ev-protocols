@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'OCPI',
-  tagline: 'Open Charge Point Interface Documentation',
+  tagline: 'Open Charge Point Interface (unofficial) Documentation',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -69,7 +69,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'OCPI Docs',
+        title: 'OCPI',
         logo: {
           alt: 'OCPI.dev',
           src: 'img/logo.svg'
@@ -79,9 +79,13 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'OCPI'
+            label: 'Docs'
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { 
+            to: '/blog', 
+            label: 'Blog', 
+            position: 'left'
+          },
           {
             type: 'docsVersionDropdown',
             position: 'right',
@@ -98,10 +102,10 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'OCPI',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Docs',
                 to: '/docs'
               }
             ]
