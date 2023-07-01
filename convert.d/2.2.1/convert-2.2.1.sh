@@ -19,13 +19,13 @@ git clean -xfd --quiet
 
 cd "$ROOT" || exit 0
 
-. ./convert.d/2.2.1/introduction.sh
+. ./convert.d/2.2.1/01-introduction.sh
 pre_introduction
 pandoc2markdown "01-introduction"
 links "docs/01-introduction.md"
 fix_introduction
 
-. ./convert.d/2.2.1/terminology.sh
+. ./convert.d/2.2.1/02-terminology.sh
 pre_terminology
 pandoc2markdown "02-terminology"
 links "docs/02-terminology.md"
