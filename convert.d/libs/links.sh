@@ -27,7 +27,7 @@ function links(){
   $SED -i 's|#transport_and_format.asciidoc#transport_and_format_message_routing_open_routing_request)|https://ocpi.dev)|g' "$file"
   $SED -i 's|#types.asciidoc#types_role_enum)|https://ocpi.dev)|g' "$file"
   $SED -i 's|#version_information_endpoint.asciidoc#versions_module)|https://ocpi.dev)|g' "$file"
-  # $SED -i 's|)|https://ocpi.dev)|g' "$file"
+  $SED -i 's|#terminology.asciidoc#terminology_roles)|https://ocpi.dev)|g' "$file"
   # $SED -i 's|)|https://ocpi.dev)|g' "$file"
   # $SED -i 's|)|https://ocpi.dev)|g' "$file"
   # $SED -i 's|)|https://ocpi.dev)|g' "$file"

@@ -30,3 +30,9 @@ pre_terminology
 pandoc2markdown "02-terminology"
 links "docs/02-terminology.md"
 fix_terminology
+
+. ./convert.d/2.2.1/03-topology.sh
+pre_topology
+pandoc2markdown "03-topology"
+links "docs/03-topology.md"
+fix_topology
