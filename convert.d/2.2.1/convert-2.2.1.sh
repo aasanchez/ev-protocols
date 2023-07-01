@@ -19,6 +19,9 @@ git clean -xfd --quiet
 
 cd "$ROOT" || exit 0
 
+cp -r ocpi/images docs/images/
+cp -r ocpi/examples docs/examples/
+
 . ./convert.d/2.2.1/01-introduction.sh
 pre_introduction
 pandoc2markdown "01-introduction"

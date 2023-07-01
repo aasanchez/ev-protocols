@@ -18,6 +18,7 @@ command -v pandoc >/dev/null 2>&1 ||    { echo >&2 "Please install pandoc"; exit
 
 if [[ ! -d $ROOT/ocpi ]]; then
   git clone https://github.com/ocpi/ocpi.git "$ROOT"/ocpi
+
 fi
 
 cd "$ROOT" || exit 0
