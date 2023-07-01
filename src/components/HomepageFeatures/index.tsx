@@ -10,32 +10,31 @@ interface FeatureItem {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'User Friendly',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Providing a more practical and user-friendly way to access OCPI documentation.
       </>
     )
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Making OCPI Accesible',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        More accessible OCPI documentation can help to accelerate the adoption of OCPI and make it easier for developers
+        to build interoperable EV charging solutions.
       </>
     )
   },
   {
-    title: 'Powered by React',
+    title: 'EV Roaming Foundation',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        This site is not associated with EV Roaming Foundation, and recommends that users always
+        consult the official OCPI documentation in https://evroaming.org.
       </>
     )
   }
