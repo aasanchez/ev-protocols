@@ -164,7 +164,7 @@ The charging topology, as relevant to the eMSP, consists of three entities:
   connectors but only one of these can be active at the same time.
 * *Location* is a group of one or more EVSEs that belong together geographically or spatially.
 
-![Charging Topology schematic](images/topology.svg)
+![Charging Topology schematic](./images/topology.svg)
 
 A Location is typically the exact location of one or more EVSEs, but it can also be the entrance of a parking garage or
 a gated community. It is up to the CPO to use whatever makes the most sense in a specific situation. Once arrived at the

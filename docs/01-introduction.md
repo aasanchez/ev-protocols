@@ -88,10 +88,10 @@ these standards and their use are taken into account and some elements have been
 
 evRoaming4EU project and its partners:
 
-![evRoaming4EU logo](images/evroamingeu_logo.png)
+![evRoaming4EU logo](./images/evroamingeu_logo.png)
 
 ECISS project and its partners:
 
-![ECISS logo](images/eciss_logo.png)
+![ECISS logo](./images/eciss_logo.png)
 
 The latest version of this specification can be found here: [OCPI Github Repository](https://github.com/ocpi/ocpi)

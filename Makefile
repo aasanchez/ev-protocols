@@ -40,8 +40,8 @@ update: bootstrap ## is used to update the project after a fresh pull
 server: setup ## is used to start the application
 	@echo "is used to start the application"
 
-convert: ## is used to run the test suite of the application
-	@./convert.d/2.2.1/convert-2.2.1.sh
+reformat: ## is used to run the test suite of the application
+	@./reformat.d/2.2.1/reformat.sh
 
 cibuild: ## is used for your continuous integration server
 	@echo "is used for your continuous integration server"

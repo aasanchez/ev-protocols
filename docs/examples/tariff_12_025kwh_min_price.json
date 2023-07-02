@@ -4,16 +4,20 @@
   "id": "20",
   "currency": "EUR",
   "min_price": {
-    "excl_vat": 0.50,
+    "excl_vat": 0.5,
     "incl_vat": 0.55
   },
-  "elements": [{
-    "price_components": [{
-      "type": "ENERGY",
-      "price": 0.25,
-      "vat": 10.0,
-      "step_size": 1
-    }]
-  }],
+  "elements": [
+    {
+      "price_components": [
+        {
+          "type": "ENERGY",
+          "price": 0.25,
+          "vat": 10,
+          "step_size": 1
+        }
+      ]
+    }
+  ],
   "last_updated": "2018-12-17T16:45:21Z"
 }

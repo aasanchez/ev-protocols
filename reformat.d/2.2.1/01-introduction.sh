@@ -43,8 +43,8 @@ function fix_introduction() {
   $SED -i 's/<figure>//gm' "$file"
   $SED -i 's/<\/figure>//gm' "$file"
   
-  $SED -i "s|<img src=\"images/evroamingeu_logo.png\" alt=\"evRoaming4EU logo\" />|![evRoaming4EU logo](images/evroamingeu_logo.png)|g" "$file"
-  $SED -i "s|<img src=\"images/eciss_logo.png\" alt=\"ECISS logo\" />|![ECISS logo](images/eciss_logo.png)|g" "$file"
+  $SED -i "s|<img src=\"images/evroamingeu_logo.png\" alt=\"evRoaming4EU logo\" />|![evRoaming4EU logo](./images/evroamingeu_logo.png)|g" "$file"
+  $SED -i "s|<img src=\"images/eciss_logo.png\" alt=\"ECISS logo\" />|![ECISS logo](./images/eciss_logo.png)|g" "$file"
   
   $SED -i 's|<https://github.com/ocpi/ocpi>|[OCPI Github Repository](https://github.com/ocpi/ocpi)|g' "$file"
   $SED -i '/^$/N;/\n$/D' "$file"

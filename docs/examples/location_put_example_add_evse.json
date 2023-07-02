@@ -2,13 +2,17 @@
   "uid": "3256",
   "evse_id": "BE*BEC*E041503003",
   "status": "AVAILABLE",
-  "capabilities": ["RESERVABLE"],
+  "capabilities": [
+    "RESERVABLE"
+  ],
   "connectors": [
     {
       "id": "1",
       "standard": "IEC_62196_T2",
       "format": "SOCKET",
-      "tariff_ids": ["14"]
+      "tariff_ids": [
+        "14"
+      ]
     }
   ],
   "floor": -1,

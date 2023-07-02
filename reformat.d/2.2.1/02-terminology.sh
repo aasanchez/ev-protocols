@@ -27,7 +27,7 @@ function fix_terminology(){
 
   $SED -i '/<figure>/d' "$file"
   $SED -i '/<\/figure>/d' "$file"
-  $SED -i "s|<img src=\"images/topology.svg\" alt=\"Charging Topology schematic\" />|![Charging Topology schematic](images/topology.svg)|g" "$file"
+  $SED -i "s|<img src=\"images/topology.svg\" alt=\"Charging Topology schematic\" />|![Charging Topology schematic](./images/topology.svg)|g" "$file"
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
   echo "" >> "$file"
