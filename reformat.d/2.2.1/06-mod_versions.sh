@@ -9,7 +9,7 @@ function fix_mod_versions() {
   file="$ROOT/docs/06-mod_versions.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 6\nslug: module-versions\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 7\nslug: module-versions\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   $SED -i -e "s|\`+|\`|gm" "$file"
@@ -23,7 +23,7 @@ function fix_mod_versions() {
 
   $SED -i -e "s|^\# \*Versions\* module|# Versions module|gm" "$file"
 
-  $SED -i "s/\*\*Type:\*\* Configuration Module/\:\:\:info\n\*\*Type:\*\* Configuration Module\n\:\:\:/gm" "$file"
+  $SED -i "s/\*\*Type:\*\* Configuration Module/\:\:\:info Type\nConfiguration Module\n\:\:\:/gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

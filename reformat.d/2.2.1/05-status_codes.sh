@@ -10,4 +10,7 @@ function fix_status_codes() {
   $SED -i "s|–|-|gm" "$file"
   $SED -i "s/’/'/gm" "$file"
   $SED -i 's|^- |* |gm' "$file"
+  $SED -i -z 's|\n\*\s|\* |gm' "$file"
+  $SED -i -z 's|:\n\*\s|:\n\n\* |gm' "$file"
+
 }

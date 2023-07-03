@@ -7,7 +7,6 @@ slug: status-codes
 There are two types of status codes:
 
 * Transport related (HTTP)
-
 * Content related (OCPI)
 
 The transport layer ends after a message is correctly parsed into a (semantically unvalidated) JSON structure. When a
@@ -21,7 +20,6 @@ In case of a GET request, when the resource does NOT exist, the server SHOULD re
 When the server receives a valid OCPI object it SHOULD respond with:
 
 * HTTP `200 - Ok` when the object already existed and has successfully been updated.
-
 * HTTP `201 - Created` when the object has been newly created in the server system.
 
 Requests that reach the OCPI layer SHOULD return an OCPI response message with a `status_code` field as defined below.
