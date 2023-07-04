@@ -15,6 +15,9 @@ function fix_mod_locations() {
   file="$ROOT/docs/08-mod_locations.md"
   tempfile="$file.tmp"
 
+  echo -e "---\nsidebar_position: 8\nslug: module-locations\n---" | cat - "$file" > "$tempfile"
+  mv "$tempfile" "$file"
+  
   gsed -i -e "s|^\# \*Locations\* module|# Locations module|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`locations\`\*\*|\:\:\:tip Module Identifier\nlocations\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"

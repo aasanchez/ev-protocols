@@ -1,3 +1,7 @@
+---
+sidebar_position: 8
+slug: module-locations
+---
 # Locations module
 
 :::tip Module Identifier

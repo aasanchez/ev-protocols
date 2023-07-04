@@ -1,3 +1,7 @@
+---
+sidebar_position: 10
+slug: module-cdrs
+---
 # CDRs module
 
 :::tip Module Identifier

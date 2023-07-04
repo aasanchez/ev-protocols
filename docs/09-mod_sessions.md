@@ -1,3 +1,7 @@
+---
+sidebar_position: 9
+slug: module-sessions
+---
 # Sessions module
 
 **Module Identifier: `sessions`**

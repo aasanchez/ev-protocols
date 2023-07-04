@@ -9,6 +9,9 @@ function fix_mod_cdrs() {
   file="$ROOT/docs/10-mod_cdrs.md"
   tempfile="$file.tmp"
 
+  echo -e "---\nsidebar_position: 10\nslug: module-cdrs\n---" | cat - "$file" > "$tempfile"
+  mv "$tempfile" "$file"
+
   gsed -i -e "s|^\# \*CDRs\* module|# CDRs module|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`cdrs\`\*\*|\:\:\:tip Module Identifier\ncdrs\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"

@@ -10,6 +10,9 @@ function fix_mod_sessions() {
   file="$ROOT/docs/09-mod_sessions.md"
   tempfile="$file.tmp"
 
+  echo -e "---\nsidebar_position: 9\nslug: module-sessions\n---" | cat - "$file" > "$tempfile"
+  mv "$tempfile" "$file"
+
   gsed -i -e "s|^\# \*Sessions\* module|# Sessions module|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`crds\`\*\*|\:\:\:tip Module Identifier\ncrds\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"
