@@ -16,4 +16,8 @@ function fix_mod_cdrs() {
 
   gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
   gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+
+  docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
+  mv "$tempfile" "$file"
+  echo "" >> "$file"
 }
