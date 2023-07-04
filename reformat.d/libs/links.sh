@@ -148,7 +148,7 @@ function links(){
   gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_cdrs_cdr_location_class)|(https://ocpi.dev)|g' "$file"
-  # gsed -i 's|()|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#mod_cdrs_authmethod_enum)|(https://ocpi.dev)|g' "$file"
   # gsed -i 's|()|(https://ocpi.dev)|g' "$file"
   # gsed -i 's|()|(https://ocpi.dev)|g' "$file"
   # gsed -i 's|()|(https://ocpi.dev)|g' "$file"
