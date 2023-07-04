@@ -131,13 +131,10 @@ Endpoint structure definition:
 
 Examples:
 
-`+https://www.server.com/ocpi/cpo/2.2.1/locations/?date_from=2019-01-28T12:00:00&date_to=2019-01-29T12:00:00+`
-
-`+https://ocpi.server.com/2.2.1/locations/?offset=50+`
-
-`+https://www.server.com/ocpi/2.2.1/locations/?date_from=2019-01-29T12:00:00&limit=100+`
-
-`+https://www.server.com/ocpi/cpo/2.2.1/locations/?offset=50&limit=100+`
+* `https://www.server.com/ocpi/cpo/2.2.1/locations/?date_from=2019-01-28T12:00:00&date_to=2019-01-29T12:00:00`
+* `https://ocpi.server.com/2.2.1/locations/?offset=50`
+* `https://www.server.com/ocpi/2.2.1/locations/?date_from=2019-01-29T12:00:00&limit=100`
+* `https://www.server.com/ocpi/cpo/2.2.1/locations/?offset=50&limit=100`
 
 If the optional parameters `{date_from}` and/or `{date_to}` are provided, only Locations with (`last_updated`) between
 the given `{date_from}` (including) and `{date_to}` (excluding) will be returned. In order for this to work properly,
@@ -177,11 +174,9 @@ Endpoint structure definition for retrieving a Location, EVSE or Connector:
 
 Examples:
 
-`+https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1+`
-
-`+https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1/3256+`
-
-`+https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1/3256/1+`
+* `https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1`
+* `https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1/3256`
+* `https://www.server.com/ocpi/cpo/2.2.1/locations/LOC1/3256/1`
 
 The following parameters can be provided as URL segments in the same order.
 
@@ -195,12 +190,13 @@ The following parameters can be provided as URL segments in the same order.
 
 The response contains the requested object.
 
-| Type                             | Card. | Description                                                |
-|----------------------------------|-------|------------------------------------------------------------|
-| *Choice: one of three*           |       |                                                            |
-| \> [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
-| \> [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
-| \> [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
+Choice: one of three
+
+| Type                          | Card. | Description                                                |
+|-------------------------------|-------|------------------------------------------------------------|
+| [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
+| [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
+| [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
 
 ### Receiver Interface
 
@@ -217,11 +213,9 @@ Endpoint structure definition:
 
 Examples:
 
-`+https://www.server.com/ocpi/emsp/2.2.1/locations/BE/BEC/LOC1+`
-
-`+https://server.com/ocpi/2.2.1/locations/BE/BEC/LOC1/3256+`
-
-`+https://ocpi.server.com/2.2.1/locations/BE/BEC/LOC1/3256/1+`
+* `https://www.server.com/ocpi/emsp/2.2.1/locations/BE/BEC/LOC1`
+* `https://server.com/ocpi/2.2.1/locations/BE/BEC/LOC1/3256`
+* `https://ocpi.server.com/2.2.1/locations/BE/BEC/LOC1/3256/1`
 
 | Method                    | Description                                                                                                                      |
 |---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
@@ -254,12 +248,13 @@ The following parameters can be provided as URL segments.
 
 The response contains the requested object.
 
-| Type                             | Card. | Description                                                |
-|----------------------------------|-------|------------------------------------------------------------|
-| *Choice: one of three*           |       |                                                            |
-| \> [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
-| \> [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
-| \> [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
+Choice: one of three
+
+| Type                          | Card. | Description                                                |
+|-------------------------------|-------|------------------------------------------------------------|
+| [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
+| [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
+| [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
 
 #### **PUT** Method
 
@@ -300,12 +295,11 @@ Objects.
 When the PUT contains a [EVSE](https://ocpi.dev) Object, the Receiver SHALL also set the new `last_updated`
 value on the parent [Location](https://ocpi.dev) Object.
 
-| Type                             | Card. | Description                                           |
-|----------------------------------|-------|-------------------------------------------------------|
-| *Choice: one of three*           |       |                                                       |
-| \> [Location](https://ocpi.dev)  | 1     | New Location object, or Location object to replace.   |
-| \> [EVSE](https://ocpi.dev)      | 1     | New EVSE object, or EVSE object to replace.           |
-| \> [Connector](https://ocpi.dev) | 1     | New Connector object, or Connector object to replace. |
+| Type                          | Card. | Description                                           |
+|-------------------------------|-------|-------------------------------------------------------|
+| [Location](https://ocpi.dev)  | 1     | New Location object, or Location object to replace.   |
+| [EVSE](https://ocpi.dev)      | 1     | New EVSE object, or EVSE object to replace.           |
+| [Connector](https://ocpi.dev) | 1     | New Connector object, or Connector object to replace. |
 
 ##### Example: add an EVSE
 
@@ -313,9 +307,15 @@ To add an *EVSE*, simply put the full object in an update message, including all
 be new to the eMSP's system, the receiving party will know that it is a new object. When not all required fields are
 specified, the object may be discarded.
 
-``` json
-PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
+Example Request:
 
+```shell
+curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256"
+```
+
+Example Response:
+
+```json
 {
   "uid": "3256",
   "evse_id": "BE*BEC*E041503003",
@@ -359,9 +359,15 @@ value on the parent [Location](https://ocpi.dev) Object.
 This is the most common type of update message. It is used to notify eMSPs that the status of an EVSE changed. In this
 case it is the EVSE with uid `3255` of the Location with id `1012`.
 
-``` json
-PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
+Example Request:
 
+```shell
+curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255"
+```
+
+Example Response:
+
+```json
 {
   "status": "CHARGING",
   "last_updated": "2019-06-24T12:39:09Z"
@@ -372,10 +378,15 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
 
 In this example the name of the Location with id `1012` is being updated.
 
-``` json
-PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
+Example Request:
 
+```shell
+curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012"
+```
 
+Example Response:
+
+```json
 {
   "name": "Interparking Gent Zuid",
   "last_updated": "2019-06-24T12:39:09Z"
@@ -386,9 +397,15 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
 
 In this example Connector `2` of EVSE `1` of Location `1012` receives a new pricing scheme.
 
-``` json
-PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2
+Example Request:
 
+```shell
+curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2"
+```
+
+Example Response:
+
+```json
 {
   "tariff_ids": [
     "15"
@@ -401,9 +418,15 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/
 
 An EVSE can be deleted by updating its `status` property.
 
-``` json
-PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
+Example Request:
 
+```shell
+curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256"
+```
+
+Example Response:
+
+```json
 {
   "status": "REMOVED",
   "last_updated": "2019-06-24T12:39:09Z"
@@ -418,10 +441,7 @@ To inform eMSPs that an EVSE is scheduled for removal, the status_schedule field
 
 Location, EVSE and Connector have the following relation.
 
-<figure>
-<img src="images/locations-class-diagram.svg" alt="Location class diagram" />
-<figcaption aria-hidden="true">Location class diagram</figcaption>
-</figure>
+![Location class diagram](./images/locations-class-diagram.svg)
 
 ### *Location* Object
 
@@ -439,34 +459,34 @@ And that information matches all the fields of one of the [PublishToken](https:/
 the list, then they are allowed to show this location to their user. It is not allowed in OCPI to use a Token that is
 not *owned* by the eMSP itself to start a charging session.
 
-| Property             | Type                                                                | Card. | Description                                                                                                                                                                                                                                                                                                        |
-|----------------------|---------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| country_code         | [CiString](https://ocpi.dev)(2)                                     | 1     | ISO-3166 alpha-2 country code of the CPO that *owns* this Location.                                                                                                                                                                                                                                                |
-| party_id             | [CiString](https://ocpi.dev)(3)                                     | 1     | ID of the CPO that *owns* this Location (following the ISO-15118 standard).                                                                                                                                                                                                                                        |
-| id                   | [CiString](https://ocpi.dev)(36)                                    | 1     | Uniquely identifies the location within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed.                                                                                                                                                                       |
-| publish              | boolean                                                             | 1     | Defines if a Location may be published on an website or app etc. When this is set to `false`, only tokens identified in the field: `publish_allowed_to` are allowed to be shown this Location. When the same location has EVSEs that may be published and may not be published, two *Locations* should be created. |
-| publish_allowed_to   | [PublishTokenType](https://ocpi.dev)                                | \*    | This field may only be used when the `publish` field is set to `false`. Only owners of Tokens that match all the set fields of one PublishToken in the list are allowed to be shown this location.                                                                                                                 |
-| name                 | [string](https://ocpi.dev)(255)                                     | ?     | Display name of the location.                                                                                                                                                                                                                                                                                      |
-| address              | [string](https://ocpi.dev)(45)                                      | 1     | Street/block name and house number if available.                                                                                                                                                                                                                                                                   |
-| city                 | [string](https://ocpi.dev)(45)                                      | 1     | City or town.                                                                                                                                                                                                                                                                                                      |
-| postal_code          | [string](https://ocpi.dev)(10)                                      | ?     | Postal code of the location, may only be omitted when the location has no postal code: in some countries charging locations at highways don't have postal codes.                                                                                                                                                   |
-| state                | [string](https://ocpi.dev)(20)                                      | ?     | State or province of the location, only to be used when relevant.                                                                                                                                                                                                                                                  |
-| country              | [string](https://ocpi.dev)(3)                                       | 1     | ISO 3166-1 alpha-3 code for the country of this location.                                                                                                                                                                                                                                                          |
-| coordinates          | [GeoLocation](#mod_locations_geolocation_class)                     | 1     | Coordinates of the location.                                                                                                                                                                                                                                                                                       |
-| related_locations    | [AdditionalGeoLocation](#mod_locations_additionalgeolocation_class) | \*    | Geographical location of related points relevant to the user.                                                                                                                                                                                                                                                      |
-| parking_type         | [ParkingType](#mod_locations_parkingtype_enum)                      | ?     | The general type of parking at the charge point location.                                                                                                                                                                                                                                                          |
-| evses                | [EVSE](https://ocpi.dev)                                            | \*    | List of EVSEs that belong to this Location.                                                                                                                                                                                                                                                                        |
-| directions           | [DisplayText](#types.asciidoc#types_displaytext_class)              | \*    | Human-readable directions on how to reach the location.                                                                                                                                                                                                                                                            |
-| operator             | [BusinessDetails](#mod_locations_businessdetails_class)             | ?     | Information of the operator. When not specified, the information retrieved from the [Credentials](https://ocpi.dev) module, selected by the `country_code` and `party_id` of this Location, should be used instead.                                                                                                |
-| suboperator          | [BusinessDetails](#mod_locations_businessdetails_class)             | ?     | Information of the suboperator if available.                                                                                                                                                                                                                                                                       |
-| owner                | [BusinessDetails](#mod_locations_businessdetails_class)             | ?     | Information of the owner if available.                                                                                                                                                                                                                                                                             |
-| facilities           | [Facility](#mod_locations_facility_enum)                            | \*    | Optional list of facilities this charging location directly belongs to.                                                                                                                                                                                                                                            |
-| time_zone            | [string](https://ocpi.dev)(255)                                     | 1     | One of IANA tzdata's TZ-values representing the time zone of the location. Examples: "Europe/Oslo", "Europe/Zurich". (<http://www.iana.org/time-zones>)                                                                                                                                                            |
-| opening_times        | [Hours](#mod_locations_hours_class)                                 | ?     | The times when the EVSEs at the location can be accessed for charging.                                                                                                                                                                                                                                             |
-| charging_when_closed | boolean                                                             | ?     | Indicates if the EVSEs are still charging outside the opening hours of the location. E.g. when the parking garage closes its barriers over night, is it allowed to charge till the next morning? Default: **true**                                                                                                 |
-| images               | [Image](#mod_locations_image_class)                                 | \*    | Links to images related to the location such as photos or logos.                                                                                                                                                                                                                                                   |
-| energy_mix           | [EnergyMix](#mod_locations_energymix_class)                         | ?     | Details on the energy supplied at this location.                                                                                                                                                                                                                                                                   |
-| last_updated         | [DateTime](https://ocpi.dev)                                        | 1     | Timestamp when this Location or one of its EVSEs or Connectors were last updated (or created).                                                                                                                                                                                                                     |
+| Property             | Type                                      | Card. | Description                                                                                                                                                                                                                                                                                                        |
+|----------------------|-------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| country_code         | [CiString](https://ocpi.dev)(2)           | 1     | ISO-3166 alpha-2 country code of the CPO that *owns* this Location.                                                                                                                                                                                                                                                |
+| party_id             | [CiString](https://ocpi.dev)(3)           | 1     | ID of the CPO that *owns* this Location (following the ISO-15118 standard).                                                                                                                                                                                                                                        |
+| id                   | [CiString](https://ocpi.dev)(36)          | 1     | Uniquely identifies the location within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed.                                                                                                                                                                       |
+| publish              | boolean                                   | 1     | Defines if a Location may be published on an website or app etc. When this is set to `false`, only tokens identified in the field: `publish_allowed_to` are allowed to be shown this Location. When the same location has EVSEs that may be published and may not be published, two *Locations* should be created. |
+| publish_allowed_to   | [PublishTokenType](https://ocpi.dev)      | \*    | This field may only be used when the `publish` field is set to `false`. Only owners of Tokens that match all the set fields of one PublishToken in the list are allowed to be shown this location.                                                                                                                 |
+| name                 | [string](https://ocpi.dev)(255)           | ?     | Display name of the location.                                                                                                                                                                                                                                                                                      |
+| address              | [string](https://ocpi.dev)(45)            | 1     | Street/block name and house number if available.                                                                                                                                                                                                                                                                   |
+| city                 | [string](https://ocpi.dev)(45)            | 1     | City or town.                                                                                                                                                                                                                                                                                                      |
+| postal_code          | [string](https://ocpi.dev)(10)            | ?     | Postal code of the location, may only be omitted when the location has no postal code: in some countries charging locations at highways don't have postal codes.                                                                                                                                                   |
+| state                | [string](https://ocpi.dev)(20)            | ?     | State or province of the location, only to be used when relevant.                                                                                                                                                                                                                                                  |
+| country              | [string](https://ocpi.dev)(3)             | 1     | ISO 3166-1 alpha-3 code for the country of this location.                                                                                                                                                                                                                                                          |
+| coordinates          | [GeoLocation](https://ocpi.dev)           | 1     | Coordinates of the location.                                                                                                                                                                                                                                                                                       |
+| related_locations    | [AdditionalGeoLocation](https://ocpi.dev) | \*    | Geographical location of related points relevant to the user.                                                                                                                                                                                                                                                      |
+| parking_type         | [ParkingType](https://ocpi.dev)           | ?     | The general type of parking at the charge point location.                                                                                                                                                                                                                                                          |
+| evses                | [EVSE](https://ocpi.dev)                  | \*    | List of EVSEs that belong to this Location.                                                                                                                                                                                                                                                                        |
+| directions           | [DisplayText](https://ocpi.dev)           | \*    | Human-readable directions on how to reach the location.                                                                                                                                                                                                                                                            |
+| operator             | [BusinessDetails](https://ocpi.dev)       | ?     | Information of the operator. When not specified, the information retrieved from the [Credentials](https://ocpi.dev) module, selected by the `country_code` and `party_id` of this Location, should be used instead.                                                                                                |
+| suboperator          | [BusinessDetails](https://ocpi.dev)       | ?     | Information of the suboperator if available.                                                                                                                                                                                                                                                                       |
+| owner                | [BusinessDetails](https://ocpi.dev)       | ?     | Information of the owner if available.                                                                                                                                                                                                                                                                             |
+| facilities           | [Facility](https://ocpi.dev)              | \*    | Optional list of facilities this charging location directly belongs to.                                                                                                                                                                                                                                            |
+| time_zone            | [string](https://ocpi.dev)(255)           | 1     | One of IANA tzdata's TZ-values representing the time zone of the location. Examples: "Europe/Oslo", "Europe/Zurich". (<http://www.iana.org/time-zones>)                                                                                                                                                            |
+| opening_times        | [Hours](https://ocpi.dev)                 | ?     | The times when the EVSEs at the location can be accessed for charging.                                                                                                                                                                                                                                             |
+| charging_when_closed | boolean                                   | ?     | Indicates if the EVSEs are still charging outside the opening hours of the location. E.g. when the parking garage closes its barriers over night, is it allowed to charge till the next morning? Default: **true**                                                                                                 |
+| images               | [Image](https://ocpi.dev)                 | \*    | Links to images related to the location such as photos or logos.                                                                                                                                                                                                                                                   |
+| energy_mix           | [EnergyMix](https://ocpi.dev)             | ?     | Details on the energy supplied at this location.                                                                                                                                                                                                                                                                   |
+| last_updated         | [DateTime](https://ocpi.dev)              | 1     | Timestamp when this Location or one of its EVSEs or Connectors were last updated (or created).                                                                                                                                                                                                                     |
 
 Private Charge Points, home or business that do not need to be published on apps, and do not require remote control via
 OCPI, SHOULD not be PUT via the OCPI Locations module.
@@ -475,6 +495,7 @@ OCPI, SHOULD not be PUT via the OCPI Locations module.
 
 This is an example of a public charging location. Can be used by any EV Driver as long as his eMSP has a roaming
 agreement with the CPO. Or the Charge Point has an ad-hoc payment possibility
+
 * `publish` = `true`
 * `parking_type` = `ON_STREET` but could also be another value.
 * `EVSE.parking_restrictions` not used.
@@ -577,6 +598,7 @@ employees and guest of the office can charge their EV.
 
 Locations you can think of where this is useful: restaurants, bars, clubs, theme parks, stores, supermarkets, company
 building, office buildings, etc.
+
 * `publish` = `true`
 * `parking_type` = `PARKING_LOT` (but could also be `PARKING_GARAGE`, `ON_DRIVEWAY` or `UNDERGROUND_GARAGE`)
 * `EVSE.parking_restrictions` = `CUSTOMERS`
@@ -634,6 +656,7 @@ can use the information from the Location module to help the driver, maybe even 
 session from an App is not possible, because the driver will not be able to select the Charge Point on a map.
 
 In case the EV driver is not billed for charging, there is, in such a case, no reason to publish the location via OCPI.
+
 * `publish` = `false`
 * `publish_allowed_to` not used
 * `parking_type` = not used\`
@@ -694,6 +717,7 @@ Typical examples where this is useful:
 
 The locations SHALL NOT be published to the general public. Only selected
 [Tokens](https://ocpi.dev) can see (and control) the Charge Points via eMSP app.
+
 * `publish` = `false`
 * `publish_allowed_to` contains list with information of [Tokens](https://ocpi.dev) that are
   allowed to be shown the `Location`.
@@ -759,6 +783,7 @@ This is an example of a private/home charge point that needs to be controlled vi
 
 The locations SHALL NOT be published to the general public. Only the owner, identified by his/her
 [Token](https://ocpi.dev) can see (and control) the Charge Points via an eMSP app.
+
 * `publish` = `false`
 * `publish_allowed_to` contains the information of the [Tokens](https://ocpi.dev) of the
   owner.
@@ -814,6 +839,7 @@ The locations SHALL NOT be published to the general public. Only the owner, iden
 This is an example of a charge point, located in a parking garage with limited opening hours: 7:00 * 18:00.
 
 If the EV is left in the parking garage overnight, the car will still be charged.
+
 * `publish` = `true`
 * `parking_type` = `PARKING_GARAGE` but could also be another value.
 * `EVSE.parking_restrictions` not used.
@@ -914,21 +940,21 @@ with different coordinates/directions).
 An *EVSE* object has a list of Connectors which can not be used simultaneously: only one connector per EVSE can be used
 at the time.
 
-| Property             | Type                                                         | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|----------------------|--------------------------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| uid                  | [CiString](https://ocpi.dev)(36)                             | 1     | Uniquely identifies the EVSE within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed. This is the *technical* identification of the EVSE, not to be used as *human readable* identification, use the field `evse_id` for that. This field is named `uid` instead of `id`, because `id` could be confused with `evse_id` which is an eMI3 defined field. Note that in order to fulfill both the requirement that an EVSE's `uid` be unique within a CPO's platform and the [requirement that EVSEs are never deleted](#evse_delete_with_status_update), a CPO will typically want to avoid using identifiers of the physical hardware for this `uid` property. If they do use such a physical identifier, they will find themselves breaking the uniqueness requirement for `uid` when the same physical EVSE is redeployed at another Location. |
-| evse_id              | [CiString](https://ocpi.dev)(48)                             | ?     | Compliant with the following specification for EVSE ID from "eMI3 standard version V1.0" (<http://emi3group.com/documents-links/>) "Part 2: business objects." Optional because: if an `evse_id` is to be re-used in the real world, the `evse_id` can be removed from an EVSE object if the `status` is set to `REMOVED`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| status               | [Status](https://ocpi.dev)                                   | 1     | Indicates the current status of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| status_schedule      | [StatusSchedule](#mod_locations_statusschedule_class)        | \*    | Indicates a planned status update of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| capabilities         | [Capability](#mod_locations_capability_enum)                 | \*    | List of functionalities that the EVSE is capable of.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| connectors           | [Connector](https://ocpi.dev)                                | \+    | List of available connectors on the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| floor_level          | [string](https://ocpi.dev)(4)                                | ?     | Level on which the Charge Point is located (in garage buildings) in the locally displayed numbering scheme.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| coordinates          | [GeoLocation](#mod_locations_geolocation_class)              | ?     | Coordinates of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| physical_reference   | [string](https://ocpi.dev)(16)                               | ?     | A number/string printed on the outside of the EVSE for visual identification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| directions           | [DisplayText](#types.asciidoc#types_displaytext_class)       | \*    | Multi-language human-readable directions when more detailed information on how to reach the EVSE from the *Location* is required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| parking_restrictions | [ParkingRestriction](#mod_locations_parkingrestriction_enum) | \*    | The restrictions that apply to the parking spot.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| images               | [Image](#mod_locations_image_class)                          | \*    | Links to images related to the EVSE such as photos or logos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| last_updated         | [DateTime](https://ocpi.dev)                                 | 1     | Timestamp when this EVSE or one of its Connectors was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Property             | Type                                   | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|----------------------|----------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| uid                  | [CiString](https://ocpi.dev)(36)       | 1     | Uniquely identifies the EVSE within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed. This is the *technical* identification of the EVSE, not to be used as *human readable* identification, use the field `evse_id` for that. This field is named `uid` instead of `id`, because `id` could be confused with `evse_id` which is an eMI3 defined field. Note that in order to fulfill both the requirement that an EVSE's `uid` be unique within a CPO's platform and the [requirement that EVSEs are never deleted](https://ocpi.dev), a CPO will typically want to avoid using identifiers of the physical hardware for this `uid` property. If they do use such a physical identifier, they will find themselves breaking the uniqueness requirement for `uid` when the same physical EVSE is redeployed at another Location. |
+| evse_id              | [CiString](https://ocpi.dev)(48)       | ?     | Compliant with the following specification for EVSE ID from "eMI3 standard version V1.0" (<http://emi3group.com/documents-links/>) "Part 2: business objects." Optional because: if an `evse_id` is to be re-used in the real world, the `evse_id` can be removed from an EVSE object if the `status` is set to `REMOVED`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| status               | [Status](https://ocpi.dev)             | 1     | Indicates the current status of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| status_schedule      | [StatusSchedule](https://ocpi.dev)     | \*    | Indicates a planned status update of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| capabilities         | [Capability](https://ocpi.dev)         | \*    | List of functionalities that the EVSE is capable of.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| connectors           | [Connector](https://ocpi.dev)          | \+    | List of available connectors on the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| floor_level          | [string](https://ocpi.dev)(4)          | ?     | Level on which the Charge Point is located (in garage buildings) in the locally displayed numbering scheme.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| coordinates          | [GeoLocation](https://ocpi.dev)        | ?     | Coordinates of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| physical_reference   | [string](https://ocpi.dev)(16)         | ?     | A number/string printed on the outside of the EVSE for visual identification.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| directions           | [DisplayText](https://ocpi.dev)        | \*    | Multi-language human-readable directions when more detailed information on how to reach the EVSE from the *Location* is required.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| parking_restrictions | [ParkingRestriction](https://ocpi.dev) | \*    | The restrictions that apply to the parking spot.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| images               | [Image](https://ocpi.dev)              | \*    | Links to images related to the EVSE such as photos or logos.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| last_updated         | [DateTime](https://ocpi.dev)           | 1     | Timestamp when this EVSE or one of its Connectors was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 :::note
 OCPP 1.x does not have good support for Charge Points that have multiple connectors per EVSE. To make `StartSession`
@@ -942,18 +968,18 @@ A *Connector* is the *socket* or *cable and plug* available for the EV to use. A
 Connectors but only one of them can be in use at the same time. A Connector always belongs to an
 [EVSE](https://ocpi.dev) object.
 
-| Property             | Type                                                   | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|----------------------|--------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                   | [CiString](https://ocpi.dev)(36)                       | 1     | Identifier of the Connector within the EVSE. Two Connectors may have the same id as long as they do not belong to the same *EVSE* object.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| standard             | [ConnectorType](#mod_locations_connectortype_enum)     | 1     | The standard of the installed connector.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| format               | [ConnectorFormat](#mod_locations_connectorformat_enum) | 1     | The format (socket/cable) of the installed connector.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| power_type           | [PowerType](#mod_locations_powertype_enum)             | 1     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| max_voltage          | int                                                    | 1     | Maximum voltage of the connector (line to neutral for AC_3_PHASE), in volt \[V\]. For example: DC Chargers might vary the voltage during charging when battery almost full.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| max_amperage         | int                                                    | 1     | Maximum amperage of the connector, in ampere \[A\].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| max_electric_power   | int                                                    | ?     | Maximum electric power that can be delivered by this connector, in Watts (W). When the maximum electric power is lower than the calculated value from `voltage` and `amperage`, this value should be set. For example: A DC Charge Point which can delivers up to 920V and up to 400A can be limited to a maximum of 150kW (max_electric_power = 150000). Depending on the car, it may supply max voltage or current, but not both at the same time. For AC Charge Points, the amount of phases used can also have influence on the maximum power.                                                                                                                                                                                                            |
-| tariff_ids           | [CiString](https://ocpi.dev)(36)                       | \*    | Identifiers of the currently valid charging tariffs. Multiple tariffs are possible, but only one of each [Tariff.type](https://ocpi.dev) can be active at the same time. Tariffs with the same type are only allowed if they are not active at the same time: [start_date_time](https://ocpi.dev) and [end_date_time](https://ocpi.dev) period not overlapping. When preference-based smart charging is supported, one tariff for every possible [ProfileType](#mod_sessions.asciidoc#mod_sessions_profile_type_enum) should be provided. These tell the user about the options they have at this Connector, and what the tariff is for every option. For a "free of charge" tariff, this field should be set and point to a defined "free of charge" tariff. |
-| terms_and_conditions | [URL](https://ocpi.dev)                                | ?     | URL to the operator's terms and conditions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| last_updated         | [DateTime](https://ocpi.dev)                           | 1     | Timestamp when this Connector was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Property             | Type                                | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+|----------------------|-------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                   | [CiString](https://ocpi.dev)(36)    | 1     | Identifier of the Connector within the EVSE. Two Connectors may have the same id as long as they do not belong to the same *EVSE* object.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| standard             | [ConnectorType](https://ocpi.dev)   | 1     | The standard of the installed connector.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| format               | [ConnectorFormat](https://ocpi.dev) | 1     | The format (socket/cable) of the installed connector.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| power_type           | [PowerType](https://ocpi.dev)       | 1     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| max_voltage          | int                                 | 1     | Maximum voltage of the connector (line to neutral for AC_3_PHASE), in volt \[V\]. For example: DC Chargers might vary the voltage during charging when battery almost full.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| max_amperage         | int                                 | 1     | Maximum amperage of the connector, in ampere \[A\].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| max_electric_power   | int                                 | ?     | Maximum electric power that can be delivered by this connector, in Watts (W). When the maximum electric power is lower than the calculated value from `voltage` and `amperage`, this value should be set. For example: A DC Charge Point which can delivers up to 920V and up to 400A can be limited to a maximum of 150kW (max_electric_power = 150000). Depending on the car, it may supply max voltage or current, but not both at the same time. For AC Charge Points, the amount of phases used can also have influence on the maximum power.                                                                                                                                                                       |
+| tariff_ids           | [CiString](https://ocpi.dev)(36)    | \*    | Identifiers of the currently valid charging tariffs. Multiple tariffs are possible, but only one of each [Tariff.type](https://ocpi.dev) can be active at the same time. Tariffs with the same type are only allowed if they are not active at the same time: [start_date_time](https://ocpi.dev) and [end_date_time](https://ocpi.dev) period not overlapping. When preference-based smart charging is supported, one tariff for every possible [ProfileType](https://ocpi.dev) should be provided. These tell the user about the options they have at this Connector, and what the tariff is for every option. For a "free of charge" tariff, this field should be set and point to a defined "free of charge" tariff. |
+| terms_and_conditions | [URL](https://ocpi.dev)             | ?     | URL to the operator's terms and conditions.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| last_updated         | [DateTime](https://ocpi.dev)        | 1     | Timestamp when this Connector was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Data types
 
@@ -962,19 +988,19 @@ Connectors but only one of them can be in use at the same time. A Connector alwa
 This class defines an additional geo location that is relevant for the Charge Point. The geodetic system to be used is
 WGS 84.
 
-| Property  | Type                                                   | Card. | Description                                                                                                                              |
-|-----------|--------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------|
-| latitude  | [string](https://ocpi.dev)(10)                         | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`                    |
-| longitude | [string](https://ocpi.dev)(11)                         | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}`                 |
-| name      | [DisplayText](#types.asciidoc#types_displaytext_class) | ?     | Name of the point in local language or as written at the location. For example the street name of a parking lot entrance or it's number. |
+| Property  | Type                            | Card. | Description                                                                                                                              |
+|-----------|---------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------|
+| latitude  | [string](https://ocpi.dev)(10)  | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`                    |
+| longitude | [string](https://ocpi.dev)(11)  | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}`                 |
+| name      | [DisplayText](https://ocpi.dev) | ?     | Name of the point in local language or as written at the location. For example the street name of a parking lot entrance or it's number. |
 
 ### BusinessDetails *class*
 
-| Property | Type                                | Card. | Description                        |
-|----------|-------------------------------------|-------|------------------------------------|
-| name     | [string](https://ocpi.dev)(100)     | 1     | Name of the operator.              |
-| website  | [URL](https://ocpi.dev)             | ?     | Link to the operator's website.    |
-| logo     | [Image](#mod_locations_image_class) | ?     | Image link to the operator's logo. |
+| Property | Type                            | Card. | Description                        |
+|----------|---------------------------------|-------|------------------------------------|
+| name     | [string](https://ocpi.dev)(100) | 1     | Name of the operator.              |
+| website  | [URL](https://ocpi.dev)         | ?     | Link to the operator's website.    |
+| logo     | [Image](https://ocpi.dev)       | ?     | Image link to the operator's logo. |
 
 ### Capability *enum*
 
@@ -1079,7 +1105,7 @@ brands like Greenpeace Energy, etc.)*
 
 #### Examples
 
-##### Simple:
+##### Simple
 
 ``` json
 {
@@ -1089,7 +1115,7 @@ brands like Greenpeace Energy, etc.)*
 }
 ```
 
-##### Tariff energy provider name:
+##### Tariff energy provider name
 
 ``` json
 {
@@ -1101,7 +1127,7 @@ brands like Greenpeace Energy, etc.)*
 }
 ```
 
-##### Complete:
+##### Complete
 
 ``` json
 {
@@ -1246,7 +1272,7 @@ Opening and access hours of the location.
 | exceptional_openings | [ExceptionalPeriod](https://ocpi.dev) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is operating/accessible. Additional to `regular_hours`. May overlap regular rules.                                              |
 | exceptional_closings | [ExceptionalPeriod](https://ocpi.dev) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is not operating/accessible. Overwriting `regular_hours` and `exceptional_openings`. Should not overlap `exceptional_openings`. |
 
-#### Example: 24/7 open with exceptional closing.
+#### Example: 24/7 open with exceptional closing
 
 Open 24 hours per day, 7 days a week, except for 25th of December 2018 between 03:00 and 05:00.
 
@@ -1262,12 +1288,9 @@ Open 24 hours per day, 7 days a week, except for 25th of December 2018 between 0
 }
 ```
 
-<figure>
-<img src="images/location_hours_247_open_exception_closing.svg" alt="24/7 open with exception closing." />
-<figcaption>Diagram showing a representation of the example 24/7 open with exception closing.</figcaption>
-</figure>
+![24/7 open with exception closing.](./images/location_hours_247_open_exception_closing.svg)
 
-#### Example: Opening Hours with exceptional closing.
+#### Example: Opening Hours with exceptional closing
 
 Regular opening hours between 01:00 and 06:00. With exceptional closing on 25th of December 2018 between 03:00 and
 05:00.
@@ -1296,13 +1319,9 @@ Regular opening hours between 01:00 and 06:00. With exceptional closing on 25th 
 }
 ```
 
-<figure>
-<img src="images/location_hours_opening_hours_with_exceptional_closing.svg"
-alt="Opening Hours with exceptional closing." />
-<figcaption>Diagram showing a representation of the example Opening Hours with exceptional closing</figcaption>
-</figure>
+![Opening Hours with exceptional closing.](./images/location_hours_opening_hours_with_exceptional_closing.svg)
 
-#### Example: Opening Hours with exceptional opening.
+#### Example: Opening Hours with exceptional opening
 
 Regular opening hours between 00:00 and 04:00. With exceptional opening on 25th of December 2018 between 05:00 and
 07:00.
@@ -1331,11 +1350,7 @@ Regular opening hours between 00:00 and 04:00. With exceptional opening on 25th 
 }
 ```
 
-<figure>
-<img src="images/location_hours_opening_hours_with_exceptional_opening.svg"
-alt="Opening Hours with exceptional opening." />
-<figcaption>Diagram showing a representation of the example Opening Hours with exceptional opening.</figcaption>
-</figure>
+![Opening Hours with exceptional opening.](./images/location_hours_opening_hours_with_exceptional_opening.svg)
 
 ### Image *class*
 
@@ -1435,11 +1450,11 @@ When `visual_number` is set, `issuer` SHALL also be set.
 
 Regular recurring operation or access hours.
 
-| Property     | Type                          | Card. | Description                                                                                                                                                                                             |
-|--------------|-------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| weekday      | int(1)                        | 1     | Number of day in the week, from Monday (1) till Sunday (7)                                                                                                                                              |
-| period_begin | [string](https://ocpi.dev)(5) | 1     | Begin of the regular period, in local time, given in hours and minutes. Must be in 24h format with leading zeros. Example: "18:15". Hour/Minute separator: ":" Regex: `([0-1][0-9]|2[0-3]):[0-5][0-9]`. |
-| period_end   | [string](https://ocpi.dev)(5) | 1     | End of the regular period, in local time, syntax as for `period_begin`. Must be later than `period_begin`.                                                                                              |
+| Property     | Type                          | Card. | Description                                                                                                                                                                                                         |
+|--------------|-------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| weekday      | int(1)                        | 1     | Number of day in the week, from Monday (1) till Sunday (7)                                                                                                                                                          |
+| period_begin | [string](https://ocpi.dev)(5) | 1     | Begin of the regular period, in local time, given in hours and minutes. Must be in 24h format with leading zeros. Example: "18:15". Hour/Minute separator: ":" Regex: [Regex Test](https://regex101.com/r/xaMwu6/1) |
+| period_end   | [string](https://ocpi.dev)(5) | 1     | End of the regular period, in local time, syntax as for `period_begin`. Must be later than `period_begin`.                                                                                                          |
 
 #### Example
 
@@ -1493,15 +1508,14 @@ after:
 }
 ```
 
-This represents the following schedule, where <span class="line-through">stroked out</span> days are without operation
+This represents the following schedule, where ~~stroked out~~ days are without operation
 hours, **bold** days are where exceptions apply and regular displayed days are where the regular schedule applies.
 
-|           |    |    |    |    |    |        |                                      |    |                                          |    |    |    |                                      |                                      |
-|-----------|----|----|----|----|----|--------|--------------------------------------|----|------------------------------------------|----|----|----|--------------------------------------|--------------------------------------|
-| Weekday   | Mo | Tu | We | Th | Fr | Sa     | Su                                   | Mo | Tu                                       | We | Th | Fr | Sa                                   | Su                                   |
-| Date      | 16 | 17 | 18 | 19 | 20 | **21** | <span class="line-through">22</span> | 23 | **<span class="line-through">24</span>** | 25 | 26 | 27 | <span class="line-through">28</span> | <span class="line-through">29</span> |
-| Open from | 08 | 08 | 08 | 08 | 08 | 09     | `-`                                  | 08 | `-`                                      | 08 | 08 | 08 | `-`                                  | `-`                                  |
-| Open till | 20 | 20 | 20 | 20 | 20 | 12     | `-`                                  | 20 | `-`                                      | 20 | 20 | 20 | `-`                                  | `-`                                  |
+| Weekday   | Mo | Tu | We | Th | Fr | Sa     | Su     | Mo | Tu         | We | Th | Fr | Sa     | Su     |
+|-----------|----|----|----|----|----|--------|--------|----|------------|----|----|----|--------|--------|
+| Date      | 16 | 17 | 18 | 19 | 20 | **21** | ~~22~~ | 23 | **~~24~~** | 25 | 26 | 27 | ~~28~~ | ~~29~~ |
+| Open from | 08 | 08 | 08 | 08 | 08 | 09     | -      | 08 | -          | 08 | 08 | 08 | -      | -      |
+| Open till | 20 | 20 | 20 | 20 | 20 | 12     | -      | 20 | -          | 20 | 20 | 20 | -      | -      |
 
 ### Status *enum*
 

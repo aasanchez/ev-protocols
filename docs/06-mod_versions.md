@@ -24,11 +24,9 @@ No structure defined. This is open for every party to define themselves.
 
 Examples:
 
-`https://www.server.com/ocpi/cpo/versions`
-
-`https://www.server.com/ocpi/emsp/versions`
-
-`https://ocpi.server.com/versions`
+* `https://www.server.com/ocpi/cpo/versions`
+* `https://www.server.com/ocpi/emsp/versions`
+* `https://ocpi.server.com/versions`
 
 The exact URL to the implemented version endpoint should be given (offline) to parties that want to communicate with
 your OCPI implementation.
@@ -91,11 +89,9 @@ No structure defined. This is open for every party to define themselves.
 
 Examples:
 
-`https://www.server.com/ocpi/cpo/2.2.1`
-
-`https://www.server.com/ocpi/emsp/2.2.1`
-
-`https://ocpi.server.com/2.2.1/details`
+* `https://www.server.com/ocpi/cpo/2.2.1`
+* `https://www.server.com/ocpi/emsp/2.2.1`
+* `https://ocpi.server.com/2.2.1/details`
 
 This endpoint lists the supported endpoints and their URLs for a specific OCPI version. To notify the other party that
 the list of endpoints of your current version has changed, you can send a PUT request to the corresponding credentials

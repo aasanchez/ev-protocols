@@ -4,14 +4,6 @@
 # shellcheck disable=SC2016
 
 ROOT=$(pwd)
-SED="$(which sed)"
-unamestr=$(uname) 
-
-if [[ "$unamestr" == 'Linux' ]]; then
-  SED="$(which sed)"
-elif [[ "$unamestr" == 'Darwin' ]]; then
-  SED="$(which gsed)"
-fi
 
 command -v asciidoc >/dev/null 2>&1 ||  { echo >&2 "Please install asciidoc"; exit 1; };
 command -v pandoc >/dev/null 2>&1 ||    { echo >&2 "Please install pandoc"; exit 1; };
