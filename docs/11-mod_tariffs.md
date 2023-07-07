@@ -172,11 +172,17 @@ The following parameters SHALL be provided as URL segments.
 | party_id     | [CiString](https://ocpi.dev)(3)  | yes      | Party ID (Provider ID) of the CPO performing the PUT request on the eMSP's system. This SHALL be the same value as the `party_id` in the Tariff object being pushed. |
 | tariff_id    | [CiString](https://ocpi.dev)(36) | yes      | Tariff.id of the Tariff object to create or replace.                                                                                                                 |
 
-##### Example: New Tariff € 2 per hour charging time (not parking) 
+##### Example: New Tariff € 2 per hour charging time (not parking)
+
+Example Request:
+
+```shell
+curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12"
+```
+
+Example Response:
 
 ```json
-PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12
-
 {
   "country_code": "DE",
   "party_id": "ALL",
@@ -537,6 +543,7 @@ VAT), as the start fee combined with the energy costs would be lower than the de
 ##### Simple Tariff example € 2 per hour
 
 An example of a tariff where the driver does not pay per kWh, but for the time of using the Charge Point.
+
 * Charging Time
   * € 2.00 per hour (excl. VAT)
   * 10% VAT
@@ -573,6 +580,7 @@ For a charging session of 2.5 hours, this tariff will result in costs of € 5.0
 
 Example of a tariff where the driver pays for the time of using the Charge Point, but pays more when the car is no
 longer charging, to discourage the EV driver of leaving his EV connected when it is already full.
+
 * Charging Time
   * € 3.00 per hour (excl. VAT)
   * 10% VAT
@@ -620,6 +628,7 @@ the driver has to pay for 45 minutes of parking even though they left 42 minutes
 For ad-hoc charging (paying for charging without a contract), the Tariff Elements are not as important. The eMSP is not
 involved when a driver uses ad-hoc payment at the Charge Point, so no CDR is sent to an eMSP. Having a good human
 readable text is much more useful.
+
 * Charging Time
   * € 1.90 per hour (excl. VAT)
   * 5.2% VAT
