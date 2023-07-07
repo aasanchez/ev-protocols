@@ -89,14 +89,18 @@ cd "$ROOT" || exit 0
 # links "docs/10-mod_cdrs.md"
 # fix_mod_cdrs
 
-. ./reformat.d/2.2.1/11-mod_tariffs.sh
-pre_mod_tariffs
-pandoc2markdown "11-mod_tariffs"
-links "docs/11-mod_tariffs.md"
-fix_mod_tariffs
+# . ./reformat.d/2.2.1/11-mod_tariffs.sh
+# pre_mod_tariffs
+# pandoc2markdown "11-mod_tariffs"
+# links "docs/11-mod_tariffs.md"
+# fix_mod_tariffs
 
-# mod_tariffs
-# mod_tokens
+. ./reformat.d/2.2.1/12-mod_tokens.sh
+pre_mod_tokens
+pandoc2markdown "12-mod_tokens"
+links "docs/12-mod_tokens.md"
+fix_mod_tokens
+
 # mod_commands
 # mod_charging_profiles
 # mod_hub_client_info
