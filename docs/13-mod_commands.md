@@ -23,7 +23,8 @@ The Commands module enables remote commands to be sent to a Location/EVSE. The f
 See [CommandType](https://ocpi.dev) for a description of the different commands. *Use the
 `UNLOCK_CONNECTOR` command with care, please read the note at [CommandType](https://ocpi.dev).*
 
-**Module dependency:** [Locations module](https://ocpi.dev), [Sessions module](https://ocpi.dev)
+**Module dependency:** [Locations module](https://ocpi.dev), [Sessions
+module](https://ocpi.dev)
 
 ## Flow
 
@@ -46,25 +47,16 @@ Example of a `START_SESSION` that is accepted, but no new Session is started bec
 time-out. This is an example for Charge Point that allows a remote start when the cable is not yet plugged in. Some
 Charge Points even require this, there might, for example, be a latch in front of the socket to prevent vandalism.
 
-<figure>
-<img src="images/command_start_session_timeout.svg" alt="START_SESSION failed" />
-<figcaption aria-hidden="true">START_SESSION failed</figcaption>
-</figure>
+![START_SESSION failed](./images/command_start_session_timeout.svg)
 
 Example of a `START_SESSION` that is accepted, but no new Session is started because the EV is not plugged in, and this
 Charge Point does not allow a remote start without a cable already being plugged in.
 
-<figure>
-<img src="images/command_start_session_no_cable.svg" alt="START_SESSION failed" />
-<figcaption aria-hidden="true">START_SESSION failed</figcaption>
-</figure>
+![START_SESSION failed](./images/command_start_session_no_cable.svg)
 
 Example of a `START_SESSION` that is accepted and results in a new Session.
 
-<figure>
-<img src="images/command_start_session_succesful.svg" alt="START_SESSION successful" />
-<figcaption aria-hidden="true">START_SESSION successful</figcaption>
-</figure>
+![START_SESSION successful](./images/command_start_session_succesful.svg)
 
 Example of a `START_SESSION` with a Token that is Whitelist: NEVER.
 
@@ -75,31 +67,19 @@ If needed, the Charge Point does an OCPP Authorize request to validate the Token
 only does an [realtime authorization](https://ocpi.dev) when the OCPP Authorize
 request is for an RFID Token and the START_SESSION for this Token was received more then 15 minutes ago.
 
-<figure>
-<img src="images/command_start_session_whitelist_never.svg" alt="START_SESSION whitelist NEVER" />
-<figcaption aria-hidden="true">START_SESSION whitelist NEVER</figcaption>
-</figure>
+![START_SESSION whitelist NEVER](./images/command_start_session_whitelist_never.svg)
 
 Example of a `UNLOCK_CONNECTOR` that fails because the Location is not known by the CPO.
 
-<figure>
-<img src="images/command_unlock_unknow_location.svg" alt="UNLOCK_CONNECTOR Unknown Location" />
-<figcaption aria-hidden="true">UNLOCK_CONNECTOR Unknown Location</figcaption>
-</figure>
+![UNLOCK_CONNECTOR Unknown Location](./images/command_unlock_unknow_location.svg)
 
 Example of a `RESERVE_NOW` that is rejected by the Charge Point.
 
-<figure>
-<img src="images/command_reservenow_rejected.svg" alt="RESERVE_NEW rejected by Charge Point" />
-<figcaption>RESERVE_NOW rejected by Charge Point</figcaption>
-</figure>
+![RESERVE_NEW rejected by Charge Point](./images/command_reservenow_rejected.svg)
 
 Example of a successful `RESERVE_NOW`.
 
-<figure>
-<img src="images/command_reservenow_successful.svg" alt="Successful RESERVE_NOW" />
-<figcaption aria-hidden="true">Successful RESERVE_NOW</figcaption>
-</figure>
+![Successful RESERVE_NOW](./images/command_reservenow_successful.svg)
 
 Reservation canceled by the CPO. OCPI makes it possible for a CPO to cancel a reservation. This is not to be taken
 lightly. When a driver makes a reservation of a Charge Point/EVSE, he/she wants to be sure to have a charging location.
@@ -112,10 +92,7 @@ To Cancel a reservation the CPO call the Senders interface with the same URL as 
 
 The sequence diagram below continues after the sequence diagram above.
 
-<figure>
-<img src="images/command_reservenow_canceled_by_cpo.svg" alt="Reservation canceled by the CPO" />
-<figcaption aria-hidden="true">Reservation canceled by the CPO</figcaption>
-</figure>
+![Reservation canceled by the CPO](./images/command_reservenow_canceled_by_cpo.svg)
 
 These examples use OCPP 1.6 based commands between CPO and Charge Point, but that is not a requirement for OCPI.
 
@@ -155,7 +132,7 @@ Examples:
 
 #### **POST** Method
 
-====== Request Parameters
+##### Request Parameters
 
 The following parameter shall be provided as URL segments.
 
@@ -167,16 +144,17 @@ The following parameter shall be provided as URL segments.
 
 Depending on the `command` parameter the body SHALL contain the applicable object for that command.
 
-| Type                                     | Card. | Description                                                                                                                                      |
-|------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| *Choice: one of five*                    |       |                                                                                                                                                  |
-| \> [CancelReservation](https://ocpi.dev) | 1     | CancelReservation object, for the `CANCEL_RESERVATION` command, with information needed to cancel an existing reservation.                       |
-| \> [ReserveNow](https://ocpi.dev)        | 1     | ReserveNow object, for the `RESERVE_NOW` command, with information needed to reserve a (specific) connector of a Charge Point for a given Token. |
-| \> [StartSession](https://ocpi.dev)      | 1     | StartSession object, for the `START_SESSION` command, with information needed to start a sessions.                                               |
-| \> [StopSession](https://ocpi.dev)       | 1     | StopSession object, for the `STOP_SESSION` command, with information needed to stop a sessions.                                                  |
-| \> [UnlockConnector](https://ocpi.dev)   | 1     | UnlockConnector object, for the `UNLOCK_CONNECTOR` command, with information needed to unlock a connector of a Charge Point.                     |
+> Choice: one of five
 
-====== Response Data
+| Type                                  | Card. | Description                                                                                                                                      |
+|---------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [CancelReservation](https://ocpi.dev) | 1     | CancelReservation object, for the `CANCEL_RESERVATION` command, with information needed to cancel an existing reservation.                       |
+| [ReserveNow](https://ocpi.dev)        | 1     | ReserveNow object, for the `RESERVE_NOW` command, with information needed to reserve a (specific) connector of a Charge Point for a given Token. |
+| [StartSession](https://ocpi.dev)      | 1     | StartSession object, for the `START_SESSION` command, with information needed to start a sessions.                                               |
+| [StopSession](https://ocpi.dev)       | 1     | StopSession object, for the `STOP_SESSION` command, with information needed to stop a sessions.                                                  |
+| [UnlockConnector](https://ocpi.dev)   | 1     | UnlockConnector object, for the `UNLOCK_CONNECTOR` command, with information needed to unlock a connector of a Charge Point.                     |
+
+##### Response Data
 
 The response contains the direct response from the Receiver, not the response from the Charge Point itself, that will be
 sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.
