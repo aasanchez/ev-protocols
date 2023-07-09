@@ -107,7 +107,12 @@ pandoc2markdown "13-mod_commands"
 links "docs/13-mod_commands.md"
 fix_mod_commands
 
-# mod_charging_profiles
+. ./reformat.d/2.2.1/14-mod_charging_profiles.sh
+pre_mod_charging_profiles
+pandoc2markdown "14-mod_charging_profiles"
+links "docs/14-mod_charging_profiles.md"
+fix_mod_charging_profiles
+
 # mod_hub_client_info
 # types
 # changelog
