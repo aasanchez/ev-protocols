@@ -95,13 +95,18 @@ cd "$ROOT" || exit 0
 # links "docs/11-mod_tariffs.md"
 # fix_mod_tariffs
 
-. ./reformat.d/2.2.1/12-mod_tokens.sh
-pre_mod_tokens
-pandoc2markdown "12-mod_tokens"
-links "docs/12-mod_tokens.md"
-fix_mod_tokens
+# . ./reformat.d/2.2.1/12-mod_tokens.sh
+# pre_mod_tokens
+# pandoc2markdown "12-mod_tokens"
+# links "docs/12-mod_tokens.md"
+# fix_mod_tokens
 
-# mod_commands
+. ./reformat.d/2.2.1/13-mod_commands.sh
+pre_mod_commands
+pandoc2markdown "13-mod_commands"
+links "docs/13-mod_commands.md"
+fix_mod_commands
+
 # mod_charging_profiles
 # mod_hub_client_info
 # types
