@@ -66,7 +66,15 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
+      algolia: {
+        appId: 'JLVRZRP9N9',
+        apiKey: 'eab176d227cbdd45996af10f5641926e',
+        indexName: 'ocpi',
+        contextualSearch: true,
+        externalUrlRegex: 'localhost:3000|ocpi.dev',
+        searchParameters: {},
+        searchPagePath: 'search',
+      },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'OCPI',
