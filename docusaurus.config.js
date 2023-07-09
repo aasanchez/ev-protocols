@@ -39,8 +39,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/aasanchez/ocpi.dev/tree/',
           lastVersion: 'current',
           versions: {
@@ -50,10 +48,12 @@ const config = {
             }
           }
         },
+        gtag: {
+          trackingID: 'G-T3L8Q7QCG3',
+          anonymizeIP: true,
+        },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/aasanchez/ocpi.dev/tree/'
         },
         theme: {
