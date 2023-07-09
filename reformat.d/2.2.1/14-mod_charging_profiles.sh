@@ -60,25 +60,6 @@ function fix_mod_charging_profiles() {
   gsed -i "s|<img src=\"images/topology_scsp_cpo.svg\" alt=\"Smart Charging Topology: The eMSP generates ChargingProfiles\" />|![Smart Charging Topology: The eMSP generates ChargingProfiles](./images/topology_scsp_cpo.svg)|g" "$file"
   gsed -i "s|<img src=\"images/topology_scsp_emsp.svg\" alt=\"Smart Charging Topology: The eMSP generates ChargingProfiles\" />|![Smart Charging Topology: The eMSP generates ChargingProfiles](./images/topology_scsp_emsp.svg)|g" "$file"
   gsed -i "s|<img src=\"images/sd_charging_profile_updated_via_msp.svg\" alt=\"Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP\" />|![Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP](./images/sd_charging_profile_updated_via_msp.svg)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  # gsed -i "s||![](./)|g" "$file"
-  
-  # gsed -i    "s|^======\s|##### |gm" "$file"
-
-  # gsed -i    "/Choice: one of five/d" "$file"
-  # gsed -i    "s|\\\> ||gm" "$file"
-  
-  # gsed -i    "s|Depending on the \`command\` parameter the body SHALL contain the applicable object for that command\.|Depending on the \`command\` parameter the body SHALL contain the applicable object for that command\.\n\n> Choice: one of five|gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
