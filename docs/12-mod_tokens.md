@@ -163,8 +163,7 @@ The parameter: `type` may be provided as an URL parameter
 Example Request:
 
 ```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>"
-     "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
+curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
 ```
 
 Example Response:
@@ -197,8 +196,7 @@ Any request to the PATCH method SHALL contain the `last_updated` field.
 Example Request:
 
 ```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>"
-     "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
+curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
 ```
 
 Example Response:
