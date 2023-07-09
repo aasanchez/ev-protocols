@@ -128,6 +128,10 @@ const config = {
               {
                 label: 'Reddit',
                 href: 'https://www.reddit.com/r/ocpi/'
+              },
+              {
+                label: 'Discord',
+                href: 'https://discord.gg/aNgzgdUT'
               }
             ]
           },

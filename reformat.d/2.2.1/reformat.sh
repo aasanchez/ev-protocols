@@ -19,7 +19,7 @@ git clean -xfd --quiet
 
 cd "$ROOT" || exit 0
 
-directory="ocpi/examples/"
+directory="ocpi/examples"
 json_files=$(find "$directory" -type f -name "*.json")
 for file in $json_files; do
   echo "Formatting $file..."

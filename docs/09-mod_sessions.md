@@ -4,7 +4,9 @@ slug: module-sessions
 ---
 # Sessions module
 
-**Module Identifier: `sessions`**
+:::tip Module Identifier
+sessions
+:::
 
 :::caution Data owner
 CPO
