@@ -1,6 +1,6 @@
 ---
 sidebar_position: 15
-slug: module-hub-client-info
+slug: hub-client-info
 ---
 # HubClientInfo module
 

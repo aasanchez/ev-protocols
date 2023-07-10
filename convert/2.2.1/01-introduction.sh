@@ -51,3 +51,11 @@ function fix_introduction() {
   gsed -i "s/’/'/gm" "$file"
 
 }
+
+function webFormat_introduction(){
+  file="$ROOT/docs/01-introduction.md"
+  tempfile="$file.tmp"
+
+  gsed -i -z "s/For more information on detailed changes see \[changelog\](https:\/\/ocpi\.dev)\.\n\n//gm" "$file"
+
+}

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 10
-slug: module-cdrs
+slug: cdrs
 ---
 # CDRs module
 

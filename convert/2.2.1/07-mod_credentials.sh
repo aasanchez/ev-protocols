@@ -12,7 +12,7 @@ function fix_mod_credentials() {
   file="$ROOT/docs/07-mod_credentials.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 7\nslug: module-credentials\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 7\nslug: credentials\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i "s|^\`\`\`\sjson|\`\`\`json|gm" "$file"

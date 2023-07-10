@@ -17,7 +17,7 @@ function fix_mod_commands() {
   file="$ROOT/docs/13-mod_commands.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 13\nslug: module-commands\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 13\nslug: commands\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*Commands\* module|# Commands module|gm" "$file"

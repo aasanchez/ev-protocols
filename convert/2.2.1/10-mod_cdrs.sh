@@ -9,7 +9,7 @@ function fix_mod_cdrs() {
   file="$ROOT/docs/10-mod_cdrs.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 10\nslug: module-cdrs\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 10\nslug: cdrs\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*CDRs\* module|# CDRs module|gm" "$file"

@@ -1,6 +1,6 @@
 ---
 sidebar_position: 7
-slug: module-credentials
+slug: credentials
 ---
 # Credentials module
 

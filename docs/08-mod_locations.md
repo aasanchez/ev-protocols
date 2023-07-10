@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-slug: module-locations
+slug: locations
 ---
 # Locations module
 

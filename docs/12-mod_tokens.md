@@ -1,6 +1,6 @@
 ---
 sidebar_position: 12
-slug: module-tokens
+slug: tokens
 ---
 # Tokens module
 

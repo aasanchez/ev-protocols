@@ -29,7 +29,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
   * [Message routing headers](https://ocpi.dev)
   * [Hub Client Info](https://ocpi.dev)
 * [Support Platforms with multiple/different roles](https://ocpi.dev)
-* [Charging Profiles](https://ocpi.dev)
+* [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies)
 * [Preference based Smart Charging](https://ocpi.dev)
 * Improvements:
   * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,

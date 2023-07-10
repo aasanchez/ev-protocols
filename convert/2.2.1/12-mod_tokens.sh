@@ -9,7 +9,7 @@ function fix_mod_tokens() {
   file="$ROOT/docs/12-mod_tokens.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 12\nslug: module-tokens\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 12\nslug: tokens\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*Tokens\* module|# Tokens module|gm" "$file"

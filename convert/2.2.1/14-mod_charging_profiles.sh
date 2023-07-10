@@ -19,7 +19,7 @@ function fix_mod_charging_profiles() {
   file="$ROOT/docs/14-mod_charging_profiles.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 14\nslug: module-charging-profiles\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 14\nslug: charging-profiles\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*ChargingProfiles\* module|# ChargingProfiles module|gm" "$file"

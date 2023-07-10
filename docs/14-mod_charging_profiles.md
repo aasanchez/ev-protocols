@@ -1,6 +1,6 @@
 ---
 sidebar_position: 14
-slug: module-charging-profiles
+slug: charging-profiles
 ---
 # ChargingProfiles module
 
@@ -304,7 +304,7 @@ this call will contain the same
 ### Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile
 
 When the CPO knows the ActiveChargingProfile of a Charge Point has changed, the Receiver (typically the CPO) sends this
-update [ActiveChargingProfile](https://ocpi.dev) to the Sender (typically the eMSP
+update [ActiveChargingProfile](/14-mod_charging_profiles.md#activechargingprofile-class) to the Sender (typically the eMSP
 or SCSP), by calling the [PUT](https://ocpi.dev) method on the Sender interface.
 
 ![Example of an ActiveChargingProfile being send by the CPO](./images/sd_charging_profile_updated.svg)
@@ -312,10 +312,10 @@ or SCSP), by calling the [PUT](https://ocpi.dev) method on the Sender interface.
 ### Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile to the SCSP via the eMSP
 
 When the CPO knows the ActiveChargingProfile of a Charge Point has changed, the Receiver (typically the CPO) sends this
-update [ActiveChargingProfile](https://ocpi.dev) to the Sender (SCSP), by calling
+update [ActiveChargingProfile](/14-mod_charging_profiles.md#activechargingprofile-class) to the Sender (SCSP), by calling
 the [PUT](https://ocpi.dev) method on the eMSPs Sender interface.
 
-The eMSP forwards this [ActiveChargingProfile](https://ocpi.dev) to the SCSP, by
+The eMSP forwards this [ActiveChargingProfile](/14-mod_charging_profiles.md#activechargingprofile-class) to the SCSP, by
 calling the [PUT](https://ocpi.dev) method on the SCSPs Sender interface.
 
 ![Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP](./images/sd_charging_profile_updated_via_msp.svg)
@@ -550,9 +550,9 @@ The following parameter shall be provided as URL segments.
 The body contains the update ActiveChargingProfile, The ActiveChargingProfile is the charging profile as calculated by
 the EVSE.
 
-| Type                                      | Card. | Description                                                                                                                                                                          |
-|-------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ActiveChargingProfile](https://ocpi.dev) | 1     | The new ActiveChargingProfile. If there is no longer any charging profile active, the ActiveChargingProfile SHALL reflect this by showing the maximum charging capacity of the EVSE. |
+| Type                                                                              | Card. | Description                                                                                                                                                                          |
+|-----------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ActiveChargingProfile](/14-mod_charging_profiles.md#activechargingprofile-class) | 1     | The new ActiveChargingProfile. If there is no longer any charging profile active, the ActiveChargingProfile SHALL reflect this by showing the maximum charging capacity of the EVSE. |
 
 #### Response Body
 
@@ -579,10 +579,10 @@ be able to reject to timeouts, it is important for the eMSP to know the timeout 
 The ActiveChargingProfileResult object is send by the CPO to the given `response_url` in a POST request. It contains the
 result of the GET (ActiveChargingProfile) request send by the eMSP.
 
-| Property | Type                                          | Card. | Description                                                                                |
-|----------|-----------------------------------------------|-------|--------------------------------------------------------------------------------------------|
-| result   | [ChargingProfileResultType](https://ocpi.dev) | 1     | The EVSE will indicate if it was able to process the request for the ActiveChargingProfile |
-| profile  | [ActiveChargingProfile](https://ocpi.dev)     | ?     | The requested ActiveChargingProfile, if the result field is set to: `ACCEPTED`             |
+| Property | Type                                                                              | Card. | Description                                                                                |
+|----------|-----------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------|
+| result   | [ChargingProfileResultType](https://ocpi.dev)                                     | 1     | The EVSE will indicate if it was able to process the request for the ActiveChargingProfile |
+| profile  | [ActiveChargingProfile](/14-mod_charging_profiles.md#activechargingprofile-class) | ?     | The requested ActiveChargingProfile, if the result field is set to: `ACCEPTED`             |
 
 ### *ChargingProfileResult* Object
 
