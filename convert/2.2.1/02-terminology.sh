@@ -33,3 +33,28 @@ function fix_terminology(){
 }
 
 
+split_terminology() {
+  file="$ROOT/docs/02-terminology.md"
+  content=$(<"$file")
+
+  # Create the output directory
+  output_dir="$ROOT/docs/02-terminology"
+  mkdir -p "$output_dir"
+
+  # Split the content based on H2 (##) headers
+  IFS=$'\n'
+  sections=($(echo "$content" | awk '/^##/ {print NR}'))
+  sections+=($(echo "${#content}"))  # Add the end position as the last section
+  
+  echo ${#sections[@]}
+  # Extract and save each section into a separate file
+  for ((i = 0; i < ${#sections[@]} - 1; i++)); do
+      start=$((sections[i] + 1))
+      end=$((sections[i + 1] - 1))
+      title=$(echo "${content:${sections[i]}:$((sections[i + 1] - sections[i]))}" | grep -oP '^## \K(.+)')
+      slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]-' '-')
+      output_file="$output_dir/$slug.md"
+      echo "${content:$start:$((end - start + 1))}" > "$output_file"
+      echo "Saved section '$title' to '$output_file'"
+  done
+}

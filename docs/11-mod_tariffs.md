@@ -208,8 +208,10 @@ Example Response:
 Delete a Tariff object which is not used any more and will not be used in the future.
 
 :::note
+
 Before deleting a Tariff object, it is RECOMMENDED to ensure that the Tariff object is not referenced by any [Connector
 object](https://ocpi.dev) within the `tariff_ids`.
+
 :::
 
 ##### Request Parameters
@@ -260,10 +262,12 @@ Price Component with `type` = `FLAT` and `price` = `0.00` has to be provided.
 See: [Free of Charge Tariff example](https://ocpi.dev)
 
 :::note
+
 There are no parameters related to price rounding in the Tariff object or any of it constituent objects. Nor does the
 specification text of this module give any requirements about how to do price rounding. The reason for this that price
 rounding has to be done according to rules and restrictions set by applicable laws, contracts between the parties using
 OCPI and the currency used. The OCPI specification stays out of these matters.
+
 :::
 
 | Property        | Type                              | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -284,34 +288,42 @@ OCPI and the currency used. The OCPI specification stays out of these matters.
 | last_updated    | [DateTime](https://ocpi.dev)      | 1     | Timestamp when this Tariff was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                  |
 
 :::note
+
 `min_price`: As the VAT might be built up of different parts, there might be situations where minimum cost including VAT
 is reached earlier or later than the minimum cost excluding VAT. So as a rule, they both apply: - The total cost of a
 Charging Session excluding VAT can never be lower than the `min_price` excluding VAT. - The total cost of a Charging
 Session including VAT can never be lower than the `min_price` including VAT.
+
 :::
 
 :::note
+
 `max_price`: As the VAT might be built up of different parts, there might be situations where maximum cost including VAT
 is reached earlier or later than the maximum cost excluding VAT. So as a rule, they both apply: - The total cost of a
 Charging Session excluding VAT can never be higher than the `max_price` excluding VAT. - The total cost of a Charging
 Session including VAT can never be higher than the `max_price` including VAT.
+
 :::
 
 :::note
+
 `start_date_time` and `end_date_time`: When the Tariff of a Charge Point (Location) is changed during an ongoing
 charging session, it is common to not switch the Tariff until the ongoing session is finished. But this is NOT a
 requirement of OCPI, it is even possible with OCPI. Changing tariffs during an ongoing session is in many countries not
 allowed by consumer legislation. When charging at a Charge Point, a driver accepts the tariff which is valid when they
 start their charging session. If the Tariff of the Charge Point would change during the charging session, the driver
 might get billed something they didn't agree to when starting the session.
+
 :::
 
 :::note
+
 The fields: `tariff_alt_text` and `tariff_alt_url` may be used separately, or in combination with each other or even
 combined with the structured list of Tariff Elements. When a Tariff contains both the `tariff_alt_text` and `elements`
 fields, the `tariff_alt_text` SHALL only contain additional tariff information in human-readable text, not the price
 information that is also available via the `elements` field. The reason for this is that the eMSP might have additional
 fees they want to include in communication with their customer.
+
 :::
 
 #### Examples
@@ -1361,8 +1373,10 @@ money owed.
 | step_size | int                                     | 1     | Minimum amount to be billed. That is, the dimension will be billed in this `step_size` blocks. Consumed amounts are rounded up to the smallest multiple of `step_size` that is greater than the consumed amount. For example: if `type` is `TIME` and `step_size` has a value of `300`, then time will be billed in blocks of 5 minutes. If 6 minutes were consumed, 10 minutes (2 blocks of `step_size`) will be billed. |
 
 :::note
+
 `step_size`: depends on the `type` and every `type` (except `FLAT`) defines a `step_size` multiplier, which is the size
 of every *step* for that `type` in the given unit.
+
 :::
 
 For example: `PARKING_TIME` has the `step_size` multiplier: *1 second*, which means that the `step_size` of a Price
@@ -1377,15 +1391,19 @@ cost of € 0.029. When `step_size = 25`, then the same amount would be billed 
 `step_size = 500`, then the same amount will be billed for 1 to 500 Wh: € 0.125.
 
 :::note
+
 For more information about how `step_size` impacts the calculation of the cost of charging see: [CDR object
 description](https://ocpi.dev)
+
 :::
 
 :::note
+
 Take into account that using `step_size` can be confusing for Drivers and other people. There may be local or national
 regulations that regulate `step_size`. For example in The Netherlands telecom companies are required to at least offer
 one subscription which is paid per second. To prevent confusion by the customer, we recommend to keep the `step_size` as
 small as possible and mention them clearly in your offering.
+
 :::
 
 #### Example Tariff
@@ -1525,9 +1543,11 @@ A breakdown is as follows:
 | RESERVATION_EXPIRES | Used in Tariff Elements to describe costs for a reservation that expires (i.e. driver does not start a charging session before [expiry_date](https://ocpi.dev) of the reservation). |
 
 :::note
+
 When a Tariff has both `RESERVATION` and `RESERVATION_EXPIRES` Tariff Elements, where both Tariff Elements have a
 [TIME](https://ocpi.dev) Price Component, then the time based cost of an expired reservation will
 be calculated based on the `RESERVATION_EXPIRES` Tariff Element.
+
 :::
 
 ### TariffElement *class*

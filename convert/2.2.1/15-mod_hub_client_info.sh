@@ -3,7 +3,6 @@
 function pre_mod_hub_client_info(){
   file="$ROOT/ocpi/mod_hub_client_info.asciidoc"
   gsed -i 's|+$||gm' "$file"
-
 }
 
 function fix_mod_hub_client_info() {

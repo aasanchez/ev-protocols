@@ -59,20 +59,26 @@ When an eMSP does not want to Push the full list of tokens to CPOs, the CPOs wil
 request](https://ocpi.dev) to check if a Token is known by the eMSP, and if it is valid.
 
 :::note
+
 Doing real-time authorization of RFID will mean a longer delay of the authorization process, which might result in bad
 user experience at the Charge Point. So care should be taken to keep delays in processing the request to an absolute
 minimum.
+
 :::
 
 :::note
+
 Real-time authorization might be asked for a charging location that is not published via the
 [Location](https://ocpi.dev) module, typically a private charger. In most cases this is expected to
 result in: `ALLOWED`.
+
 :::
 
 :::note
+
 If real-time authorization is asked for a location, the eMSP SHALL NOT validate that charging is possible based on
 information like opening hours or EVSE status etc. as this information might not be up to date.
+
 :::
 
 ## Interfaces and endpoints
@@ -355,9 +361,11 @@ If the token is not known, the response SHALL contain the status code: `2004: Un
 The combination of *uid* and *type* should be unique for every token within the eMSP's system.
 
 :::note
+
 OCPP supports group_id (or ParentID as it is called in OCPP 1.5/1.6) OCPP 1.5/1.6 only support group ID's with maximum
 length of string(20), case insensitive. As long as EV-driver can be expected to charge at an OCPP 1.5/1.6 Charge Point,
 it is adviced to not used a group_id longer then 20.
+
 :::
 
 #### Examples
@@ -443,9 +451,11 @@ References to location details.
 | RFID        | RFID Token                                                                                                                      |
 
 :::note
+
 The eMSP is RECOMMENDED to push Tokens with type: `AD_HOC_USER` or `APP_USER` with `whitelist` set to `NEVER`.
 Whitelists are very useful for RFID type Tokens, but the `AD_HOC_USER`/`APP_USER` Tokens are used to start Sessions from
 an App etc. so whitelisting them has no advantages.
+
 :::
 
 ### WhitelistType *enum*

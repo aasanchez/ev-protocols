@@ -80,7 +80,9 @@ or eMSP) anymore. In practice this means that when a company is both a CPO and a
 that implements both interfaces, only one OCPI connection is needed.
 
 :::note
+
 OCPI 2.2 introduced the role field in the version details. Older versions of OCPI do not support this.
+
 :::
 
 Endpoint structure definition:
@@ -119,9 +121,11 @@ Both the CPO and the eMSP MUST implement this endpoint.
 | url        | [URL](https://ocpi.dev)           | 1     | URL to the endpoint.                     |
 
 :::note
+
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
 It is advised to send "SENDER" as the InterfaceRole for one's own credentials endpoint and to disregard the value of the
 role property of the Endpoint object for other platforms' credentials modules.
+
 :::
 
 ### InterfaceRole *enum*

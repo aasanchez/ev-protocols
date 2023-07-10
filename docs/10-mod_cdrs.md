@@ -47,8 +47,10 @@ After having sent the Credit CDR, the CPO can send a new CDR with a new unique I
 [`credit`](https://ocpi.dev) and [`credit_reference_id`](https://ocpi.dev) omitted.
 
 :::note
+
 How far back in time a CPO can send a Credit CDR is not defined by OCPI. It is up the business contracts between the
 different parties involved, as there might be local laws involved etc.
+
 :::
 
 ### Push model
@@ -341,26 +343,34 @@ as it is followed by another time based period.
 | last_updated               | [DateTime](https://ocpi.dev)       | 1     | Timestamp when this CDR was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                             |
 
 :::note
+
 The actual charging duration (energy being transferred between EVSE and EV) of a charging session can be calculated:
 `total_charging_time = total_time - total_parking_time`.
+
 :::
 
 :::note
+
 Having both a `credit` and a `credit_reference_id` might seem redundant. But it is seen as an advantage as a boolean
 flag used in queries is much faster than simple string comparison of references.
+
 :::
 
 :::note
+
 Different `authorization_reference` values might happen when for example a
 [ReserveNow](https://ocpi.dev) had a different `authorization_reference` then the
 value returned by a [real-time authorization](https://ocpi.dev).
+
 :::
 
 :::note
+
 When no `start_date_time` and/or `end_date_time` is known to the CPO, normally the CPO cannot send the CDR. If the MSP
 and CPO both agree that they accept CDRs that miss either or both the `start_date_time` and `end_date_time`, and local
 legislation allows billing of sessions where `start_date_time` and/or `end_date_time` are missing. Then, and only then,
 the CPO could send a CDR where the `start_date_time` and/or `end_date_time` are set to: "1970-1-1T00:00:00Z.
+
 :::
 
 #### Example of a CDR
@@ -486,12 +496,14 @@ both `CDRs` and `Sessions`. Some of these values are not useful for `CDRs`, and 
 | TIME             |              | Time charging during this [ChargingPeriod](https://ocpi.dev): defined in hours, default step_size multiplier is 1 second.                                                                                |
 
 :::note
+
 OCPI makes it possible to provide SoC in the Session object. This information can be useful to show the current State of
 Charge to an EV driver during charging. Implementers should be aware that SoC is only available at some DC Chargers.
 Which is currently a small amount of the total amount of Charge Points. Of these DC Chargers, only a small percentage
 currently provides SoC via OCPP to the CPO. Then there is also the question if SoC is allowed to be provided to
 third-parties as it can be seen as privacy-sensitive information. So if an implementer wants to show SoC in, for example
 an App, care should be taken, to make the App work without SoC, as this will probably not always be available.
+
 :::
 
 ### CdrLocation *class*
@@ -551,8 +563,10 @@ a list of signed values.
 | url                     | [string](https://ocpi.dev)(512)  | ?     | URL that can be shown to an EV driver. This URL gives the EV driver the possibility to check the signed data from a charging session.             |
 
 :::note
+
 For the German Eichrecht, different solutions are used, all have (somewhat) different encodings. Below the table with
 known implementations and the contact information for more information.
+
 :::
 
 | Name                       | Description                                | Contact                          |

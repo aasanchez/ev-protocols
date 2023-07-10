@@ -24,8 +24,8 @@ function fix_mod_commands() {
   gsed -i    "s|^\*\*Module Identifier: \`commands\`\*\*|\:\:\:tip Module Identifier\ncommands\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
-  gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
+  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
 
   gsed -i -z "s|\`\n\n\`+|\`\n* \`|gm" "$file"
   gsed -i -e "s|+\`|\`|gm" "$file"

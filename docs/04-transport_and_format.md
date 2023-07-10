@@ -24,7 +24,9 @@ Authorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg==
 ```
 
 :::note
+
 HTTP header names are case-insensitive
+
 :::
 
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
@@ -45,11 +47,13 @@ Authorization: Token ZXhhbXBsZS10b2tlbgo=
 ```
 
 :::note
+
 Many OCPI 2.1.1 and 2.2 implementations do not Base64 encode the credentials token when including it in the
 *Authorization* header. Since OCPI 2.2-d2 the OCPI specification documents clearly require Base64 encoding the
 credentials token in the header value. Implementations that wish to be compatible with non-encoding 2.1.1 and 2.2
 implementations have to choose the right way to parse and write authorization headers by either trial and error or
 configuration flags.
+
 :::
 
 The credentials token must uniquely identify the requesting party. This way, the server can use the information in the
@@ -146,11 +150,13 @@ different. This means the client will not be required to crawl all pages all ove
 last page it has retrieved all relevant pages and is up to date.
 
 :::note
+
 Some query parameters can cause concurrency problems. For example the `date_to` query parameter. When there are for
 example 1000 objects matching a query for all objects with `date_to` before 2016-01-01. While crawling over the pages
 one of these objects is updated. The client detects this: `X-Total-Count` will be lower in the next request. It is
 advised to redo the previous GET with the `offset` lowered by 1 (if the `offset` was not 0) and after that continue
 crawling the *next* page links.
+
 :::
 
 HTTP headers that have to be added to any paginated GET response.
@@ -162,7 +168,9 @@ HTTP headers that have to be added to any paginated GET response.
 | X-Limit       | int      | (Custom HTTP Header) The maximum number of objects that the server can return. Note that this is an upper limit. If there are not enough remaining objects to return, fewer objects than this upper limit number will be returned, X-Limit SHALL then still show the upper limit, not the number of objects returned.                                                                               |
 
 :::note
+
 HTTP header names are case-insensitive
+
 :::
 
 ##### Pagination Examples
@@ -301,12 +309,14 @@ For errors on the HTTP layer, use HTTP error response codes, including the respo
 details. HTTP status codes are described on [w3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 :::note
+
 Earlier versions of the OCPI 2.2.1 did not clearly specify what should be in the `data` field of the response format for
 every request. We advise that in cases where the specification does not explicitly specify what to put in the `data`
 field for the response to a certain request, the platform receiving the response accept both the `data` field being
 absent and the data field being present with any possible value. We also advise that in such cases, platform sending the
 response leave the `data` field unset in the response format. This applies for example to PUT requests when pushing
 Session objects, and PATCH requests to add charging periods to Sessions.
+
 :::
 
 * **Example:** Version information response (list of objects)
@@ -482,7 +492,9 @@ or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with th
 | OCPI-from-country-code | [CiString](https://ocpi.dev)(2) | *country code* of the connected party this message is sent from.     |
 
 :::note
+
 HTTP header names are case-insensitive
+
 :::
 
 ![OCPI Sequence Diagram Hub GET](./images/sd_get_simple.svg)
@@ -519,8 +531,10 @@ data like [Tokens](https://ocpi.dev) and
 these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.
 
 :::note
+
 For "Client Owned Objects", the party-id and country-code in the URL segments will still be the original party-id and
 country-code from the original client sending the Broadcast Push to the Hub.
+
 :::
 
 ![OCPI Sequence Diagram of a Broadcast Push from a CPO to multiple eMSPs](./images/sd_put_boardcast.svg)
@@ -653,7 +667,9 @@ request/response.
 | X-Correlation-ID | Every request/response SHALL contain a unique correlation ID, every response to this request SHALL contain the same ID. |
 
 :::note
+
 HTTP header names are case-insensitive
+
 :::
 
 It is advised to used GUID/UUID as values for X-Request-ID and X-Correlation-ID.

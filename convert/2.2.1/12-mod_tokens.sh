@@ -3,8 +3,6 @@
 function pre_mod_tokens(){
   file="$ROOT/ocpi/mod_tokens.asciidoc"
   gsed -i 's|+$||gm' "$file"
-
-  
 }
 
 function fix_mod_tokens() {
@@ -19,8 +17,8 @@ function fix_mod_tokens() {
   gsed -i    "s|^\*\*Data owner: \`MSP\`\*\*|\:\:\:caution Data owner\nMSP\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
-  gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
+  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
 
   gsed -i -z "s|\`\n\n\`+|\`\n* \`|gm" "$file"
   gsed -i -e "s|+\`|\`|gm" "$file"

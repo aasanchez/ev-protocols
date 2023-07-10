@@ -24,11 +24,13 @@ parties to signal their intent. The data structures are base on OCPP 1.6 and 2.0
 OCPI and OCPP easy.
 
 :::note
+
 Charging Profiles set via this module are no guarantee that the EV will charge with the exact given limit, it is a
 maximum limit, not a target. A lot of factors influence the charging speed. The EV might not take the amount of energy
 that the EVSE is willing to provide to it, the battery might be too warm or almost full. A single phase cable might be
 used on a three phase Charge Point. There can be local energy limits (load balancing between EVSEs on a relative small
 energy connection to a group of EVSEs) that might limit the energy offered by the EVSE to the EV even further.
+
 :::
 
 ChargingProfile can be created by the owner of a Token on Sessions that belong to that token. If another party sends a
@@ -41,8 +43,10 @@ session information to them. They need to know which session is ongoing to be ab
 module, read eMSP as SCSP.
 
 :::note
+
 OCPI provides the means for SCSPs to do this. Parties doing this have to adhere to local privacy laws, have to have
 setup contracts etc. Local laws might oblige explicit consent from the driver etc.
+
 :::
 
 **Module dependency:** [Sessions module](https://ocpi.dev)
@@ -53,9 +57,11 @@ There are different Smart Charging Topologies possible. Which topology can be us
 different parties.
 
 :::note
+
 Care has to be taken to prevent mixing the different topologies. When multiple parties start sending Charging Profiles,
 the resulting charging speed might be unpredictable. In case of OCPP Charge Points, the result will be the minimum of
 all the Charging Profiles, resulting in a slower than needed charging speed.
+
 :::
 
 ### The eMSP generates ChargingProfiles
@@ -347,7 +353,9 @@ Example:
 * `https://www.cpo.com/ocpi/2.2.1/chargingprofiles/1234?duration=900&response_url=https://www.msp.com/ocpi/2.2.1/chargingprofile/response?request_id=5678`
 
 :::note
+
 As it is not common to add a body to a GET request, all parameters are added to the URL.
+
 :::
 
 ====== Request Parameters
@@ -361,9 +369,11 @@ The following parameters shall be provided as URL segments.
 | response_url | [URL](https://ocpi.dev)          | yes      | URL that the [ActiveChargingProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
 
 :::note
+
 duration: Balance the duration between maximizing the information gained and the data usage and computation to execute
 on the request. Warning: asking for longer duration than necessary might result in additional data costs, while its
 added value diminishes with every change in the schedule.
+
 :::
 
 ====== Response Data
@@ -425,7 +435,9 @@ Example:
 * `https://www.cpo.com/ocpi/2.2.1/chargingprofiles/1234?response_url=https://www.server.com/example`
 
 :::note
+
 As it is not common to add a body to a DELETE request, all parameters are added to the URL.
+
 :::
 
 ====== Request Parameters

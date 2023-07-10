@@ -83,7 +83,9 @@ available. Grouping Charge Points in the same location into one OCPI Location wi
 Charging Locations.
 
 :::note
+
 By definition, an EVSE can only charge one EV at a time.
+
 :::
 
 ### OCPP 1.x Charge Points with multiple connectors per EVSE
@@ -438,7 +440,9 @@ Example Response:
 ```
 
 :::note
+
 To inform eMSPs that an EVSE is scheduled for removal, the status_schedule field can be used.\_
+
 :::
 
 ## Object description
@@ -961,9 +965,11 @@ at the time.
 | last_updated         | [DateTime](https://ocpi.dev)           | 1     | Timestamp when this EVSE or one of its Connectors was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 :::note
+
 OCPP 1.x does not have good support for Charge Points that have multiple connectors per EVSE. To make `StartSession`
 over OCPI work, the CPO SHOULD present the different connectors of an EVSE as separate EVSE, as is also written by the
 OCA in the application note: "Multiple Connectors per EVSE in a OCPP 1.x implementation".
+
 :::
 
 ### *Connector* Object
@@ -1261,8 +1267,10 @@ This class defines the geo location of the Charge Point. The geodetic system to 
 | longitude | [string](https://ocpi.dev)(11) | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}` |
 
 :::note
+
 Five decimal places is seen as a minimum for GPS coordinates of the Charge Point as this gives approximately 1 meter
 precision. More is always better. Seven decimal places gives approximately 1cm precision.
+
 :::
 
 ### Hours *class*
@@ -1550,6 +1558,8 @@ still planned and under construction."
 | status       | [Status](https://ocpi.dev)   | 1     | Status value during the scheduled period. |
 
 :::note
+
 The scheduled status is purely informational. When the status actually changes, the CPO must push an update to the EVSEs
 `status` field itself.
+
 :::

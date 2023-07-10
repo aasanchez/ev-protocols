@@ -27,8 +27,8 @@ function fix_transport_and_format() {
   echo -e "---\nsidebar_position: 4\nslug: transport-and-format\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
-  gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
+  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
   gsed -i -z "s|======|######|gm" "$file"
   gsed -i "s|^\s\sAuthorization|Authorization|gm" "$file"
   gsed -i "s/’/'/gm" "$file"

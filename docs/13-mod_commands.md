@@ -334,10 +334,12 @@ other eMSPs is not allowed.
 | authorization_reference | [CiString](https://ocpi.dev)(36) | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant [Session](https://ocpi.dev) and/or [CDR](https://ocpi.dev).                                    |
 
 :::note
+
 In case of an OCPP 1.x Charge Point, the EVSE ID should be mapped to the connector ID of a Charge Point. OCPP 1.x does
 not have good support for Charge Points that have multiple connectors per EVSE. To make StartSession over OCPI work, the
 CPO SHOULD present the different connectors of an EVSE as separate EVSE, as is also written by the OCA in the
 application note: "Multiple Connectors per EVSE in a OCPP 1.x implementation".
+
 :::
 
 ### *StopSession* Object

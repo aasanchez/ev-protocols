@@ -28,7 +28,9 @@ Example of how timestamps shall be formatted in OCPI, other formats/patterns are
 ```
 
 :::note
+
 +00:00 is not the same as UTC.
+
 :::
 
 ## DisplayText *class*
@@ -59,7 +61,7 @@ large amount* of digits.
 | excl_vat | [number](https://ocpi.dev) | 1     | Price/Cost excluding VAT. |
 | incl_vat | [number](https://ocpi.dev) | ?     | Price/Cost including VAT. |
 
-### Role *enum*
+## Role *enum*
 
 | Value | Description                                                                                             |
 |-------|---------------------------------------------------------------------------------------------------------|

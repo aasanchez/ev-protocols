@@ -3,7 +3,6 @@
 function pre_types(){
   file="$ROOT/ocpi/types.asciidoc"
   gsed -i "s|\[source\]|\[source, text\]|gm" "$file"
-  # gsed -i "s|\[source\]|\[source, text\]|gm" "$file"
 }
 
 function fix_types() {
@@ -13,12 +12,12 @@ function fix_types() {
   echo -e "---\nsidebar_position: 16\nslug: types\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
-  gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
+  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
   
   gsed -i "s|^\`\`\`\stext|\`\`\`text|gm" "$file"
   gsed -i -z "s|\`\`\`text\n{|\`\`\`json\n{|gm" "$file"
-  
+
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
   echo "" >> "$file"
