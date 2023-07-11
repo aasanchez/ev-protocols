@@ -12,7 +12,7 @@ function pre_mod_locations(){
 }
 
 function fix_mod_locations() {
-  file="$ROOT/docs/08-mod_locations.md"
+  file="$ROOT/website/docs/08-mod_locations.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 8\nslug: locations\n---" | cat - "$file" > "$tempfile"

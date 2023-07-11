@@ -2,14 +2,12 @@
 # shellcheck source=/dev/null
 
 . ./convert/libs/global.sh
-# . ./convert/libs/links.sh
-# . ./convert/libs/pandoc.sh
 
 . ./convert/2.2.1/01-introduction.sh
 flavored_introduction
 
-# . ./convert/2.2.1/02-terminology.sh
-# split_terminology
+. ./convert/2.2.1/02-terminology.sh
+flavored_terminology
 
 # . ./convert/2.2.1/03-topology.sh
 

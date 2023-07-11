@@ -1,4 +1,5 @@
 ---
+sidebar_position: 2
 slug: terminology-and-definitions
 ---
 # Terminology and Definitions
@@ -68,18 +69,18 @@ Examples of platforms:
 The following table shows the typical modules implemented by the different roles. These are not required. The table
 shows the typical communication role: Receiver, Sender or Both.
 
-| Modules                                                                     | [CPO](https://ocpi.dev) | [eMSP](https://ocpi.dev) | [Hub](https://ocpi.dev) | [NSP](https://ocpi.dev) | [NAP](https://ocpi.dev) | [SCSP](https://ocpi.dev) |
-|-----------------------------------------------------------------------------|-------------------------|--------------------------|-------------------------|-------------------------|-------------------------|--------------------------|
-| [CDRs](https://ocpi.dev)                                                    | Sender                  | Receiver                 | Both                    |                         |                         |                          |
-| [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies) | Receiver                |                          | Both                    |                         |                         | Sender                   |
-| [Commands](https://ocpi.dev)                                                | Receiver                | Sender                   | Both                    |                         |                         |                          |
-| [Credentials](https://ocpi.dev)                                             | Both                    | Both                     | Both                    | Both                    | Both                    | Both                     |
-| [Hub Client Info](https://ocpi.dev)                                         | Receiver                | Receiver                 | Sender                  | Receiver                | Receiver                | Receiver                 |
-| [Locations](https://ocpi.dev)                                               | Sender                  | Receiver                 | Both                    | Receiver                | Both                    |                          |
-| [Sessions](https://ocpi.dev)                                                | Sender                  | Receiver                 | Both                    |                         |                         | Receiver                 |
-| [Tariffs](https://ocpi.dev)                                                 | Sender                  | Receiver                 | Both                    | Receiver                | Both                    |                          |
-| [Tokens](https://ocpi.dev)                                                  | Receiver                | Sender                   | Both                    |                         |                         |                          |
-| [Versions](https://ocpi.dev)                                                | Both                    | Both                     | Both                    | Both                    | Both                    | Both                     |
+| Modules                                                                     | [CPO](/16-types.md#role-enum) | [eMSP](/16-types.md#role-enum) | [Hub](/16-types.md#role-enum) | [NSP](/16-types.md#role-enum) | [NAP](/16-types.md#role-enum) | [SCSP](/16-types.md#role-enum) |
+|-----------------------------------------------------------------------------|-------------------------------|--------------------------------|-------------------------------|-------------------------------|-------------------------------|--------------------------------|
+| [CDRs](https://ocpi.dev)                                                    | Sender                        | Receiver                       | Both                          |                               |                               |                                |
+| [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies) | Receiver                      |                                | Both                          |                               |                               | Sender                         |
+| [Commands](https://ocpi.dev)                                                | Receiver                      | Sender                         | Both                          |                               |                               |                                |
+| [Credentials](https://ocpi.dev)                                             | Both                          | Both                           | Both                          | Both                          | Both                          | Both                           |
+| [Hub Client Info](https://ocpi.dev)                                         | Receiver                      | Receiver                       | Sender                        | Receiver                      | Receiver                      | Receiver                       |
+| [Locations](https://ocpi.dev)                                               | Sender                        | Receiver                       | Both                          | Receiver                      | Both                          |                                |
+| [Sessions](https://ocpi.dev)                                                | Sender                        | Receiver                       | Both                          |                               |                               | Receiver                       |
+| [Tariffs](https://ocpi.dev)                                                 | Sender                        | Receiver                       | Both                          | Receiver                      | Both                          |                                |
+| [Tokens](https://ocpi.dev)                                                  | Receiver                      | Sender                         | Both                          |                               |                               |                                |
+| [Versions](https://ocpi.dev)                                                | Both                          | Both                           | Both                          | Both                          | Both                          | Both                           |
 
 ## Terminology
 

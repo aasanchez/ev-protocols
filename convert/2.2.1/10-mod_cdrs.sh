@@ -6,7 +6,7 @@ function pre_mod_cdrs(){
 }
 
 function fix_mod_cdrs() {
-  file="$ROOT/docs/10-mod_cdrs.md"
+  file="$ROOT/website/docs/10-mod_cdrs.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 10\nslug: cdrs\n---" | cat - "$file" > "$tempfile"

@@ -1,4 +1,5 @@
 ---
+sidebar_position: 7
 slug: versions
 ---
 # Versions module
@@ -47,7 +48,7 @@ Both, CPOs and eMSPs MUST implement such a version endpoint.
 | Property | Type                              | Card. | Description                                                  |
 |----------|-----------------------------------|-------|--------------------------------------------------------------|
 | version  | [VersionNumber](https://ocpi.dev) | 1     | The version number.                                          |
-| url      | [URL](https://ocpi.dev)           | 1     | URL to the endpoint containing version specific information. |
+| url      | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint containing version specific information. |
 
 ### GET
 
@@ -117,7 +118,7 @@ Both the CPO and the eMSP MUST implement this endpoint.
 |------------|-----------------------------------|-------|------------------------------------------|
 | identifier | [ModuleID](https://ocpi.dev)      | 1     | Endpoint identifier.                     |
 | role       | [InterfaceRole](https://ocpi.dev) | 1     | Interface role this endpoint implements. |
-| url        | [URL](https://ocpi.dev)           | 1     | URL to the endpoint.                     |
+| url        | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint.                     |
 
 :::note
 

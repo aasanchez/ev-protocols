@@ -16,7 +16,7 @@ function pre_mod_charging_profiles(){
 }
 
 function fix_mod_charging_profiles() {
-  file="$ROOT/docs/14-mod_charging_profiles.md"
+  file="$ROOT/website/docs/14-mod_charging_profiles.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 14\nslug: charging-profiles\n---" | cat - "$file" > "$tempfile"

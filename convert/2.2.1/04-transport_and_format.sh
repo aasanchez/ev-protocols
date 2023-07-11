@@ -21,7 +21,7 @@ function pre_transport_and_format(){
 }
 
 function fix_transport_and_format() {
-  file="$ROOT/docs/04-transport_and_format.md"
+  file="$ROOT/website/docs/04-transport_and_format.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 4\nslug: transport-and-format\n---" | cat - "$file" > "$tempfile"

@@ -14,7 +14,7 @@ function pre_mod_commands(){
 }
 
 function fix_mod_commands() {
-  file="$ROOT/docs/13-mod_commands.md"
+  file="$ROOT/website/docs/13-mod_commands.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 13\nslug: commands\n---" | cat - "$file" > "$tempfile"

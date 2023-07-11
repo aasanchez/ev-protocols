@@ -1,4 +1,5 @@
 ---
+sidebar_position: 5
 slug: status-codes
 ---
 # Status codes

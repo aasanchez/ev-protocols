@@ -7,7 +7,7 @@ function pre_mod_tariffs(){
 }
 
 function fix_mod_tariffs() {
-  file="$ROOT/docs/11-mod_tariffs.md"
+  file="$ROOT/website/docs/11-mod_tariffs.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 11\nslug: tariffs\n---" | cat - "$file" > "$tempfile"

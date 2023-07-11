@@ -8,7 +8,7 @@ function pre_terminology(){
 }
 
 function fix_terminology(){
-  file="$ROOT/docs/02-terminology.md"
+  file="$ROOT/website/docs/02-terminology.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 2\nslug: terminology-and-definitions\n---" | cat - "$file" > "$tempfile"
@@ -33,28 +33,11 @@ function fix_terminology(){
 }
 
 
-split_terminology() {
-  file="$ROOT/docs/02-terminology.md"
-  content=$(<"$file")
+flavored_terminology() {
+  file="$ROOT/website/docs/02-terminology.md"
+  tempfile="$file.tmp"
+  echo "$file ocpi.dev flavored"
 
-  # Create the output directory
-  output_dir="$ROOT/docs/02-terminology"
-  mkdir -p "$output_dir"
+  splitInH2 "$file"
 
-  # Split the content based on H2 (##) headers
-  IFS=$'\n'
-  sections=($(echo "$content" | awk '/^##/ {print NR}'))
-  sections+=($(echo "${#content}"))  # Add the end position as the last section
-  
-  echo ${#sections[@]}
-  # Extract and save each section into a separate file
-  for ((i = 0; i < ${#sections[@]} - 1; i++)); do
-      start=$((sections[i] + 1))
-      end=$((sections[i + 1] - 1))
-      title=$(echo "${content:${sections[i]}:$((sections[i + 1] - sections[i]))}" | grep -oP '^## \K(.+)')
-      slug=$(echo "$title" | tr '[:upper:]' '[:lower:]' | tr -cs '[:alnum:]-' '-')
-      output_file="$output_dir/$slug.md"
-      echo "${content:$start:$((end - start + 1))}" > "$output_file"
-      echo "Saved section '$title' to '$output_file'"
-  done
 }

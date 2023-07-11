@@ -6,7 +6,7 @@ function pre_types(){
 }
 
 function fix_types() {
-  file="$ROOT/docs/16-types.md"
+  file="$ROOT/website/docs/16-types.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 16\nslug: types\n---" | cat - "$file" > "$tempfile"

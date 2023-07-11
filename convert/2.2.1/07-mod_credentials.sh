@@ -9,7 +9,7 @@ function pre_mod_credentials(){
 }
 
 function fix_mod_credentials() {
-  file="$ROOT/docs/07-mod_credentials.md"
+  file="$ROOT/website/docs/07-mod_credentials.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 7\nslug: credentials\n---" | cat - "$file" > "$tempfile"

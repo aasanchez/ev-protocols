@@ -6,7 +6,7 @@ function pre_mod_sessions(){
 }
 
 function fix_mod_sessions() {
-  file="$ROOT/docs/09-mod_sessions.md"
+  file="$ROOT/website/docs/09-mod_sessions.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 9\nslug: sessions\n---" | cat - "$file" > "$tempfile"

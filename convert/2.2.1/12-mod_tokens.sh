@@ -6,7 +6,7 @@ function pre_mod_tokens(){
 }
 
 function fix_mod_tokens() {
-  file="$ROOT/docs/12-mod_tokens.md"
+  file="$ROOT/website/docs/12-mod_tokens.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 12\nslug: tokens\n---" | cat - "$file" > "$tempfile"

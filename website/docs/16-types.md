@@ -1,4 +1,5 @@
 ---
+sidebar_position: 16
 slug: types
 ---
 # Types
@@ -34,10 +35,10 @@ Example of how timestamps shall be formatted in OCPI, other formats/patterns are
 
 ## DisplayText *class*
 
-| Property | Type                            | Card. | Description                                                       |
-|----------|---------------------------------|-------|-------------------------------------------------------------------|
-| language | [string](https://ocpi.dev)(2)   | 1     | Language Code ISO 639-1.                                          |
-| text     | [string](https://ocpi.dev)(512) | 1     | Text to be displayed to a end user. No markup, html etc. allowed. |
+| Property | Type                        | Card. | Description                                                       |
+|----------|-----------------------------|-------|-------------------------------------------------------------------|
+| language | [string](#string-type)(2)   | 1     | Language Code ISO 639-1.                                          |
+| text     | [string](#string-type)(512) | 1     | Text to be displayed to a end user. No markup, html etc. allowed. |
 
 Example:
 
@@ -55,10 +56,10 @@ large amount* of digits.
 
 ## Price *class*
 
-| Property | Type                       | Card. | Description               |
-|----------|----------------------------|-------|---------------------------|
-| excl_vat | [number](https://ocpi.dev) | 1     | Price/Cost excluding VAT. |
-| incl_vat | [number](https://ocpi.dev) | ?     | Price/Cost including VAT. |
+| Property | Type                   | Card. | Description               |
+|----------|------------------------|-------|---------------------------|
+| excl_vat | [number](#number-type) | 1     | Price/Cost excluding VAT. |
+| incl_vat | [number](#number-type) | ?     | Price/Cost including VAT. |
 
 ## Role *enum*
 

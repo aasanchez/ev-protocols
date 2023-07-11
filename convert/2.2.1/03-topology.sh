@@ -14,7 +14,7 @@ function pre_topology(){
 }
 
 function fix_topology() {
-  file="$ROOT/docs/03-topology.md"
+  file="$ROOT/website/docs/03-topology.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 3\nslug: supported-topologies/\n---" | cat - "$file" > "$tempfile"
