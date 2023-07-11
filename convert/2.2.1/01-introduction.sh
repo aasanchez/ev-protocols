@@ -21,7 +21,10 @@ function pre_introduction(){
   gsed -i 's|Ecomovement|https://www.eco-movement.com[Ecomovement]|g' "$file"
   gsed -i 's|Allego|https://www.allego.eu[Allego]|g' "$file"
   gsed -i 's|ENIO|https://www.enio-management.com[ENIO]|g' "$file"
-
+  gsed -i 's|Fastned|https://fastnedcharging.com[Fastned]|g' "$file"
+  gsed -i 's|AvantIT|https://www.avantit.no[AvantIT]|g' "$file"
+  gsed -i 's|Chargemap|https://chargemap.com[Chargemap]|g' "$file"
+  gsed -i 's|Vattenfall|https://vattenfall.com/[Vattenfall]|g' "$file"
 }
 
 function fix_introduction() {

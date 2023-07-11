@@ -30,8 +30,9 @@ Box](https://evbox.com), [New Motion](https://newmotion.com), [ElaadNL](https://
 [Rexel](https://www.rexel.com), [Stromnetz Hamburg](https://www.stromnetz-hamburg.de),
 [Enervalis](https://enervalis.com), [Place to plug](https://placetoplug.com), [Plugsurfing](https://plugsurfing.com),
 [Ecomovement](https://www.eco-movement.com), [Allego](https://www.allego.eu), Gronn Kontakt Norway,
-[ENIO](https://www.enio-management.com), Fastned, AvantIT, Chargemap, Involtum, Capitol Region Denmark, Vattenfall, EON,
-ECY Conseil Emeric Chardiny, Eneco Mobility, Google, Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge,
+[ENIO](https://www.enio-management.com), [Fastned](https://fastnedcharging.com), [AvantIT](https://www.avantit.no),
+[Chargemap](https://chargemap.com), Involtum, Capitol Region Denmark, [Vattenfall](https://vattenfall.com/), EON, ECY
+Conseil Emeric Chardiny, Eneco Mobility, Google, Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge,
 Service House, Alfen / ICU, PI2 Consultancy, Pitpoint, Blue Corner, Building Energy, Chargestorm, Chargepoint, ESARJ,
 Chargelab.co, MUVEXT, Next Green Car / Zap Map, Be Mo Tech, Parking Eagle, GraphDefined, Chargecloud,
 Rutgerplantengaconsulting, Everon, Tanqyou, Electric Vehicle Association Scotland (EVA NCS), EV-Tech, Plugin Power,
