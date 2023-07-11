@@ -1,5 +1,4 @@
 ---
-sidebar_position: 4
 slug: transport-and-format
 ---
 # Transport and format

@@ -1,5 +1,4 @@
 ---
-sidebar_position: 9
 slug: sessions
 ---
 # Sessions module

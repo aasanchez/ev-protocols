@@ -1,45 +1,8 @@
 ---
-sidebar_position: 1
+id: introduction
 slug: /
 ---
 # OCPI
-
-## OCPI 2.2.1-d2
-
-In the OCPI Development Working Group at the EV Roaming Foundation we are always tracking unclarities in the
-specification and making changes to the specification document to fix these for later versions. We noticed that the OCPI
-2.2.1 documentation had accumulated so many clarifications since the formal release of 2.2.1 that it is worthwhile to
-make a new "documentation release", OCPI 2.2.1-d2. This release does not change the requirements compared to OCPI 2.2.1.
-The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 but do so more clearly.
-
-## OCPI 2.2.1
-
-During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
-minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
-
-## OCPI 2.2
-
-OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
-
-### Changes/New functionality
-
-* Support for Hubs
-  * [Message routing headers](https://ocpi.dev)
-  * [Hub Client Info](https://ocpi.dev)
-* [Support Platforms with multiple/different roles](https://ocpi.dev)
-* [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies)
-* [Preference based Smart Charging](https://ocpi.dev)
-* Improvements:
-  * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
-    AuthorizationReference, CdrLocation, CdrToken
-  * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
-  * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
-    more examples
-  * [Locations](https://ocpi.dev): Multiple Tariffs, Lots of small improvements
-  * [Tokens](https://ocpi.dev): Group_id, energy contract
-  * [Commands](https://ocpi.dev): Cancel Reservation added
-
-## Introduction and background
 
 The Open Charge Point Interface (OCPI) enables a scalable, automated EV roaming setup between Charge Point Operators and
 e-Mobility Service Providers. It supports authorization, charge point information exchange (including live status
@@ -80,7 +43,42 @@ guarantee progress and ensure development and results.
 This document describes a combined set of standards based on the work done in the past. Next to that, the evolution of
 these standards and their use are taken into account and some elements have been updated to match nowadays use.
 
-### OCPI is developed with support of
+## OCPI 2.2.1-d2
+
+In the OCPI Development Working Group at the EV Roaming Foundation we are always tracking unclarities in the
+specification and making changes to the specification document to fix these for later versions. We noticed that the OCPI
+2.2.1 documentation had accumulated so many clarifications since the formal release of 2.2.1 that it is worthwhile to
+make a new "documentation release", OCPI 2.2.1-d2. This release does not change the requirements compared to OCPI 2.2.1.
+The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 but do so more clearly.
+
+## OCPI 2.2.1
+
+During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
+minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
+
+## OCPI 2.2
+
+OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
+
+### Changes/New functionality
+
+* Support for Hubs
+  * [Message routing headers](https://ocpi.dev)
+  * [Hub Client Info](https://ocpi.dev)
+* [Support Platforms with multiple/different roles](https://ocpi.dev)
+* [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies)
+* [Preference based Smart Charging](https://ocpi.dev)
+* Improvements:
+  * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
+    AuthorizationReference, CdrLocation, CdrToken
+  * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
+  * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
+    more examples
+  * [Locations](https://ocpi.dev): Multiple Tariffs, Lots of small improvements
+  * [Tokens](https://ocpi.dev): Group_id, energy contract
+  * [Commands](https://ocpi.dev): Cancel Reservation added
+
+## OCPI is developed with support of
 
 evRoaming4EU project and its partners:
 

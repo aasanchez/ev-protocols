@@ -29,16 +29,16 @@ help:
 	@grep -E '^[a-zA-Z_0-9%-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "${GREEN}%-12s${RESET} %s\n", $$1, $$2}'
 
 bootstrap: ## is used solely for fulfilling dependencies of the project
-	@npm install
+	@cd website && npm install
 
 setup: bootstrap ## is used to set up a project in an initial state
 	@echo "is used to set up a project in an initial state"
 
 update: bootstrap ## is used to update the project after a fresh pull
-	@npx docusaurus start
+	@cd website && npm update
 
 server: setup ## is used to start the application
-	@echo "is used to start the application"
+	@cd website && npx docusaurus start
 
 .PHONY: convert
 convert: ## convert from asciidoc to markdown
