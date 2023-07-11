@@ -52,7 +52,11 @@ function fix_introduction() {
 
 }
 
-function webFormat_introduction(){
+# Transforms the structure of the original documentation
+# maybe change to headings, titles, and order of presentation of the information in order 
+# to optimize accessibility and usability for web-based formats.
+# This function preserves the content and definitions without modification.
+function flavored_introduction(){
   file="$ROOT/docs/01-introduction.md"
   tempfile="$file.tmp"
 

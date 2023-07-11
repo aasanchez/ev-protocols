@@ -6,7 +6,7 @@
 # . ./convert/libs/pandoc.sh
 
 . ./convert/2.2.1/01-introduction.sh
-webFormat_introduction
+flavored_introduction
 
 # . ./convert/2.2.1/02-terminology.sh
 # split_terminology

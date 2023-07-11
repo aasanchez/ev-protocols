@@ -42,8 +42,8 @@ server: setup ## is used to start the application
 
 .PHONY: convert
 convert: ## convert from asciidoc to markdown
-  ./convert/2.2.1/conver2markdown.sh
-  # ./convert/2.2.1/conver2markdown.sh
+	@ ./convert/2.2.1/ocpidev-flavor.sh
+
 
 cibuild: ## is used for your continuous integration server
 	@echo "is used for your continuous integration server"
