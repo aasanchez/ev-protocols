@@ -25,7 +25,7 @@ function pre_introduction(){
 }
 
 function fix_introduction() {
-  file="$ROOT/docs/01-introduction.md"
+  file="$ROOT/website/docs/01-introduction.md"
   tempfile="$file.tmp"
 
   echo -e "---\nsidebar_position: 1\nslug: /\n---" | cat - "$file" > "$tempfile"
@@ -57,9 +57,49 @@ function fix_introduction() {
 # to optimize accessibility and usability for web-based formats.
 # This function preserves the content and definitions without modification.
 function flavored_introduction(){
-  file="$ROOT/docs/01-introduction.md"
+  file="$ROOT/website/docs/01-introduction.md"
   tempfile="$file.tmp"
-
+  echo "$file ocpi.dev flavored"
   gsed -i -z "s/For more information on detailed changes see \[changelog\](https:\/\/ocpi\.dev)\.\n\n//gm" "$file"
+  
+  rm -rf "$ROOT/tmp/"
+  mkdir -p "$ROOT/tmp/"
+
+  content=$(<"$file")
+  sections=($(echo "$content" | awk '/^## / { print NR }'))
+  for ((i = 0; i < ${#sections[@]}; i++)); do
+    start=${sections[i]}
+    end=${sections[i+1]:-$(echo "$content" | wc -l)}
+    section_content=$(echo "$content" | sed -n "${start},${end}p")
+    section_heading=$(echo "$section_content" | head -n 1 | sed 's/^## //')
+    filename=$(echo "$section_heading" | tr '[:upper:]' '[:lower:]' | tr -cd '[:alnum:]\n')
+    filename="${filename}.md"
+    section_content=$(echo "$section_content" | sed '$d')
+    echo "$section_content" > "$ROOT/tmp/$filename"
+    echo "Created file: $filename"
+  done
+  
+  line_number=$(grep -n "### OCPI is developed with support of" "$ROOT/tmp/introductionandbackground.md" | cut -d: -f1)
+  gsed -n "${line_number},\$p" "$ROOT/tmp/introductionandbackground.md" > "$ROOT/tmp/newfile.md"
+
+  gsed -i "${line_number},\$d" "$ROOT/tmp/introductionandbackground.md"
+  gsed -i '/^$/N;/\n$/D' "$ROOT/tmp/introductionandbackground.md"
+
+  cat "$ROOT/tmp/introductionandbackground.md" \
+      "$ROOT/tmp/ocpi221d2.md" \
+      "$ROOT/tmp/ocpi221.md" \
+      "$ROOT/tmp/ocpi22.md" \
+      "$ROOT/tmp/newfile.md" \
+      > "$ROOT/website/docs/01-introduction.md"
+
+  echo -e "---\nsidebar_position: 1\nslug: /\n---" | cat - "$file" > "$tempfile"
+  mv "$tempfile" "$file"
+
+  gsed -i 's|^### OCPI|\n## OCPI|g' "$file"
+  gsed -i 's|^## OCPI 2.2.1$|\n## OCPI 2.2.1|g' "$file"
+  gsed -i 's|^## OCPI 2.2$|\n## OCPI 2.2|g' "$file"
+  gsed -i 's|^## OCPI 2.2.1-d2$|## OCPI 2.2.1-d2|g' "$file"
+
+  gsed -i 's|^## Introduction and background$|# OCPI|g' "$file"
 
 }

@@ -1,5 +1,5 @@
 ---
-id: introduction
+sidebar_position: 1
 slug: /
 ---
 # OCPI
@@ -87,5 +87,3 @@ evRoaming4EU project and its partners:
 ECISS project and its partners:
 
 ![ECISS logo](./images/eciss_logo.png)
-
-The latest version of this specification can be found here: [OCPI Github Repository](https://github.com/ocpi/ocpi)

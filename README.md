@@ -1,5 +1,7 @@
 # OCPI Docs
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4d8ebf71-99de-497c-81bb-a1d028ae95d4/deploy-status)](https://app.netlify.com/sites/ocpi-dev/deploys)
+
 This repository contains a Docusaurus project that provides a translation and easier-to-navigate documentation of the
 official documentation of the OCPI protocol. The documentation is strictly translated from the original asciidoc files
 into markdown files, and flavored with the docusaurus options.
