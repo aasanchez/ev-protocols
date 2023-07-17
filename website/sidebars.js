@@ -21,6 +21,22 @@ const sidebars = {
         'terminology-and-definitions/data-retention',
       ],
     },
+    'topology',
+    'transport_and_format',
+    'status_codes',
+    'mod_versions',
+    'mod_credentials',
+    'mod_locations',
+    'mod_sessions',
+    'mod_cdrs',
+    'mod_tariffs',
+    'mod_tokens',
+    'mod_commands',
+    'mod_charging_profiles',
+    'mod_hub_client_info',
+    'types'
+
+
   ]
 };
 
