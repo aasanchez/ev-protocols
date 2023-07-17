@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-requirement-keywords
-slug: terminology-and-definitions/requirement-keywords
+id: requirement-keywords
+slug: requirement-keywords
 ---
 # Requirement Keywords
 

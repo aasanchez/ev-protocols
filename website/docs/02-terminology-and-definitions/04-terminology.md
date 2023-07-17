@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-terminology
-slug: terminology-and-definitions/terminology
+id: terminology
+slug: terminology
 ---
 # Terminology
 

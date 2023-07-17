@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-cardinality
-slug: terminology-and-definitions/cardinality
+id: cardinality
+slug: cardinality
 ---
 # Cardinality
 

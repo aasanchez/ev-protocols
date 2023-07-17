@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-abbreviations
-slug: terminology-and-definitions/abbreviations
+id: abbreviations
+slug: abbreviations
 ---
 # Abbreviations
 

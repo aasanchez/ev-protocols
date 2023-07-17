@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-ev-charging-market-roles
-slug: terminology-and-definitions/ev-charging-market-roles
+id: ev-charging-market-roles
+slug: ev-charging-market-roles
 ---
 # EV Charging Market Roles
 

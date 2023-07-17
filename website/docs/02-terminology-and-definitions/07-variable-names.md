@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-variable-names
-slug: terminology-and-definitions/variable-names
+id: variable-names
+slug: variable-names
 ---
 # Variable names
 

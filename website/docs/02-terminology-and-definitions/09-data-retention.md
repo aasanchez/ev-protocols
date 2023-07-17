@@ -1,6 +1,6 @@
 ---
-id: terminology-and-definitions-data-retention
-slug: terminology-and-definitions/data-retention
+id: data-retention
+slug: -data-retention
 ---
 # Data Retention
 
