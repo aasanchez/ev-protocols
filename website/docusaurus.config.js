@@ -85,7 +85,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docs',
             position: 'left',
             label: 'Docs'
           },
@@ -144,7 +144,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/aasanchez/ocpi'
+                href: 'https://github.com/aasanchez/ocpi.dev'
               }
             ]
           }

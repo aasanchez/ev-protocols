@@ -53,4 +53,4 @@ console: ## is used to open a console for your application
 	@echo "is used to open a console for your application"
 
 clean: ## is used to reset the infrastructure o an inditial state
-	@echo "is used to reset the infrastructure o an inditial state"
+	@cd website && npx docusaurus clear
