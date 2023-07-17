@@ -9,7 +9,7 @@ OCPI 2.1.1 and earlier were not designed for that. OCPI 2.2 introduced a solutio
 routing](https://ocpi.dev).
 
 OCPI 2.2 introduced Platforms that connect via OCPI instead of CPO and eMSP, more on this in: [EV Charging Market
-Roles](https://ocpi.dev)
+Roles](./02-terminology-and-definitions/03-ev-charging-market-roles.md)
 
 ## Peer-to-peer
 

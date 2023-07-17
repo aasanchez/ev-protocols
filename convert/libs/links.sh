@@ -176,7 +176,7 @@ function links(){
   gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#terminology.asciidoc#terminology_roles)|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#terminology.asciidoc#terminology_roles)|(./02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_authorization_header)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_client_owned_object_push)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_message_routing)|(https://ocpi.dev)|g' "$file"

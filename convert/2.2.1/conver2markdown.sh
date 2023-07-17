@@ -39,11 +39,11 @@ pandoc2markdown "02-terminology"
 links "website/docs/02-terminology.md"
 fix_terminology
 
-# . ./convert/2.2.1/03-topology.sh
-# pre_topology
-# pandoc2markdown "03-topology"
-# links "website/docs/03-topology.md"
-# fix_topology
+. ./convert/2.2.1/03-topology.sh
+pre_topology
+pandoc2markdown "03-topology"
+links "website/docs/03-topology.md"
+fix_topology
 
 # . ./convert/2.2.1/04-transport_and_format.sh
 # pre_transport_and_format
