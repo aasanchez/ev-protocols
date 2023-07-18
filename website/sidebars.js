@@ -8,7 +8,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         'terminology-and-definitions/requirement-keywords',
         'terminology-and-definitions/abbreviations',
@@ -22,18 +22,41 @@ const sidebars = {
       ],
     },
     'topology',
-    'transport_and_format',
+    {
+      type: 'category',
+      label: 'Transport and format',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'transport_and_format/json-http-implementation-guide',
+        'transport_and_format/unique-message-ids',
+        'transport_and_format/interface-endpoints',
+        'transport_and_format/offline-behaviour',
+      ],
+    },
     'status_codes',
-    'mod_versions',
-    'mod_credentials',
-    'mod_locations',
-    'mod_sessions',
-    'mod_cdrs',
-    'mod_tariffs',
-    'mod_tokens',
-    'mod_commands',
-    'mod_charging_profiles',
-    'mod_hub_client_info',
+    {
+      type: 'category',
+      label: 'Modules',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'mod_versions',
+        'mod_credentials',
+        'mod_locations',
+        'mod_sessions',
+        'mod_cdrs',
+        'mod_tariffs',
+        'mod_tokens',
+        'mod_commands',
+        'mod_charging_profiles',
+        'mod_hub_client_info',
+      ],
+    },
     'types'
 
 
