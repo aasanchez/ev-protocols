@@ -17,7 +17,7 @@ function fix_mod_credentials() {
 
   gsed -i "s|^\`\`\`\sjson|\`\`\`json|gm" "$file"
   gsed -i "s/’/'/gm" "$file"
-  gsed -i -e "s|^\# \*Credentials\* module|# Credentials module|gm" "$file"
+  gsed -i -e "s|^\# \*Credentials\* module|# Credentials|gm" "$file"
 
   gsed -i "s|^\*\*Module Identifier: \`credentials\`\*\*|\:\:\:tip Module Identifier\ncredentials\n\:\:\:|gm" "$file"
   gsed -i "s/\*\*Type:\*\* Configuration Module/\:\:\:info Type\nConfiguration Module\n\:\:\:/gm" "$file"

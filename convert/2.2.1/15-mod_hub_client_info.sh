@@ -12,7 +12,7 @@ function fix_mod_hub_client_info() {
   echo -e "---\nsidebar_position: 15\nslug: hub-client-info\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -e "s|^\# \*HubClientInfo\* module|# HubClientInfo module|gm" "$file"
+  gsed -i -e "s|^\# \*HubClientInfo\* module|# HubClientInfo|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`hubclientinfo\`\*\*|\:\:\:tip Module Identifier\nhubclientinfo\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`Hub\`\*\*|\:\:\:caution Data owner\nHub\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Configuration Module|\:\:\:info Type\nConfiguration Module\n\:\:\:|gm" "$file"

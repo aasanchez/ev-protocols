@@ -2,7 +2,7 @@
 sidebar_position: 13
 slug: commands
 ---
-# Commands module
+# Commands
 
 :::tip Module Identifier
 commands

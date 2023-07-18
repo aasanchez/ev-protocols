@@ -2,7 +2,7 @@
 sidebar_position: 10
 slug: cdrs
 ---
-# CDRs module
+# CDRs
 
 :::tip Module Identifier
 cdrs

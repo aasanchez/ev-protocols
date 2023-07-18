@@ -13,7 +13,7 @@ function fix_mod_tariffs() {
   echo -e "---\nsidebar_position: 11\nslug: tariffs\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -e "s|^\# \*Tariffs\* module|# Tariffs module|gm" "$file"
+  gsed -i -e "s|^\# \*Tariffs\* module|# Tariffs|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`tariffs\`\*\*|\:\:\:tip Module Identifier\ntariffs\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"

@@ -22,7 +22,7 @@ function fix_mod_versions() {
   gsed -i "s|\` mo| mo|gm" "$file"
   gsed -i 's/\*\*credentials\\ module,/**credentials** module,/g' "$file"
 
-  gsed -i -e "s|^\# \*Versions\* module|# Versions module|gm" "$file"
+  gsed -i -e "s|^\# \*Versions\* module|# Versions|gm" "$file"
 
   gsed -i "s/\*\*Type:\*\* Configuration Module/\:\:\:info Type\nConfiguration Module\n\:\:\:/gm" "$file"
 

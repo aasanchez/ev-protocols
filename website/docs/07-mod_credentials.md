@@ -2,7 +2,7 @@
 sidebar_position: 7
 slug: credentials
 ---
-# Credentials module
+# Credentials
 
 :::tip Module Identifier
 credentials

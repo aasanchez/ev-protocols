@@ -22,7 +22,7 @@ function fix_mod_charging_profiles() {
   echo -e "---\nsidebar_position: 14\nslug: charging-profiles\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -e "s|^\# \*ChargingProfiles\* module|# ChargingProfiles module|gm" "$file"
+  gsed -i -e "s|^\# \*ChargingProfiles\* module|# ChargingProfiles|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`chargingprofiles\`\*\*|\:\:\:tip Module Identifier\nchargingprofiles\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"
 

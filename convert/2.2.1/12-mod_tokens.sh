@@ -12,7 +12,7 @@ function fix_mod_tokens() {
   echo -e "---\nsidebar_position: 12\nslug: tokens\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -e "s|^\# \*Tokens\* module|# Tokens module|gm" "$file"
+  gsed -i -e "s|^\# \*Tokens\* module|# Tokens|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`tokens\`\*\*|\:\:\:tip Module Identifier\ntokens\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`MSP\`\*\*|\:\:\:caution Data owner\nMSP\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"

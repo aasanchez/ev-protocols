@@ -12,7 +12,7 @@ function fix_mod_cdrs() {
   echo -e "---\nsidebar_position: 10\nslug: cdrs\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -e "s|^\# \*CDRs\* module|# CDRs module|gm" "$file"
+  gsed -i -e "s|^\# \*CDRs\* module|# CDRs|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`cdrs\`\*\*|\:\:\:tip Module Identifier\ncdrs\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"

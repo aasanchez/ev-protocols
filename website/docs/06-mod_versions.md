@@ -2,7 +2,7 @@
 sidebar_position: 7
 slug: versions
 ---
-# Versions module
+# Versions
 
 :::info Type
 Configuration Module

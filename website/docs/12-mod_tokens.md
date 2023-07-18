@@ -2,7 +2,7 @@
 sidebar_position: 12
 slug: tokens
 ---
-# Tokens module
+# Tokens
 
 :::tip Module Identifier
 tokens

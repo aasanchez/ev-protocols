@@ -18,7 +18,7 @@ function fix_mod_locations() {
   echo -e "---\nsidebar_position: 8\nslug: locations\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
   
-  gsed -i -e "s|^\# \*Locations\* module|# Locations module|gm" "$file"
+  gsed -i -e "s|^\# \*Locations\* module|# Locations|gm" "$file"
   gsed -i    "s|^\*\*Module Identifier: \`locations\`\*\*|\:\:\:tip Module Identifier\nlocations\n\:\:\:|gm" "$file"
   gsed -i    "s|^\*\*Data owner: \`CPO\`\*\*|\:\:\:caution Data owner\nCPO\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"

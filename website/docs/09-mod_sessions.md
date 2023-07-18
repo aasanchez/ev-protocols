@@ -2,7 +2,7 @@
 sidebar_position: 9
 slug: sessions
 ---
-# Sessions module
+# Sessions
 
 :::tip Module Identifier
 sessions
