@@ -75,6 +75,7 @@ E_O_HEADERS
 
   file="$ROOT/website/docs/02-terminology-and-definitions/03-ev-charging-market-roles.md"
   gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: ev-charging-market-roles
@@ -85,6 +86,7 @@ E_O_HEADERS
 
   file="$ROOT/website/docs/02-terminology-and-definitions/04-terminology.md"
   gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: terminology

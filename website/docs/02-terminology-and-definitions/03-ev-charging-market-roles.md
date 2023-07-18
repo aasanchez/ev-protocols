@@ -42,7 +42,7 @@ Examples of platforms:
 * A Roaming Hub is in OCPI terms also a Platform, antoher OCPI Platform can connect to it. Most Roamings Hubs only have
   one role: Hub.
 
-### Typical OCPI implementations per Role
+## Typical OCPI implementations per Role
 
 The following table shows the typical modules implemented by the different roles. These are not required. The table
 shows the typical communication role: Receiver, Sender or Both.

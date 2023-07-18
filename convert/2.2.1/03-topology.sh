@@ -17,7 +17,7 @@ function fix_topology() {
   file="$ROOT/website/docs/03-topology.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 3\nslug: supported-topologies/\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: supported-topologies\nslug: supported-topologies/\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i '/<figure>/d' "$file"
