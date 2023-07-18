@@ -2,7 +2,7 @@
 
 function pre_transport_and_format(){
   file="$ROOT/ocpi/transport_and_format.asciidoc"
-  gsed -i "s|\[source\]|\[source, text\]|gm" "$file"
+  gsed -i "s|\[source\]|\[source, http\]|gm" "$file"
   gsed -i -e "s| {object-id} | \`object-id\` |gm" "$file"
   gsed -i -e "s|{base-ocpi-url}/{end-point}/{country-code}/{party-id}/{object-id}|\`{base-ocpi-url}/{end-point}/{country-code}/{party-id}/{object-id}\`|gm" "$file"
   
@@ -40,7 +40,7 @@ function fix_transport_and_format() {
   gsed -i -e 's|^  https|https|gm' "$file"
   gsed -i 's|^#### Example\:|\* \*\*Example:\*\*|gm' "$file"
   gsed -i "s|^\`\`\`\sjson|\`\`\`json|gm" "$file"
-  gsed -i "s|^\`\`\`\stext|\`\`\`text|gm" "$file"
+  gsed -i "s|^\`\`\`\shttp|\`\`\`http|gm" "$file"
   gsed -i 's|^        "status_code"|  "status_code"|gm' "$file"
   gsed -i 's|^        "status_message"|  "status_message"|gm' "$file"
   gsed -i 's|^        "timestamp"|  "timestamp"|gm' "$file"
@@ -68,4 +68,98 @@ function fix_transport_and_format() {
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
   echo "" >> "$file"
+}
+
+flavored_transport_and_format() {
+  file="$ROOT/website/docs/04-transport_and_format.md"
+  tempfile="$file.tmp"
+  echo "$file ocpi.dev flavored"
+
+  splitInH2 "$file"
+
+  rm -rf "$ROOT/website/docs/04-transport_and_format"
+  mkdir -p "$ROOT/website/docs/04-transport_and_format"
+
+  mv "$ROOT/tmp/jsonhttpimplementationguide.md" "$ROOT/website/docs/04-transport_and_format/01-json-http-implementation-guide.md"
+  mv "$ROOT/tmp/uniquemessageids.md"            "$ROOT/website/docs/04-transport_and_format/02-unique-message-ids.md"
+  mv "$ROOT/tmp/interfaceendpoints.md"          "$ROOT/website/docs/04-transport_and_format/03-interface-endpoints.md"
+  mv "$ROOT/tmp/offlinebehaviour.md"            "$ROOT/website/docs/04-transport_and_format/04-offline-behaviour.md"
+
+  file="$ROOT/website/docs/04-transport_and_format/01-json-http-implementation-guide.md"
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^##### /#### /gm" "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: json-http-implementation-guide
+slug: transport_and_format/json-http-implementation-guide
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+  gsed -i -z 's|### GET All via Hubs\n\nThis|\#\#\# GET All via Hubs \(headers description\)\n\nThis|gm' "$file"
+
+  search_text="http\nAuthorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg=="
+  replace_text="shell {2} title=\"Note: HTTP header names are case-insensitive\"\ncurl --request GET \"https://www.server.com/ocpi/cpo/2.2.1/versions\" \\\ \n--header \"Authorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg==\""
+  gsed -i -z "s|$search_text|$replace_text|g" "$file"
+
+  gsed -i -z "s|\n\:\:\:note\n\nHTTP header names are case-insensitive\n\n\:\:\:\n||g" "$file"
+
+  search_text="http\nAuthorization: Token ZXhhbXBsZS10b2tlbgo="
+  replace_text="shell {2}\ncurl --request GET \"https://www.server.com/ocpi/cpo/2.2.1/versions\" \\\ \n--header \"Authorization: Token ZXhhbXBsZS10b2tlbgo=\""
+  gsed -i -z "s|$search_text|$replace_text|g" "$file"
+
+  gsed -i 's/[ \t]*$//' "$file"
+  gsed -i 's|Example sequence diagram of a GET for 1 Object from a CPO on one platform to an MSP on another platform directly|Party to Party|gm' "$file"
+
+  gsed -i "s/^### GET/### GET Method/gm" "$file"
+  gsed -i "s/^### PUT/### PUT Method/gm" "$file"
+  gsed -i "s/^### PATCH/### PATCH Method/gm" "$file"
+
+  gsed -i -z "s|\:\:\:\n\n\*|\:\:\:\n\n\#\#\# Examples\n\n\*|gm" "$file"
+  gsed -i -z "s|\*\*Example\:\*\*\s||gm" "$file"
+
+  file="$ROOT/website/docs/04-transport_and_format/02-unique-message-ids.md"
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: unique-message-ids
+slug: transport_and_format/unique-message-ids
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+
+
+  file="$ROOT/website/docs/04-transport_and_format/03-interface-endpoints.md"
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: interface-endpoints
+slug: transport_and_format/interface-endpoints
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+
+
+  file="$ROOT/website/docs/04-transport_and_format/04-offline-behaviour.md"
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: offline-behaviour
+slug: transport_and_format/offline-behaviour
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+
+
+
+  rm "$ROOT/website/docs/04-transport_and_format.md"
 }

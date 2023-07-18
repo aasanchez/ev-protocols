@@ -3,15 +3,16 @@
 
 . ./convert/libs/global.sh
 
-. ./convert/2.2.1/01-introduction.sh
-flavored_introduction
+# . ./convert/2.2.1/01-introduction.sh
+# flavored_introduction
 
-. ./convert/2.2.1/02-terminology.sh
-flavored_terminology
+# . ./convert/2.2.1/02-terminology.sh
+# flavored_terminology
 
-. ./convert/2.2.1/03-topology.sh
+# . ./convert/2.2.1/03-topology.sh
 
 . ./convert/2.2.1/04-transport_and_format.sh
+flavored_transport_and_format
 
 # . ./convert/2.2.1/05-status_codes.sh
 
