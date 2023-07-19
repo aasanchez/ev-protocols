@@ -9,7 +9,7 @@ function fix_mod_versions() {
   file="$ROOT/website/docs/06-mod_versions.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 7\nslug: versions\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: versions\nslug: modules/versions\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -z "s|\`\n\n\`+|\`\n* \`|gm" "$file"

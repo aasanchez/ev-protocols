@@ -1,6 +1,6 @@
 ---
-sidebar_position: 9
-slug: sessions
+id: sessions
+slug: modules/sessions
 ---
 # Sessions
 

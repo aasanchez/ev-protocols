@@ -1,6 +1,6 @@
 ---
-sidebar_position: 11
-slug: tariffs
+id: tariffs
+slug: modules/tariffs
 ---
 # Tariffs
 

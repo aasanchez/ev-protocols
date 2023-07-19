@@ -2,15 +2,17 @@
 
 ROOT=$(pwd)
 
-OUTPUT_FILE="$ROOT/static/fieva.md"
-rm -rf "$OUTPUT_FILE"
+DIR="$ROOT/website/docs"
+markdown_files=$(find "$DIR" -name "*.md" | sort)
 
-for file in $(find "$ROOT"/docs/*.md | sort); do
+merged_file="website/static/fieva.md"
+rm -rf $merged_file
+touch $merged_file
+
+for file in $markdown_files; do
   echo "Merging $file..."
-  tail -n +5 "$file" >> "$OUTPUT_FILE"
-  echo "" >> "$OUTPUT_FILE"
+  cat "$file" >> $merged_file
 done
 
-gsed -i '/^$/{N;/^\n$/D;}' "$OUTPUT_FILE"
+mdl website/static/fieva.md
 
-mdl static/fieva.md

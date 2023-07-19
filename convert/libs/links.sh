@@ -4,6 +4,7 @@ function links(){
   file="$1"
 
   gsed -i 's|(#changelog.asciidoc#changelog_changelog)|(https://ocpi.dev)|g' "$file"
+
   gsed -i 's|(#credentials.asciidoc#credentials_credentials_endpoint)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#credentials.asciidoc#credentials_credentials_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#credentials.asciidoc#credentials_credentials_role_class)|(https://ocpi.dev)|g' "$file"
@@ -13,7 +14,9 @@ function links(){
   gsed -i 's|(#credentials_get_method)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#credentials_post_method)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#credentials_put_method)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#evse_delete_with_status_update)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#mod_cdrs.asciidoc#mod_cdrs_authmethod_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_cdrs.asciidoc#mod_cdrs_cdr_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_cdrs.asciidoc#mod_cdrs_cdr_token_object)|(https://ocpi.dev)|g' "$file"
@@ -33,8 +36,9 @@ function links(){
   gsed -i 's|(#mod_cdrs_post_method)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_cdrs_signed_data_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_cdrs_signed_value_class)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_charging_profiles.asciidoc#mod_charging_profiles_module)|(/14-mod_charging_profiles.md#smart-charging-topologies)|g' "$file"
-  gsed -i 's|(#mod_charging_profiles_active_charging_profile_class)|(/14-mod_charging_profiles.md#activechargingprofile-class)|g' "$file"
+
+  gsed -i 's|(#mod_charging_profiles.asciidoc#mod_charging_profiles_module)|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#mod_charging_profiles_active_charging_profile_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_charging_profiles_active_charging_profiles_result_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_charging_profiles_active_charging_profiles_result_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_charging_profiles_charging_profile_class)|(https://ocpi.dev)|g' "$file"
@@ -51,6 +55,7 @@ function links(){
   gsed -i 's|(#mod_charging_profiles_responsetype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_charging_profiles_resulttype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_charging_profiles_set_charging_profile_object)|(https://ocpi.dev)|g' "$file"
+
   gsed -i 's|(#mod_commands.asciidoc#mod_commands_cancelreservation_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_commands.asciidoc#mod_commands_commands_module)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_commands.asciidoc#mod_commands_reservenow_object)|(https://ocpi.dev)|g' "$file"
@@ -70,12 +75,14 @@ function links(){
   gsed -i 's|(#mod_commands_startsession_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_commands_stopsession_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_commands_unlockconnector_object)|(https://ocpi.dev)|g' "$file"
+
   gsed -i 's|(#mod_hub_client_info.asciidoc#mod_hub_client_info_module)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_hub_client_info_client_get)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_hub_client_info_client_put)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_hub_client_info_hub_client_info_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_hub_client_info_hub_connection_type_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_hub_client_info_hub_get)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#mod_locations.asciidoc#mod_locations_businessdetails_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_locations.asciidoc#mod_locations_capability_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_locations.asciidoc#mod_locations_connector_object)|(https://ocpi.dev)|g' "$file"
@@ -123,6 +130,7 @@ function links(){
   gsed -i 's|(#mod_locations_regularhours_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_locations_status_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_locations_statusschedule_class)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#mod_sessions.asciidoc#mod_sessions_profile_type_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_sessions.asciidoc#mod_sessions_session_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_sessions.asciidoc#mod_sessions_sessions_module)|(https://ocpi.dev)|g' "$file"
@@ -137,6 +145,7 @@ function links(){
   gsed -i 's|(#mod_sessions_profile_type_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_sessions_session_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_sessions_sessionstatus_enum)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#mod_tariffs.asciidoc#mod_tariffs_pricecomponent_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tariffs.asciidoc#mod_tariffs_tariff_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tariffs.asciidoc#mod_tariffs_tariffdimensiontype_enum)|(https://ocpi.dev)|g' "$file"
@@ -157,6 +166,7 @@ function links(){
   gsed -i 's|(#mod_tariffs_tariffdimensiontype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tariffs_tariffelement_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tariffs_tariffrestrictions_class)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_real-time_authorization)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_token_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_tokens_module)|(https://ocpi.dev)|g' "$file"
@@ -173,10 +183,13 @@ function links(){
   gsed -i 's|(#mod_tokens_token_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens_tokentype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens_whitelisttype_enum)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#terminology.asciidoc#terminology_roles)|(./02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
+  
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_authorization_header)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_client_owned_object_push)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_message_routing)|(https://ocpi.dev)|g' "$file"
@@ -195,6 +208,7 @@ function links(){
   gsed -i 's|(#transport_and_format_pull_and_push)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format_put)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#transport_and_format_response_format)|(https://ocpi.dev)|g' "$file"
+  
   gsed -i 's|(#types.asciidoc#mod_tokens_energy_contract)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#types.asciidoc#types_cistring_type)|(/16-types.md#cistring-type)|g' "$file"
   gsed -i 's|(#types.asciidoc#types_datetime_type)|(/16-types.md#datetime-type)|g' "$file"
@@ -206,6 +220,7 @@ function links(){
   gsed -i 's|(#types.asciidoc#types_url_type)|(/16-types.md#url-type)|g' "$file"
   gsed -i 's|(#types_number_type)|(#number-type)|g' "$file"
   gsed -i 's|(#types_string_type)|(#string-type)|g' "$file"
+  
   gsed -i 's|(#version_information_endpoint.asciidoc#versions_module)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#version_information_endpoint_endpoint_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#version_information_endpoint_interface_role_enum)|(https://ocpi.dev)|g' "$file"
@@ -214,4 +229,5 @@ function links(){
   gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(https://ocpi.dev)|g' "$file"
+
 }

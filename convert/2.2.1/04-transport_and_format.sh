@@ -77,15 +77,15 @@ flavored_transport_and_format() {
 
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/04-transport_and_format"
-  mkdir -p "$ROOT/website/docs/04-transport_and_format"
+  rm -rf "$ROOT/website/docs/04-transport-and-format"
+  mkdir -p "$ROOT/website/docs/04-transport-and-format"
 
-  mv "$ROOT/tmp/jsonhttpimplementationguide.md" "$ROOT/website/docs/04-transport_and_format/01-json-http-implementation-guide.md"
-  mv "$ROOT/tmp/uniquemessageids.md"            "$ROOT/website/docs/04-transport_and_format/02-unique-message-ids.md"
-  mv "$ROOT/tmp/interfaceendpoints.md"          "$ROOT/website/docs/04-transport_and_format/03-interface-endpoints.md"
-  mv "$ROOT/tmp/offlinebehaviour.md"            "$ROOT/website/docs/04-transport_and_format/04-offline-behaviour.md"
+  mv "$ROOT/tmp/jsonhttpimplementationguide.md" "$ROOT/website/docs/04-transport-and-format/01-json-http-implementation-guide.md"
+  mv "$ROOT/tmp/uniquemessageids.md"            "$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
+  mv "$ROOT/tmp/interfaceendpoints.md"          "$ROOT/website/docs/04-transport-and-format/03-interface-endpoints.md"
+  mv "$ROOT/tmp/offlinebehaviour.md"            "$ROOT/website/docs/04-transport-and-format/04-offline-behaviour.md"
 
-  file="$ROOT/website/docs/04-transport_and_format/01-json-http-implementation-guide.md"
+  file="$ROOT/website/docs/04-transport-and-format/01-json-http-implementation-guide.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
@@ -94,7 +94,7 @@ flavored_transport_and_format() {
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: json-http-implementation-guide
-slug: transport_and_format/json-http-implementation-guide
+slug: json-http-implementation-guide
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -121,39 +121,39 @@ E_O_HEADERS
   gsed -i -z "s|\:\:\:\n\n\*|\:\:\:\n\n\#\#\# Examples\n\n\*|gm" "$file"
   gsed -i -z "s|\*\*Example\:\*\*\s||gm" "$file"
 
-  file="$ROOT/website/docs/04-transport_and_format/02-unique-message-ids.md"
+  file="$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: unique-message-ids
-slug: transport_and_format/unique-message-ids
+slug: unique-message-ids
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
 
 
-  file="$ROOT/website/docs/04-transport_and_format/03-interface-endpoints.md"
+  file="$ROOT/website/docs/04-transport-and-format/03-interface-endpoints.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: interface-endpoints
-slug: transport_and_format/interface-endpoints
+slug: interface-endpoints
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
 
 
-  file="$ROOT/website/docs/04-transport_and_format/04-offline-behaviour.md"
+  file="$ROOT/website/docs/04-transport-and-format/04-offline-behaviour.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: offline-behaviour
-slug: transport_and_format/offline-behaviour
+slug: offline-behaviour
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"

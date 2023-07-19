@@ -24,7 +24,10 @@ function pre_introduction(){
   gsed -i 's|Fastned|https://fastnedcharging.com[Fastned]|g' "$file"
   gsed -i 's|AvantIT|https://www.avantit.no[AvantIT]|g' "$file"
   gsed -i 's|Chargemap|https://chargemap.com[Chargemap]|g' "$file"
-  gsed -i 's|Vattenfall|https://vattenfall.com/[Vattenfall]|g' "$file"
+  gsed -i 's|Vattenfall|https://vattenfall.com[Vattenfall]|g' "$file"
+  gsed -i 's|Involtum|https://www.involtum.com[Involtum]|g' "$file"
+  gsed -i 's|EON|https://www.eon.com[EON]|g' "$file"
+
 }
 
 function fix_introduction() {

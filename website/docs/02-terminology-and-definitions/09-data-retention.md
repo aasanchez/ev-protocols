@@ -1,6 +1,6 @@
 ---
 id: data-retention
-slug: -data-retention
+slug: data-retention
 ---
 # Data Retention
 

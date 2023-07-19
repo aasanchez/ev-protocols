@@ -9,7 +9,7 @@ function fix_mod_hub_client_info() {
   file="$ROOT/website/docs/15-mod_hub_client_info.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 15\nslug: hub-client-info\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: hub_client_info\nslug: modules/hub-client-info\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*HubClientInfo\* module|# HubClientInfo|gm" "$file"

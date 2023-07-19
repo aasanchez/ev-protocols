@@ -1,6 +1,6 @@
 ---
 id: json-http-implementation-guide
-slug: transport_and_format/json-http-implementation-guide
+slug: json-http-implementation-guide
 ---
 # JSON / HTTP implementation guide
 

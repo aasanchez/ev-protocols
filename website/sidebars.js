@@ -7,6 +7,7 @@ const sidebars = {
       label: 'Terminology and Definitions',
       link: {
         type: 'generated-index',
+        slug: 'terminology-and-definitions',
       },
       collapsed: true,
       items: [
@@ -27,14 +28,14 @@ const sidebars = {
       label: 'Transport and format',
       link: {
         type: 'generated-index',
+        slug: 'transport-and-format',
       },
       collapsed: true,
       items: [
-        // 'transport_and_format',
-        'transport_and_format/json-http-implementation-guide',
-        'transport_and_format/unique-message-ids',
-        'transport_and_format/interface-endpoints',
-        'transport_and_format/offline-behaviour',
+        'transport-and-format/json-http-implementation-guide',
+        'transport-and-format/unique-message-ids',
+        'transport-and-format/interface-endpoints',
+        'transport-and-format/offline-behaviour'
       ],
     },
     'status_codes',
@@ -43,19 +44,20 @@ const sidebars = {
       label: 'Modules',
       link: {
         type: 'generated-index',
+        slug: 'modules'
       },
       collapsed: true,
       items: [
-        'mod_versions',
-        'mod_credentials',
-        'mod_locations',
-        'mod_sessions',
-        'mod_cdrs',
-        'mod_tariffs',
-        'mod_tokens',
-        'mod_commands',
-        'mod_charging_profiles',
-        'mod_hub_client_info',
+        'versions',
+        'credentials',
+        'locations',
+        'sessions',
+        'cdrs',
+        'tariffs',
+        'tokens',
+        'commands',
+        'charging_profiles',
+        'hub_client_info',
       ],
     },
     'types'

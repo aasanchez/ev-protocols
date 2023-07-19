@@ -9,7 +9,7 @@ function fix_mod_sessions() {
   file="$ROOT/website/docs/09-mod_sessions.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 9\nslug: sessions\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: sessions\nslug: modules/sessions\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*Sessions\* module|# Sessions|gm" "$file"

@@ -1,6 +1,6 @@
 ---
-sidebar_position: 8
-slug: locations
+id: locations
+slug: modules/locations
 ---
 # Locations
 

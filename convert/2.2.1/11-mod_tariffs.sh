@@ -10,7 +10,7 @@ function fix_mod_tariffs() {
   file="$ROOT/website/docs/11-mod_tariffs.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 11\nslug: tariffs\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: tariffs\nslug: modules/tariffs\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -e "s|^\# \*Tariffs\* module|# Tariffs|gm" "$file"

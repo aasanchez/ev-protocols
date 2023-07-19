@@ -31,15 +31,15 @@ Box](https://evbox.com), [New Motion](https://newmotion.com), [ElaadNL](https://
 [Enervalis](https://enervalis.com), [Place to plug](https://placetoplug.com), [Plugsurfing](https://plugsurfing.com),
 [Ecomovement](https://www.eco-movement.com), [Allego](https://www.allego.eu), Gronn Kontakt Norway,
 [ENIO](https://www.enio-management.com), [Fastned](https://fastnedcharging.com), [AvantIT](https://www.avantit.no),
-[Chargemap](https://chargemap.com), Involtum, Capitol Region Denmark, [Vattenfall](https://vattenfall.com/), EON, ECY
-Conseil Emeric Chardiny, Eneco Mobility, Google, Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge,
-Service House, Alfen / ICU, PI2 Consultancy, Pitpoint, Blue Corner, Building Energy, Chargestorm, Chargepoint, ESARJ,
-Chargelab.co, MUVEXT, Next Green Car / Zap Map, Be Mo Tech, Parking Eagle, GraphDefined, Chargecloud,
-Rutgerplantengaconsulting, Everon, Tanqyou, Electric Vehicle Association Scotland (EVA NCS), EV-Tech, Plugin Power,
-[Last Mile Solutions](https://lastmilesolutions.com), BIA Power, IBIL, Gridscape, Maxem, Virta, EasyCharger, Total EV
-Charge, Gowithflow, EKAROS, Rexel US, Stekker App, Travelcard, Emobility Consulting. The EVRoaming foundation supported
-by the Netherlands Knowledge Platform for Charging Infrastructure (NKL) facilitates and coordinates this protocol to
-guarantee progress and ensure development and results.
+[Chargemap](https://chargemap.com), [Involtum](https://www.involtum.com), Capitol Region Denmark,
+[Vattenfall](https://vattenfall.com), [EON](https://www.eon.com), ECY Conseil Emeric Chardiny, Eneco Mobility, Google,
+Jedlix, MTC, Smartlab, Sodetrel, XXIMO, Mnemonics, Share & Charge, Service House, Alfen / ICU, PI2 Consultancy,
+Pitpoint, Blue Corner, Building Energy, Chargestorm, Chargepoint, ESARJ, Chargelab.co, MUVEXT, Next Green Car / Zap Map,
+Be Mo Tech, Parking Eagle, GraphDefined, Chargecloud, Rutgerplantengaconsulting, Everon, Tanqyou, Electric Vehicle
+Association Scotland (EVA NCS), EV-Tech, Plugin Power, [Last Mile Solutions](https://lastmilesolutions.com), BIA Power,
+IBIL, Gridscape, Maxem, Virta, EasyCharger, Total EV Charge, Gowithflow, EKAROS, Rexel US, Stekker App, Travelcard,
+Emobility Consulting. The EVRoaming foundation supported by the Netherlands Knowledge Platform for Charging
+Infrastructure (NKL) facilitates and coordinates this protocol to guarantee progress and ensure development and results.
 
 This document describes a combined set of standards based on the work done in the past. Next to that, the evolution of
 these standards and their use are taken into account and some elements have been updated to match nowadays use.
@@ -67,7 +67,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
   * [Message routing headers](https://ocpi.dev)
   * [Hub Client Info](https://ocpi.dev)
 * [Support Platforms with multiple/different roles](https://ocpi.dev)
-* [Charging Profiles](/14-mod_charging_profiles.md#smart-charging-topologies)
+* [Charging Profiles](https://ocpi.dev)
 * [Preference based Smart Charging](https://ocpi.dev)
 * Improvements:
   * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,

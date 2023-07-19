@@ -58,7 +58,7 @@ flavored_terminology() {
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: requirement-keywords
-slug: terminology-and-definitions/requirement-keywords
+slug: requirement-keywords
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -68,7 +68,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: abbreviations
-slug: terminology-and-definitions/abbreviations
+slug: abbreviations
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -79,7 +79,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: ev-charging-market-roles
-slug: terminology-and-definitions/ev-charging-market-roles
+slug: ev-charging-market-roles
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -90,7 +90,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: terminology
-slug: terminology-and-definitions/terminology
+slug: terminology
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -101,7 +101,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: provider-and-operator-abbreviation
-slug: terminology-and-definitions/provider-and-operator-abbreviation
+slug: provider-and-operator-abbreviation
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -111,7 +111,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: charging-topology
-slug: terminology-and-definitions/charging-topology
+slug: charging-topology
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -122,7 +122,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: variable-names
-slug: terminology-and-definitions/variable-names
+slug: variable-names
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -132,7 +132,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: cardinality
-slug: terminology-and-definitions/cardinality
+slug: cardinality
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -143,7 +143,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-retention
-slug: terminology-and-definitions/data-retention
+slug: data-retention
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"

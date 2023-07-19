@@ -1,6 +1,6 @@
 ---
-sidebar_position: 13
-slug: commands
+id: commands
+slug: modules/commands
 ---
 # Commands
 

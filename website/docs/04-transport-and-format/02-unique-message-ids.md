@@ -1,6 +1,6 @@
 ---
 id: unique-message-ids
-slug: transport_and_format/unique-message-ids
+slug: unique-message-ids
 ---
 # Unique message IDs
 

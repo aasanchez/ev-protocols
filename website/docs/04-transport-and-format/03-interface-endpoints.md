@@ -1,6 +1,6 @@
 ---
 id: interface-endpoints
-slug: transport_and_format/interface-endpoints
+slug: interface-endpoints
 ---
 # Interface endpoints
 

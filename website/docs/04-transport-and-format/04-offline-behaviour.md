@@ -1,6 +1,6 @@
 ---
 id: offline-behaviour
-slug: transport_and_format/offline-behaviour
+slug: offline-behaviour
 ---
 # Offline behaviour
 
