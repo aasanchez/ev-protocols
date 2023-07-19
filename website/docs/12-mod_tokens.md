@@ -92,7 +92,7 @@ cache is still correct.
 Typically implemented by market roles like: CPO.
 
 With this interface the Sender can push the Token information to the Receiver. Tokens is a [Client Owned
-Object](https://ocpi.dev), so the end-points need to contain
+Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the end-points need to contain
 the required extra fields: {[party_id](https://ocpi.dev)} and
 {[country_code](https://ocpi.dev)}.
 
@@ -249,10 +249,10 @@ Examples:
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only Tokens with (`last_updated`) between the
 given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
 
-This request is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters. This request
-is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters. This request
+is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                               | Required | Description                                                                                      |
 |-----------|----------------------------------------|----------|--------------------------------------------------------------------------------------------------|
@@ -264,7 +264,7 @@ is [paginated](https://ocpi.dev), it supports the
 ##### Response Data
 
 The endpoint response with list of valid Token objects, the header will contain the
-[pagination](https://ocpi.dev) related headers.
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
 
 Any older information that is not specified in the response is considered as no longer valid. Each object must contain
 all required fields. Fields that are not specified may be considered as null values.

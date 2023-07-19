@@ -116,12 +116,14 @@ E_O_HEADERS
   gsed -i 's/[ \t]*$//' "$file"
   gsed -i 's|Example sequence diagram of a GET for 1 Object from a CPO on one platform to an MSP on another platform directly|Party to Party|gm' "$file"
 
-  gsed -i "s/^### GET/### GET Method/gm" "$file"
+  gsed -i "s/^### GET$/### GET Method/gm" "$file"
   gsed -i "s/^### PUT/### PUT Method/gm" "$file"
   gsed -i "s/^### PATCH/### PATCH Method/gm" "$file"
 
   gsed -i -z "s|\:\:\:\n\n\*|\:\:\:\n\n\#\#\# Examples\n\n\*|gm" "$file"
   gsed -i -z "s|\*\*Example\:\*\*\s||gm" "$file"
+
+  gsed -i "/^\`\`\`json$/,/^\`\`\`$/ s/^/    /" "$file"
 
   file="$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
   echo "flavoring $file"
@@ -160,8 +162,6 @@ slug: offline-behaviour
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
-
-
 
   rm "$ROOT/website/docs/04-transport_and_format.md"
 }

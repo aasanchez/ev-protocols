@@ -16,7 +16,7 @@ The credentials module is used to exchange the credentials token that has to be 
 requests.
 
 Every OCPI request is required to contain a credentials token in the [HTTP Authorization
-header](https://ocpi.dev).
+header](/04-transport-and-format/01-json-http-implementation-guide.md#authorization-header).
 
 ## Use cases
 
@@ -167,11 +167,11 @@ when a CPO provides *white-label* services for *virtual* CPOs.
 
 One or more roles and thus `party_id` and `country_code` sets are provided here to inform a server about the `party_id`
 and `country_code` sets a client will use when pushing [Client Owned
-Objects](https://ocpi.dev). This helps a server to determine
+Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push). This helps a server to determine
 the URLs a client will use when pushing a [Client Owned
-Object](https://ocpi.dev). The `country_code` is added to
+Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push). The `country_code` is added to
 make certain the URL used when pushing a [Client Owned
-Object](https://ocpi.dev) is unique as there might be
+Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push) is unique as there might be
 multiple parties in the world with the same `party_id`. The combination of `country_code` and `party_id` should always
 be unique though. A party operating in multiple countries can always use the home country of the company for all
 connections.

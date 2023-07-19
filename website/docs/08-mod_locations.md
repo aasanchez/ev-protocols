@@ -148,8 +148,8 @@ the following logic MUST be implemented accordingly: If an EVSE is updated, also
 field needs to be updated. Similarly, if a Connector is updated, the EVSE's `last_updated` and the Location's
 `last_updated` fields need to be updated.
 
-This request is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                               | Required | Description                                                                                         |
 |-----------|----------------------------------------|----------|-----------------------------------------------------------------------------------------------------|
@@ -161,7 +161,7 @@ This request is [paginated](https://ocpi.dev), it supports the
 ##### GET List: Response Data
 
 This endpoint returns a list of Location objects. The header will contain the
-[pagination](https://ocpi.dev) related headers.
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
 
 Each object must contain all required fields. Fields that are not specified may be considered as null values. Any old
 information that is not specified in the response is considered no longer valid. For requests that use pagination, the
@@ -208,7 +208,7 @@ Choice: one of three
 
 Typically implemented by market roles like: eMSP and NSP.
 
-Locations are [Client Owned Objects](https://ocpi.dev), so
+Locations are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so
 the end-points need to contain the required extra fields:
 {[party_id](https://ocpi.dev)} and
 {[country_code](https://ocpi.dev)}.

@@ -80,16 +80,16 @@ hours, not minutes, and to introduce some splay (randomize the length of the pol
 
 ## Request format
 
-The request method can be any of [GET](https://ocpi.dev), POST, [PUT](https://ocpi.dev),
-[PATCH](https://ocpi.dev) or DELETE. The OCPI protocol uses them in a way similar to REST APIs.
+The request method can be any of [GET](#get-method), POST, [PUT](#put-method),
+[PATCH](#patch-method) or DELETE. The OCPI protocol uses them in a way similar to REST APIs.
 
-| Method                    | Description                                        |
-|---------------------------|----------------------------------------------------|
-| [GET](https://ocpi.dev)   | Fetches objects or information.                    |
-| POST                      | Creates new objects or information.                |
-| [PUT](https://ocpi.dev)   | Updates existing objects or information.           |
-| [PATCH](https://ocpi.dev) | Partially updates existing objects or information. |
-| DELETE                    | Removes existing objects or information.           |
+| Method                 | Description                                        |
+|------------------------|----------------------------------------------------|
+| [GET](#get-method)     | Fetches objects or information.                    |
+| POST                   | Creates new objects or information.                |
+| [PUT](#put-method)     | Updates existing objects or information.           |
+| [PATCH](#patch-method) | Partially updates existing objects or information. |
+| DELETE                 | Removes existing objects or information.           |
 
 The HTTP header: Content-Type SHALL be set to `application/json` for any request that contains a message body: POST, PUT
 and PATCH. When no body is present, probably in a GET or DELETE, then the Content-Type header MAY be omitted.
@@ -213,9 +213,9 @@ updated. Any fields (both required or optional) that are left out remain unchang
 
 The MIME-type of the request body is: `application/json` and may contain the data as documented for each endpoint.
 
-In case a PATCH request fails, the client is expected to call the [GET](https://ocpi.dev) method to check the
+In case a PATCH request fails, the client is expected to call the [GET](#get-method) method to check the
 state of the object in the other party's system. If the object doesn't exist, the client should do a
-[PUT](https://ocpi.dev).
+[PUT](#put-method).
 
 ## Client Owned Object Push
 
@@ -311,128 +311,128 @@ Session objects, and PATCH requests to add charging periods to Sessions.
 
 * Version information response (list of objects)
 
-```json
-{
-  "data": [
+    ```json
     {
-      "version": "2.1.1",
-      "url": "https://example.com/ocpi/cpo/2.1.1"
-    },
-    {
-      "version": "2.2",
-      "url": "https://example.com/ocpi/cpo/2.2"
+      "data": [
+        {
+          "version": "2.1.1",
+          "url": "https://example.com/ocpi/cpo/2.1.1"
+        },
+        {
+          "version": "2.2",
+          "url": "https://example.com/ocpi/cpo/2.2"
+        }
+      ],
+      "status_code": 1000,
+      "status_message": "Success",
+      "timestamp": "2015-06-30T21:59:59Z"
     }
-  ],
-  "status_code": 1000,
-  "status_message": "Success",
-  "timestamp": "2015-06-30T21:59:59Z"
-}
-```
+    ```
 
 * Version details response (one object)
 
-```json
-{
-  "data": {
-    "version": "2.2",
-    "endpoints": [
-      {
-        "identifier": "credentials",
-        "role": "SENDER",
-        "url": "https://example.com/ocpi/cpo/2.2/credentials"
+    ```json
+    {
+      "data": {
+        "version": "2.2",
+        "endpoints": [
+          {
+            "identifier": "credentials",
+            "role": "SENDER",
+            "url": "https://example.com/ocpi/cpo/2.2/credentials"
+          },
+          {
+            "identifier": "locations",
+            "role": "SENDER",
+            "url": "https://example.com/ocpi/cpo/2.2/locations"
+          }
+        ]
       },
-      {
-        "identifier": "locations",
-        "role": "SENDER",
-        "url": "https://example.com/ocpi/cpo/2.2/locations"
-      }
-    ]
-  },
-  "status_code": 1000,
-  "status_message": "Success",
-  "timestamp": "2015-06-30T21:59:59Z"
-}
-```
+      "status_code": 1000,
+      "status_message": "Success",
+      "timestamp": "2015-06-30T21:59:59Z"
+    }
+    ```
 
 * Tokens GET Response with one Token object. (CPO end-point) (one object)
 
-```json
-{
-  "data": {
-    "country_code": "DE",
-    "party_id": "TNM",
-    "uid": "012345678",
-    "type": "RFID",
-    "contract_id": "FA54320",
-    "visual_number": "DF000-2001-8999",
-    "issuer": "TheNewMotion",
-    "valid": true,
-    "whitelist": "ALLOWED",
-    "last_updated": "2015-06-29T22:39:09Z"
-  },
-  "status_code": 1000,
-  "status_message": "Success",
-  "timestamp": "2015-06-30T21:59:59Z"
-}
-```
+    ```json
+    {
+      "data": {
+        "country_code": "DE",
+        "party_id": "TNM",
+        "uid": "012345678",
+        "type": "RFID",
+        "contract_id": "FA54320",
+        "visual_number": "DF000-2001-8999",
+        "issuer": "TheNewMotion",
+        "valid": true,
+        "whitelist": "ALLOWED",
+        "last_updated": "2015-06-29T22:39:09Z"
+      },
+      "status_code": 1000,
+      "status_message": "Success",
+      "timestamp": "2015-06-30T21:59:59Z"
+    }
+    ```
 
 * Tokens GET Response with list of Token objects. (eMSP end-point) (list of objects)
 
-```json
-{
-  "data": [
+    ```json
     {
-      "country_code": "NL",
-      "party_id": "TNM",
-      "uid": "100012",
-      "type": "RFID",
-      "contract_id": "FA54320",
-      "visual_number": "DF000-2001-8999",
-      "issuer": "TheNewMotion",
-      "valid": true,
-      "whitelist": "ALWAYS",
-      "last_updated": "2015-06-21T22:39:05Z"
-    },
-    {
-      "country_code": "NL",
-      "party_id": "TNM",
-      "uid": "100013",
-      "type": "RFID",
-      "contract_id": "FA543A5",
-      "visual_number": "DF000-2001-9000",
-      "issuer": "TheNewMotion",
-      "valid": true,
-      "whitelist": "ALLOWED",
-      "last_updated": "2015-06-28T11:21:09Z"
-    },
-    {
-      "country_code": "NL",
-      "party_id": "TNM",
-      "uid": "100014",
-      "type": "RFID",
-      "contract_id": "FA543BB",
-      "visual_number": "DF000-2001-9010",
-      "issuer": "TheNewMotion",
-      "valid": false,
-      "whitelist": "ALLOWED",
-      "last_updated": "2015-05-29T10:12:26Z"
+      "data": [
+        {
+          "country_code": "NL",
+          "party_id": "TNM",
+          "uid": "100012",
+          "type": "RFID",
+          "contract_id": "FA54320",
+          "visual_number": "DF000-2001-8999",
+          "issuer": "TheNewMotion",
+          "valid": true,
+          "whitelist": "ALWAYS",
+          "last_updated": "2015-06-21T22:39:05Z"
+        },
+        {
+          "country_code": "NL",
+          "party_id": "TNM",
+          "uid": "100013",
+          "type": "RFID",
+          "contract_id": "FA543A5",
+          "visual_number": "DF000-2001-9000",
+          "issuer": "TheNewMotion",
+          "valid": true,
+          "whitelist": "ALLOWED",
+          "last_updated": "2015-06-28T11:21:09Z"
+        },
+        {
+          "country_code": "NL",
+          "party_id": "TNM",
+          "uid": "100014",
+          "type": "RFID",
+          "contract_id": "FA543BB",
+          "visual_number": "DF000-2001-9010",
+          "issuer": "TheNewMotion",
+          "valid": false,
+          "whitelist": "ALLOWED",
+          "last_updated": "2015-05-29T10:12:26Z"
+        }
+      ],
+      "status_code": 1000,
+      "status_message": "Success",
+      "timestamp": "2015-06-30T21:59:59Z"
     }
-  ],
-  "status_code": 1000,
-  "status_message": "Success",
-  "timestamp": "2015-06-30T21:59:59Z"
-}
-```
+    ```
 
 * Response with an error (contains no data field)
 
-```json
-{
-  "status_code": 2001,
-  "status_message": "Missing required field: type",
-  "timestamp": "2015-06-30T21:59:59Z"
-}
-```
+    ```json
+    {
+      "status_code": 2001,
+      "status_message": "Missing required field: type",
+      "timestamp": "2015-06-30T21:59:59Z"
+    }
+    ```
 
 ## Message Routing
 
@@ -462,7 +462,7 @@ four HTTP headers are to be added to any request/response to allow messages to b
 
 When implementing OCPI these four headers SHALL be implemented for any request/response to/from a Functional Module.
 This does not mean they have to be present in all request. There are situation/special request where some headers can or
-shall be omitted, See: [Open Routing Request](https://ocpi.dev)
+shall be omitted, See: [Open Routing Request](#open-routing-request)
 
 Only requests/responses from Function Modules: such as: [Tokens](https://ocpi.dev),
 [Locations](https://ocpi.dev), [CDRs](https://ocpi.dev)
@@ -505,7 +505,7 @@ module, using its own party-id and country-code in the *OCPI-from-* headers. The
 country-code in the *OCPI-to-* headers.
 
 GET SHALL NOT be used in combination with Broadcast Push. If the requesting party wants to GET information of which it
-does not know the receiving party, an [Open Routing Request](https://ocpi.dev)
+does not know the receiving party, an [Open Routing Request](#open-routing-request)
 MUST be used. (see below)
 
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
@@ -530,16 +530,16 @@ know the destination of a request, the *OCPI-to-* headers can be omitted in the 
 then decide to which party a request needs to be routed, or that it needs to be broadcasted if the destination cannot be
 determined.
 
-This has nothing to do with [Broadcast Push](https://ocpi.dev) though, as [Broadcast
-Push](https://ocpi.dev) only works for the [Push
-model](https://ocpi.dev), not for [GET](https://ocpi.dev) requests.
+This has nothing to do with [Broadcast Push](#broadcast-push) though, as [Broadcast
+Push](#broadcast-push) only works for the [Push
+model](#pull-and-push), not for [GET](#get-method) requests.
 
-Open Routing Requests are possible for GET ([Not GET ALL](https://ocpi.dev)), POST, PUT, PATCH and
+Open Routing Requests are possible for GET ([Not GET ALL](#get-all-via-hubs)), POST, PUT, PATCH and
 DELETE.
 
 ![Example sequence diagram of a open routing GET from a CPO via the Hub](../images/sd_get_openrouting.svg)
 
-### GET Method All via Hubs
+### GET All via Hubs
 
 A client (Receiver) can request a GET on the Sender interface of a module implemented by a Hub. To request a GET All
 from a Hub, the client uses the party-id and country-code of the Hub in the *OCPI-to-* headers, and calls the GET method
@@ -588,7 +588,7 @@ from one platform to another platform via a Hub.
 #### Party to Party Broadcast Push
 
 This table contains the description of which headers are required to be used for which message when a request is a
-[Broadcast Push](https://ocpi.dev) to the Hub.
+[Broadcast Push](#broadcast-push) to the Hub.
 
 | Name               | Route                      | TO Headers       | FROM Headers     |
 |--------------------|----------------------------|------------------|------------------|
@@ -602,7 +602,7 @@ This table contains the description of which headers are required to be used for
 #### Party to Party Open Routing Request
 
 This table contains the description of which headers are required to be used for which message when [the routing of a
-request needs to be determined by the Hub itself](https://ocpi.dev). For an
+request needs to be determined by the Hub itself](#open-routing-request). For an
 Open Routing Request, the TO headers in the request from the requesting party to the Hub MUST be omitted.
 
 | Name          | Route                      | TO Headers       | FROM Headers     |
@@ -614,10 +614,10 @@ Open Routing Request, the TO headers in the request from the requesting party to
 
 ![Example sequence diagram of a open routing between platforms GET from a CPO via the Hub](../images/sd_get_openrouting_platform.svg)
 
-### GET Method All via Hubs (headers description)
+### GET All via Hubs (headers description)
 
 This table contains the description of which headers are required to be used when doing a [GET All via a
-Hub](https://ocpi.dev). For a GET All via Hub: The HTTP Method SHALL be GET, The call is to a
+Hub](#get-all-via-hubs). For a GET All via Hub: The HTTP Method SHALL be GET, The call is to a
 Senders Interface, the TO headers in the request to the Hub has to be set to the Hub.
 
 | Name                      | Route                      | TO Headers       | FROM Headers     |

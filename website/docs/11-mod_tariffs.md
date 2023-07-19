@@ -52,13 +52,13 @@ Typically implemented by market roles like: CPO.
 
 The Sender's Tariffs interface gives the Receiver the ability to request Tariffs information.
 
-| Method                  | Description                                                                                                                 |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Returns Tariff objects from the CPO, last updated between the `{date_from}` and `{date_to}` ([paginated](https://ocpi.dev)) |
-| POST                    | n/a                                                                                                                         |
-| PUT                     | n/a                                                                                                                         |
-| PATCH                   | n/a                                                                                                                         |
-| DELETE                  | n/a                                                                                                                         |
+| Method                  | Description                                                                                                                                                                         |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](https://ocpi.dev) | Returns Tariff objects from the CPO, last updated between the `{date_from}` and `{date_to}` ([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)) |
+| POST                    | n/a                                                                                                                                                                                 |
+| PUT                     | n/a                                                                                                                                                                                 |
+| PATCH                   | n/a                                                                                                                                                                                 |
+| DELETE                  | n/a                                                                                                                                                                                 |
 
 #### **GET** Method
 
@@ -80,8 +80,8 @@ Examples:
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only Tariffs with `last_updated` between the
 given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
 
-This request is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                               | Required | Description                                                                                       |
 |-----------|----------------------------------------|----------|---------------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ This request is [paginated](https://ocpi.dev), it supports the
 ##### Response Data
 
 The endpoint returns an object with a list of valid Tariffs, the header will contain the
-[pagination](https://ocpi.dev) related headers.
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
 
 Any older information that is not specified in the response is considered no longer valid. Each object must contain all
 required fields. Fields that are not specified may be considered as null values.
@@ -106,7 +106,7 @@ required fields. Fields that are not specified may be considered as null values.
 
 Typically implemented by market roles like: eMSP and NSP.
 
-Tariffs are [Client Owned Objects](https://ocpi.dev), so the
+Tariffs are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the
 endpoints need to contain the required extra fields: {[party_id](https://ocpi.dev)}
 and {[country_code](https://ocpi.dev)}.
 

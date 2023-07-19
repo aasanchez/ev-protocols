@@ -511,7 +511,7 @@ The content of the request body depends on the original request by the eMSP to w
 #### Response Body
 
 The response to the POST on the Sender interface SHALL contain the [Response
-Format](https://ocpi.dev) with the data field omitted.
+Format](/04-transport-and-format/01-json-http-implementation-guide.md#response-format) with the data field omitted.
 
 #### **PUT** Method
 
@@ -557,7 +557,7 @@ the EVSE.
 #### Response Body
 
 The response to the PUT on the eMSP interface SHALL contain the [Response
-Format](https://ocpi.dev) with the data field omitted.
+Format](/04-transport-and-format/01-json-http-implementation-guide.md#response-format) with the data field omitted.
 
 ## Object description
 

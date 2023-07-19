@@ -204,8 +204,8 @@ Examples:
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only ClientInfo objects with (`last_updated`)
 between the given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
 
-This request is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                               | Required | Description                                                                                          |
 |-----------|----------------------------------------|----------|------------------------------------------------------------------------------------------------------|
@@ -217,7 +217,7 @@ This request is [paginated](https://ocpi.dev), it supports the
 #### Response Data
 
 The endpoint response with list of valid ClientInfo objects, the header will contain the
-[pagination](https://ocpi.dev) related headers.
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
 
 Any older information that is not specified in the response is considered as no longer valid. Each object must contain
 all required fields. Fields that are not specified may be considered as null values.

@@ -74,13 +74,13 @@ A CDR might be created even if no energy was transferred to the EV, just for the
 
 Typically implemented by market roles like: CPO.
 
-| Method                  | Description                                                                                                                       |
-|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Fetch Session objects of charging sessions last updated between the `{date_from}` and `{date_to}`([paginated](https://ocpi.dev)). |
-| POST                    | n/a                                                                                                                               |
-| [PUT](https://ocpi.dev) | Setting Charging Preferences of an ongoing session.                                                                               |
-| PATCH                   | n/a                                                                                                                               |
-| DELETE                  | n/a                                                                                                                               |
+| Method                  | Description                                                                                                                                                                               |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](https://ocpi.dev) | Fetch Session objects of charging sessions last updated between the `{date_from}` and `{date_to}`([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)). |
+| POST                    | n/a                                                                                                                                                                                       |
+| [PUT](https://ocpi.dev) | Setting Charging Preferences of an ongoing session.                                                                                                                                       |
+| PATCH                   | n/a                                                                                                                                                                                       |
+| DELETE                  | n/a                                                                                                                                                                                       |
 
 #### **GET** Method
 
@@ -102,8 +102,8 @@ Examples:
 Only Sessions with `last_update` between the given `{date_from}` (including) and `{date_to}` (excluding) will be
 returned.
 
-This request is [paginated](https://ocpi.dev), it supports the
-[pagination](https://ocpi.dev) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                               | Required | Description                                                                                        |
 |-----------|----------------------------------------|----------|----------------------------------------------------------------------------------------------------|
@@ -115,7 +115,7 @@ This request is [paginated](https://ocpi.dev), it supports the
 ##### Response Data
 
 The response contains a list of Session objects that match the given parameters in the request, the header will contain
-the [pagination](https://ocpi.dev) related headers.
+the [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
 
 Any older information that is not specified in the response is considered no longer valid. Each object must contain all
 required fields. Fields that are not specified may be considered as null values.
@@ -171,7 +171,7 @@ The response contains a [ChargingPreferencesResponse](https://ocpi.dev) value.
 
 Typically implemented by market roles like: eMSP and SCSP.
 
-Sessions are [Client Owned Objects](https://ocpi.dev), so
+Sessions are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so
 the endpoints need to contain the required extra fields:
 {[party_id](https://ocpi.dev)} and
 {[country_code](https://ocpi.dev)}.
@@ -369,8 +369,8 @@ description](https://ocpi.dev).
 | auth_method             | [AuthMethod](https://ocpi.dev)             | 1     | Method used for authentication. This might change during a session, for example when the session was started with a reservation: [ReserveNow](https://ocpi.dev): [`COMMAND`](https://ocpi.dev). When the driver arrives and starts charging using a Token that is whitelisted: [`WHITELIST`](https://ocpi.dev).                                                                                                                   |
 | authorization_reference | [CiString](/16-types.md#cistring-type)(36) | ?     | Reference to the authorization given by the eMSP. When the eMSP provided an `authorization_reference` in either: [real-time authorization](https://ocpi.dev), [StartSession](https://ocpi.dev) or [ReserveNow](https://ocpi.dev) this field SHALL contain the same value. When different `authorization_reference` values have been given by the eMSP that are relevant to this Session, the last given value SHALL be used here. |
 | location_id             | [CiString](/16-types.md#cistring-type)(36) | 1     | Location.id of the Location object of this CPO, on which the charging session is/was happening.                                                                                                                                                                                                                                                                                                                                   |
-| evse_uid                | [CiString](/16-types.md#cistring-type)(36) | 1     | EVSE.uid of the EVSE of this Location on which the charging session is/was happening. Allowed to be set to: [`#NA`](https://ocpi.dev) when this session is created for a reservation, but no EVSE yet assigned to the driver.                                                                                                                                                                                                     |
-| connector_id            | [CiString](/16-types.md#cistring-type)(36) | 1     | Connector.id of the Connector of this Location where the charging session is/was happening. Allowed to be set to: [`#NA`](https://ocpi.dev) when this session is created for a reservation, but no connector yet assigned to the driver.                                                                                                                                                                                          |
+| evse_uid                | [CiString](/16-types.md#cistring-type)(36) | 1     | EVSE.uid of the EVSE of this Location on which the charging session is/was happening. Allowed to be set to: [`#NA`](/04-transport-and-format/01-json-http-implementation-guide.md#no-data-available) when this session is created for a reservation, but no EVSE yet assigned to the driver.                                                                                                                                      |
+| connector_id            | [CiString](/16-types.md#cistring-type)(36) | 1     | Connector.id of the Connector of this Location where the charging session is/was happening. Allowed to be set to: [`#NA`](/04-transport-and-format/01-json-http-implementation-guide.md#no-data-available) when this session is created for a reservation, but no connector yet assigned to the driver.                                                                                                                           |
 | meter_id                | [string](/16-types.md#string-type)(255)    | ?     | Optional identification of the kWh meter.                                                                                                                                                                                                                                                                                                                                                                                         |
 | currency                | [string](/16-types.md#string-type)(3)      | 1     | ISO 4217 code of the currency used for this session.                                                                                                                                                                                                                                                                                                                                                                              |
 | charging_periods        | [ChargingPeriod](https://ocpi.dev)         | \*    | An optional list of Charging Periods that can be used to calculate and verify the total cost.                                                                                                                                                                                                                                                                                                                                     |
@@ -505,7 +505,7 @@ An enum with possible responses to a [PUT Charging Preferences](https://ocpi.dev
 
 If a PUT with `ChargingPreferences` is received for an EVSE that does not have the capability
 `CHARGING_PREFERENCES_CAPABLE`, the receiver should respond with an HTTP status of 404 and an OCPI status code of 2001
-in the [OCPI response object](https://ocpi.dev).
+in the [OCPI response object](#response-format).
 
 | Value                      | Description                                                                                                                 |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------|
