@@ -184,9 +184,9 @@ function links(){
   gsed -i 's|(#mod_tokens_tokentype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens_whitelisttype_enum)|(https://ocpi.dev)|g' "$file"
   
-  gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(/05-status_codes.md#2xxx-client-errors)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(/05-status_codes.md#3xxx-server-errors)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(/05-status_codes.md)|g' "$file"
   
   gsed -i 's|(#terminology.asciidoc#terminology_roles)|(./02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
   

@@ -101,6 +101,8 @@ E_O_HEADERS
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
   gsed -i -z 's|### GET All via Hubs\n\nThis|\#\#\# GET All via Hubs \(headers description\)\n\nThis|gm' "$file"
 
+  gsed -i -z "s|\[2001\](/05\-status_codes.md)|\[2001\](/05\-status_codes.md\#2xxx-client-errors)|gm" "$file"
+
   search_text="http\nAuthorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg=="
   replace_text="shell {2} title=\"Note: HTTP header names are case-insensitive\"\ncurl --request GET \"https://www.server.com/ocpi/cpo/2.2.1/versions\" \\\ \n--header \"Authorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg==\""
   gsed -i -z "s|$search_text|$replace_text|g" "$file"

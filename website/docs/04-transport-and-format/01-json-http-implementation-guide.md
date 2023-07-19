@@ -263,7 +263,7 @@ When a client tries to access an object with a URL that has a different
 
 When a client pushes a Client Owned Object, but the `object-id` in the URL is different from the id in the object being
 pushed, server implementations are advised to return an [OCPI status
-code](https://ocpi.dev): [2001](https://ocpi.dev).
+code](/05-status_codes.md): [2001](/05-status_codes.md#2xxx-client-errors).
 
 ## Client Owned Object Pull
 
@@ -283,7 +283,7 @@ the following properties:
 | Property       | Type                                   | Card.   | Description                                                                                                                                                                                           |
 |----------------|----------------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | data           | Array or Object or String              | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?) |
-| status_code    | int                                    | 1       | OCPI status code, as listed in [Status Codes](https://ocpi.dev), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits.                 |
+| status_code    | int                                    | 1       | OCPI status code, as listed in [Status Codes](/05-status_codes.md), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits.              |
 | status_message | [string](/16-types.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                             |
 | timestamp      | [DateTime](/16-types.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                  |
 
@@ -291,7 +291,7 @@ For brevity's sake, any further examples used in this specification will only co
 reality, it will always have to be wrapped in the above response format.
 
 When a request cannot be accepted, the type response depends on the type of error. For more information see: [Status
-codes](https://ocpi.dev)
+codes](/05-status_codes.md)
 
 For errors on the HTTP layer, use HTTP error response codes, including the response format above, that contains more
 details. HTTP status codes are described on [w3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
