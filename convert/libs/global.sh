@@ -35,3 +35,10 @@ splitInH2(){
     echo "Created file: $filename"
   done
 }
+
+function common_cleaning(){
+  file="$1"
+  echo "Markdown cleaning for $file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
+  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
+}

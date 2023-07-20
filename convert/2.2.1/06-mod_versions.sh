@@ -30,3 +30,22 @@ function fix_mod_versions() {
   mv "$tempfile" "$file"
   echo "" >> "$file"
 }
+
+function flavored_mod_versions() {
+  file="$ROOT/website/docs/06-mod_versions.md"
+  tempfile="$file.tmp"
+  echo "$file ocpi.dev flavored"
+
+  splitInH2 "$file"
+
+  rm -rf "$ROOT/website/docs/05-versions"
+  mkdir -p "$ROOT/website/docs/05-versions"
+
+  mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/05-versions/02-version-information-endpoint.md"
+  mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/05-versions/03-version-details-endpoint.md"
+
+  < "$file" gsed -n '1,/## Version information endpoint/p' > "$ROOT/website/docs/05-versions/01-version-intro.md"
+
+
+
+}

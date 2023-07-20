@@ -313,15 +313,9 @@ To add an *EVSE*, simply put the full object in an update message, including all
 be new to the eMSP's system, the receiving party will know that it is a new object. When not all required fields are
 specified, the object may be discarded.
 
-Example Request:
+``` json
+PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256"
-```
-
-Example Response:
-
-```json
 {
   "uid": "3256",
   "evse_id": "BE*BEC*E041503003",
@@ -365,15 +359,9 @@ value on the parent [Location](https://ocpi.dev) Object.
 This is the most common type of update message. It is used to notify eMSPs that the status of an EVSE changed. In this
 case it is the EVSE with uid `3255` of the Location with id `1012`.
 
-Example Request:
+``` json
+PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
 
-```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255"
-```
-
-Example Response:
-
-```json
 {
   "status": "CHARGING",
   "last_updated": "2019-06-24T12:39:09Z"
@@ -384,15 +372,10 @@ Example Response:
 
 In this example the name of the Location with id `1012` is being updated.
 
-Example Request:
+``` json
+PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
 
-```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012"
-```
 
-Example Response:
-
-```json
 {
   "name": "Interparking Gent Zuid",
   "last_updated": "2019-06-24T12:39:09Z"
@@ -403,15 +386,9 @@ Example Response:
 
 In this example Connector `2` of EVSE `1` of Location `1012` receives a new pricing scheme.
 
-Example Request:
+``` json
+PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2
 
-```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2"
-```
-
-Example Response:
-
-```json
 {
   "tariff_ids": [
     "15"
@@ -424,15 +401,9 @@ Example Response:
 
 An EVSE can be deleted by updating its `status` property.
 
-Example Request:
+``` json
+PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
-```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256"
-```
-
-Example Response:
-
-```json
 {
   "status": "REMOVED",
   "last_updated": "2019-06-24T12:39:09Z"

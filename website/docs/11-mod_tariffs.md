@@ -174,15 +174,9 @@ The following parameters SHALL be provided as URL segments.
 
 ##### Example: New Tariff € 2 per hour charging time (not parking)
 
-Example Request:
-
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12"
-```
-
-Example Response:
-
 ```json
+PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12
+
 {
   "country_code": "DE",
   "party_id": "ALL",

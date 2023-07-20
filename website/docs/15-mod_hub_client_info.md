@@ -153,15 +153,9 @@ The following parameters shall be provided as URL segments.
 
 ====== Example: put a new ClientInfo object
 
-Example Request:
+``` json
+PUT To URL: https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL
 
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL"
-```
-
-Example Response:
-
-```json
 {
   "country_code": "NL",
   "party_id": "ALL",

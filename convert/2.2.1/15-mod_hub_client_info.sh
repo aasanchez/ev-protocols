@@ -25,7 +25,7 @@ function fix_mod_hub_client_info() {
   gsed -i -z "s|\n\n\*\s|\n\* |gm" "$file"
   gsed -i -z "s|Examples:\n\*|Examples:\n\n\*|gm" "$file"
 
-  gsed -i -z "s|\`\`\` json\nPUT To URL: https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
+  # gsed -i -z "s|\`\`\` json\nPUT To URL: https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

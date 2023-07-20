@@ -57,7 +57,7 @@ function fix_mod_tariffs() {
   gsed -i -z "s|more useful\.\n\* Charging Time|more useful\.\n\n\* Charging Time|gm" "$file"
   gsed -i -z "s|more detail\.\n\* Start or transaction fee|more detail\.\n\n\* Start or transaction fee|gm" "$file"
 
-  gsed -i -z "s|\`\`\`json\nPUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
+  # gsed -i -z "s|\`\`\`json\nPUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

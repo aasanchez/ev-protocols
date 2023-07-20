@@ -271,15 +271,9 @@ If existing [ChargingPeriod](https://ocpi.dev) objects in a
 
 Patching the `total_cost` needs to be done on the [Session](https://ocpi.dev) Object.
 
-Example Request:
+``` json
+PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101"
-```
-
-Example Response:
-
-```json
 {
   "total_cost": {
     "excl_vat": 0.6,
@@ -294,15 +288,9 @@ Example Response:
 PATCH used to add a new [ChargingPeriod](https://ocpi.dev) to the Session and updating
 all related fields.
 
-Example Request:
+``` json
+PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101"
-```
-
-Example Response:
-
-```json
 {
   "kwh": 15,
   "charging_periods": [

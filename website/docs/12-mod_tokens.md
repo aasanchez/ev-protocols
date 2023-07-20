@@ -166,15 +166,9 @@ The parameter: `type` may be provided as an URL parameter
 
 ##### Example: put a new Token
 
-Example Request:
+``` json
+PUT To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
-```shell
-curl --request PUT --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
-```
-
-Example Response:
-
-```json
 {
   "country_code": "NL",
   "party_id": "TNM",
@@ -199,15 +193,9 @@ Any request to the PATCH method SHALL contain the `last_updated` field.
 
 ##### Example: invalidate a Token
 
-Example Request:
+``` json
+PATCH To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
-```shell
-curl --request PATCH --header "Authorization: Token <OCPI_TOKEN>" "https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678"
-```
-
-Example Response:
-
-```json
 {
   "valid": false,
   "last_updated": "2019-06-19T02:11:11Z"

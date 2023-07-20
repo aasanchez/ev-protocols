@@ -17,6 +17,7 @@ flavored_transport_and_format
 . ./convert/2.2.1/05-status_codes.sh
 
 . ./convert/2.2.1/06-mod_versions.sh
+flavored_mod_versions
 
 . ./convert/2.2.1/07-mod_credentials.sh
 
