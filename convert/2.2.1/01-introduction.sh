@@ -45,9 +45,6 @@ function fix_introduction() {
   gsed -i 's/\* A good/\n\* A good /' "$file"
     
   gsed -i 's/\*\*OCPI is developed with support of:\*\*/### OCPI is developed with support of/g' "$file"
-
-  gsed -i 's/<figure>//gm' "$file"
-  gsed -i 's/<\/figure>//gm' "$file"
   
   gsed -i "s|<img src=\"images/evroamingeu_logo.png\" alt=\"evRoaming4EU logo\" />|![evRoaming4EU logo](./images/evroamingeu_logo.png)|g" "$file"
   gsed -i "s|<img src=\"images/eciss_logo.png\" alt=\"ECISS logo\" />|![ECISS logo](./images/eciss_logo.png)|g" "$file"

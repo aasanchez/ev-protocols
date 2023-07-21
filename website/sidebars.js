@@ -48,27 +48,20 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        // {
-        //   type: 'category',
-        //   label: 'Versions',
-        //   link: {
-        //     type: 'doc',
-        //     id: 'guides/markdown-features/introduction',
-        //   },
-        //   items: [
-        //     'guides/markdown-features/react',
-        //     'guides/markdown-features/tabs',
-        //     'guides/markdown-features/code-blocks',
-        //     'guides/markdown-features/admonitions',
-        //     'guides/markdown-features/toc',
-        //     'guides/markdown-features/assets',
-        //     'guides/markdown-features/links',
-        //     'guides/markdown-features/plugins',
-        //     'guides/markdown-features/math-equations',
-        //     'guides/markdown-features/diagrams',
-        //     'guides/markdown-features/head-metadata',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: 'Versions',
+          // slug: 'modules/version',
+          link: {
+            type: 'doc',
+            id: 'versions/intro',
+            
+          },
+          items: [
+            'versions/information-endpoint',
+            'versions/details-endpoint'
+          ],
+        },
         'credentials',
         'locations',
         'sessions',

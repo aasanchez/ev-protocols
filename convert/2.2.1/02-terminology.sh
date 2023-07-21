@@ -17,15 +17,11 @@ function fix_terminology(){
   gsed -i -z 's/\n\n- /\n\* /gm' "$file"
   gsed -i -z 's/Examples of platforms:/Examples of platforms:\n/gm' "$file"
   gsed -i 's/[[:blank:]]*$//' "$file"              # Delete Trailspace
-  gsed -i "s/’/'/gm" "$file"
-  gsed -i "s/“/\"/gm" "$file"
-  gsed -i "s/”/\"/gm" "$file"
+
   gsed -i "s|Belgium and Luxembourg.$|Belgium and Luxembourg.\n|gm" "$file"
   gsed -i "s|codes.de/).|codes.de/).\n|gm" "$file"
   gsed -i "s|\* \*Connector|\n\* \*Connector|gm" "$file"
 
-  gsed -i '/<figure>/d' "$file"
-  gsed -i '/<\/figure>/d' "$file"
   gsed -i "s|<img src=\"images/topology.svg\" alt=\"Charging Topology schematic\" />|![Charging Topology schematic](./images/topology.svg)|g" "$file"
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
@@ -116,6 +112,7 @@ slug: charging-topology
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+  gsed -i '/^$/N;/^\n$/D'  "$file"
 
   file="$ROOT/website/docs/02-terminology-and-definitions/07-variable-names.md"
   gsed -i "s/^## /# /gm" "$file"

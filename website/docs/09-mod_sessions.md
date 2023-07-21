@@ -138,9 +138,7 @@ Examples:
 * `https://www.server.com/ocpi/cpo/2.2.1/sessions/1234/charging_preferences`
 
 :::note
-
 The `/charging_preferences` URL suffix is required when setting Charging Preferences.
-
 :::
 
 ##### Request Parameters
@@ -322,9 +320,7 @@ instructed not to take energy by the driver. But as the EV was connected to the 
 park tariff or reservation cost might be relevant.
 
 :::note
-
 Although OCPI supports such pricing mechanisms, local laws might not allow this.
-
 :::
 
 It is recommended to add enough `ChargingPeriods` to a Session so that the eMSP is able to provide feedback to the EV
@@ -367,11 +363,9 @@ description](https://ocpi.dev).
 | last_updated            | [DateTime](/16-types.md#datetime-type)     | 1     | Timestamp when this Session was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                        |
 
 :::note
-
 Different `authorization_reference` values might happen when for example a
 [ReserveNow](https://ocpi.dev) had a different `authorization_reference` then the
 value returned by a [real-time authorization](https://ocpi.dev).
-
 :::
 
 #### Examples

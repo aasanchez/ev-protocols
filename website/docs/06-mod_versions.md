@@ -9,8 +9,8 @@ Configuration Module
 :::
 
 This is the required base module of OCPI. This module is the starting point for any OCPI connection. Via this module,
-clients can learn [which versions](https://ocpi.dev) of OCPI a server
-supports, and [which modules](https://ocpi.dev) it supports for each of the
+clients can learn [which versions](/06-versions/02-version-information-endpoint.md) of OCPI a server
+supports, and [which modules](/06-versions/03-version-details-endpoint.md) it supports for each of the
 versions.
 
 ## Version information endpoint
@@ -80,9 +80,7 @@ or eMSP) anymore. In practice this means that when a company is both a CPO and a
 that implements both interfaces, only one OCPI connection is needed.
 
 :::note
-
 OCPI 2.2 introduced the role field in the version details. Older versions of OCPI do not support this.
-
 :::
 
 Endpoint structure definition:
@@ -121,11 +119,9 @@ Both the CPO and the eMSP MUST implement this endpoint.
 | url        | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint.                     |
 
 :::note
-
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
 It is advised to send "SENDER" as the InterfaceRole for one's own credentials endpoint and to disregard the value of the
 role property of the Endpoint object for other platforms' credentials modules.
-
 :::
 
 ### InterfaceRole *enum*

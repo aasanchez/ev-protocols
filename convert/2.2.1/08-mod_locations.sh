@@ -25,8 +25,6 @@ function fix_mod_locations() {
   gsed -i    "s|^======|#####|gm" "$file"
   gsed -i -z "s|- |* |gm" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
-  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
   gsed -i    "s/’/'/gm" "$file"
   gsed -i -z "s|\n\*\s|\* |gm" "$file"
   gsed -i -z "s|:\n\*\s|:\n\n\* |gm" "$file"
@@ -46,15 +44,6 @@ function fix_mod_locations() {
   gsed -i    "s|\\\> ||gm" "$file"
   
   gsed -i    "s|The response contains the requested object.|The response contains the requested object.\n\nChoice: one of three|gm" "$file"
-
-  # gsed -i -z "s|\`\`\` json\nPUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
-  # gsed -i -z "s|\`\`\` json\nPATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PATCH --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
-  # gsed -i -z "s|\`\`\` json\nPATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PATCH --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json|gm" "$file"
-  # gsed -i -z "s|\`\`\` json\nPATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PATCH --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
-  # gsed -i -z "s|\`\`\` json\nPATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PATCH --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
-
-  gsed -i    "/<figure>/d" "$file"
-  gsed -i    "/<\/figure>/d" "$file"
 
   gsed -i    "s|<img src=\"images/locations-class-diagram.svg\" alt=\"Location class diagram\" />|![Location class diagram](./images/locations-class-diagram.svg)|g" "$file"
   gsed -i    "s|<img src=\"images/location_hours_247_open_exception_closing.svg\" alt=\"24/7 open with exception closing.\" />|![24/7 open with exception closing.](./images/location_hours_247_open_exception_closing.svg)|g" "$file"

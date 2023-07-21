@@ -20,8 +20,6 @@ function fix_topology() {
   echo -e "---\nid: supported-topologies\nslug: supported-topologies/\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i '/<figure>/d' "$file"
-  gsed -i '/<\/figure>/d' "$file"
   gsed -i -z "s/svg\"\nalt/svg\" alt/gm" "$file"
 
   gsed -i "s|<img src=\"images/architecture_direct.svg\" alt=\"peer-to-peer topology example\" />|![peer-to-peer topology example](./images/architecture_direct.svg)|g" "$file"
@@ -32,4 +30,7 @@ function fix_topology() {
   gsed -i "s|<img src=\"images/architecture_mutiple_platform_direct_modified.svg\" alt=\"peer-to-peer with mixed roles topology example\" />|![Multiple peer-to-peer](./images/architecture_mutiple_platform_direct_modified.svg)|g" "$file"
   gsed -i "s|<img src=\"images/architecture_hub_simple_modified.svg\" alt=\"Platforms connected via a Hub topology example\" />|![Platforms connected via a Hub topology example](./images/architecture_hub_simple_modified.svg)|g" "$file"
   gsed -i "s|<img src=\"images/architecture_hub_and_direct_modified.svg\" alt=\"Platforms connected via a Hub and directly topology example\" />|![Platforms connected via a Hub and directly topology example](./images/architecture_hub_and_direct_modified.svg)|g" "$file"
+
+  gsed -i '/^$/N;/^\n$/D' "$file"
+  gsed -i '${/^$/d}' "$file"
 }

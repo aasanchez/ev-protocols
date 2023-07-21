@@ -22,13 +22,8 @@ function fix_mod_sessions() {
   gsed -i -e "s|+\`|\`|gm" "$file"
   gsed -i -z "s|\`+|* \`|gm" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
-  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
-
   gsed -i    "s|^======|#####|gm" "$file"
   gsed -i 's|^- |* |gm' "$file"
-
-  # gsed -i -z "s|\`\`\` json\nPATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101\n\n|Example Request:\n\n\`\`\`shell\ncurl --request PUT --header \"Authorization: Token <OCPI_TOKEN>\" \"https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101\"\n\`\`\`\n\nExample Response:\n\n\`\`\`json\n|gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

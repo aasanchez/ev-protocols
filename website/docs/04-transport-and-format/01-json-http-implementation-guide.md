@@ -22,6 +22,10 @@ curl --request GET "https://www.server.com/ocpi/cpo/2.2.1/versions" \
 --header "Authorization: Token ZWJmM2IzOTktNzc5Zi00NDk3LTliOWQtYWM2YWQzY2M0NGQyCg=="
 ```
 
+:::note
+HTTP header names are case-insensitive
+:::
+
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
 *credentials token*. [*Credentials tokens*](https://ocpi.dev) are exchanged via the
 [credentials module](https://ocpi.dev). These are different *tokens* than the
@@ -41,13 +45,11 @@ curl --request GET "https://www.server.com/ocpi/cpo/2.2.1/versions" \
 ```
 
 :::note
-
 Many OCPI 2.1.1 and 2.2 implementations do not Base64 encode the credentials token when including it in the
 *Authorization* header. Since OCPI 2.2-d2 the OCPI specification documents clearly require Base64 encoding the
 credentials token in the header value. Implementations that wish to be compatible with non-encoding 2.1.1 and 2.2
 implementations have to choose the right way to parse and write authorization headers by either trial and error or
 configuration flags.
-
 :::
 
 The credentials token must uniquely identify the requesting party. This way, the server can use the information in the
@@ -58,7 +60,7 @@ HTTP `401 * Unauthorized` status code.
 
 When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](https://ocpi.dev),
 on another module than: [`credentials`](https://ocpi.dev) or
-[`versions`](https://ocpi.dev), the server SHALL respond with an HTTP
+[`versions`](/06-versions/01-version-intro.md), the server SHALL respond with an HTTP
 `401 * Unauthorized` status code.
 
 ## Pull and Push
@@ -144,13 +146,11 @@ different. This means the client will not be required to crawl all pages all ove
 last page it has retrieved all relevant pages and is up to date.
 
 :::note
-
 Some query parameters can cause concurrency problems. For example the `date_to` query parameter. When there are for
 example 1000 objects matching a query for all objects with `date_to` before 2016-01-01. While crawling over the pages
 one of these objects is updated. The client detects this: `X-Total-Count` will be lower in the next request. It is
 advised to redo the previous GET with the `offset` lowered by 1 (if the `offset` was not 0) and after that continue
 crawling the *next* page links.
-
 :::
 
 HTTP headers that have to be added to any paginated GET response.
@@ -160,6 +160,10 @@ HTTP headers that have to be added to any paginated GET response.
 | Link          | String   | Link to the *next* page should be provided when this is NOT the last page. The Link should also contain any filters present in the original request. See the examples below.                                                                                                                                                                                                                        |
 | X-Total-Count | int      | (Custom HTTP Header) The total number of objects available in the server system that match the given query (including the given query parameters, for example: `date_to` and `date_from` but excluding `limit` and `offset`) and that are available to this client. For example: The CPO server might return less CDR objects to an eMSP than the total number of CDRs available in the CPO system. |
 | X-Limit       | int      | (Custom HTTP Header) The maximum number of objects that the server can return. Note that this is an upper limit. If there are not enough remaining objects to return, fewer objects than this upper limit number will be returned, X-Limit SHALL then still show the upper limit, not the number of objects returned.                                                                               |
+
+:::note
+HTTP header names are case-insensitive
+:::
 
 #### Pagination Examples
 
@@ -297,14 +301,12 @@ For errors on the HTTP layer, use HTTP error response codes, including the respo
 details. HTTP status codes are described on [w3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 :::note
-
 Earlier versions of the OCPI 2.2.1 did not clearly specify what should be in the `data` field of the response format for
 every request. We advise that in cases where the specification does not explicitly specify what to put in the `data`
 field for the response to a certain request, the platform receiving the response accept both the `data` field being
 absent and the data field being present with any possible value. We also advise that in such cases, platform sending the
 response leave the `data` field unset in the response format. This applies for example to PUT requests when pushing
 Session objects, and PATCH requests to add charging periods to Sessions.
-
 :::
 
 ### Examples
@@ -470,7 +472,7 @@ etc. SHALL be routed, so need the routing headers.
 
 The requests/responses to/from Configuration Modules:
 [Credentials](https://ocpi.dev),
-[Versions](https://ocpi.dev) and [Hub Client
+[Versions](/06-versions/01-version-intro.md) and [Hub Client
 Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
@@ -481,9 +483,17 @@ or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with th
 | OCPI-from-party-id     | [CiString](/16-types.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
 | OCPI-from-country-code | [CiString](/16-types.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
 
+:::note
+HTTP header names are case-insensitive
+:::
+
+
 ![OCPI Sequence Diagram Hub GET](../images/sd_get_simple.svg)
 
+
+
 ![OCPI Sequence Diagram Hub PUT with 2 Hubs](../images/sd_put_2_hubs.svg)
+
 
 ### Broadcast Push
 
@@ -515,13 +525,13 @@ data like [Tokens](https://ocpi.dev) and
 these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.
 
 :::note
-
 For "Client Owned Objects", the party-id and country-code in the URL segments will still be the original party-id and
 country-code from the original client sending the Broadcast Push to the Hub.
-
 :::
 
+
 ![OCPI Sequence Diagram of a Broadcast Push from a CPO to multiple eMSPs](../images/sd_put_boardcast.svg)
+
 
 ### Open Routing Request
 
@@ -537,7 +547,9 @@ model](#pull-and-push), not for [GET](#get-method) requests.
 Open Routing Requests are possible for GET ([Not GET ALL](#get-all-via-hubs)), POST, PUT, PATCH and
 DELETE.
 
+
 ![Example sequence diagram of a open routing GET from a CPO via the Hub](../images/sd_get_openrouting.svg)
+
 
 ### GET All via Hubs
 
@@ -550,7 +562,9 @@ The Hub can then combine objects from different connected parties and return the
 The client can determine the owner of the objects by looking at the `county_code` and `party_id` in the individual
 objects returned by the hub.
 
+
 ![OCPI Sequence Diagram of a GET All via the Hub.](../images/sd_get_all.svg)
+
 
 ### Overview of required/optional routing headers for different scenarios
 
@@ -569,7 +583,9 @@ the parties to/from which the message is sent, not the platform itself.
 | Direct request  | Requesting platform provider to Receiving platform provider | Receiving-party  | Requesting-party |
 | Direct response | Receiving platform provider to Requesting platform provider | Requesting-party | Receiving-party  |
 
+
 ![Party to Party (without a Hub)](../images/sd_platform_to_platform_direct.svg)
+
 
 #### Party to Party via Hub
 
@@ -583,7 +599,9 @@ from one platform to another platform via a Hub.
 | Direct response | Receiving platform to Hub  | Requesting-party | Receiving-party  |
 | Direct response | Hub to requesting platform | Requesting-party | Receiving-party  |
 
+
 ![Example sequence diagram of a GET for 1 Object from one Platform to another Platform via a Hub](../images/sd_platform_hub_platform.svg)
+
 
 #### Party to Party Broadcast Push
 
@@ -597,7 +615,9 @@ This table contains the description of which headers are required to be used for
 | Broadcast request  | Hub to receiving platform  | Receiving-party  | Hub              |
 | Broadcast response | Receiving platform to Hub  | Hub              | Receiving-party  |
 
+
 ![Example sequence diagram of Broadcast Push from one Platform to another Platform via a Hub](../images/sd_platform_hub_platform_broadcast.svg)
+
 
 #### Party to Party Open Routing Request
 
@@ -612,7 +632,9 @@ Open Routing Request, the TO headers in the request from the requesting party to
 | Open response | Receiving platform to Hub  | Requesting-party | Receiving-party  |
 | Open response | Hub to requesting platform | Requesting-party | Receiving-party  |
 
+
 ![Example sequence diagram of a open routing between platforms GET from a CPO via the Hub](../images/sd_get_openrouting_platform.svg)
+
 
 ### GET All via Hubs (headers description)
 
@@ -625,7 +647,9 @@ Senders Interface, the TO headers in the request to the Hub has to be set to the
 | GET All via Hubs request  | Requesting platform to Hub | Hub              | Requesting-party |
 | GET All via Hubs response | Hub to receiving platform  | Requesting-party | Hub              |
 
+
 ![OCPI Sequence Diagram of a GET All via the Hub](../images/sd_get_all_platform.svg)
+
 
 ### Timestamps and Objects send via Hubs
 

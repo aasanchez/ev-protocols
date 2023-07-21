@@ -27,8 +27,6 @@ function fix_transport_and_format() {
   echo -e "---\nsidebar_position: 4\nslug: transport-and-format\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
-  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
   gsed -i -z "s|======|######|gm" "$file"
   gsed -i "s|^\s\sAuthorization|Authorization|gm" "$file"
   gsed -i "s/’/'/gm" "$file"
@@ -44,8 +42,6 @@ function fix_transport_and_format() {
   gsed -i 's|^        "status_code"|  "status_code"|gm' "$file"
   gsed -i 's|^        "status_message"|  "status_message"|gm' "$file"
   gsed -i 's|^        "timestamp"|  "timestamp"|gm' "$file"
-  gsed -i '/<figure>/d' "$file"
-  gsed -i '/<\/figure>/d' "$file"
 
   gsed -i -z 's|.svg"\nalt="|.svg" alt="|gm' "$file"
 

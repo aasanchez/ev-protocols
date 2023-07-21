@@ -22,14 +22,11 @@ function fix_mod_credentials() {
   gsed -i "s|^\*\*Module Identifier: \`credentials\`\*\*|\:\:\:tip Module Identifier\ncredentials\n\:\:\:|gm" "$file"
   gsed -i "s/\*\*Type:\*\* Configuration Module/\:\:\:info Type\nConfiguration Module\n\:\:\:/gm" "$file"
 
-  gsed -i '/<figure>/d' "$file"
-  gsed -i '/<\/figure>/d' "$file"
-
   gsed -i "s|<img src=\"images/registration-sequence.svg\" alt=\"The OCPI registration process\" />|![The OCPI registration process](./images/registration-sequence.svg)|g" "$file"
   gsed -i "s|<img src=\"images/update-sequence.svg\" alt=\"The OCPI update process\" />|![The OCPI update process](./images/update-sequence.svg)|g" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"
-  echo "" >> "$file"
+  gsed -i '/^$/N;/^\n$/D'  "$file"
 
 }

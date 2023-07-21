@@ -1,4 +1,8 @@
-## Version details endpoint
+---
+id: details-endpoint
+slug: /modules/versions/details-endpoint
+---
+# Version details endpoint
 
 Via the version details, the parties can exchange which modules are implemented for a specific version of OCPI, which
 interface role is implemented, and what the endpoint URL is for this interface.
@@ -9,9 +13,7 @@ or eMSP) anymore. In practice this means that when a company is both a CPO and a
 that implements both interfaces, only one OCPI connection is needed.
 
 :::note
-
 OCPI 2.2 introduced the role field in the version details. Older versions of OCPI do not support this.
-
 :::
 
 Endpoint structure definition:
@@ -34,14 +36,14 @@ Both the CPO and the eMSP MUST implement this endpoint.
 |--------|-------------------------------------------------------------------|
 | GET    | Fetch information about the supported endpoints for this version. |
 
-### Data
+## Data
 
 | Property  | Type                              | Card. | Description                                     |
 |-----------|-----------------------------------|-------|-------------------------------------------------|
 | version   | [VersionNumber](https://ocpi.dev) | 1     | The version number.                             |
 | endpoints | [Endpoint](https://ocpi.dev)      | \+    | A list of supported endpoints for this version. |
 
-### Endpoint *class*
+## Endpoint *class*
 
 | Property   | Type                              | Card. | Description                              |
 |------------|-----------------------------------|-------|------------------------------------------|
@@ -50,21 +52,19 @@ Both the CPO and the eMSP MUST implement this endpoint.
 | url        | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint.                     |
 
 :::note
-
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
 It is advised to send "SENDER" as the InterfaceRole for one's own credentials endpoint and to disregard the value of the
 role property of the Endpoint object for other platforms' credentials modules.
-
 :::
 
-### InterfaceRole *enum*
+## InterfaceRole *enum*
 
 | Value    | Description                                                                                                                                   |
 |----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | SENDER   | Sender Interface implementation. Interface implemented by the owner of data, so the Receiver can Pull information from the data Sender/owner. |
 | RECEIVER | Receiver Interface implementation. Interface implemented by the receiver of data, so the Sender/owner can Push information to the Receiver.   |
 
-### ModuleID *enum*
+## ModuleID *enum*
 
 The Module identifiers for each endpoint are described in the beginning of each *Module* chapter. The following table
 contains the list of modules in this version of OCPI. Most modules (except [Credentials &
@@ -83,7 +83,7 @@ between modules. If there are dependencies between modules, it will be mentioned
 | [Tariffs](https://ocpi.dev)                    | tariffs          |                                                                                     |
 | [Tokens](https://ocpi.dev)                     | tokens           |                                                                                     |
 
-### VersionNumber *enum*
+## VersionNumber *enum*
 
 List of known versions.
 
@@ -95,7 +95,7 @@ List of known versions.
 | 2.2   | OCPI version 2.2 (DEPRECATED, do not use, use 2.2.1 instead) |
 | 2.2.1 | OCPI version 2.2.1 (this version)                            |
 
-#### Custom Modules
+### Custom Modules
 
 Parties are allowed to create custom modules or customized versions of the existing modules. To do so, the [ModuleID
 enum](https://ocpi.dev) can be extended with additional custom moduleIDs. These custom
@@ -106,11 +106,11 @@ of OCPI.
 
 For example: `nltnm-tokens`
 
-### GET
+## GET
 
 Fetch information about the supported endpoints and their URLs for this OCPI version.
 
-#### Examples
+### Examples
 
 Simple version details example: CPO with only 2 modules.
 

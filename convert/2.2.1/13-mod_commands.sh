@@ -24,9 +24,6 @@ function fix_mod_commands() {
   gsed -i    "s|^\*\*Module Identifier: \`commands\`\*\*|\:\:\:tip Module Identifier\ncommands\n\:\:\:|gm" "$file"
   gsed -i    "s|\*\*Type:\*\* Functional Module|\:\:\:info Type\nFunctional Module\n\:\:\:|gm" "$file"
 
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
-  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
-
   gsed -i -z "s|\`\n\n\`+|\`\n* \`|gm" "$file"
   gsed -i -e "s|+\`|\`|gm" "$file"
   gsed -i -z "s|\`+|* \`|gm" "$file"
@@ -36,9 +33,6 @@ function fix_mod_commands() {
   gsed -i -z "s|\`\n\n\*|\`\n\*|gm" "$file"
   
   gsed -i    "s/’/'/gm" "$file"
-
-  gsed -i    "/<figure>/d" "$file"
-  gsed -i    "/<\/figure>/d" "$file"
 
   gsed -i "s|<img src=\"images/command_start_session_timeout.svg\" alt=\"START_SESSION failed\" />|![START_SESSION failed](./images/command_start_session_timeout.svg)|g" "$file"
   gsed -i "s|<img src=\"images/command_start_session_no_cable.svg\" alt=\"START_SESSION failed\" />|![START_SESSION failed](./images/command_start_session_no_cable.svg)|g" "$file"

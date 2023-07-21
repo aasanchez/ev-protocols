@@ -61,7 +61,7 @@ echo ""
 pre_topology
 pandoc2markdown "03-topology"
 links "website/docs/03-topology.md"
-common_cleaning "website/docs/02-terminology.md"
+common_cleaning "website/docs/03-topology.md"
 fix_topology
 
 echo ""

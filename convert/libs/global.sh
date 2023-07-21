@@ -39,6 +39,13 @@ splitInH2(){
 function common_cleaning(){
   file="$1"
   echo "Markdown cleaning for $file"
-  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note\n/gm" "$file"
-  gsed -i -z "s|\n</div>|\n\:\:\:|gm" "$file"
+  gsed -i -z "s/<div class=\"note\">\n/\:\:\:note/gm" "$file"
+  gsed -i -z "s|\n</div>|\:\:\:|gm" "$file"
+
+  gsed -i 's/<figure>//gm' "$file"
+  gsed -i 's/<\/figure>//gm' "$file"
+
+  gsed -i "s/’/'/gm" "$file"
+  gsed -i "s/“/\"/gm" "$file"
+  gsed -i "s/”/\"/gm" "$file"
 }

@@ -24,13 +24,11 @@ parties to signal their intent. The data structures are base on OCPP 1.6 and 2.0
 OCPI and OCPP easy.
 
 :::note
-
 Charging Profiles set via this module are no guarantee that the EV will charge with the exact given limit, it is a
 maximum limit, not a target. A lot of factors influence the charging speed. The EV might not take the amount of energy
 that the EVSE is willing to provide to it, the battery might be too warm or almost full. A single phase cable might be
 used on a three phase Charge Point. There can be local energy limits (load balancing between EVSEs on a relative small
 energy connection to a group of EVSEs) that might limit the energy offered by the EVSE to the EV even further.
-
 :::
 
 ChargingProfile can be created by the owner of a Token on Sessions that belong to that token. If another party sends a
@@ -43,10 +41,8 @@ session information to them. They need to know which session is ongoing to be ab
 module, read eMSP as SCSP.
 
 :::note
-
 OCPI provides the means for SCSPs to do this. Parties doing this have to adhere to local privacy laws, have to have
 setup contracts etc. Local laws might oblige explicit consent from the driver etc.
-
 :::
 
 **Module dependency:** [Sessions module](https://ocpi.dev)
@@ -57,11 +53,9 @@ There are different Smart Charging Topologies possible. Which topology can be us
 different parties.
 
 :::note
-
 Care has to be taken to prevent mixing the different topologies. When multiple parties start sending Charging Profiles,
 the resulting charging speed might be unpredictable. In case of OCPP Charge Points, the result will be the minimum of
 all the Charging Profiles, resulting in a slower than needed charging speed.
-
 :::
 
 ### The eMSP generates ChargingProfiles
@@ -70,7 +64,9 @@ The most straight forward topology, the eMSP generates ChargingProfiles for its 
 eMSP *owns* the customer, so if the eMSP knows that its customer agrees with the eMSP manipulating the charging speed,
 the eMSP is free to do this.
 
+
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](./images/topology_sc_emsp.svg)
+
 
 | Interface | Role |
 |-----------|------|
@@ -93,7 +89,9 @@ about eMSPs customers.
 
 From the CPO point of view, this topology is similar to the one above, the CPO will not know the difference.
 
+
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](./images/topology_scsp_emsp.svg)
+
 
 | Connection  | Interface | Role |
 |-------------|-----------|------|
@@ -122,7 +120,9 @@ about eMSPs customers.
 
 In this topology, the eMSP is not aware that the CPO is using OCPI to receive Charging Profiles from the SCSP.
 
+
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](./images/topology_scsp_cpo.svg)
+
 
 | Interface | Role |
 |-----------|------|
@@ -203,7 +203,9 @@ sent to the eMSP or SCSP by call the [POST](https://ocpi.dev) method, on the URL
 eMSP of SCSP in the [PUT](https://ocpi.dev) request, this call will contain a
 [ChargingProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a SetChargingProfile](./images/sd_charging_profile_set.svg)
+
 
 ### Example of a setting/updating a ChargingProfile by the SCSP via the eMSP
 
@@ -227,7 +229,9 @@ sent to the eMSP by the [POST](https://ocpi.dev) method, on the URL provided by 
 provided by the SCSP in the [PUT](https://ocpi.dev) request of the SCSP, this call will contain a
 [ChargingProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a SetChargingProfile via the MSP](./images/sd_charging_profile_set_via_msp.svg)
+
 
 ### Example of a removing/clearing ChargingProfile sent by the Sender (typically the eMSP or SCSP)
 
@@ -243,7 +247,9 @@ result is sent to the eMSP by call the [POST](https://ocpi.dev) method, on the U
 eMSP in the [DELETE](https://ocpi.dev) request of the eMSP, this call will contain a
 [ClearProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a ClearChargingProfile](./images/sd_charging_profile_clear.svg)
+
 
 ### Example of a removing/clearing ChargingProfile send by the SCSP via the eMSP
 
@@ -262,7 +268,9 @@ in the [DELETE](https://ocpi.dev) request of the eMSP. The eMSP forwards this re
 URL provided by the SCSP in the [DELETE](https://ocpi.dev) request of the SCSP, this call will
 contain a [ClearProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a ClearChargingProfile via the MSP](./images/sd_charging_profile_clear_via_msp.svg)
+
 
 ### Example of a GET ActiveChargingProfile send by the Sender (typically the eMSP or SCSP)
 
@@ -278,7 +286,9 @@ response from the Charge Point, that ActiveChargingProfile is sent to the eMSP b
 [GET](https://ocpi.dev) request of the eMSP, this call will contain a
 [ActiveChargingProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a GET ActiveChargingProfile](./images/sd_charging_profile_get.svg)
+
 
 ### Example of a GET ActiveChargingProfile send by the SCSP via eMSP
 
@@ -299,7 +309,9 @@ this result to the the URL provided by the SCSP in the [GET](https://ocpi.dev) r
 this call will contain the same
 [ActiveChargingProfileResult](https://ocpi.dev) Object.
 
+
 ![Example of a GET ActiveChargingProfile via the MSP](./images/sd_charging_profile_get_via_msp.svg)
+
 
 ### Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile
 
@@ -307,7 +319,9 @@ When the CPO knows the ActiveChargingProfile of a Charge Point has changed, the 
 update [ActiveChargingProfile](https://ocpi.dev) to the Sender (typically the eMSP
 or SCSP), by calling the [PUT](https://ocpi.dev) method on the Sender interface.
 
+
 ![Example of an ActiveChargingProfile being send by the CPO](./images/sd_charging_profile_updated.svg)
+
 
 ### Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile to the SCSP via the eMSP
 
@@ -318,7 +332,9 @@ the [PUT](https://ocpi.dev) method on the eMSPs Sender interface.
 The eMSP forwards this [ActiveChargingProfile](https://ocpi.dev) to the SCSP, by
 calling the [PUT](https://ocpi.dev) method on the SCSPs Sender interface.
 
+
 ![Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP](./images/sd_charging_profile_updated_via_msp.svg)
+
 
 ## Interfaces and endpoints
 
@@ -353,9 +369,7 @@ Example:
 * `https://www.cpo.com/ocpi/2.2.1/chargingprofiles/1234?duration=900&response_url=https://www.msp.com/ocpi/2.2.1/chargingprofile/response?request_id=5678`
 
 :::note
-
 As it is not common to add a body to a GET request, all parameters are added to the URL.
-
 :::
 
 ====== Request Parameters
@@ -369,11 +383,9 @@ The following parameters shall be provided as URL segments.
 | response_url | [URL](/16-types.md#url-type)               | yes      | URL that the [ActiveChargingProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
 
 :::note
-
 duration: Balance the duration between maximizing the information gained and the data usage and computation to execute
 on the request. Warning: asking for longer duration than necessary might result in additional data costs, while its
 added value diminishes with every change in the schedule.
-
 :::
 
 ====== Response Data
@@ -435,9 +447,7 @@ Example:
 * `https://www.cpo.com/ocpi/2.2.1/chargingprofiles/1234?response_url=https://www.server.com/example`
 
 :::note
-
 As it is not common to add a body to a DELETE request, all parameters are added to the URL.
-
 :::
 
 ====== Request Parameters
