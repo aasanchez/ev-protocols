@@ -58,8 +58,10 @@ const sidebars = {
             
           },
           items: [
-            'versions/information-endpoint',
-            'versions/details-endpoint'
+            'versions/interfaces-and-endpoints',
+            'versions/data-types',
+            'versions/object-description',
+            'versions/custom-module'
           ],
         },
         'credentials',

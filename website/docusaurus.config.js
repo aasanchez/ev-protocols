@@ -80,7 +80,7 @@ const config = {
         title: 'OCPI',
         logo: {
           alt: 'OCPI.dev',
-          src: 'img/logo.svg'
+          src: 'img/logo.png'
         },
         items: [
           {

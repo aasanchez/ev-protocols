@@ -11,7 +11,7 @@ interface FeatureItem {
 const FeatureList: FeatureItem[] = [
   {
     title: 'User Friendly',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/documents_document_documentation_format_paper_icon.svg').default,
     description: (
       <>
         Providing a more practical and user-friendly way to access OCPI documentation.
@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Making OCPI Accesible',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/ocpidev2.svg').default,
     description: (
       <>
         More accessible OCPI documentation can help to accelerate the adoption of OCPI and make it easier for developers
@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'EV Roaming Foundation',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/copyright_creator_document_legal_pencil_icon.svg').default,
     description: (
       <>
         This site is not associated with EV Roaming Foundation, and recommends that users always

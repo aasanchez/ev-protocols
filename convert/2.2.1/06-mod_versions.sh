@@ -9,7 +9,7 @@ function fix_mod_versions() {
   file="$ROOT/website/docs/06-mod_versions.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nid: versions\nslug: modules/versions\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: versions\nslug: modules/versiones\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -z "s|\`\n\n\`+|\`\n* \`|gm" "$file"
@@ -36,10 +36,10 @@ function flavored_mod_versions() {
   tempfile="$file.tmp"
   echo "$file ocpi.dev flavored"
 
-#   splitInH2 "$file"
+  splitInH2 "$file"
 
-#   rm -rf "$ROOT/website/docs/06-versions"
-#   mkdir -p "$ROOT/website/docs/06-versions"
+  rm -rf "$ROOT/website/docs/06-versions"
+  mkdir -p "$ROOT/website/docs/06-versions"
 
 #   mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/06-versions/02-version-information-endpoint.md"
 #   mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/06-versions/03-version-details-endpoint.md"
