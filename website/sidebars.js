@@ -38,7 +38,7 @@ const sidebars = {
         'transport-and-format/offline-behaviour'
       ],
     },
-    'status_codes',
+    'status-codes/status-codes',
     {
       type: 'category',
       label: '📦 Modules',
@@ -60,7 +60,7 @@ const sidebars = {
         'hub_client_info',
       ],
     },
-    'types'
+    'types/types'
 
 
   ]

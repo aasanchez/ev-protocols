@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 
 function fix_status_codes() {
-  file="$ROOT/website/docs/05-status_codes.md"
+  rm -rf "$ROOT/website/docs/05-status-codes"
+  mkdir -p "$ROOT/website/docs/05-status-codes"
+
+  mv "$ROOT/website/docs/05-status_codes.md" "$ROOT/website/docs/05-status-codes/05-status-codes.md"
+  
+  file="$ROOT/website/docs/05-status-codes/05-status-codes.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 5\nslug: status-codes\n---" | cat - "$file" > "$tempfile"
+  gsed -i "s|^# Status codes$|# 🚦 Status codes|gm" "$file"
+
+  echo -e "---\nsidebar_position: 5\nslug: /status-codes\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i "s|–|-|gm" "$file"

@@ -184,9 +184,9 @@ function links(){
   gsed -i 's|(#mod_tokens_tokentype_enum)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens_whitelisttype_enum)|(https://ocpi.dev)|g' "$file"
   
-  gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(/05-status_codes.md#2xxx-client-errors)|g' "$file"
-  gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(/05-status_codes.md#3xxx-server-errors)|g' "$file"
-  gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(/05-status_codes.md)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_2xxx_client_errors)|(/05-status-codes/05-status-codes.md#2xxx-client-errors)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(/05-status-codes/05-status-codes.md#3xxx-server-errors)|g' "$file"
+  gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(/05-status-codes/05-status-codes.md)|g' "$file"
   
   gsed -i 's|(#terminology.asciidoc#terminology_roles)|(/02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
   
@@ -210,14 +210,14 @@ function links(){
   gsed -i 's|(#transport_and_format_response_format)|(#response-format)|g' "$file"
   
   gsed -i 's|(#types.asciidoc#mod_tokens_energy_contract)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_cistring_type)|(/16-types.md#cistring-type)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_datetime_type)|(/16-types.md#datetime-type)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_displaytext_class)|(/16-types.md#displaytext-class)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_number_type)|(/16-types.md#number-type)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_price_class)|(/16-types.md#price-class)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_role_enum)|(/16-types.md#role-enum)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_string_type)|(/16-types.md#string-type)|g' "$file"
-  gsed -i 's|(#types.asciidoc#types_url_type)|(/16-types.md#url-type)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_cistring_type)|(/16-types/16-types.md#cistring-type)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_datetime_type)|(/16-types/16-types.md#datetime-type)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_displaytext_class)|(/16-types/16-types.md#displaytext-class)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_number_type)|(/16-types/16-types.md#number-type)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_price_class)|(/16-types/16-types.md#price-class)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_role_enum)|(/16-types/16-types.md#role-enum)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_string_type)|(/16-types/16-types.md#string-type)|g' "$file"
+  gsed -i 's|(#types.asciidoc#types_url_type)|(/16-types/16-types.md#url-type)|g' "$file"
   gsed -i 's|(#types_number_type)|(#number-type)|g' "$file"
   gsed -i 's|(#types_string_type)|(#string-type)|g' "$file"
   

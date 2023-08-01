@@ -22,7 +22,7 @@ function fix_topology() {
   file="$ROOT/website/docs/03-supported-topologies/03-topology.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nid: supported-topologies\nslug: supported-topologies/\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: supported-topologies\nslug: /supported-topologies/\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i 's|^# Supported Topologies$|# 🕸️ Supported Topologies|g' "$file"
