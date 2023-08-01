@@ -1,8 +1,8 @@
 ---
 sidebar_position: 16
-slug: types
+slug: /types
 ---
-# Types
+# 🔧 Types
 
 ## CiString *type*
 
