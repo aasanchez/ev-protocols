@@ -65,7 +65,7 @@ agreement with the CPO. Or the Charge Point has an ad-hoc payment possibility
 * `parking_type` = `ON_STREET` but could also be another value.
 * `EVSE.parking_restrictions` not used.
 
-``` json
+```json
 {
   "country_code": "BE",
   "party_id": "BEC",
