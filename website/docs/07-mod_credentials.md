@@ -75,7 +75,7 @@ once a month, in case it was not detected that the credentials where compromised
 ### Errors during registration
 
 When the server connects back to the client during the credentials registration, it might encounter problems. When this
-happens, the server should add the status code [3001](/05-status_codes.md#3xxx-server-errors) in the
+happens, the server should add the status code [3001](/05-status-codes/05-status-codes.md#3xxx-server-errors) in the
 response to the POST from the client.
 
 ### Required endpoints not available
@@ -91,7 +91,7 @@ to send the POST request with credentials to the Receiver. Log a message/notify 
 administrator of the Receiver platform.
 
 In case the Receiver platform that cannot find the endpoints it expects, then it is expected to respond to the request
-with the status code [3003](/05-status_codes.md#3xxx-server-errors).
+with the status code [3003](/05-status-codes/05-status-codes.md#3xxx-server-errors).
 
 ## Interfaces and endpoints
 
@@ -154,11 +154,11 @@ This method MUST return a `HTTP status code 405: method not allowed` if the clie
 
 ### Credentials object
 
-| Property | Type                                   | Card. | Description                                                                                                                                                                                                                                   |
-|----------|----------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token    | [string](/16-types.md#string-type)(64) | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
-| url      | [URL](/16-types.md#url-type)           | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
-| roles    | [CredentialsRole](https://ocpi.dev)    | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
+| Property | Type                                            | Card. | Description                                                                                                                                                                                                                                   |
+|----------|-------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token    | [string](/16-types/16-types.md#string-type)(64) | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
+| url      | [URL](/16-types/16-types.md#url-type)           | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
+| roles    | [CredentialsRole](https://ocpi.dev)             | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
 
 Every role needs a unique combination of: `role`, `party_id` and `country_code`.
 
@@ -303,9 +303,9 @@ Example of a CPO credentials object for a platform that provides services for 3 
 
 ### CredentialsRole *class*
 
-| Property         | Type                                      | Card. | Description                                                                    |
-|------------------|-------------------------------------------|-------|--------------------------------------------------------------------------------|
-| role             | [Role](/16-types.md#role-enum)            | 1     | Type of role.                                                                  |
-| business_details | [BusinessDetails](https://ocpi.dev)       | 1     | Details of this party.                                                         |
-| party_id         | [CiString](/16-types.md#cistring-type)(3) | 1     | CPO, eMSP (or other role) ID of this party (following the ISO-15118 standard). |
-| country_code     | [CiString](/16-types.md#cistring-type)(2) | 1     | ISO-3166 alpha-2 country code of the country this party is operating in.       |
+| Property         | Type                                               | Card. | Description                                                                    |
+|------------------|----------------------------------------------------|-------|--------------------------------------------------------------------------------|
+| role             | [Role](/16-types/16-types.md#role-enum)            | 1     | Type of role.                                                                  |
+| business_details | [BusinessDetails](https://ocpi.dev)                | 1     | Details of this party.                                                         |
+| party_id         | [CiString](/16-types/16-types.md#cistring-type)(3) | 1     | CPO, eMSP (or other role) ID of this party (following the ISO-15118 standard). |
+| country_code     | [CiString](/16-types/16-types.md#cistring-type)(2) | 1     | ISO-3166 alpha-2 country code of the country this party is operating in.       |
