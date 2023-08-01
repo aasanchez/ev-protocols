@@ -487,13 +487,9 @@ or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with th
 HTTP header names are case-insensitive
 :::
 
-
 ![OCPI Sequence Diagram Hub GET](../images/sd_get_simple.svg)
 
-
-
 ![OCPI Sequence Diagram Hub PUT with 2 Hubs](../images/sd_put_2_hubs.svg)
-
 
 ### Broadcast Push
 
@@ -529,9 +525,7 @@ For "Client Owned Objects", the party-id and country-code in the URL segments wi
 country-code from the original client sending the Broadcast Push to the Hub.
 :::
 
-
 ![OCPI Sequence Diagram of a Broadcast Push from a CPO to multiple eMSPs](../images/sd_put_boardcast.svg)
-
 
 ### Open Routing Request
 
@@ -547,9 +541,7 @@ model](#pull-and-push), not for [GET](#get-method) requests.
 Open Routing Requests are possible for GET ([Not GET ALL](#get-all-via-hubs)), POST, PUT, PATCH and
 DELETE.
 
-
 ![Example sequence diagram of a open routing GET from a CPO via the Hub](../images/sd_get_openrouting.svg)
-
 
 ### GET All via Hubs
 
@@ -562,9 +554,7 @@ The Hub can then combine objects from different connected parties and return the
 The client can determine the owner of the objects by looking at the `county_code` and `party_id` in the individual
 objects returned by the hub.
 
-
 ![OCPI Sequence Diagram of a GET All via the Hub.](../images/sd_get_all.svg)
-
 
 ### Overview of required/optional routing headers for different scenarios
 
@@ -583,9 +573,7 @@ the parties to/from which the message is sent, not the platform itself.
 | Direct request  | Requesting platform provider to Receiving platform provider | Receiving-party  | Requesting-party |
 | Direct response | Receiving platform provider to Requesting platform provider | Requesting-party | Receiving-party  |
 
-
 ![Party to Party (without a Hub)](../images/sd_platform_to_platform_direct.svg)
-
 
 #### Party to Party via Hub
 
@@ -599,9 +587,7 @@ from one platform to another platform via a Hub.
 | Direct response | Receiving platform to Hub  | Requesting-party | Receiving-party  |
 | Direct response | Hub to requesting platform | Requesting-party | Receiving-party  |
 
-
 ![Example sequence diagram of a GET for 1 Object from one Platform to another Platform via a Hub](../images/sd_platform_hub_platform.svg)
-
 
 #### Party to Party Broadcast Push
 
@@ -615,9 +601,7 @@ This table contains the description of which headers are required to be used for
 | Broadcast request  | Hub to receiving platform  | Receiving-party  | Hub              |
 | Broadcast response | Receiving platform to Hub  | Hub              | Receiving-party  |
 
-
 ![Example sequence diagram of Broadcast Push from one Platform to another Platform via a Hub](../images/sd_platform_hub_platform_broadcast.svg)
-
 
 #### Party to Party Open Routing Request
 
@@ -632,9 +616,7 @@ Open Routing Request, the TO headers in the request from the requesting party to
 | Open response | Receiving platform to Hub  | Requesting-party | Receiving-party  |
 | Open response | Hub to requesting platform | Requesting-party | Receiving-party  |
 
-
 ![Example sequence diagram of a open routing between platforms GET from a CPO via the Hub](../images/sd_get_openrouting_platform.svg)
-
 
 ### GET All via Hubs (headers description)
 
@@ -647,9 +629,7 @@ Senders Interface, the TO headers in the request to the Hub has to be set to the
 | GET All via Hubs request  | Requesting platform to Hub | Hub              | Requesting-party |
 | GET All via Hubs response | Hub to receiving platform  | Requesting-party | Hub              |
 
-
 ![OCPI Sequence Diagram of a GET All via the Hub](../images/sd_get_all_platform.svg)
-
 
 ### Timestamps and Objects send via Hubs
 

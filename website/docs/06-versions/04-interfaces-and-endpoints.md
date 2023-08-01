@@ -4,7 +4,6 @@ slug: /modules/version/interfaces-and-endpoints
 ---
 # Interfaces and Endpoint
 
-
 ## Version information endpoint
 
 This endpoint lists all the available OCPI versions and the corresponding URLs to where version specific details such as
