@@ -64,7 +64,21 @@ const sidebars = {
             'versions/custom-module'
           ],
         },
-        'credentials',
+        {
+          type: 'category',
+          label: 'Credentials',
+          link: {
+            type: 'doc',
+            id: 'credentials/intro',
+            
+          },
+          items: [
+            'credentials/use-cases',
+            'credentials/interfaces-and-endpoints',
+            'credentials/data-types',
+            'credentials/object-description'
+          ],
+        },
         'locations',
         'sessions',
         'cdrs',
