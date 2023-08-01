@@ -4,7 +4,7 @@ const sidebars = {
     'introduction/introduction',
     {
       type: 'category',
-      label: 'Terminology and Definitions',
+      label: '📚 Terminology and Definitions',
       link: {
         type: 'generated-index',
         slug: 'terminology-and-definitions',
@@ -22,7 +22,7 @@ const sidebars = {
         'terminology-and-definitions/data-retention',
       ],
     },
-    'supported-topologies',
+    'supported-topologies/supported-topologies',
     {
       type: 'category',
       label: 'Transport and format',

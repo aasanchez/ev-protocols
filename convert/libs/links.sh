@@ -188,7 +188,7 @@ function links(){
   gsed -i 's|(#status_codes.asciidoc#status_codes_3xxx_server_errors)|(/05-status_codes.md#3xxx-server-errors)|g' "$file"
   gsed -i 's|(#status_codes.asciidoc#status_codes_status_codes)|(/05-status_codes.md)|g' "$file"
   
-  gsed -i 's|(#terminology.asciidoc#terminology_roles)|(./02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
+  gsed -i 's|(#terminology.asciidoc#terminology_roles)|(/02-terminology-and-definitions/03-ev-charging-market-roles.md)|g' "$file"
   
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_authorization_header)|(/04-transport-and-format/01-json-http-implementation-guide.md#authorization-header)|g' "$file"
   gsed -i 's|(#transport_and_format.asciidoc#transport_and_format_client_owned_object_push)|(/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push)|g' "$file"

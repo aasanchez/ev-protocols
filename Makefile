@@ -45,8 +45,8 @@ convert: ## convert from asciidoc to markdown
 	@ ./convert/2.2.1/conver2markdown.sh
 	@ ./convert/2.2.1/ocpidev-flavor.sh
 
-cibuild: ## is used for your continuous integration server
-	@echo "is used for your continuous integration server"
+build: ## is used for your continuous integration server
+	@cd website && npx docusaurus build
 
 console: ## is used to open a console for your application
 	@echo "is used to open a console for your application"
