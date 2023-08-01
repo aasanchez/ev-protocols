@@ -50,7 +50,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Versions',
+          label: 'ℹ️ Versions',
           // slug: 'modules/version',
           link: {
             type: 'doc',
@@ -59,14 +59,14 @@ const sidebars = {
           },
           items: [
             'versions/interfaces-and-endpoints',
-            'versions/data-types',
             'versions/object-description',
+            'versions/data-types',
             'versions/custom-module'
           ],
         },
         {
           type: 'category',
-          label: 'Credentials',
+          label: '🗝️ Credentials',
           link: {
             type: 'doc',
             id: 'credentials/intro',
@@ -75,13 +75,13 @@ const sidebars = {
           items: [
             'credentials/use-cases',
             'credentials/interfaces-and-endpoints',
-            'credentials/data-types',
-            'credentials/object-description'
+            'credentials/object-description',
+            'credentials/data-types'
           ],
         },
         {
           type: 'category',
-          label: 'Locations',
+          label: '📍 Locations',
           link: {
             type: 'doc',
             id: 'locations/intro',
@@ -90,8 +90,23 @@ const sidebars = {
           items: [
             'locations/flow-and-lifecycle',
             'locations/interfaces-and-endpoints',
-            'locations/data-types',
-            'locations/object-description'
+            'locations/object-description',
+            'locations/data-types'
+          ],
+        },
+        {
+          type: 'category',
+          label: '📖 Sessions',
+          link: {
+            type: 'doc',
+            id: 'locations/intro',
+            
+          },
+          items: [
+            'sessions/flow-and-lifecycle',
+            'sessions/interfaces-and-endpoints',
+            'sessions/object-description',
+            'sessions/data-types'
           ],
         },
         'sessions',
