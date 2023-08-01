@@ -114,10 +114,10 @@ the connected client system had a different status or was missing an object.
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                  | Required | Description                                                |
-|--------------|-------------------------------------------|----------|------------------------------------------------------------|
-| country_code | [CiString](/16-types.md#cistring-type)(2) | yes      | Country code of the requested ClientInfo object.           |
-| party_id     | [CiString](/16-types.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the requested ClientInfo object. |
+| Parameter    | Datatype                                           | Required | Description                                                |
+|--------------|----------------------------------------------------|----------|------------------------------------------------------------|
+| country_code | [CiString](/16-types/16-types.md#cistring-type)(2) | yes      | Country code of the requested ClientInfo object.           |
+| party_id     | [CiString](/16-types/16-types.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the requested ClientInfo object. |
 
 ====== Response Data
 
@@ -145,11 +145,11 @@ In the put request a the new or updated ClientInfo object is send.
 
 The following parameters shall be provided as URL segments.
 
-|              |                                           |          |                                                                                |
-|--------------|-------------------------------------------|----------|--------------------------------------------------------------------------------|
-| Parameter    | Datatype                                  | Required | Description                                                                    |
-| country_code | [CiString](/16-types.md#cistring-type)(2) | yes      | Country code of the eMSP sending this PUT request to the CPO system.           |
-| party_id     | [CiString](/16-types.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. |
+|              |                                                    |          |                                                                                |
+|--------------|----------------------------------------------------|----------|--------------------------------------------------------------------------------|
+| Parameter    | Datatype                                           | Required | Description                                                                    |
+| country_code | [CiString](/16-types/16-types.md#cistring-type)(2) | yes      | Country code of the eMSP sending this PUT request to the CPO system.           |
+| party_id     | [CiString](/16-types/16-types.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. |
 
 ====== Example: put a new ClientInfo object
 
@@ -201,12 +201,12 @@ between the given `{date_from}` (including) and `{date_to}` (excluding) will be 
 This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
-| Parameter | Datatype                               | Required | Description                                                                                          |
-|-----------|----------------------------------------|----------|------------------------------------------------------------------------------------------------------|
-| date_from | [DateTime](/16-types.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` after or equal to this Date/Time (inclusive).        |
-| date_to   | [DateTime](/16-types.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` up to this Date/Time, but not including (exclusive). |
-| offset    | int                                    | no       | The offset of the first object returned. Default is 0.                                               |
-| limit     | int                                    | no       | Maximum number of objects to GET.                                                                    |
+| Parameter | Datatype                                        | Required | Description                                                                                          |
+|-----------|-------------------------------------------------|----------|------------------------------------------------------------------------------------------------------|
+| date_from | [DateTime](/16-types/16-types.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` after or equal to this Date/Time (inclusive).        |
+| date_to   | [DateTime](/16-types/16-types.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` up to this Date/Time, but not including (exclusive). |
+| offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                               |
+| limit     | int                                             | no       | Maximum number of objects to GET.                                                                    |
 
 #### Response Data
 
@@ -225,13 +225,13 @@ all required fields. Fields that are not specified may be considered as null val
 
 ### *ClientInfo* Object
 
-| Property     | Type                                      | Card. | Description                                                                                           |
-|--------------|-------------------------------------------|-------|-------------------------------------------------------------------------------------------------------|
-| party_id     | [CiString](/16-types.md#cistring-type)(3) | 1     | CPO or eMSP ID of this party (following the 15118 ISO standard), as used in the credentials exchange. |
-| country_code | [CiString](/16-types.md#cistring-type)(2) | 1     | Country code of the country this party is operating in, as used in the credentials exchange.          |
-| role         | [Role](/16-types.md#role-enum)            | 1     | The role of the connected party.                                                                      |
-| status       | [ConnectionStatus](https://ocpi.dev)      | 1     | Status of the connection to the party.                                                                |
-| last_updated | [DateTime](/16-types.md#datetime-type)    | 1     | Timestamp when this ClientInfo object was last updated.                                               |
+| Property     | Type                                               | Card. | Description                                                                                           |
+|--------------|----------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------|
+| party_id     | [CiString](/16-types/16-types.md#cistring-type)(3) | 1     | CPO or eMSP ID of this party (following the 15118 ISO standard), as used in the credentials exchange. |
+| country_code | [CiString](/16-types/16-types.md#cistring-type)(2) | 1     | Country code of the country this party is operating in, as used in the credentials exchange.          |
+| role         | [Role](/16-types/16-types.md#role-enum)            | 1     | The role of the connected party.                                                                      |
+| status       | [ConnectionStatus](https://ocpi.dev)               | 1     | Status of the connection to the party.                                                                |
+| last_updated | [DateTime](/16-types/16-types.md#datetime-type)    | 1     | Timestamp when this ClientInfo object was last updated.                                               |
 
 ## Data types
 

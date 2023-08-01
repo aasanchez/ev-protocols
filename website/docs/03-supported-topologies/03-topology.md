@@ -1,6 +1,6 @@
 ---
 id: supported-topologies
-slug: supported-topologies/
+slug: /supported-topologies/
 ---
 # 🕸️ Supported Topologies
 

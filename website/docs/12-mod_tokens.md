@@ -118,12 +118,12 @@ The following parameters: `country_code`, `party_id`, `token_uid` have to be pro
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter    | Datatype                                   | Required | Description                                                                       |
-|--------------|--------------------------------------------|----------|-----------------------------------------------------------------------------------|
-| country_code | [CiString](/16-types.md#cistring-type)(2)  | yes      | Country code of the eMSP requesting this GET from the CPO system.                 |
-| party_id     | [CiString](/16-types.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP requesting this GET from the CPO system.       |
-| token_uid    | [CiString](/16-types.md#cistring-type)(36) | yes      | Token.uid of the Token object to retrieve.                                        |
-| type         | [TokenType](https://ocpi.dev)              | no       | Token.type of the Token to retrieve. Default if omitted: [RFID](https://ocpi.dev) |
+| Parameter    | Datatype                                            | Required | Description                                                                       |
+|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------|
+| country_code | [CiString](/16-types/16-types.md#cistring-type)(2)  | yes      | Country code of the eMSP requesting this GET from the CPO system.                 |
+| party_id     | [CiString](/16-types/16-types.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP requesting this GET from the CPO system.       |
+| token_uid    | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | Token.uid of the Token object to retrieve.                                        |
+| type         | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token to retrieve. Default if omitted: [RFID](https://ocpi.dev) |
 
 ##### Response Data
 
@@ -151,12 +151,12 @@ The following parameters: `country_code`, `party_id`, `token_uid` have to be pro
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter    | Datatype                                   | Required | Description                                                                                                                                                     |
-|--------------|--------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| country_code | [CiString](/16-types.md#cistring-type)(2)  | yes      | Country code of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `country_code` in the Token object being pushed.       |
-| party_id     | [CiString](/16-types.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `party_id` in the Token object being pushed. |
-| token_uid    | [CiString](/16-types.md#cistring-type)(36) | yes      | Token.uid of the (new) Token object (to replace).                                                                                                               |
-| type         | [TokenType](https://ocpi.dev)              | no       | Token.type of the Token of the (new) Token object (to replace). Default if omitted: [RFID](https://ocpi.dev)                                                    |
+| Parameter    | Datatype                                            | Required | Description                                                                                                                                                     |
+|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| country_code | [CiString](/16-types/16-types.md#cistring-type)(2)  | yes      | Country code of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `country_code` in the Token object being pushed.       |
+| party_id     | [CiString](/16-types/16-types.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `party_id` in the Token object being pushed. |
+| token_uid    | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | Token.uid of the (new) Token object (to replace).                                                                                                               |
+| type         | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token of the (new) Token object (to replace). Default if omitted: [RFID](https://ocpi.dev)                                                    |
 
 ##### Example: put a new Token
 
@@ -236,12 +236,12 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
-| Parameter | Datatype                               | Required | Description                                                                                      |
-|-----------|----------------------------------------|----------|--------------------------------------------------------------------------------------------------|
-| date_from | [DateTime](/16-types.md#datetime-type) | no       | Only return Tokens that have `last_updated` after or equal to this Date/Time (inclusive).        |
-| date_to   | [DateTime](/16-types.md#datetime-type) | no       | Only return Tokens that have `last_updated` up to this Date/Time, but not including (exclusive). |
-| offset    | int                                    | no       | The offset of the first object returned. Default is 0.                                           |
-| limit     | int                                    | no       | Maximum number of objects to GET.                                                                |
+| Parameter | Datatype                                        | Required | Description                                                                                      |
+|-----------|-------------------------------------------------|----------|--------------------------------------------------------------------------------------------------|
+| date_from | [DateTime](/16-types/16-types.md#datetime-type) | no       | Only return Tokens that have `last_updated` after or equal to this Date/Time (inclusive).        |
+| date_to   | [DateTime](/16-types/16-types.md#datetime-type) | no       | Only return Tokens that have `last_updated` up to this Date/Time, but not including (exclusive). |
+| offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                           |
+| limit     | int                                             | no       | Maximum number of objects to GET.                                                                |
 
 ##### Response Data
 
@@ -275,7 +275,7 @@ When the eMSP does not know the Token, the eMSP SHALL respond with an HTTP statu
 
 When the eMSP receives a *real-time* authorization request from a CPO that contains too little information (no
 LocationReferences provided) to determine if the Token might be used, the eMSP SHALL respond with the OCPI status:
-[2002](/05-status_codes.md#2xxx-client-errors)
+[2002](/05-status-codes/05-status-codes.md#2xxx-client-errors)
 
 ##### Request Parameters
 
@@ -283,10 +283,10 @@ The parameter: `token_uid` has to be provided as URL segments.
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter | Datatype                                   | Required | Description                                                                                           |
-|-----------|--------------------------------------------|----------|-------------------------------------------------------------------------------------------------------|
-| token_uid | [CiString](/16-types.md#cistring-type)(36) | yes      | Token.uid of the Token for which authorization is requested.                                          |
-| type      | [TokenType](https://ocpi.dev)              | no       | Token.type of the Token for which this authorization is. Default if omitted: [RFID](https://ocpi.dev) |
+| Parameter | Datatype                                            | Required | Description                                                                                           |
+|-----------|-----------------------------------------------------|----------|-------------------------------------------------------------------------------------------------------|
+| token_uid | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | Token.uid of the Token for which authorization is requested.                                          |
+| type      | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token for which this authorization is. Default if omitted: [RFID](https://ocpi.dev) |
 
 ##### Request Body
 
@@ -313,32 +313,32 @@ If the token is not known, the response SHALL contain the status code: `2004: Un
 
 ### *AuthorizationInfo* Object
 
-| Property                | Type                                          | Card. | Description                                                                                                                                                                                          |
-|-------------------------|-----------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| allowed                 | [AllowedType](https://ocpi.dev)               | 1     | Status of the Token, and whether charging is allowed at the optionally given location.                                                                                                               |
-| token                   | [Token](https://ocpi.dev)                     | 1     | The complete Token object for which this authorization was requested.                                                                                                                                |
-| location                | [LocationReferences](https://ocpi.dev)        | ?     | Optional reference to the location if it was included in the request, and if the EV driver is allowed to charge at that location. Only the EVSEs the EV driver is allowed to charge at are returned. |
-| authorization_reference | [CiString](/16-types.md#cistring-type)(36)    | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant [Session](https://ocpi.dev) and/or [CDR](https://ocpi.dev).                            |
-| info                    | [DisplayText](/16-types.md#displaytext-class) | ?     | Optional display text, additional information to the EV driver.                                                                                                                                      |
+| Property                | Type                                                   | Card. | Description                                                                                                                                                                                          |
+|-------------------------|--------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| allowed                 | [AllowedType](https://ocpi.dev)                        | 1     | Status of the Token, and whether charging is allowed at the optionally given location.                                                                                                               |
+| token                   | [Token](https://ocpi.dev)                              | 1     | The complete Token object for which this authorization was requested.                                                                                                                                |
+| location                | [LocationReferences](https://ocpi.dev)                 | ?     | Optional reference to the location if it was included in the request, and if the EV driver is allowed to charge at that location. Only the EVSEs the EV driver is allowed to charge at are returned. |
+| authorization_reference | [CiString](/16-types/16-types.md#cistring-type)(36)    | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant [Session](https://ocpi.dev) and/or [CDR](https://ocpi.dev).                            |
+| info                    | [DisplayText](/16-types/16-types.md#displaytext-class) | ?     | Optional display text, additional information to the EV driver.                                                                                                                                      |
 
 ### *Token* Object
 
 | Property             | Type                                                              | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |----------------------|-------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| country_code         | [CiString](/16-types.md#cistring-type)(2)                         | 1     | ISO-3166 alpha-2 country code of the MSP that *owns* this Token.                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| party_id             | [CiString](/16-types.md#cistring-type)(3)                         | 1     | ID of the eMSP that *owns* this Token (following the ISO-15118 standard).                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| uid                  | [CiString](/16-types.md#cistring-type)(36)                        | 1     | Unique ID by which this Token, combined with the Token type, can be identified. This is the field used by CPO system (RFID reader on the Charge Point) to identify this token. Currently, in most cases: type=RFID, this is the RFID hidden ID as read by the RFID reader, but that is not a requirement. If this is a `APP_USER` or `AD_HOC_USER` Token, it will be a uniquely, by the eMSP, generated ID. This field is named `uid` instead of `id` to prevent confusion with: `contract_id`. |
+| country_code         | [CiString](/16-types/16-types.md#cistring-type)(2)                | 1     | ISO-3166 alpha-2 country code of the MSP that *owns* this Token.                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| party_id             | [CiString](/16-types/16-types.md#cistring-type)(3)                | 1     | ID of the eMSP that *owns* this Token (following the ISO-15118 standard).                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| uid                  | [CiString](/16-types/16-types.md#cistring-type)(36)               | 1     | Unique ID by which this Token, combined with the Token type, can be identified. This is the field used by CPO system (RFID reader on the Charge Point) to identify this token. Currently, in most cases: type=RFID, this is the RFID hidden ID as read by the RFID reader, but that is not a requirement. If this is a `APP_USER` or `AD_HOC_USER` Token, it will be a uniquely, by the eMSP, generated ID. This field is named `uid` instead of `id` to prevent confusion with: `contract_id`. |
 | type                 | [TokenType](https://ocpi.dev)                                     | 1     | Type of the token                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| contract_id          | [CiString](/16-types.md#cistring-type)(36)                        | 1     | Uniquely identifies the EV Driver contract token within the eMSP's platform (and suboperator platforms). Recommended to follow the specification for eMA ID from "eMI3 standard version V1.0" (<http://emi3group.com/documents-links/>) "Part 2: business objects."                                                                                                                                                                                                                             |
-| visual_number        | [string](/16-types.md#string-type)(64)                            | ?     | Visual readable number/identification as printed on the Token (RFID card), might be equal to the contract_id.                                                                                                                                                                                                                                                                                                                                                                                   |
-| issuer               | [string](/16-types.md#string-type)(64)                            | 1     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP.                                                                                                                                                                                                                                                                                                                                                                          |
-| group_id             | [CiString](/16-types.md#cistring-type)(36)                        | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one, so that a session can be started with one token and stopped with another, handy when a card and key-fob are given to the EV-driver. Beware that OCPP 1.5/1.6 only support group_ids (it is called parentId in OCPP 1.5/1.6) with a maximum length of 20.                                                                                                                                            |
+| contract_id          | [CiString](/16-types/16-types.md#cistring-type)(36)               | 1     | Uniquely identifies the EV Driver contract token within the eMSP's platform (and suboperator platforms). Recommended to follow the specification for eMA ID from "eMI3 standard version V1.0" (<http://emi3group.com/documents-links/>) "Part 2: business objects."                                                                                                                                                                                                                             |
+| visual_number        | [string](/16-types/16-types.md#string-type)(64)                   | ?     | Visual readable number/identification as printed on the Token (RFID card), might be equal to the contract_id.                                                                                                                                                                                                                                                                                                                                                                                   |
+| issuer               | [string](/16-types/16-types.md#string-type)(64)                   | 1     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP.                                                                                                                                                                                                                                                                                                                                                                          |
+| group_id             | [CiString](/16-types/16-types.md#cistring-type)(36)               | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one, so that a session can be started with one token and stopped with another, handy when a card and key-fob are given to the EV-driver. Beware that OCPP 1.5/1.6 only support group_ids (it is called parentId in OCPP 1.5/1.6) with a maximum length of 20.                                                                                                                                            |
 | valid                | boolean                                                           | 1     | Is this Token valid                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | whitelist            | [WhitelistType](https://ocpi.dev)                                 | 1     | Indicates what type of white-listing is allowed.                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| language             | [string](/16-types.md#string-type)(2)                             | ?     | Language Code ISO 639-1. This optional field indicates the Token owner's preferred interface language. If the language is not provided or not supported then the CPO is free to choose its own language.                                                                                                                                                                                                                                                                                        |
+| language             | [string](/16-types/16-types.md#string-type)(2)                    | ?     | Language Code ISO 639-1. This optional field indicates the Token owner's preferred interface language. If the language is not provided or not supported then the CPO is free to choose its own language.                                                                                                                                                                                                                                                                                        |
 | default_profile_type | [ProfileType](https://ocpi.dev)                                   | ?     | The default [Charging Preference](https://ocpi.dev). When this is provided, and a charging session is started on an Charge Point that support Preference base Smart Charging and support this [ProfileType](https://ocpi.dev), the Charge Point can start using this [ProfileType](https://ocpi.dev), without this having to be set via: [Set Charging Preferences](https://ocpi.dev).                                                                                                          |
 | energy_contract      | [EnergyContract](#mod_tokens.asciidoc#mod_tokens_energy_contract) | ?     | When the Charge Point supports using your own energy supplier/contract at a Charge Point, information about the energy supplier/contract is needed so the CPO knows which energy supplier to use. NOTE: In a lot of countries it is currently not allowed/possible to use a drivers own energy supplier/contract at a Charge Point.                                                                                                                                                             |
-| last_updated         | [DateTime](/16-types.md#datetime-type)                            | 1     | Timestamp when this Token was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| last_updated         | [DateTime](/16-types/16-types.md#datetime-type)                   | 1     | Timestamp when this Token was last updated (or created).                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 The combination of *uid* and *type* should be unique for every token within the eMSP's system.
 
@@ -407,19 +407,19 @@ it is adviced to not used a group_id longer then 20.
 Information about a energy contract that belongs to a Token so a driver could use his/her own energy contract when
 charging at a Charge Point.
 
-| Property      | Type                                   | Card. | Description                                                                  |
-|---------------|----------------------------------------|-------|------------------------------------------------------------------------------|
-| supplier_name | [string](/16-types.md#string-type)(64) | 1     | Name of the energy supplier for this token.                                  |
-| contract_id   | [string](/16-types.md#string-type)(64) | ?     | Contract ID at the energy supplier, that belongs to the owner of this token. |
+| Property      | Type                                            | Card. | Description                                                                  |
+|---------------|-------------------------------------------------|-------|------------------------------------------------------------------------------|
+| supplier_name | [string](/16-types/16-types.md#string-type)(64) | 1     | Name of the energy supplier for this token.                                  |
+| contract_id   | [string](/16-types/16-types.md#string-type)(64) | ?     | Contract ID at the energy supplier, that belongs to the owner of this token. |
 
 ### LocationReferences *class*
 
 References to location details.
 
-| Property    | Type                                       | Card. | Description                                                                                    |
-|-------------|--------------------------------------------|-------|------------------------------------------------------------------------------------------------|
-| location_id | [CiString](/16-types.md#cistring-type)(36) | 1     | Unique identifier for the location.                                                            |
-| evse_uids   | [CiString](/16-types.md#cistring-type)(36) | \*    | Unique identifiers for EVSEs within the CPO's platform for the EVSE within the given location. |
+| Property    | Type                                                | Card. | Description                                                                                    |
+|-------------|-----------------------------------------------------|-------|------------------------------------------------------------------------------------------------|
+| location_id | [CiString](/16-types/16-types.md#cistring-type)(36) | 1     | Unique identifier for the location.                                                            |
+| evse_uids   | [CiString](/16-types/16-types.md#cistring-type)(36) | \*    | Unique identifiers for EVSEs within the CPO's platform for the EVSE within the given location. |
 
 ### TokenType *enum*
 

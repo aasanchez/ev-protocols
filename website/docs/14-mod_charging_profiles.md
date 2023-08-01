@@ -376,11 +376,11 @@ As it is not common to add a body to a GET request, all parameters are added to 
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                   | Required | Description                                                                                                                                                                                   |
-|--------------|--------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| session_id   | [CiString](/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                                           |
-| duration     | int                                        | yes      | Length of the requested ActiveChargingProfile in seconds Duration in seconds. \*                                                                                                              |
-| response_url | [URL](/16-types.md#url-type)               | yes      | URL that the [ActiveChargingProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
+| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                                   |
+|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| session_id   | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                                           |
+| duration     | int                                                 | yes      | Length of the requested ActiveChargingProfile in seconds Duration in seconds. \*                                                                                                              |
+| response_url | [URL](/16-types/16-types.md#url-type)               | yes      | URL that the [ActiveChargingProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
 
 :::note
 duration: Balance the duration between maximizing the information gained and the data usage and computation to execute
@@ -413,9 +413,9 @@ Example:
 
 The following parameter shall be provided as URL segments.
 
-| Parameter  | Datatype                                   | Required | Description                                                         |
-|------------|--------------------------------------------|----------|---------------------------------------------------------------------|
-| session_id | [CiString](/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform. |
+| Parameter  | Datatype                                            | Required | Description                                                         |
+|------------|-----------------------------------------------------|----------|---------------------------------------------------------------------|
+| session_id | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform. |
 
 #### Request Body
 
@@ -454,10 +454,10 @@ As it is not common to add a body to a DELETE request, all parameters are added 
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                   | Required | Description                                                                                                                                                                       |
-|--------------|--------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| session_id   | [CiString](/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                               |
-| response_url | [URL](/16-types.md#url-type)               | yes      | URL that the [ClearProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between DELETE ChargingProfile requests. |
+| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                       |
+|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| session_id   | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                               |
+| response_url | [URL](/16-types/16-types.md#url-type)               | yes      | URL that the [ClearProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between DELETE ChargingProfile requests. |
 
 ====== Response Data
 
@@ -551,9 +551,9 @@ Example:
 
 The following parameter shall be provided as URL segments.
 
-| Parameter  | Datatype                                   | Required | Description                                                         |
-|------------|--------------------------------------------|----------|---------------------------------------------------------------------|
-| session_id | [CiString](/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform. |
+| Parameter  | Datatype                                            | Required | Description                                                         |
+|------------|-----------------------------------------------------|----------|---------------------------------------------------------------------|
+| session_id | [CiString](/16-types/16-types.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform. |
 
 #### Request Body
 
@@ -616,19 +616,19 @@ of the DELETE (ClearProfile) request send by the eMSP.
 
 Object set to a CPO to set a Charging Profile.
 
-| Property         | Type                                | Card. | Description                                                                                                                                                         |
-|------------------|-------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| charging_profile | [ChargingProfile](https://ocpi.dev) | 1     | Contains limits for the available power or current over time.                                                                                                       |
-| response_url     | [URL](/16-types.md#url-type)        | 1     | URL that the ChargingProfileResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
+| Property         | Type                                  | Card. | Description                                                                                                                                                         |
+|------------------|---------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| charging_profile | [ChargingProfile](https://ocpi.dev)   | 1     | Contains limits for the available power or current over time.                                                                                                       |
+| response_url     | [URL](/16-types/16-types.md#url-type) | 1     | URL that the ChargingProfileResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
 
 ## Data types
 
 ### ActiveChargingProfile *class*
 
-| Property         | Type                                   | Card. | Description                                                                                                                                                 |
-|------------------|----------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| start_date_time  | [DateTime](/16-types.md#datetime-type) | 1     | Date and time at which the Charge Point has calculated this ActiveChargingProfile. All time measurements within the profile are relative to this timestamp. |
-| charging_profile | [ChargingProfile](https://ocpi.dev)    | 1     | Charging profile structure defines a list of charging periods.                                                                                              |
+| Property         | Type                                            | Card. | Description                                                                                                                                                 |
+|------------------|-------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| start_date_time  | [DateTime](/16-types/16-types.md#datetime-type) | 1     | Date and time at which the Charge Point has calculated this ActiveChargingProfile. All time measurements within the profile are relative to this timestamp. |
+| charging_profile | [ChargingProfile](https://ocpi.dev)             | 1     | Charging profile structure defines a list of charging periods.                                                                                              |
 
 ### ChargingRateUnit *enum*
 
@@ -643,23 +643,23 @@ Unit in which a charging profile is defined.
 
 Charging profile class defines a list of charging periods.
 
-| Property                | Type                                      | Card. | Description                                                                                                                                                                                                                                                                                                                            |
-|-------------------------|-------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| start_date_time         | [DateTime](/16-types.md#datetime-type)    | ?     | Starting point of an absolute profile. If absent the profile will be relative to start of charging.                                                                                                                                                                                                                                    |
-| duration                | int                                       | ?     | Duration of the charging profile in seconds. If the duration is left empty, the last period will continue indefinitely or until end of the transaction in case start_date_time is absent.                                                                                                                                              |
-| charging_rate_unit      | [ChargingRateUnit](https://ocpi.dev)      | 1     | The unit of measure.                                                                                                                                                                                                                                                                                                                   |
-| min_charging_rate       | [number](/16-types.md#number-type)        | ?     | Minimum charging rate supported by the EV. The unit of measure is defined by the chargingRateUnit. This parameter is intended to be used by a local smart charging algorithm to optimize the power allocation for in the case a charging process is inefficient at lower charging rates. Accepts at most one digit fraction (e.g. 8.1) |
-| charging_profile_period | [ChargingProfilePeriod](https://ocpi.dev) | \*    | List of ChargingProfilePeriod elements defining maximum power or current usage over time.                                                                                                                                                                                                                                              |
+| Property                | Type                                            | Card. | Description                                                                                                                                                                                                                                                                                                                            |
+|-------------------------|-------------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| start_date_time         | [DateTime](/16-types/16-types.md#datetime-type) | ?     | Starting point of an absolute profile. If absent the profile will be relative to start of charging.                                                                                                                                                                                                                                    |
+| duration                | int                                             | ?     | Duration of the charging profile in seconds. If the duration is left empty, the last period will continue indefinitely or until end of the transaction in case start_date_time is absent.                                                                                                                                              |
+| charging_rate_unit      | [ChargingRateUnit](https://ocpi.dev)            | 1     | The unit of measure.                                                                                                                                                                                                                                                                                                                   |
+| min_charging_rate       | [number](/16-types/16-types.md#number-type)     | ?     | Minimum charging rate supported by the EV. The unit of measure is defined by the chargingRateUnit. This parameter is intended to be used by a local smart charging algorithm to optimize the power allocation for in the case a charging process is inefficient at lower charging rates. Accepts at most one digit fraction (e.g. 8.1) |
+| charging_profile_period | [ChargingProfilePeriod](https://ocpi.dev)       | \*    | List of ChargingProfilePeriod elements defining maximum power or current usage over time.                                                                                                                                                                                                                                              |
 
 ### ChargingProfilePeriod *class*
 
 Charging profile period structure defines a time period in a charging profile, as used in:
 [ChargingProfile](https://ocpi.dev)
 
-| Property     | Type                               | Card. | Description                                                                                                                                                                |
-|--------------|------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| start_period | int                                | 1     | Start of the period, in seconds from the start of profile. The value of StartPeriod also defines the stop time of the previous period.                                     |
-| limit        | [number](/16-types.md#number-type) | 1     | Charging rate limit during the profile period, in the applicable chargingRateUnit, for example in Amperes (A) or Watts (W). Accepts at most one digit fraction (e.g. 8.1). |
+| Property     | Type                                        | Card. | Description                                                                                                                                                                |
+|--------------|---------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| start_period | int                                         | 1     | Start of the period, in seconds from the start of profile. The value of StartPeriod also defines the stop time of the previous period.                                     |
+| limit        | [number](/16-types/16-types.md#number-type) | 1     | Charging rate limit during the profile period, in the applicable chargingRateUnit, for example in Amperes (A) or Watts (W). Accepts at most one digit fraction (e.g. 8.1). |
 
 ### ChargingProfileResponseType *enum*
 

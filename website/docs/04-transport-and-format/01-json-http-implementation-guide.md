@@ -120,12 +120,12 @@ additional headers need to be added to the response.
 
 The following table lists all the parameters that have to be supported but might be omitted by a client request.
 
-| Parameter | Datatype                               | Description                                                                                                                                                                                                                                             |
-|-----------|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date_from | [DateTime](/16-types.md#datetime-type) | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
-| date_to   | [DateTime](/16-types.md#datetime-type) | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
-| offset    | int                                    | The offset of the first object returned. Default is 0 (the first object).                                                                                                                                                                               |
-| limit     | int                                    | The maximum number of objects to GET. The server might decide to return fewer objects, either because there are no more objects, or the server limits the maximum number of objects to return. This is to prevent, for example, overloading the system. |
+| Parameter | Datatype                                        | Description                                                                                                                                                                                                                                             |
+|-----------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| date_from | [DateTime](/16-types/16-types.md#datetime-type) | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
+| date_to   | [DateTime](/16-types/16-types.md#datetime-type) | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
+| offset    | int                                             | The offset of the first object returned. Default is 0 (the first object).                                                                                                                                                                               |
+| limit     | int                                             | The maximum number of objects to GET. The server might decide to return fewer objects, either because there are no more objects, or the server limits the maximum number of objects to return. This is to prevent, for example, overloading the system. |
 
 The `date_from` is inclusive and `date_to` exclusive, this way, when sequential requests with to the same end-point are
 done, the next interval will have no overlap and the `date_from` of the next interval is simply the `date_to` of the
@@ -267,7 +267,7 @@ When a client tries to access an object with a URL that has a different
 
 When a client pushes a Client Owned Object, but the `object-id` in the URL is different from the id in the object being
 pushed, server implementations are advised to return an [OCPI status
-code](/05-status_codes.md): [2001](/05-status_codes.md#2xxx-client-errors).
+code](/05-status-codes/05-status-codes.md): [2001](/05-status-codes/05-status-codes.md).
 
 ## Client Owned Object Pull
 
@@ -284,18 +284,18 @@ When one or more objects, returned in the response, do not meet one of the
 The content that is sent with all the response messages is an *application/json* type and contains a JSON object with
 the following properties:
 
-| Property       | Type                                   | Card.   | Description                                                                                                                                                                                           |
-|----------------|----------------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| data           | Array or Object or String              | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?) |
-| status_code    | int                                    | 1       | OCPI status code, as listed in [Status Codes](/05-status_codes.md), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits.              |
-| status_message | [string](/16-types.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                             |
-| timestamp      | [DateTime](/16-types.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                  |
+| Property       | Type                                            | Card.   | Description                                                                                                                                                                                              |
+|----------------|-------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data           | Array or Object or String                       | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?)    |
+| status_code    | int                                             | 1       | OCPI status code, as listed in [Status Codes](/05-status-codes/05-status-codes.md), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits. |
+| status_message | [string](/16-types/16-types.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                                |
+| timestamp      | [DateTime](/16-types/16-types.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                     |
 
 For brevity's sake, any further examples used in this specification will only contain the value of the "data" field. In
 reality, it will always have to be wrapped in the above response format.
 
 When a request cannot be accepted, the type response depends on the type of error. For more information see: [Status
-codes](/05-status_codes.md)
+codes](/05-status-codes/05-status-codes.md)
 
 For errors on the HTTP layer, use HTTP error response codes, including the response format above, that contains more
 details. HTTP status codes are described on [w3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
@@ -476,12 +476,12 @@ The requests/responses to/from Configuration Modules:
 Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
-| HTTP Header            | Datatype                                  | Description                                                          |
-|------------------------|-------------------------------------------|----------------------------------------------------------------------|
-| OCPI-to-party-id       | [CiString](/16-types.md#cistring-type)(3) | *party id* of the connected party this message is to be sent to.     |
-| OCPI-to-country-code   | [CiString](/16-types.md#cistring-type)(2) | *country code* of the connected party this message is to be sent to. |
-| OCPI-from-party-id     | [CiString](/16-types.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
-| OCPI-from-country-code | [CiString](/16-types.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
+| HTTP Header            | Datatype                                           | Description                                                          |
+|------------------------|----------------------------------------------------|----------------------------------------------------------------------|
+| OCPI-to-party-id       | [CiString](/16-types/16-types.md#cistring-type)(3) | *party id* of the connected party this message is to be sent to.     |
+| OCPI-to-country-code   | [CiString](/16-types/16-types.md#cistring-type)(2) | *country code* of the connected party this message is to be sent to. |
+| OCPI-from-party-id     | [CiString](/16-types/16-types.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
+| OCPI-from-country-code | [CiString](/16-types/16-types.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
 
 :::note
 HTTP header names are case-insensitive
