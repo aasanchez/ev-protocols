@@ -9,9 +9,9 @@ authors:
 tags: [JSON Schema, OCPI, eMobility, open source, validation, assessment, compliance, quality, SolidStudio]
 ---
 
-SolidStudio, a leading provider of eMobility solutions, has released a new open source JSON Schema Generator for OCPI.
-The generator allows developers to create a set of files in JSON-Schema format that reflect the communication interfaces
-for OCPI 2.1.1, 2.2 and 2.2.1.
+SolidStudio, a leading provider of eMobility solutions, has released a new open source
+[JSON Schema Generator for OCPI](https://github.com/solidstudiosh/ocpi-schema). The generator allows developers to
+create a set of files in JSON-Schema format that reflect the communication interfaces for OCPI 2.1.1, 2.2 and 2.2.1.
 
 JSON Schema is a standard for API validation and assessment capabilities. By using the SolidStudio JSON Schema Generator
 for OCPI, developers can ensure that their APIs are compliant with the OCPI documentation.
@@ -39,3 +39,5 @@ OCPI 2.1.1, 2.2 or 2.2.1 API.
 The SolidStudio JSON Schema Generator for OCPI is a valuable tool for developers who want to ensure that their APIs are
 compliant with the OCPI documentation. The generator is easy to use and can save developers time and effort. If you are
 developing an OCPI API, I encourage you to check out the SolidStudio JSON Schema Generator.
+
+[JSON-Schema generator for OCPI 2.1.1](https://github.com/solidstudiosh/ocpi-schema)
