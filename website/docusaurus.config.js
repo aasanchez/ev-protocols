@@ -50,7 +50,7 @@ const config = {
         },
         gtag: {
           trackingID: 'G-T3L8Q7QCG3',
-          anonymizeIP: true,
+          anonymizeIP: true
         },
         blog: {
           showReadingTime: true,
@@ -63,8 +63,8 @@ const config = {
           changefreq: 'weekly',
           priority: 0.5,
           ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-        },
+          filename: 'sitemap.xml'
+        }
       })
     ]
   ],
@@ -79,7 +79,7 @@ const config = {
         contextualSearch: true,
         externalUrlRegex: 'localhost:3000|ocpi.dev',
         searchParameters: {},
-        searchPagePath: 'search',
+        searchPagePath: 'search'
       },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
@@ -95,9 +95,9 @@ const config = {
             position: 'left',
             label: 'Docs'
           },
-          { 
-            to: '/blog', 
-            label: 'Blog', 
+          {
+            to: '/blog',
+            label: 'Blog',
             position: 'left'
           },
           {

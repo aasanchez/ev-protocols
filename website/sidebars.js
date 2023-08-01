@@ -7,7 +7,7 @@ const sidebars = {
       label: '📚 Terminology and Definitions',
       link: {
         type: 'generated-index',
-        slug: 'terminology-and-definitions',
+        slug: 'terminology-and-definitions'
       },
       collapsed: true,
       items: [
@@ -19,8 +19,8 @@ const sidebars = {
         'terminology-and-definitions/charging-topology',
         'terminology-and-definitions/variable-names',
         'terminology-and-definitions/cardinality',
-        'terminology-and-definitions/data-retention',
-      ],
+        'terminology-and-definitions/data-retention'
+      ]
     },
     'supported-topologies/supported-topologies',
     {
@@ -28,7 +28,7 @@ const sidebars = {
       label: '✏️ Transport and format',
       link: {
         type: 'generated-index',
-        slug: 'transport-and-format',
+        slug: 'transport-and-format'
       },
       collapsed: true,
       items: [
@@ -36,7 +36,7 @@ const sidebars = {
         'transport-and-format/unique-message-ids',
         'transport-and-format/interface-endpoints',
         'transport-and-format/offline-behaviour'
-      ],
+      ]
     },
     'status-codes/status-codes',
     {
@@ -57,13 +57,12 @@ const sidebars = {
         'tokens',
         'commands',
         'charging_profiles',
-        'hub_client_info',
-      ],
+        'hub_client_info'
+      ]
     },
     'types/types'
 
-
   ]
-};
+}
 
 module.exports = sidebars
