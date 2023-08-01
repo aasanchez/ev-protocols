@@ -45,7 +45,6 @@ common_cleaning "website/docs/01-introduction.md"
 fix_introduction
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/02-terminology.sh
 pre_terminology
@@ -54,7 +53,6 @@ links "website/docs/02-terminology.md"
 common_cleaning "website/docs/02-terminology.md"
 fix_terminology
 
-echo ""
 echo ""
 
 . ./convert/2.2.1/03-topology.sh
@@ -65,7 +63,6 @@ common_cleaning "website/docs/03-topology.md"
 fix_topology
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/04-transport_and_format.sh
 pre_transport_and_format
@@ -75,14 +72,12 @@ common_cleaning "website/docs/04-transport_and_format.md"
 fix_transport_and_format
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/05-status_codes.sh
 pandoc2markdown "05-status_codes"
 common_cleaning "website/docs/05-status_codes.md"
 fix_status_codes
 
-echo ""
 echo ""
 
 mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
@@ -94,7 +89,6 @@ common_cleaning "website/docs/06-mod_versions.md"
 fix_mod_versions
 
 echo ""
-echo ""
 
 mv ocpi/credentials.asciidoc ocpi/mod_credentials.asciidoc
 . ./convert/2.2.1/07-mod_credentials.sh
@@ -105,7 +99,6 @@ common_cleaning "website/docs/07-mod_credentials.md"
 fix_mod_credentials
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/08-mod_locations.sh
 pre_mod_locations
@@ -114,7 +107,6 @@ links "website/docs/08-mod_locations.md"
 common_cleaning "website/docs/08-mod_locations.md"
 fix_mod_locations
 
-echo ""
 echo ""
 
 . ./convert/2.2.1/09-mod_sessions.sh
@@ -125,7 +117,6 @@ common_cleaning "website/docs/09-mod_sessions.md"
 fix_mod_sessions
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/10-mod_cdrs.sh
 pre_mod_cdrs
@@ -134,7 +125,6 @@ links "website/docs/10-mod_cdrs.md"
 common_cleaning "website/docs/10-mod_cdrs.md"
 fix_mod_cdrs
 
-echo ""
 echo ""
 
 . ./convert/2.2.1/11-mod_tariffs.sh
@@ -145,7 +135,6 @@ common_cleaning "website/docs/11-mod_tariffs.md"
 fix_mod_tariffs
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/12-mod_tokens.sh
 pre_mod_tokens
@@ -154,7 +143,6 @@ links "website/docs/12-mod_tokens.md"
 common_cleaning "website/docs/12-mod_tokens.md"
 fix_mod_tokens
 
-echo ""
 echo ""
 
 . ./convert/2.2.1/13-mod_commands.sh
@@ -165,7 +153,6 @@ common_cleaning "website/docs/13-mod_commands.md"
 fix_mod_commands
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/14-mod_charging_profiles.sh
 pre_mod_charging_profiles
@@ -175,7 +162,6 @@ common_cleaning "website/docs/14-mod_charging_profiles.md"
 fix_mod_charging_profiles
 
 echo ""
-echo ""
 
 . ./convert/2.2.1/15-mod_hub_client_info.sh
 pre_mod_hub_client_info
@@ -184,7 +170,6 @@ links "website/docs/15-mod_hub_client_info.md"
 common_cleaning "website/docs/15-mod_hub_client_info.md"
 fix_mod_hub_client_info
 
-echo ""
 echo ""
 
 . ./convert/2.2.1/16-types.sh

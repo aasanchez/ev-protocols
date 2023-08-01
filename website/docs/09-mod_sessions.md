@@ -1,6 +1,6 @@
 ---
 id: sessions
-slug: /sessions
+slug: modules/sessions
 ---
 # Sessions
 

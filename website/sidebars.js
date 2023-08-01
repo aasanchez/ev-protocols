@@ -48,67 +48,9 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        {
-          type: 'category',
-          label: 'ℹ️ Versions',
-          // slug: 'modules/version',
-          link: {
-            type: 'doc',
-            id: 'versions/intro',
-            
-          },
-          items: [
-            'versions/interfaces-and-endpoints',
-            'versions/object-description',
-            'versions/data-types',
-            'versions/custom-module'
-          ],
-        },
-        {
-          type: 'category',
-          label: '🗝️ Credentials',
-          link: {
-            type: 'doc',
-            id: 'credentials/intro',
-            
-          },
-          items: [
-            'credentials/use-cases',
-            'credentials/interfaces-and-endpoints',
-            'credentials/object-description',
-            'credentials/data-types'
-          ],
-        },
-        {
-          type: 'category',
-          label: '📍 Locations',
-          link: {
-            type: 'doc',
-            id: 'locations/intro',
-            
-          },
-          items: [
-            'locations/flow-and-lifecycle',
-            'locations/interfaces-and-endpoints',
-            'locations/object-description',
-            'locations/data-types'
-          ],
-        },
-        {
-          type: 'category',
-          label: '📖 Sessions',
-          link: {
-            type: 'doc',
-            id: 'locations/intro',
-            
-          },
-          items: [
-            'sessions/flow-and-lifecycle',
-            'sessions/interfaces-and-endpoints',
-            'sessions/object-description',
-            'sessions/data-types'
-          ],
-        },
+        'versions',
+        'credentials',
+        'locations',
         'sessions',
         'cdrs',
         'tariffs',
