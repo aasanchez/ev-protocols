@@ -45,10 +45,10 @@ Both, CPOs and eMSPs MUST implement such a version endpoint.
 
 ### Version *class*
 
-| Property | Type                              | Card. | Description                                                  |
-|----------|-----------------------------------|-------|--------------------------------------------------------------|
-| version  | [VersionNumber](https://ocpi.dev) | 1     | The version number.                                          |
-| url      | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint containing version specific information. |
+| Property | Type                                  | Card. | Description                                                  |
+|----------|---------------------------------------|-------|--------------------------------------------------------------|
+| version  | [VersionNumber](https://ocpi.dev)     | 1     | The version number.                                          |
+| url      | [URL](/16-types/16-types.md#url-type) | 1     | URL to the endpoint containing version specific information. |
 
 ### GET
 
@@ -112,11 +112,11 @@ Both the CPO and the eMSP MUST implement this endpoint.
 
 ### Endpoint *class*
 
-| Property   | Type                              | Card. | Description                              |
-|------------|-----------------------------------|-------|------------------------------------------|
-| identifier | [ModuleID](https://ocpi.dev)      | 1     | Endpoint identifier.                     |
-| role       | [InterfaceRole](https://ocpi.dev) | 1     | Interface role this endpoint implements. |
-| url        | [URL](/16-types.md#url-type)      | 1     | URL to the endpoint.                     |
+| Property   | Type                                  | Card. | Description                              |
+|------------|---------------------------------------|-------|------------------------------------------|
+| identifier | [ModuleID](https://ocpi.dev)          | 1     | Endpoint identifier.                     |
+| role       | [InterfaceRole](https://ocpi.dev)     | 1     | Interface role this endpoint implements. |
+| url        | [URL](/16-types/16-types.md#url-type) | 1     | URL to the endpoint.                     |
 
 :::note
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
