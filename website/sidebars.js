@@ -41,7 +41,7 @@ const sidebars = {
     'status_codes',
     {
       type: 'category',
-      label: 'Modules',
+      label: '📦 Modules',
       link: {
         type: 'generated-index',
         slug: 'modules'
