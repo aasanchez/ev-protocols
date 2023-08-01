@@ -1,6 +1,6 @@
 ---
 id: object-description
-slug: object-description
+slug: /modules/version/object-description
 ---
 # Object Description
 

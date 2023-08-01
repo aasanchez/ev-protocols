@@ -1,6 +1,6 @@
 ---
 id: intro
-slug: intro
+slug: /modules/version
 ---
 # Versions
 

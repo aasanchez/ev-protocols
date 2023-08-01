@@ -1,6 +1,6 @@
 ---
 id: custom-module
-slug: custom-module
+slug: /modules/version/custom-module
 ---
 # Custom Modules
 

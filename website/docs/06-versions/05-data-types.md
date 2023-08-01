@@ -1,6 +1,6 @@
 ---
 id: data-types
-slug: data-types
+slug: /modules/version/data-types
 ---
 # Data Types
 

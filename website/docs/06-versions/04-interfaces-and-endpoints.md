@@ -1,6 +1,6 @@
 ---
 id: interfaces-and-endpoints
-slug: interfaces-and-endpoints
+slug: /modules/version/interfaces-and-endpoints
 ---
 # Interfaces and Endpoint
 
