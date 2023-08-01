@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
-    'introduction',
+    'introduction/introduction',
     {
       type: 'category',
       label: 'Terminology and Definitions',

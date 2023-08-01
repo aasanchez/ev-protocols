@@ -2,7 +2,7 @@
 id: introduction
 slug: /
 ---
-# OCPI
+# ⚡ OCPI
 
 The Open Charge Point Interface (OCPI) enables a scalable, automated EV roaming setup between Charge Point Operators and
 e-Mobility Service Providers. It supports authorization, charge point information exchange (including live status
@@ -83,8 +83,8 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
 
 evRoaming4EU project and its partners:
 
-![evRoaming4EU logo](./images/evroamingeu_logo.png)
+![evRoaming4EU logo](../images/evroamingeu_logo.png)
 
 ECISS project and its partners:
 
-![ECISS logo](./images/eciss_logo.png)
+![ECISS logo](../images/eciss_logo.png)
