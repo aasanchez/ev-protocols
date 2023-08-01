@@ -167,6 +167,7 @@ function links(){
   gsed -i 's|(#mod_tariffs_tariffelement_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tariffs_tariffrestrictions_class)|(https://ocpi.dev)|g' "$file"
   
+  gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_energy_contract)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_real-time_authorization)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_token_object)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_tokens.asciidoc#mod_tokens_tokens_module)|(https://ocpi.dev)|g' "$file"
@@ -209,7 +210,6 @@ function links(){
   gsed -i 's|(#transport_and_format_put)|(#put-method)|g' "$file"
   gsed -i 's|(#transport_and_format_response_format)|(#response-format)|g' "$file"
   
-  gsed -i 's|(#types.asciidoc#mod_tokens_energy_contract)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#types.asciidoc#types_cistring_type)|(/16-types/16-types.md#cistring-type)|g' "$file"
   gsed -i 's|(#types.asciidoc#types_datetime_type)|(/16-types/16-types.md#datetime-type)|g' "$file"
   gsed -i 's|(#types.asciidoc#types_displaytext_class)|(/16-types/16-types.md#displaytext-class)|g' "$file"
