@@ -25,7 +25,7 @@ const sidebars = {
     'supported-topologies/supported-topologies',
     {
       type: 'category',
-      label: 'Transport and format',
+      label: '✏️ Transport and format',
       link: {
         type: 'generated-index',
         slug: 'transport-and-format',
