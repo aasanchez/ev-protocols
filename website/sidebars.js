@@ -79,7 +79,21 @@ const sidebars = {
             'credentials/object-description'
           ],
         },
-        'locations',
+        {
+          type: 'category',
+          label: 'Locations',
+          link: {
+            type: 'doc',
+            id: 'locations/intro',
+            
+          },
+          items: [
+            'locations/flow-and-lifecycle',
+            'locations/interfaces-and-endpoints',
+            'locations/data-types',
+            'locations/object-description'
+          ],
+        },
         'sessions',
         'cdrs',
         'tariffs',
