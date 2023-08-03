@@ -48,7 +48,19 @@ const sidebars = {
       },
       collapsed: true,
       items: [
-        'versions',
+        {
+          type: 'category',
+          label: 'Versions',
+          link: {
+            type: 'doc',
+            id: 'versions/intro'
+          },
+          collapsed: true,
+          items: [
+            'versions/information-endpoint',
+            'versions/details-endpoint'
+          ]
+        },
         'credentials',
         'locations',
         'sessions',
