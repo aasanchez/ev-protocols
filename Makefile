@@ -40,10 +40,13 @@ update: bootstrap ## is used to update the project after a fresh pull
 server: setup ## is used to start the application
 	@cd website && npx docusaurus start
 
+full-server: convert clean setup ## is used to start the application
+	@cd website && npx docusaurus start
+
 .PHONY: convert
 convert: ## convert from asciidoc to markdown
-	@ ./convert/2.2.1/conver2markdown.sh
-	@ ./convert/2.2.1/ocpidev-flavor.sh
+	@ ./convert.d/2.2.1/conver2markdown.sh
+	@ ./convert.d/2.2.1/ocpidev-flavor.sh
 
 build: ## is used for your continuous integration server
 	@cd website && npx docusaurus build
