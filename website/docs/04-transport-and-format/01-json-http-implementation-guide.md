@@ -60,7 +60,7 @@ HTTP `401 * Unauthorized` status code.
 
 When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](https://ocpi.dev),
 on another module than: [`credentials`](https://ocpi.dev) or
-[`versions`](https://ocpi.dev), the server SHALL respond with an HTTP
+[`versions`](/06-versions/01-version-intro.md), the server SHALL respond with an HTTP
 `401 * Unauthorized` status code.
 
 ## Pull and Push
@@ -472,7 +472,7 @@ etc. SHALL be routed, so need the routing headers.
 
 The requests/responses to/from Configuration Modules:
 [Credentials](https://ocpi.dev),
-[Versions](https://ocpi.dev) and [Hub Client
+[Versions](/06-versions/01-version-intro.md) and [Hub Client
 Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
