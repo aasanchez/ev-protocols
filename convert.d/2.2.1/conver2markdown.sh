@@ -37,68 +37,7 @@ for file in $json_files; do
   gsed -i -e 's|ydpi="53.060001">|ydpi="53.060001"><rect width="100%" height="100%" fill="white" />|gm' "$file"
 done
 
-. ./convert.d/2.2.1/01-introduction.sh
-pre_introduction
-pandoc2markdown "01-introduction"
-links "website/docs/01-introduction.md"
-common_cleaning "website/docs/01-introduction.md"
-fix_introduction
-
-echo ""
-
-. ./convert.d/2.2.1/02-terminology.sh
-pre_terminology
-pandoc2markdown "02-terminology"
-links "website/docs/02-terminology.md"
-common_cleaning "website/docs/02-terminology.md"
-fix_terminology
-
-echo ""
-
-. ./convert.d/2.2.1/03-topology.sh
-pre_topology
-pandoc2markdown "03-topology"
-links "website/docs/03-topology.md"
-common_cleaning "website/docs/03-topology.md"
-fix_topology
-
-echo ""
-
-. ./convert.d/2.2.1/04-transport_and_format.sh
-pre_transport_and_format
-pandoc2markdown "04-transport_and_format"
-links "website/docs/04-transport_and_format.md"
-common_cleaning "website/docs/04-transport_and_format.md"
-fix_transport_and_format
-
-echo ""
-
-. ./convert.d/2.2.1/05-status_codes.sh
-pandoc2markdown "05-status_codes"
-common_cleaning "website/docs/05-status_codes.md"
-fix_status_codes
-
-echo ""
-
-mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
-. ./convert.d/2.2.1/06-mod_versions.sh
-pre_mod_versions
-pandoc2markdown "06-mod_versions"
-links "website/docs/06-mod_versions.md"
-common_cleaning "website/docs/06-mod_versions.md"
-fix_mod_versions
-
-echo ""
-
-mv ocpi/credentials.asciidoc ocpi/mod_credentials.asciidoc
-. ./convert.d/2.2.1/07-mod_credentials.sh
-pre_mod_credentials
-pandoc2markdown "07-mod_credentials"
-links "website/docs/07-mod_credentials.md"
-common_cleaning "website/docs/07-mod_credentials.md"
-fix_mod_credentials
-
-echo ""
+. ./conv                       d
 
 . ./convert.d/2.2.1/08-mod_locations.sh
 pre_mod_locations
