@@ -10,13 +10,13 @@ able the handle receiving the request from another party.
 
 Example: `/ocpi/2.2.1/credentials` and `/ocpi/emsp/2.2.1/credentials`
 
-| Method                     | Description                                                                                       |
-|----------------------------|---------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev)    | Retrieves the credentials object to access the server's platform.                                 |
-| [POST](https://ocpi.dev)   | Provides the server with a credentials object to access the client's system (i.e. register).      |
-| [PUT](https://ocpi.dev)    | Provides the server with an updated credentials object to access the client's system.             |
-| PATCH                      | n/a                                                                                               |
-| [DELETE](https://ocpi.dev) | Informs the server that its credentials to the client's system are now invalid (i.e. unregister). |
+| Method                                                                            | Description                                                                                       |
+|-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/02-credentials/05-interfaces-and-endpoints.md#get-method)       | Retrieves the credentials object to access the server's platform.                                 |
+| [POST](/06-modules/02-credentials/05-interfaces-and-endpoints.md#post-method)     | Provides the server with a credentials object to access the client's system (i.e. register).      |
+| [PUT](/06-modules/02-credentials/05-interfaces-and-endpoints.md#put-method)       | Provides the server with an updated credentials object to access the client's system.             |
+| PATCH                                                                             | n/a                                                                                               |
+| [DELETE](/06-modules/02-credentials/05-interfaces-and-endpoints.md#delete-method) | Informs the server that its credentials to the client's system are now invalid (i.e. unregister). |
 
 ## **GET** Method
 

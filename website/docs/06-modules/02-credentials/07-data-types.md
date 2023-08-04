@@ -2,9 +2,9 @@
 id: data-types
 slug: /modules/credentials/data-types
 ---
-## Data types
+# Data types
 
-### CredentialsRole *class*
+## CredentialsRole *class*
 
 | Property         | Type                                               | Card. | Description                                                                    |
 |------------------|----------------------------------------------------|-------|--------------------------------------------------------------------------------|

@@ -107,8 +107,8 @@ required fields. Fields that are not specified may be considered as null values.
 Typically implemented by market roles like: eMSP and NSP.
 
 Tariffs are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the
-endpoints need to contain the required extra fields: {[party_id](https://ocpi.dev)}
-and {[country_code](https://ocpi.dev)}.
+endpoints need to contain the required extra fields: {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)}
+and {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
 Endpoint structure definition:
 

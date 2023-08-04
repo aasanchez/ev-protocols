@@ -2,15 +2,15 @@
 id: object-description
 slug: /modules/credentials/object-description
 ---
-## Object description
+# Object description
 
-### Credentials object
+## Credentials object
 
-| Property | Type                                            | Card. | Description                                                                                                                                                                                                                                   |
-|----------|-------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token    | [string](/07-types/01-intro.md#string-type)(64) | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
-| url      | [URL](/07-types/01-intro.md#url-type)           | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
-| roles    | [CredentialsRole](https://ocpi.dev)             | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
+| Property | Type                                                                                 | Card. | Description                                                                                                                                                                                                                                   |
+|----------|--------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token    | [string](/07-types/01-intro.md#string-type)(64)                                      | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
+| url      | [URL](/07-types/01-intro.md#url-type)                                                | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
+| roles    | [CredentialsRole](/06-modules/02-credentials/07-data-types.md#credentialsrole-class) | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
 
 Every role needs a unique combination of: `role`, `party_id` and `country_code`.
 
@@ -40,7 +40,7 @@ A Hub SHALL only reports itself as role: Hub. A Hub SHALL NOT report all the oth
 platform. A Hub SHALL report connected parties via the [HubClientInfo
 module](https://ocpi.dev).
 
-### Examples
+## Examples
 
 Example of a minimal CPO credentials object:
 

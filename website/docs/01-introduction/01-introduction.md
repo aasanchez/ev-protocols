@@ -66,7 +66,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
 * Support for Hubs
   * [Message routing headers](/04-transport-and-format/01-json-http-implementation-guide.md#message-routing)
   * [Hub Client Info](https://ocpi.dev)
-* [Support Platforms with multiple/different roles](https://ocpi.dev)
+* [Support Platforms with multiple/different roles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class)
 * [Charging Profiles](https://ocpi.dev)
 * [Preference based Smart Charging](https://ocpi.dev)
 * Improvements:

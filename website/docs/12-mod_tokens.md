@@ -87,8 +87,8 @@ Typically implemented by market roles like: CPO.
 
 With this interface the Sender can push the Token information to the Receiver. Tokens is a [Client Owned
 Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the end-points need to contain
-the required extra fields: {[party_id](https://ocpi.dev)} and
-{[country_code](https://ocpi.dev)}.
+the required extra fields: {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
 Endpoint structure definition:
 

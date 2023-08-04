@@ -27,8 +27,8 @@ HTTP header names are case-insensitive
 :::
 
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
-*credentials token*. [*Credentials tokens*](https://ocpi.dev) are exchanged via the
-[credentials module](https://ocpi.dev). These are different *tokens* than the
+*credentials token*. [*Credentials tokens*](/06-modules/02-credentials/06-object-description.md#credentials-object) are exchanged via the
+[credentials module](/06-modules/02-credentials/01-intro.md). These are different *tokens* than the
 [Tokens](https://ocpi.dev) exchanged via the [Token
 Module](https://ocpi.dev): Tokens used by drivers to authorize charging. To prevent
 confusion, when talking about the token used here in the HTTP Authorization header, call them: *Credentials Tokens*.
@@ -58,9 +58,9 @@ Authorization header to link the request to the correct requesting party's accou
 If the header is missing or the credentials token doesn't match any known party then the server SHALL respond with an
 HTTP `401 * Unauthorized` status code.
 
-When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](https://ocpi.dev),
-on another module than: [`credentials`](https://ocpi.dev) or
-[`versions`](/06-modules/01-versions/01-version-intro.md), the server SHALL respond with an HTTP
+When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](/06-modules/02-credentials/03-use-cases.md#registration),
+on another module than: [`credentials`](/06-modules/02-credentials/01-intro.md) or
+[`versions`](/06-modules/01-versions/01-intro.md), the server SHALL respond with an HTTP
 `401 * Unauthorized` status code.
 
 ## Pull and Push
@@ -234,13 +234,13 @@ might receive Tariff objects from multiple CPOs. They need to be able to make a 
 tariffs from different CPOs.
 
 The distinction between objects from different CPOs/eMSPs is made based on a
-{[country_code](https://ocpi.dev)} and
-{[party_id](https://ocpi.dev)}. The
-[country_code's](https://ocpi.dev) and
-[party_id's](https://ocpi.dev) of the parties on the other platform are received
-during the [credentials](https://ocpi.dev) handshake in the
-[CredentialsRoles](https://ocpi.dev). The roles exchanged during the
-[credentials](https://ocpi.dev) handshake provide the server with details needed
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+{[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)}. The
+[country_code's](/06-modules/02-credentials/06-object-description.md#credentials-object) and
+[party_id's](/06-modules/02-credentials/06-object-description.md#credentials-object) of the parties on the other platform are received
+during the [credentials](/06-modules/02-credentials/01-intro.md) handshake in the
+[CredentialsRoles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class). The roles exchanged during the
+[credentials](/06-modules/02-credentials/01-intro.md) handshake provide the server with details needed
 to determine which URLs a client might use.
 
 Client Owned Object URL definition: `{base-ocpi-url}/{end-point}/{country-code}/{party-id}/{object-id}`
@@ -259,10 +259,10 @@ owner* is provided at the beginning of every module that has a clear owner.
 ### Errors
 
 When a client tries to access an object with a URL that has a different
-[country_code](https://ocpi.dev) and/or
-[party_id](https://ocpi.dev) than one of the
-[CredentialsRoles](https://ocpi.dev) given during the
-[credentials](https://ocpi.dev) handshake, it is allowed to respond with an HTTP
+[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object) and/or
+[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object) than one of the
+[CredentialsRoles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class) given during the
+[credentials](/06-modules/02-credentials/01-intro.md) handshake, it is allowed to respond with an HTTP
 `404` status code, this way blocking client access to objects that do not belong to them.
 
 When a client pushes a Client Owned Object, but the `object-id` in the URL is different from the id in the object being
@@ -272,12 +272,12 @@ code](/05-status-codes/05-status-codes.md): [2001](/05-status-codes/05-status-co
 ## Client Owned Object Pull
 
 When doing a GET on the Sender interface of a module, the owner of an object can be determined by looking at the
-{[country_code](https://ocpi.dev)} and
-{[party_id](https://ocpi.dev)} in the object itself.
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+{[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} in the object itself.
 
 When one or more objects, returned in the response, do not meet one of the
-[CredentialsRoles](https://ocpi.dev) given during the
-[credentials](https://ocpi.dev) handshake, these objects may be ignored.
+[CredentialsRoles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class) given during the
+[credentials](/06-modules/02-credentials/01-intro.md) handshake, these objects may be ignored.
 
 ## Response format
 
@@ -471,8 +471,8 @@ Only requests/responses from Function Modules: such as: [Tokens](https://ocpi.de
 etc. SHALL be routed, so need the routing headers.
 
 The requests/responses to/from Configuration Modules:
-[Credentials](https://ocpi.dev),
-[Versions](/06-modules/01-versions/01-version-intro.md) and [Hub Client
+[Credentials](/06-modules/02-credentials/01-intro.md),
+[Versions](/06-modules/01-versions/01-intro.md) and [Hub Client
 Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 

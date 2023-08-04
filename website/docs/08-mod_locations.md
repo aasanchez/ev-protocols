@@ -208,8 +208,8 @@ Typically implemented by market roles like: eMSP and NSP.
 
 Locations are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so
 the end-points need to contain the required extra fields:
-{[party_id](https://ocpi.dev)} and
-{[country_code](https://ocpi.dev)}.
+{[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
 Endpoint structure definition:
 
@@ -276,8 +276,8 @@ When the PUT only contains a [EVSE](https://ocpi.dev) Object, the Receiver SHALL
 
 This is an information Push message, the objects pushed will not be owned by the eMSP. To make distinctions between
 objects being pushed to an eMSP from different CPOs, the
-{[party_id](https://ocpi.dev)} and
-{[country_code](https://ocpi.dev)} have to be included in the URL (as URL segments,
+{[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} have to be included in the URL (as URL segments,
 as described in the [Receiver Interface](https://ocpi.dev)).
 
 | Parameter    | Datatype                                            | Required | Description                                                                                                                                                   |
@@ -454,7 +454,7 @@ not *owned* by the eMSP itself to start a charging session.
 | parking_type         | [ParkingType](https://ocpi.dev)                        | ?     | The general type of parking at the charge point location.                                                                                                                                                                                                                                                          |
 | evses                | [EVSE](https://ocpi.dev)                               | \*    | List of EVSEs that belong to this Location.                                                                                                                                                                                                                                                                        |
 | directions           | [DisplayText](/07-types/01-intro.md#displaytext-class) | \*    | Human-readable directions on how to reach the location.                                                                                                                                                                                                                                                            |
-| operator             | [BusinessDetails](https://ocpi.dev)                    | ?     | Information of the operator. When not specified, the information retrieved from the [Credentials](https://ocpi.dev) module, selected by the `country_code` and `party_id` of this Location, should be used instead.                                                                                                |
+| operator             | [BusinessDetails](https://ocpi.dev)                    | ?     | Information of the operator. When not specified, the information retrieved from the [Credentials](/06-modules/02-credentials/01-intro.md) module, selected by the `country_code` and `party_id` of this Location, should be used instead.                                                                          |
 | suboperator          | [BusinessDetails](https://ocpi.dev)                    | ?     | Information of the suboperator if available.                                                                                                                                                                                                                                                                       |
 | owner                | [BusinessDetails](https://ocpi.dev)                    | ?     | Information of the owner if available.                                                                                                                                                                                                                                                                             |
 | facilities           | [Facility](https://ocpi.dev)                           | \*    | Optional list of facilities this charging location directly belongs to.                                                                                                                                                                                                                                            |

@@ -68,20 +68,20 @@ role property of the Endpoint object for other platforms' credentials modules.
 
 The Module identifiers for each endpoint are described in the beginning of each *Module* chapter. The following table
 contains the list of modules in this version of OCPI. Most modules (except [Credentials &
-Registration](https://ocpi.dev)) are optional, but there might be dependencies
+Registration](/06-modules/02-credentials/01-intro.md)) are optional, but there might be dependencies
 between modules. If there are dependencies between modules, it will be mentioned in the affected module description.
 
-| Module                                         | ModuleID         | Remark                                                                              |
-|------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
-| [CDRs](https://ocpi.dev)                       | cdrs             |                                                                                     |
-| [Charging Profiles](https://ocpi.dev)          | chargingprofiles |                                                                                     |
-| [Commands](https://ocpi.dev)                   | commands         |                                                                                     |
-| [Credentials & Registration](https://ocpi.dev) | credentials      | Required for all implementations. The `role` field has no function for this module. |
-| [Hub Client Info](https://ocpi.dev)            | hubclientinfo    |                                                                                     |
-| [Locations](https://ocpi.dev)                  | locations        |                                                                                     |
-| [Sessions](https://ocpi.dev)                   | sessions         |                                                                                     |
-| [Tariffs](https://ocpi.dev)                    | tariffs          |                                                                                     |
-| [Tokens](https://ocpi.dev)                     | tokens           |                                                                                     |
+| Module                                                               | ModuleID         | Remark                                                                              |
+|----------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
+| [CDRs](https://ocpi.dev)                                             | cdrs             |                                                                                     |
+| [Charging Profiles](https://ocpi.dev)                                | chargingprofiles |                                                                                     |
+| [Commands](https://ocpi.dev)                                         | commands         |                                                                                     |
+| [Credentials & Registration](/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |
+| [Hub Client Info](https://ocpi.dev)                                  | hubclientinfo    |                                                                                     |
+| [Locations](https://ocpi.dev)                                        | locations        |                                                                                     |
+| [Sessions](https://ocpi.dev)                                         | sessions         |                                                                                     |
+| [Tariffs](https://ocpi.dev)                                          | tariffs          |                                                                                     |
+| [Tokens](https://ocpi.dev)                                           | tokens           |                                                                                     |
 
 ### VersionNumber *enum*
 
