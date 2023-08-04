@@ -221,13 +221,13 @@ function links(){
   gsed -i 's|(#types_number_type)|(#number-type)|g' "$file"
   gsed -i 's|(#types_string_type)|(#string-type)|g' "$file"
   
-  gsed -i 's|(#version_information_endpoint.asciidoc#versions_module)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_endpoint_class)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_interface_role_enum)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_moduleid_enum)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_class)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#version_information_endpoint.asciidoc#versions_module)|(/06-versions/01-version-intro.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_endpoint_class)|(/06-versions/03-version-details-endpoint.md#endpoint-class)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_interface_role_enum)|(/06-versions/03-version-details-endpoint.md#interfacerole-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_moduleid_enum)|(/06-versions/03-version-details-endpoint.md#moduleid-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_class)|(/06-versions/02-version-information-endpoint.md#version-class)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(/06-versions/03-version-details-endpoint.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(/06-versions/02-version-information-endpoint.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(/06-versions/02-version-information-endpoint.md#versionnumber-enum)|g' "$file"
 
 }

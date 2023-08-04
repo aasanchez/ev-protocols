@@ -73,7 +73,11 @@ slug: /modules/versions/information-endpoint
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
-
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^## Version/### Version/gm" "$file"
 
   file="$ROOT/website/docs/06-versions/03-version-details-endpoint.md"
   cat <<E_O_HEADERS > "$file.tmp"
@@ -83,50 +87,11 @@ slug: /modules/versions/details-endpoint
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  echo "flavoring $file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
 
-#   echo "flavoring $file"
-#   # gsed -i "s/^## /# /gm" "$file"
-#   gsed -i "s/^### /## /gm" "$file"
-#   gsed -i "s/^#### /### /gm" "$file"
-#   gsed -i "s/^## GET$/## GET - Fetch information about the supported versions/gm" "$file"
-#   gsed -i '/| Method | Description                                     |/d' "$file"
-#   gsed -i '/|--------|-------------------------------------------------|/d' "$file"
-#   gsed -i '/| GET    | Fetch information about the supported versions. |/d' "$file"
-#   gsed -i "s|^\`\`\`\sjson|\`\`\`json|gm" "$file"
-#   splitInH2 "$file"
-#   gsed -i -z "s|]|]\n\`\`\`|gm" "$ROOT/tmp/getfetchinformationaboutthesupportedversions.md"
-#   cat "$ROOT/tmp/versioninformationendpoint.md" \
-#       "$ROOT/tmp/getfetchinformationaboutthesupportedversions.md" \
-#       "$ROOT/tmp/data.md" \
-#       "$ROOT/tmp/versionclass.md" \
-#       > "$file"
-#   rm -rf "$ROOT/tmp/" && mkdir -p "$ROOT/tmp/"
-#   gsed -i "s|^## Version information|# Version information|gm" "$file"
-#   gsed -i -z 's|a version endpoint.|a version endpoint.\n|gm' "$file"
-#   gsed -i -z 's|## Data|\n## Data|gm' "$file"
-#   gsed -i -z 's|## Version |\n## Version |gm' "$file"
-
-#   gsed -i -z "s/### Example\n\n//gm" "$file"
-
-
-
-
-
-
-
-#   file="$ROOT/website/docs/06-versions/03-version-details-endpoint.md"
-#   echo "flavoring $file"
-#   gsed -i "s/^## /# /gm" "$file"
-#   gsed -i "s/^### /## /gm" "$file"
-#   gsed -i "s/^#### /### /gm" "$file"
-#   cat <<E_O_HEADERS > "$file.tmp"
-# ---
-# id: details-endpoint
-# slug: /modules/versions/details-endpoint
-# ---
-# E_O_HEADERS
-#   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
-
-#   rm "$ROOT/website/docs/06-mod_versions.md"
+  gsed -i "s/^### Data/## Data/gm" "$file"
+  gsed -i "s/^### GET/## GET/gm" "$file"
 
 }
