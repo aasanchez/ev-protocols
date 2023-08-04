@@ -50,7 +50,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Versions',
+          label: '🇻 Versions',
           link: {
             type: 'doc',
             id: 'modules/versions/intro'
@@ -61,7 +61,21 @@ const sidebars = {
             'modules/versions/details-endpoint'
           ]
         },
-        'credentials',
+        {
+          type: 'category',
+          label: '🔐 Credentials',
+          link: {
+            type: 'doc',
+            id: 'modules/credentials/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/credentials/use-cases',
+            'modules/credentials/interfaces-and-endpoints',
+            'modules/credentials/object-description',
+            'modules/credentials/data-types'
+          ]
+        },
         'locations',
         'sessions',
         'cdrs',
