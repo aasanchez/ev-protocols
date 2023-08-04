@@ -94,4 +94,6 @@ E_O_HEADERS
   gsed -i "s/^### Data/## Data/gm" "$file"
   gsed -i "s/^### GET/## GET/gm" "$file"
 
+  rm -rf "$ROOT/website/docs/06-mod_versions.md"
+
 }
