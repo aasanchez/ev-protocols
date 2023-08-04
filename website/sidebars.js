@@ -76,7 +76,21 @@ const sidebars = {
             'modules/credentials/data-types'
           ]
         },
-        'locations',
+        {
+          type: 'category',
+          label: '📍 Locations',
+          link: {
+            type: 'doc',
+            id: 'modules/locations/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/locations/flow-and-lifecycle',
+            'modules/locations/interfaces-and-endpoints',
+            'modules/locations/object-description',
+            'modules/locations/data-types'
+          ]
+        },
         'sessions',
         'cdrs',
         'tariffs',

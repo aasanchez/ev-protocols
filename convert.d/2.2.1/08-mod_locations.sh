@@ -45,10 +45,10 @@ function fix_mod_locations() {
   
   gsed -i    "s|The response contains the requested object.|The response contains the requested object.\n\nChoice: one of three|gm" "$file"
 
-  gsed -i    "s|<img src=\"images/locations-class-diagram.svg\" alt=\"Location class diagram\" />|![Location class diagram](./images/locations-class-diagram.svg)|g" "$file"
-  gsed -i    "s|<img src=\"images/location_hours_247_open_exception_closing.svg\" alt=\"24/7 open with exception closing.\" />|![24/7 open with exception closing.](./images/location_hours_247_open_exception_closing.svg)|g" "$file"
-  gsed -i -z "s|<img src=\"images/location_hours_opening_hours_with_exceptional_closing.svg\"\nalt=\"Opening Hours with exceptional closing.\" />|![Opening Hours with exceptional closing.](./images/location_hours_opening_hours_with_exceptional_closing.svg)|g" "$file"
-  gsed -i -z "s|<img src=\"images/location_hours_opening_hours_with_exceptional_opening.svg\"\nalt=\"Opening Hours with exceptional opening.\" />|![Opening Hours with exceptional opening.](./images/location_hours_opening_hours_with_exceptional_opening.svg)|g" "$file"
+  gsed -i    "s|<img src=\"images/locations-class-diagram.svg\" alt=\"Location class diagram\" />|![Location class diagram](../../images/locations-class-diagram.svg)|g" "$file"
+  gsed -i    "s|<img src=\"images/location_hours_247_open_exception_closing.svg\" alt=\"24/7 open with exception closing.\" />|![24/7 open with exception closing.](../../images/location_hours_247_open_exception_closing.svg)|g" "$file"
+  gsed -i -z "s|<img src=\"images/location_hours_opening_hours_with_exceptional_closing.svg\"\nalt=\"Opening Hours with exceptional closing.\" />|![Opening Hours with exceptional closing.](../../images/location_hours_opening_hours_with_exceptional_closing.svg)|g" "$file"
+  gsed -i -z "s|<img src=\"images/location_hours_opening_hours_with_exceptional_opening.svg\"\nalt=\"Opening Hours with exceptional opening.\" />|![Opening Hours with exceptional opening.](../../images/location_hours_opening_hours_with_exceptional_opening.svg)|g" "$file"
 
   gsed -i    "s|^##### Simple:$|##### Simple|gm" "$file"
   gsed -i    "s|^##### Tariff energy provider name:$|##### Tariff energy provider name|gm" "$file"
@@ -63,4 +63,90 @@ function fix_mod_locations() {
   mv "$tempfile" "$file"
   echo "" >> "$file"
 
+}
+
+function flavored_mod_locations() {
+  file="$ROOT/website/docs/08-mod_locations.md"
+  tempfile="$file.tmp"
+  echo "$file ocpi.dev flavored"
+  MODULE="03-locations"
+  splitInH2 "$file"
+
+  rm -rf "$ROOT/website/docs/06-modules/03-locations"
+  mkdir -p "$ROOT/website/docs/06-modules/03-locations"
+
+  # reserved
+  # mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
+  mv "$ROOT/tmp/flowandlifecycle.md"        "$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+
+  < "$file" gsed -n '1,/## Flow and Lifecycle/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  echo "flavoring $file"
+  gsed -i '1,4d' "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: intro
+slug: /modules/locations
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i '/## Flow and Lifecycle/d' "$file"
+  gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: flow-and-lifecycle
+slug: /modules/locations/flow-and-lifecycle
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: interfaces-and-endpoints
+slug: /modules/locations/interfaces-and-endpoints
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: object-description
+slug: /modules/locations/object-description
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: data-types
+slug: /modules/locations/data-types
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  rm -rf "$ROOT/website/docs/08-mod_locations.md"
 }
