@@ -5,15 +5,15 @@ function links(){
 
   gsed -i 's|(#changelog.asciidoc#changelog_changelog)|(https://ocpi.dev)|g' "$file"
 
-  gsed -i 's|(#credentials.asciidoc#credentials_credentials_endpoint)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials.asciidoc#credentials_credentials_object)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials.asciidoc#credentials_credentials_role_class)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials.asciidoc#credentials_registration)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials_credentials_role_class)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials_delete_method)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials_get_method)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials_post_method)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#credentials_put_method)|(https://ocpi.dev)|g' "$file"
+  gsed -i 's|(#credentials.asciidoc#credentials_credentials_endpoint)|(/06-modules/02-credentials/01-intro.md)|g' "$file"
+  gsed -i 's|(#credentials.asciidoc#credentials_credentials_object)|(/06-modules/02-credentials/06-object-description.md#credentials-object)|g' "$file"
+  gsed -i 's|(#credentials.asciidoc#credentials_credentials_role_class)|(/06-modules/02-credentials/07-data-types.md#credentialsrole-class)|g' "$file"
+  gsed -i 's|(#credentials.asciidoc#credentials_registration)|(/06-modules/02-credentials/03-use-cases.md#registration)|g' "$file"
+  gsed -i 's|(#credentials_credentials_role_class)|(/06-modules/02-credentials/07-data-types.md#credentialsrole-class)|g' "$file"
+  gsed -i 's|(#credentials_delete_method)|(/06-modules/02-credentials/05-interfaces-and-endpoints.md#delete-method)|g' "$file"
+  gsed -i 's|(#credentials_get_method)|(/06-modules/02-credentials/05-interfaces-and-endpoints.md#get-method)|g' "$file"
+  gsed -i 's|(#credentials_post_method)|(/06-modules/02-credentials/05-interfaces-and-endpoints.md#post-method)|g' "$file"
+  gsed -i 's|(#credentials_put_method)|(/06-modules/02-credentials/05-interfaces-and-endpoints.md#put-method)|g' "$file"
   
   gsed -i 's|(#evse_delete_with_status_update)|(https://ocpi.dev)|g' "$file"
   

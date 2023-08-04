@@ -20,6 +20,7 @@ flavored_transport_and_format
 flavored_mod_versions
 
 . ./convert.d/2.2.1/07-mod_credentials.sh
+flavored_mod_credentials
 
 . ./convert.d/2.2.1/08-mod_locations.sh
 

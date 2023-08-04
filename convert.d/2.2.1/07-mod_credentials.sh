@@ -63,7 +63,6 @@ E_O_HEADERS
   gsed -i '/## Use cases/d' "$file"
   gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
 
-
   file="$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
@@ -76,7 +75,6 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
-
 
   file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
@@ -92,6 +90,7 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: object-description
@@ -99,12 +98,12 @@ slug: /modules/credentials/object-description
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
-
-
-
-
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-types
@@ -112,9 +111,9 @@ slug: /modules/credentials/data-types
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
-
-
-
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
 
   rm -rf "$ROOT/website/docs/07-mod_credentials.md"
 }
