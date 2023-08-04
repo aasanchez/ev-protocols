@@ -41,13 +41,12 @@ function flavored_mod_versions() {
   rm -rf "$ROOT/website/docs/06-modules/01-versions"
   mkdir -p "$ROOT/website/docs/06-modules/01-versions"
 
-  mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/06-modules/01-versions/02-version-information-endpoint.md"
-  mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/06-modules/01-versions/03-version-details-endpoint.md"
+  mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/06-modules/01-versions/02-information-endpoint.md"
+  mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/06-modules/01-versions/03-details-endpoint.md"
 
-  < "$file" gsed -n '1,/## Version information endpoint/p' > "$ROOT/website/docs/06-modules/01-versions/01-version-intro.md"
+  < "$file" gsed -n '1,/## Version information endpoint/p' > "$ROOT/website/docs/06-modules/01-versions/01-intro.md"
 
-
-  file="$ROOT/website/docs/06-modules/01-versions/01-version-intro.md"
+  file="$ROOT/website/docs/06-modules/01-versions/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   gsed -i "s/^## /# /gm" "$file"
@@ -65,7 +64,7 @@ E_O_HEADERS
   gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
   gsed -i -z 's/versions.\n\n/versions.\n/gm' "$file"
 
-  file="$ROOT/website/docs/06-modules/01-versions/02-version-information-endpoint.md"
+  file="$ROOT/website/docs/06-modules/01-versions/02-information-endpoint.md"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: information-endpoint
@@ -79,7 +78,7 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i "s/^## Version/### Version/gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/01-versions/03-version-details-endpoint.md"
+  file="$ROOT/website/docs/06-modules/01-versions/03-details-endpoint.md"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: details-endpoint

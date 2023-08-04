@@ -221,13 +221,13 @@ function links(){
   gsed -i 's|(#types_number_type)|(#number-type)|g' "$file"
   gsed -i 's|(#types_string_type)|(#string-type)|g' "$file"
   
-  gsed -i 's|(#version_information_endpoint.asciidoc#versions_module)|(/06-modules/01-versions/01-version-intro.md)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_endpoint_class)|(/06-modules/01-versions/03-version-details-endpoint.md#endpoint-class)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_interface_role_enum)|(/06-modules/01-versions/03-version-details-endpoint.md#interfacerole-enum)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_moduleid_enum)|(/06-modules/01-versions/03-version-details-endpoint.md#moduleid-enum)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_class)|(/06-modules/01-versions/02-version-information-endpoint.md#version-class)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(/06-modules/01-versions/03-version-details-endpoint.md)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(/06-modules/01-versions/02-version-information-endpoint.md)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(/06-modules/01-versions/03-version-details-endpoint.md#versionnumber-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint.asciidoc#versions_module)|(/06-modules/01-versions/01-intro.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_endpoint_class)|(/06-modules/01-versions/03-details-endpoint.md#endpoint-class)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_interface_role_enum)|(/06-modules/01-versions/03-details-endpoint.md#interfacerole-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_moduleid_enum)|(/06-modules/01-versions/03-details-endpoint.md#moduleid-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_class)|(/06-modules/01-versions/02-information-endpoint.md#version-class)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(/06-modules/01-versions/03-details-endpoint.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(/06-modules/01-versions/02-information-endpoint.md)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(/06-modules/01-versions/03-details-endpoint.md#versionnumber-enum)|g' "$file"
 
 }
