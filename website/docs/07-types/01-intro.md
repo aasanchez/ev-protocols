@@ -1,5 +1,6 @@
 ---
-sidebar_position: 16
+id: intro
+sidebar_position: 07
 slug: /types
 ---
 # 🔧 Types

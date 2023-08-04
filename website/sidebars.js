@@ -53,12 +53,12 @@ const sidebars = {
           label: 'Versions',
           link: {
             type: 'doc',
-            id: 'versions/intro'
+            id: 'modules/versions/intro'
           },
           collapsed: true,
           items: [
-            'versions/information-endpoint',
-            'versions/details-endpoint'
+            'modules/versions/information-endpoint',
+            'modules/versions/details-endpoint'
           ]
         },
         'credentials',
@@ -72,7 +72,7 @@ const sidebars = {
         'hub_client_info'
       ]
     },
-    'types/types'
+    'types/intro'
 
   ]
 }

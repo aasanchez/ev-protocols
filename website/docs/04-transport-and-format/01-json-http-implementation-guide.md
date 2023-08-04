@@ -60,7 +60,7 @@ HTTP `401 * Unauthorized` status code.
 
 When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](https://ocpi.dev),
 on another module than: [`credentials`](https://ocpi.dev) or
-[`versions`](/06-versions/01-version-intro.md), the server SHALL respond with an HTTP
+[`versions`](/06-modules/01-versions/01-version-intro.md), the server SHALL respond with an HTTP
 `401 * Unauthorized` status code.
 
 ## Pull and Push
@@ -122,8 +122,8 @@ The following table lists all the parameters that have to be supported but might
 
 | Parameter | Datatype                                        | Description                                                                                                                                                                                                                                             |
 |-----------|-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date_from | [DateTime](/16-types/16-types.md#datetime-type) | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
-| date_to   | [DateTime](/16-types/16-types.md#datetime-type) | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
+| date_from | [DateTime](/07-types/01-intro.md#datetime-type) | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
+| date_to   | [DateTime](/07-types/01-intro.md#datetime-type) | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
 | offset    | int                                             | The offset of the first object returned. Default is 0 (the first object).                                                                                                                                                                               |
 | limit     | int                                             | The maximum number of objects to GET. The server might decide to return fewer objects, either because there are no more objects, or the server limits the maximum number of objects to return. This is to prevent, for example, overloading the system. |
 
@@ -288,8 +288,8 @@ the following properties:
 |----------------|-------------------------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | data           | Array or Object or String                       | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?)    |
 | status_code    | int                                             | 1       | OCPI status code, as listed in [Status Codes](/05-status-codes/05-status-codes.md), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits. |
-| status_message | [string](/16-types/16-types.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                                |
-| timestamp      | [DateTime](/16-types/16-types.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                     |
+| status_message | [string](/07-types/01-intro.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                                |
+| timestamp      | [DateTime](/07-types/01-intro.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                     |
 
 For brevity's sake, any further examples used in this specification will only contain the value of the "data" field. In
 reality, it will always have to be wrapped in the above response format.
@@ -472,16 +472,16 @@ etc. SHALL be routed, so need the routing headers.
 
 The requests/responses to/from Configuration Modules:
 [Credentials](https://ocpi.dev),
-[Versions](/06-versions/01-version-intro.md) and [Hub Client
+[Versions](/06-modules/01-versions/01-version-intro.md) and [Hub Client
 Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
 | HTTP Header            | Datatype                                           | Description                                                          |
 |------------------------|----------------------------------------------------|----------------------------------------------------------------------|
-| OCPI-to-party-id       | [CiString](/16-types/16-types.md#cistring-type)(3) | *party id* of the connected party this message is to be sent to.     |
-| OCPI-to-country-code   | [CiString](/16-types/16-types.md#cistring-type)(2) | *country code* of the connected party this message is to be sent to. |
-| OCPI-from-party-id     | [CiString](/16-types/16-types.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
-| OCPI-from-country-code | [CiString](/16-types/16-types.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
+| OCPI-to-party-id       | [CiString](/07-types/01-intro.md#cistring-type)(3) | *party id* of the connected party this message is to be sent to.     |
+| OCPI-to-country-code   | [CiString](/07-types/01-intro.md#cistring-type)(2) | *country code* of the connected party this message is to be sent to. |
+| OCPI-from-party-id     | [CiString](/07-types/01-intro.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
+| OCPI-from-country-code | [CiString](/07-types/01-intro.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
 
 :::note
 HTTP header names are case-insensitive

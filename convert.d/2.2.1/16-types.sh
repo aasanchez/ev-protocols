@@ -6,15 +6,15 @@ function pre_types(){
 }
 
 function fix_types() {
-  rm -rf "$ROOT/website/docs/16-types"
-  mkdir -p "$ROOT/website/docs/16-types"
+  rm -rf "$ROOT/website/docs/07-types"
+  mkdir -p "$ROOT/website/docs/07-types"
 
-  mv "$ROOT/website/docs/16-types.md" "$ROOT/website/docs/16-types/16-types.md"
+  mv "$ROOT/website/docs/16-types.md" "$ROOT/website/docs/07-types/01-intro.md"
 
-  file="$ROOT/website/docs/16-types/16-types.md"
+  file="$ROOT/website/docs/07-types/01-intro.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 16\nslug: /types\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: intro\nsidebar_position: 07\nslug: /types\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i 's|^# Types$|# 🔧 Types|g' "$file"
