@@ -34,10 +34,10 @@ Both, CPOs and eMSPs MUST implement such a version endpoint.
 
 ### Version *class*
 
-| Property | Type                                                                                           | Card. | Description                                                  |
-|----------|------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
-| version  | [VersionNumber](/06-modules/01-versions/02-version-information-endpoint.md#versionnumber-enum) | 1     | The version number.                                          |
-| url      | [URL](/07-types/01-intro.md#url-type)                                                          | 1     | URL to the endpoint containing version specific information. |
+| Property | Type                                                                                       | Card. | Description                                                  |
+|----------|--------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
+| version  | [VersionNumber](/06-modules/01-versions/03-version-details-endpoint.md#versionnumber-enum) | 1     | The version number.                                          |
+| url      | [URL](/07-types/01-intro.md#url-type)                                                      | 1     | URL to the endpoint containing version specific information. |
 
 ## GET
 

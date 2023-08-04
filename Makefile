@@ -29,19 +29,19 @@ help:
 	@grep -E '^[a-zA-Z_0-9%-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "${GREEN}%-12s${RESET} %s\n", $$1, $$2}'
 
 bootstrap: ## is used solely for fulfilling dependencies of the project
-	@cd website && npm install
+	@cd $(current-dir)website && npm install
 
 setup: bootstrap ## is used to set up a project in an initial state
 	@echo "is used to set up a project in an initial state"
 
 update: bootstrap ## is used to update the project after a fresh pull
-	@cd website && npm update
+	@cd $(current-dir)website && npm update
 
 server: setup ## is used to start the application
-	@cd website && npx docusaurus start
+	@cd $(current-dir)website && npx docusaurus start
 
 full-server: convert clean setup ## is used to start the application
-	@cd website && npx docusaurus start
+	@cd $(current-dir)website && npx docusaurus start
 
 .PHONY: convert
 convert: ## convert from asciidoc to markdown
@@ -49,7 +49,7 @@ convert: ## convert from asciidoc to markdown
 	@ ./convert.d/2.2.1/ocpidev-flavor.sh
 
 build: ## is used for your continuous integration server
-	@cd website && npx docusaurus build
+	@cd $(current-dir)website && npx docusaurus build
 
 console: ## is used to open a console for your application
 	@echo "is used to open a console for your application"

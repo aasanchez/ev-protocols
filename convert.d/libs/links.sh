@@ -228,6 +228,6 @@ function links(){
   gsed -i 's|(#version_information_endpoint_version_class)|(/06-modules/01-versions/02-version-information-endpoint.md#version-class)|g' "$file"
   gsed -i 's|(#version_information_endpoint_version_details_endpoint)|(/06-modules/01-versions/03-version-details-endpoint.md)|g' "$file"
   gsed -i 's|(#version_information_endpoint_version_information_endpoint)|(/06-modules/01-versions/02-version-information-endpoint.md)|g' "$file"
-  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(/06-modules/01-versions/02-version-information-endpoint.md#versionnumber-enum)|g' "$file"
+  gsed -i 's|(#version_information_endpoint_versionnumber_enum)|(/06-modules/01-versions/03-version-details-endpoint.md#versionnumber-enum)|g' "$file"
 
 }

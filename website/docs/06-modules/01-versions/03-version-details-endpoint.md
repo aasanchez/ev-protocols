@@ -38,10 +38,10 @@ Both the CPO and the eMSP MUST implement this endpoint.
 
 ## Data
 
-| Property  | Type                                                                                           | Card. | Description                                     |
-|-----------|------------------------------------------------------------------------------------------------|-------|-------------------------------------------------|
-| version   | [VersionNumber](/06-modules/01-versions/02-version-information-endpoint.md#versionnumber-enum) | 1     | The version number.                             |
-| endpoints | [Endpoint](/06-modules/01-versions/03-version-details-endpoint.md#endpoint-class)              | \+    | A list of supported endpoints for this version. |
+| Property  | Type                                                                                       | Card. | Description                                     |
+|-----------|--------------------------------------------------------------------------------------------|-------|-------------------------------------------------|
+| version   | [VersionNumber](/06-modules/01-versions/03-version-details-endpoint.md#versionnumber-enum) | 1     | The version number.                             |
+| endpoints | [Endpoint](/06-modules/01-versions/03-version-details-endpoint.md#endpoint-class)          | \+    | A list of supported endpoints for this version. |
 
 ### Endpoint *class*
 
