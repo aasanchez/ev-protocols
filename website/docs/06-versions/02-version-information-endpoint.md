@@ -2,7 +2,7 @@
 id: information-endpoint
 slug: /modules/versions/information-endpoint
 ---
-## Version information endpoint
+# Version information endpoint
 
 This endpoint lists all the available OCPI versions and the corresponding URLs to where version specific details such as
 the supported endpoints can be found.
@@ -26,24 +26,24 @@ Both, CPOs and eMSPs MUST implement such a version endpoint.
 |--------|-------------------------------------------------|
 | GET    | Fetch information about the supported versions. |
 
-### Data
+## Data
 
-| Type                        | Card. | Description                        |
-|-----------------------------|-------|------------------------------------|
-| [Version](https://ocpi.dev) | \+    | A list of supported OCPI versions. |
+| Type                                                                     | Card. | Description                        |
+|--------------------------------------------------------------------------|-------|------------------------------------|
+| [Version](/06-versions/02-version-information-endpoint.md#version-class) | \+    | A list of supported OCPI versions. |
 
 ### Version *class*
 
-| Property | Type                                  | Card. | Description                                                  |
-|----------|---------------------------------------|-------|--------------------------------------------------------------|
-| version  | [VersionNumber](https://ocpi.dev)     | 1     | The version number.                                          |
-| url      | [URL](/16-types/16-types.md#url-type) | 1     | URL to the endpoint containing version specific information. |
+| Property | Type                                                                                | Card. | Description                                                  |
+|----------|-------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
+| version  | [VersionNumber](/06-versions/02-version-information-endpoint.md#versionnumber-enum) | 1     | The version number.                                          |
+| url      | [URL](/16-types/16-types.md#url-type)                                               | 1     | URL to the endpoint containing version specific information. |
 
-### GET
+## GET
 
 Fetch all supported OCPI versions of this CPO or eMSP.
 
-#### Example
+### Example
 
 ``` json
 [

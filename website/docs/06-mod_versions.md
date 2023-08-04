@@ -9,8 +9,8 @@ Configuration Module
 :::
 
 This is the required base module of OCPI. This module is the starting point for any OCPI connection. Via this module,
-clients can learn [which versions](https://ocpi.dev) of OCPI a server
-supports, and [which modules](https://ocpi.dev) it supports for each of the
+clients can learn [which versions](/06-versions/02-version-information-endpoint.md) of OCPI a server
+supports, and [which modules](/06-versions/03-version-details-endpoint.md) it supports for each of the
 versions.
 
 ## Version information endpoint
@@ -39,16 +39,16 @@ Both, CPOs and eMSPs MUST implement such a version endpoint.
 
 ### Data
 
-| Type                        | Card. | Description                        |
-|-----------------------------|-------|------------------------------------|
-| [Version](https://ocpi.dev) | \+    | A list of supported OCPI versions. |
+| Type                                                                     | Card. | Description                        |
+|--------------------------------------------------------------------------|-------|------------------------------------|
+| [Version](/06-versions/02-version-information-endpoint.md#version-class) | \+    | A list of supported OCPI versions. |
 
 ### Version *class*
 
-| Property | Type                                  | Card. | Description                                                  |
-|----------|---------------------------------------|-------|--------------------------------------------------------------|
-| version  | [VersionNumber](https://ocpi.dev)     | 1     | The version number.                                          |
-| url      | [URL](/16-types/16-types.md#url-type) | 1     | URL to the endpoint containing version specific information. |
+| Property | Type                                                                                | Card. | Description                                                  |
+|----------|-------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
+| version  | [VersionNumber](/06-versions/02-version-information-endpoint.md#versionnumber-enum) | 1     | The version number.                                          |
+| url      | [URL](/16-types/16-types.md#url-type)                                               | 1     | URL to the endpoint containing version specific information. |
 
 ### GET
 
@@ -105,18 +105,18 @@ Both the CPO and the eMSP MUST implement this endpoint.
 
 ### Data
 
-| Property  | Type                              | Card. | Description                                     |
-|-----------|-----------------------------------|-------|-------------------------------------------------|
-| version   | [VersionNumber](https://ocpi.dev) | 1     | The version number.                             |
-| endpoints | [Endpoint](https://ocpi.dev)      | \+    | A list of supported endpoints for this version. |
+| Property  | Type                                                                                | Card. | Description                                     |
+|-----------|-------------------------------------------------------------------------------------|-------|-------------------------------------------------|
+| version   | [VersionNumber](/06-versions/02-version-information-endpoint.md#versionnumber-enum) | 1     | The version number.                             |
+| endpoints | [Endpoint](/06-versions/03-version-details-endpoint.md#endpoint-class)              | \+    | A list of supported endpoints for this version. |
 
 ### Endpoint *class*
 
-| Property   | Type                                  | Card. | Description                              |
-|------------|---------------------------------------|-------|------------------------------------------|
-| identifier | [ModuleID](https://ocpi.dev)          | 1     | Endpoint identifier.                     |
-| role       | [InterfaceRole](https://ocpi.dev)     | 1     | Interface role this endpoint implements. |
-| url        | [URL](/16-types/16-types.md#url-type) | 1     | URL to the endpoint.                     |
+| Property   | Type                                                                            | Card. | Description                              |
+|------------|---------------------------------------------------------------------------------|-------|------------------------------------------|
+| identifier | [ModuleID](/06-versions/03-version-details-endpoint.md#moduleid-enum)           | 1     | Endpoint identifier.                     |
+| role       | [InterfaceRole](/06-versions/03-version-details-endpoint.md#interfacerole-enum) | 1     | Interface role this endpoint implements. |
+| url        | [URL](/16-types/16-types.md#url-type)                                           | 1     | URL to the endpoint.                     |
 
 :::note
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
@@ -165,7 +165,7 @@ List of known versions.
 #### Custom Modules
 
 Parties are allowed to create custom modules or customized versions of the existing modules. To do so, the [ModuleID
-enum](https://ocpi.dev) can be extended with additional custom moduleIDs. These custom
+enum](/06-versions/03-version-details-endpoint.md#moduleid-enum) can be extended with additional custom moduleIDs. These custom
 moduleIDs MAY only be sent to parties with which there is an agreement to use a custom module. Do NOT send custom
 moduleIDs to parties you are not 100% sure will understand the custom moduleIDs. It is advised to use a prefix (e.g.
 country-code + party-id) for any custom moduleID, this ensures that the moduleID will not be used for any future module
