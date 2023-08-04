@@ -2,10 +2,6 @@
 id: intro
 slug: /modules/credentials
 ---
----
-id: credentials
-slug: modules/credentials
----
 # Credentials
 
 :::tip Module Identifier

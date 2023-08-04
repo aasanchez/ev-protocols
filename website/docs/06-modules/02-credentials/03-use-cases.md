@@ -2,9 +2,9 @@
 id: use-cases
 slug: /modules/credentials/use-cases
 ---
-## Use cases
+# Use cases
 
-### Registration
+## Registration
 
 To start using OCPI, the Platforms will need to exchange credentials tokens.
 
@@ -29,25 +29,25 @@ Receiver Platform. The `CREDENTIALS_TOKEN_A` can then be thrown away, it MAY no 
 (In the sequence diagrams below we use relative paths as short resource identifiers to illustrate API endpoints; please
 note that they should be absolute URLs in any working implementation of OCPI.)
 
-![The OCPI registration process](../images/registration-sequence.svg)
+![The OCPI registration process](../../images/registration-sequence.svg)
 
 Due to its symmetric nature of the credentials module, any platform can be Sender and or the Receiver for this module.
 
-### Updating to a newer version
+## Updating to a newer version
 
 At some point, both platforms will have implemented a newer OCPI version. To start using the newer version, one platform
 has to send a PUT request to the credentials endpoint of the other platform.
 
-![The OCPI update process](../images/update-sequence.svg)
+![The OCPI update process](../../images/update-sequence.svg)
 
-### Changing endpoints for the current version
+## Changing endpoints for the current version
 
 This can be done by following the update procedure for the same version.
 
 By sending a PUT request to the credentials endpoint of this version, the other platform will fetch and store the
 corresponding set of endpoints.
 
-### Updating the credentials and resetting the credentials token
+## Updating the credentials and resetting the credentials token
 
 The credentials (or parts thereof, such as the credentials token) can be updated by sending the new credentials via a
 PUT request to the credentials endpoint of the current version, similar to the update procedure described above.
@@ -56,13 +56,13 @@ Security advices: When one of the connecting platforms suspects that a credentia
 SHALL initiate a credentials token update as soon as possible. It is advisable to renew the credentials tokens at least
 once a month, in case it was not detected that the credentials where compromised.
 
-### Errors during registration
+## Errors during registration
 
 When the server connects back to the client during the credentials registration, it might encounter problems. When this
 happens, the server should add the status code [3001](/05-status-codes/05-status-codes.md#3xxx-server-errors) in the
 response to the POST from the client.
 
-### Required endpoints not available
+## Required endpoints not available
 
 When two platforms connect, it might happen that one of the platforms expects a certain endpoint to be available at the
 other platform.

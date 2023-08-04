@@ -2,7 +2,7 @@
 id: interfaces-and-endpoints
 slug: /modules/credentials/interfaces-and-endpoints
 ---
-## Interfaces and endpoints
+# Interfaces and endpoints
 
 The Credentials module is different from all other OCPI modules. This module is symmetric, it has to be implemented by
 all OCPI implementations, and all implementations need to be able call this module on any other platform, and have to be
@@ -18,13 +18,13 @@ Example: `/ocpi/2.2.1/credentials` and `/ocpi/emsp/2.2.1/credentials`
 | PATCH                      | n/a                                                                                               |
 | [DELETE](https://ocpi.dev) | Informs the server that its credentials to the client's system are now invalid (i.e. unregister). |
 
-### **GET** Method
+## **GET** Method
 
 Retrieves the credentials object to access the server's platform. The request body is empty, the response contains the
 credentials object to access the server's platform. This credentials object also contains extra information about the
 server such as its business details.
 
-### **POST** Method
+## **POST** Method
 
 Provides the server with credentials to access the client's system. This credentials object also contains extra
 information about the client such as its business details.
@@ -38,7 +38,7 @@ business details.
 
 This method MUST return a `HTTP status code 405: method not allowed` if the client has already been registered before.
 
-### **PUT** Method
+## **PUT** Method
 
 Provides the server with updated credentials to access the client's system. This credentials object also contains extra
 information about the client such as its business details.
@@ -52,7 +52,7 @@ the server such as its business details.
 
 This method MUST return a `HTTP status code 405: method not allowed` if the client has not been registered yet.
 
-### **DELETE** Method
+## **DELETE** Method
 
 Informs the server that its credentials to access the client's system are now invalid and can no longer be used. Both
 parties must end any automated communication. This is the unregistration process.
