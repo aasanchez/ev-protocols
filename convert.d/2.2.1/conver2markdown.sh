@@ -142,6 +142,7 @@ pandoc2markdown "11-mod_tariffs"
 links "website/docs/11-mod_tariffs.md"
 common_cleaning "website/docs/11-mod_tariffs.md"
 fix_mod_tariffs
+flavored_mod_tariffs
 
 echo ""
 

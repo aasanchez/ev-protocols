@@ -121,7 +121,21 @@ const sidebars = {
             'modules/cdrs/data-types'
           ]
         },
-        'tariffs',
+        {
+          type: 'category',
+          label: '💰 Tariffs',
+          link: {
+            type: 'doc',
+            id: 'modules/tariffs/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/tariffs/flow-and-lifecycle',
+            'modules/tariffs/interfaces-and-endpoints',
+            'modules/tariffs/object-description',
+            'modules/tariffs/data-types'
+          ]
+        },
         'tokens',
         'commands',
         'charging_profiles',
