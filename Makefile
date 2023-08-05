@@ -46,7 +46,6 @@ full-server: convert clean setup ## is used to start the application
 .PHONY: convert
 convert: ## convert from asciidoc to markdown
 	@ ./convert.d/2.2.1/conver2markdown.sh
-	@ ./convert.d/2.2.1/ocpidev-flavor.sh
 
 build: ## is used for your continuous integration server
 	@cd $(current-dir)website && npx docusaurus build

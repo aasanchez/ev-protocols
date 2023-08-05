@@ -43,6 +43,7 @@ pandoc2markdown "01-introduction"
 links "website/docs/01-introduction.md"
 common_cleaning "website/docs/01-introduction.md"
 fix_introduction
+flavored_introduction
 
 echo ""
 
@@ -52,6 +53,7 @@ pandoc2markdown "02-terminology"
 links "website/docs/02-terminology.md"
 common_cleaning "website/docs/02-terminology.md"
 fix_terminology
+flavored_terminology
 
 echo ""
 
@@ -62,6 +64,7 @@ links "website/docs/03-topology.md"
 common_cleaning "website/docs/03-topology.md"
 fix_topology
 
+
 echo ""
 
 . ./convert.d/2.2.1/04-transport_and_format.sh
@@ -70,6 +73,7 @@ pandoc2markdown "04-transport_and_format"
 links "website/docs/04-transport_and_format.md"
 common_cleaning "website/docs/04-transport_and_format.md"
 fix_transport_and_format
+flavored_transport_and_format
 
 echo ""
 
@@ -87,6 +91,7 @@ pandoc2markdown "06-mod_versions"
 links "website/docs/06-mod_versions.md"
 common_cleaning "website/docs/06-mod_versions.md"
 fix_mod_versions
+flavored_mod_versions
 
 echo ""
 
@@ -97,6 +102,7 @@ pandoc2markdown "07-mod_credentials"
 links "website/docs/07-mod_credentials.md"
 common_cleaning "website/docs/07-mod_credentials.md"
 fix_mod_credentials
+flavored_mod_credentials
 
 echo ""
 
@@ -106,6 +112,7 @@ pandoc2markdown "08-mod_locations"
 links "website/docs/08-mod_locations.md"
 common_cleaning "website/docs/08-mod_locations.md"
 fix_mod_locations
+flavored_mod_locations
 
 echo ""
 
