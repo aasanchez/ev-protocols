@@ -26,6 +26,7 @@ flavored_mod_credentials
 flavored_mod_locations
 
 . ./convert.d/2.2.1/09-mod_sessions.sh
+# flavored_mod_locations
 
 . ./convert.d/2.2.1/10-mod_cdrs.sh
 
