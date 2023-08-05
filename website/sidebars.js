@@ -91,7 +91,21 @@ const sidebars = {
             'modules/locations/data-types'
           ]
         },
-        'sessions',
+        {
+          type: 'category',
+          label: '🍪 Sessions',
+          link: {
+            type: 'doc',
+            id: 'modules/sessions/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/sessions/flow-and-lifecycle',
+            'modules/sessions/interfaces-and-endpoints',
+            'modules/sessions/object-description',
+            'modules/sessions/data-types'
+          ]
+        },
         'cdrs',
         'tariffs',
         'tokens',

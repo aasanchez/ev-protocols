@@ -122,6 +122,7 @@ pandoc2markdown "09-mod_sessions"
 links "website/docs/09-mod_sessions.md"
 common_cleaning "website/docs/09-mod_sessions.md"
 fix_mod_sessions
+flavored_mod_sessions
 
 echo ""
 
