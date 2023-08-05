@@ -152,6 +152,7 @@ pandoc2markdown "12-mod_tokens"
 links "website/docs/12-mod_tokens.md"
 common_cleaning "website/docs/12-mod_tokens.md"
 fix_mod_tokens
+flavored_mod_tokens
 
 echo ""
 
