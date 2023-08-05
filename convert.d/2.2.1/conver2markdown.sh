@@ -132,6 +132,7 @@ pandoc2markdown "10-mod_cdrs"
 links "website/docs/10-mod_cdrs.md"
 common_cleaning "website/docs/10-mod_cdrs.md"
 fix_mod_cdrs
+flavored_mod_cdrs
 
 echo ""
 
