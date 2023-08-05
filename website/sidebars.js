@@ -106,7 +106,21 @@ const sidebars = {
             'modules/sessions/data-types'
           ]
         },
-        'cdrs',
+        {
+          type: 'category',
+          label: '🔎 CDRs',
+          link: {
+            type: 'doc',
+            id: 'modules/cdrs/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/cdrs/flow-and-lifecycle',
+            'modules/cdrs/interfaces-and-endpoints',
+            'modules/cdrs/object-description',
+            'modules/cdrs/data-types'
+          ]
+        },
         'tariffs',
         'tokens',
         'commands',

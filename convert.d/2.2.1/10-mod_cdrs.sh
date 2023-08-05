@@ -113,5 +113,5 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
 
-  rm -rf "$ROOT/website/docs/09-mod_cdrs.md"
+  rm -rf "$ROOT/website/docs/10-mod_cdrs.md"
 }
