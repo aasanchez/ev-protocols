@@ -29,9 +29,7 @@ Example of how timestamps shall be formatted in OCPI, other formats/patterns are
 ```
 
 :::note
-
 +00:00 is not the same as UTC.
-
 :::
 
 ## DisplayText *class*

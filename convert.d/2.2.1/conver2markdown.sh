@@ -190,7 +190,7 @@ echo ""
 pre_types
 pandoc2markdown "16-types"
 links "website/docs/16-types.md"
-common_cleaning "website/docs/15-mod_hub_client_info.md"
+common_cleaning "website/docs/16-types.md"
 fix_types
 
 cd "$ROOT"/ocpi || exit 0

@@ -194,7 +194,7 @@ const sidebars = {
           items: [
             'modules/hubclientinfo/scenarios',
             'modules/hubclientinfo/flow-and-lifecycle',
-            'modules/hubclientinfo/interfaces-and-endpoints',
+            'modules/hubclientinfo/interfaces',
             'modules/hubclientinfo/object-description',
             'modules/hubclientinfo/data-types'
           ]
