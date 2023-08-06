@@ -162,6 +162,7 @@ pandoc2markdown "13-mod_commands"
 links "website/docs/13-mod_commands.md"
 common_cleaning "website/docs/13-mod_commands.md"
 fix_mod_commands
+flavored_mod_commands
 
 echo ""
 
@@ -171,6 +172,7 @@ pandoc2markdown "14-mod_charging_profiles"
 links "website/docs/14-mod_charging_profiles.md"
 common_cleaning "website/docs/14-mod_charging_profiles.md"
 fix_mod_charging_profiles
+flavored_mod_charging-profiles
 
 echo ""
 
@@ -180,6 +182,7 @@ pandoc2markdown "15-mod_hub_client_info"
 links "website/docs/15-mod_hub_client_info.md"
 common_cleaning "website/docs/15-mod_hub_client_info.md"
 fix_mod_hub_client_info
+flavored_mod_hubclientinfo
 
 echo ""
 

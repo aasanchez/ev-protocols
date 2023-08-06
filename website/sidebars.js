@@ -78,7 +78,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '📍 Locations',
+          label: '🗺️ Locations',
           link: {
             type: 'doc',
             id: 'modules/locations/intro'
@@ -108,7 +108,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: '🔎 CDRs',
+          label: '📊 CDRs',
           link: {
             type: 'doc',
             id: 'modules/cdrs/intro'
@@ -136,10 +136,69 @@ const sidebars = {
             'modules/tariffs/data-types'
           ]
         },
-        'tokens',
-        'commands',
-        'charging_profiles',
-        'hub_client_info'
+        {
+          type: 'category',
+          label: '👤 Tokens',
+          link: {
+            type: 'doc',
+            id: 'modules/tokens/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/tokens/flow-and-lifecycle',
+            'modules/tokens/interfaces-and-endpoints',
+            'modules/tokens/object-description',
+            'modules/tokens/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '⚙️ Commands',
+          link: {
+            type: 'doc',
+            id: 'modules/commands/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/commands/flow',
+            'modules/commands/interfaces-and-endpoints',
+            'modules/commands/object-description',
+            'modules/commands/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔌 ChargingProfiles',
+          link: {
+            type: 'doc',
+            id: 'modules/charging-profiles/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/charging-profiles/smart-charging-topologies',
+            'modules/charging-profiles/use-cases',
+            'modules/charging-profiles/flow',
+            'modules/charging-profiles/interfaces-and-endpoints',
+            'modules/charging-profiles/object-description',
+            'modules/charging-profiles/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '⛓️ HubClientInfo',
+          link: {
+            type: 'doc',
+            id: 'modules/hubclientinfo/intro'
+          },
+          collapsed: true,
+          items: [
+            'modules/hubclientinfo/scenarios',
+            'modules/hubclientinfo/flow-and-lifecycle',
+            'modules/hubclientinfo/interfaces-and-endpoints',
+            'modules/hubclientinfo/object-description',
+            'modules/hubclientinfo/data-types'
+          ]
+        },
       ]
     },
     'types/intro'

@@ -29,3 +29,99 @@ function fix_mod_hub_client_info() {
   mv "$tempfile" "$file"
   echo "" >> "$file"
 }
+
+function flavored_mod_hubclientinfo() {
+  file="$ROOT/website/docs/15-mod_hub_client_info.md"
+  tempfile="$file.tmp"
+  echo "$file ocpi.dev flavored"
+  MODULE="10-hubclientinfo"
+  splitInH2 "$file"
+
+  rm -rf "$ROOT/website/docs/06-modules/10-hubclientinfo"
+  mkdir -p "$ROOT/website/docs/06-modules/10-hubclientinfo"
+
+  mv "$ROOT/tmp/scenarios.md"           "$ROOT/website/docs/06-modules/$MODULE/03-scenarios.md"
+  mv "$ROOT/tmp/flowandlifecycle.md"    "$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  mv "$ROOT/tmp/interfaces.md"          "$ROOT/website/docs/06-modules/$MODULE/05-interfaces.md"
+  mv "$ROOT/tmp/objectdescription.md"   "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"           "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+
+  < "$file" gsed -n '1,/## Scenarios/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  echo "flavoring $file"
+  gsed -i '1,4d' "$file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: intro
+slug: /modules/hubclientinfo
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i '/## Scenarios/d' "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/03-scenarios.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: scenarios
+slug: /modules/hubclientinfo/scenarios
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: flow-and-lifecycle
+slug: /modules/hubclientinfo/flow-and-lifecycle
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: interfaces
+slug: /modules/hubclientinfo/interfaces
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: object-description
+slug: /modules/hubclientinfo/object-description
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  echo "flavoring $file"
+  cat <<E_O_HEADERS > "$file.tmp"
+---
+id: data-types
+slug: /modules/hubclientinfo/data-types
+---
+E_O_HEADERS
+  cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
+  gsed -i "s/^## /# /gm" "$file"
+  gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^#### /### /gm" "$file"
+
+  # rm -rf "$ROOT/website/docs/15-mod_hub_client_info.md"
+}
