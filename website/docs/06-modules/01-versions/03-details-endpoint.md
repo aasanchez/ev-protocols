@@ -73,7 +73,7 @@ between modules. If there are dependencies between modules, it will be mentioned
 
 | Module                                                               | ModuleID         | Remark                                                                              |
 |----------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
-| [CDRs](https://ocpi.dev)                                             | cdrs             |                                                                                     |
+| [CDRs](/06-modules/05-cdrs/01-intro.md)                              | cdrs             |                                                                                     |
 | [Charging Profiles](https://ocpi.dev)                                | chargingprofiles |                                                                                     |
 | [Commands](https://ocpi.dev)                                         | commands         |                                                                                     |
 | [Credentials & Registration](/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |

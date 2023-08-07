@@ -14,10 +14,10 @@ slug: /modules/cdrs/data-types
 
 ## CdrDimension *class*
 
-| Property | Type                                        | Card. | Description                                                                 |
-|----------|---------------------------------------------|-------|-----------------------------------------------------------------------------|
-| type     | [CdrDimensionType](https://ocpi.dev)        | 1     | Type of CDR dimension.                                                      |
-| volume   | [number](/07-types/01-intro.md#number-type) | 1     | Volume of the dimension consumed, measured according to the dimension type. |
+| Property | Type                                                                           | Card. | Description                                                                 |
+|----------|--------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------|
+| type     | [CdrDimensionType](/06-modules/05-cdrs/07-data-types.md#cdrdimensiontype-enum) | 1     | Type of CDR dimension.                                                      |
+| volume   | [number](/07-types/01-intro.md#number-type)                                    | 1     | Volume of the dimension consumed, measured according to the dimension type. |
 
 ## CdrDimensionType *enum*
 
@@ -25,21 +25,21 @@ This enumeration contains allowed values for CdrDimensions, which are used to de
 both `CDRs` and `Sessions`. Some of these values are not useful for `CDRs`, and SHALL therefor only be used in
 `Sessions`, these are marked in the column: Session Only
 
-| Value            | Session Only | Description                                                                                                                                                                                              |
-|------------------|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CURRENT          | Y            | Average charging current during this [ChargingPeriod](https://ocpi.dev): defined in A (Ampere). When negative, the current is flowing from the EV to the grid.                                           |
-| ENERGY           |              | Total amount of energy (dis-)charged during this [ChargingPeriod](https://ocpi.dev): defined in kWh. When negative, more energy was feed into the grid then charged into the EV. Default step_size is 1. |
-| ENERGY_EXPORT    | Y            | Total amount of energy feed back into the grid: defined in kWh.                                                                                                                                          |
-| ENERGY_IMPORT    | Y            | Total amount of energy charged, defined in kWh.                                                                                                                                                          |
-| MAX_CURRENT      |              | Sum of the maximum current over all phases, reached during this [ChargingPeriod](https://ocpi.dev): defined in A (Ampere).                                                                               |
-| MIN_CURRENT      |              | Sum of the minimum current over all phases, reached during this [ChargingPeriod](https://ocpi.dev), when negative, current has flowed from the EV to the grid. Defined in A (Ampere).                    |
-| MAX_POWER        |              | Maximum power reached during this [ChargingPeriod](https://ocpi.dev): defined in kW (Kilowatt).                                                                                                          |
-| MIN_POWER        |              | Minimum power reached during this [ChargingPeriod](https://ocpi.dev): defined in kW (Kilowatt), when negative, the power has flowed from the EV to the grid.                                             |
-| PARKING_TIME     |              | Time during this [ChargingPeriod](https://ocpi.dev) not charging: defined in hours, default step_size multiplier is 1 second.                                                                            |
-| POWER            | Y            | Average power during this [ChargingPeriod](https://ocpi.dev): defined in kW (Kilowatt). When negative, the power is flowing from the EV to the grid.                                                     |
-| RESERVATION_TIME |              | Time during this [ChargingPeriod](https://ocpi.dev) Charge Point has been reserved and not yet been in use for this customer: defined in hours, default step_size multiplier is 1 second.                |
-| STATE_OF_CHARGE  | Y            | Current state of charge of the EV, in percentage, values allowed: 0 to 100. See note below.                                                                                                              |
-| TIME             |              | Time charging during this [ChargingPeriod](https://ocpi.dev): defined in hours, default step_size multiplier is 1 second.                                                                                |
+| Value            | Session Only | Description                                                                                                                                                                                                                                       |
+|------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CURRENT          | Y            | Average charging current during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in A (Ampere). When negative, the current is flowing from the EV to the grid.                                           |
+| ENERGY           |              | Total amount of energy (dis-)charged during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in kWh. When negative, more energy was feed into the grid then charged into the EV. Default step_size is 1. |
+| ENERGY_EXPORT    | Y            | Total amount of energy feed back into the grid: defined in kWh.                                                                                                                                                                                   |
+| ENERGY_IMPORT    | Y            | Total amount of energy charged, defined in kWh.                                                                                                                                                                                                   |
+| MAX_CURRENT      |              | Sum of the maximum current over all phases, reached during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in A (Ampere).                                                                               |
+| MIN_CURRENT      |              | Sum of the minimum current over all phases, reached during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class), when negative, current has flowed from the EV to the grid. Defined in A (Ampere).                    |
+| MAX_POWER        |              | Maximum power reached during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in kW (Kilowatt).                                                                                                          |
+| MIN_POWER        |              | Minimum power reached during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in kW (Kilowatt), when negative, the power has flowed from the EV to the grid.                                             |
+| PARKING_TIME     |              | Time during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) not charging: defined in hours, default step_size multiplier is 1 second.                                                                            |
+| POWER            | Y            | Average power during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in kW (Kilowatt). When negative, the power is flowing from the EV to the grid.                                                     |
+| RESERVATION_TIME |              | Time during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) Charge Point has been reserved and not yet been in use for this customer: defined in hours, default step_size multiplier is 1 second.                |
+| STATE_OF_CHARGE  | Y            | Current state of charge of the EV, in percentage, values allowed: 0 to 100. See note below.                                                                                                                                                       |
+| TIME             |              | Time charging during this [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class): defined in hours, default step_size multiplier is 1 second.                                                                                |
 
 :::note
 OCPI makes it possible to provide SoC in the Session object. This information can be useful to show the current State of
@@ -87,24 +87,24 @@ The *CdrLocation* class contains only the relevant information from the
 A Charging Period consists of a start timestamp and a list of possible values that influence this period, for example:
 amount of energy charged this period, maximum current during this period etc.
 
-| Property        | Type                                                | Card. | Description                                                                                                                           |
-|-----------------|-----------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------|
-| start_date_time | [DateTime](/07-types/01-intro.md#datetime-type)     | 1     | Start timestamp of the charging period. A period ends when the next period starts. The last period ends when the session ends.        |
-| dimensions      | [CdrDimension](https://ocpi.dev)                    | \+    | List of relevant values for this charging period.                                                                                     |
-| tariff_id       | [CiString](/07-types/01-intro.md#cistring-type)(36) | ?     | Unique identifier of the Tariff that is relevant for this Charging Period. If not provided, no Tariff is relevant during this period. |
+| Property        | Type                                                                    | Card. | Description                                                                                                                           |
+|-----------------|-------------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------|
+| start_date_time | [DateTime](/07-types/01-intro.md#datetime-type)                         | 1     | Start timestamp of the charging period. A period ends when the next period starts. The last period ends when the session ends.        |
+| dimensions      | [CdrDimension](/06-modules/05-cdrs/07-data-types.md#cdrdimension-class) | \+    | List of relevant values for this charging period.                                                                                     |
+| tariff_id       | [CiString](/07-types/01-intro.md#cistring-type)(36)                     | ?     | Unique identifier of the Tariff that is relevant for this Charging Period. If not provided, no Tariff is relevant during this period. |
 
 ## SignedData *class*
 
 This class contains all the information of the signed data. Which encoding method is used, if needed, the public key and
 a list of signed values.
 
-| Property                | Type                                                | Card. | Description                                                                                                                                       |
-|-------------------------|-----------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| encoding_method         | [CiString](/07-types/01-intro.md#cistring-type)(36) | 1     | The name of the encoding used in the SignedData field. This is the name given to the encoding by a company or group of companies. See note below. |
-| encoding_method_version | int                                                 | ?     | Version of the EncodingMethod (when applicable)                                                                                                   |
-| public_key              | [string](/07-types/01-intro.md#string-type)(512)    | ?     | Public key used to sign the data, base64 encoded.                                                                                                 |
-| signed_values           | [SignedValue](https://ocpi.dev)                     | \+    | One or more signed values.                                                                                                                        |
-| url                     | [string](/07-types/01-intro.md#cistring-type)(512)  | ?     | URL that can be shown to an EV driver. This URL gives the EV driver the possibility to check the signed data from a charging session.             |
+| Property                | Type                                                                  | Card. | Description                                                                                                                                       |
+|-------------------------|-----------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| encoding_method         | [CiString](/07-types/01-intro.md#cistring-type)(36)                   | 1     | The name of the encoding used in the SignedData field. This is the name given to the encoding by a company or group of companies. See note below. |
+| encoding_method_version | int                                                                   | ?     | Version of the EncodingMethod (when applicable)                                                                                                   |
+| public_key              | [string](/07-types/01-intro.md#string-type)(512)                      | ?     | Public key used to sign the data, base64 encoded.                                                                                                 |
+| signed_values           | [SignedValue](/06-modules/05-cdrs/07-data-types.md#signedvalue-class) | \+    | One or more signed values.                                                                                                                        |
+| url                     | [string](/07-types/01-intro.md#cistring-type)(512)                    | ?     | URL that can be shown to an EV driver. This URL gives the EV driver the possibility to check the signed data from a charging session.             |
 
 :::note
 For the German Eichrecht, different solutions are used, all have (somewhat) different encodings. Below the table with

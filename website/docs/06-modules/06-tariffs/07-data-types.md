@@ -46,7 +46,7 @@ cost of € 0.029. When `step_size = 25`, then the same amount would be billed 
 
 :::note
 For more information about how `step_size` impacts the calculation of the cost of charging see: [CDR object
-description](https://ocpi.dev)
+description](/06-modules/05-cdrs/06-object-description.md#step_size)
 :::
 
 :::note

@@ -26,7 +26,11 @@ function fix_mod_cdrs() {
   gsed -i    "s/’/'/gm" "$file"
   gsed -i    "s|^======|#####|gm" "$file"
 
+  gsed -i -z "s|\*\*step_size\:\*\* |#### Step_size\n\n|gm" "$file"
+  gsed -i -z "s|\*\*ChargingPeriod\:\*\* |#### ChargingPeriod\n\n|gm" "$file"
+
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
+
   mv "$tempfile" "$file"
   echo "" >> "$file"
 }

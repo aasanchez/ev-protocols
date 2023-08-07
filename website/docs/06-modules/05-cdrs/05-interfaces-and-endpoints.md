@@ -25,13 +25,13 @@ Examples:
 * `https://www.server.com/ocpi/2.2.1/cdrs/?date_from=2019-01-29T12:00:00&limit=100`
 * `https://www.server.com/ocpi/cpo/2.2.1/cdrs/?offset=50&limit=100`
 
-| Method                  | Description                                                                                                                                                                                                                          |
-|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Fetch CDRs last updated (which in the current version of OCPI can only be the creation Date/Time) between the `{date_from}` and `{date_to}` ([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)). |
-| POST                    | n/a                                                                                                                                                                                                                                  |
-| PUT                     | n/a                                                                                                                                                                                                                                  |
-| PATCH                   | n/a                                                                                                                                                                                                                                  |
-| DELETE                  | n/a                                                                                                                                                                                                                                  |
+| Method                                                               | Description                                                                                                                                                                                                                          |
+|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/05-cdrs/05-interfaces-and-endpoints.md#get-method) | Fetch CDRs last updated (which in the current version of OCPI can only be the creation Date/Time) between the `{date_from}` and `{date_to}` ([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)). |
+| POST                                                                 | n/a                                                                                                                                                                                                                                  |
+| PUT                                                                  | n/a                                                                                                                                                                                                                                  |
+| PATCH                                                                | n/a                                                                                                                                                                                                                                  |
+| DELETE                                                               | n/a                                                                                                                                                                                                                                  |
 
 ### **GET** Method
 
@@ -60,10 +60,10 @@ The endpoint returns a list of CDRs matching the given parameters in the GET req
 Any older information that is not specified in the response is considered no longer valid. Each object must contain all
 required fields. Fields that are not specified may be considered as null values.
 
-|                         |       |               |
-|-------------------------|-------|---------------|
-| Datatype                | Card. | Description   |
-| [CDR](https://ocpi.dev) | \*    | List of CDRs. |
+|                                                                |       |               |
+|----------------------------------------------------------------|-------|---------------|
+| Datatype                                                       | Card. | Description   |
+| [CDR](/06-modules/05-cdrs/06-object-description.md#cdr-object) | \*    | List of CDRs. |
 
 ## Receiver Interface
 
@@ -71,13 +71,13 @@ Typically implemented by market roles like: eMSP.
 
 The CDRs endpoint can be used to create and retrieve CDRs.
 
-| Method                   | Description                   |
-|--------------------------|-------------------------------|
-| [GET](https://ocpi.dev)  | Retrieve an existing CDR.     |
-| [POST](https://ocpi.dev) | Send a new CDR.               |
-| PUT                      | n/a (CDRs cannot be replaced) |
-| PATCH                    | n/a (CDRs cannot be updated)  |
-| DELETE                   | n/a (CDRs cannot be removed)  |
+| Method                                                                 | Description                   |
+|------------------------------------------------------------------------|-------------------------------|
+| [GET](/06-modules/05-cdrs/05-interfaces-and-endpoints.md#get-method-1) | Retrieve an existing CDR.     |
+| [POST](/06-modules/05-cdrs/05-interfaces-and-endpoints.md#post-method) | Send a new CDR.               |
+| PUT                                                                    | n/a (CDRs cannot be replaced) |
+| PATCH                                                                  | n/a (CDRs cannot be updated)  |
+| DELETE                                                                 | n/a (CDRs cannot be removed)  |
 
 ### GET Method
 
@@ -101,10 +101,10 @@ used.
 
 The endpoint returns the requested CDR, if it exists.
 
-|                         |       |                       |
-|-------------------------|-------|-----------------------|
-| Datatype                | Card. | Description           |
-| [CDR](https://ocpi.dev) | 1     | Requested CDR object. |
+|                                                                |       |                       |
+|----------------------------------------------------------------|-------|-----------------------|
+| Datatype                                                       | Card. | Description           |
+| [CDR](/06-modules/05-cdrs/06-object-description.md#cdr-object) | 1     | Requested CDR object. |
 
 ### POST Method
 
@@ -124,9 +124,9 @@ Example:
 
 In the POST request the new CDR object is sent.
 
-| Type                    | Card. | Description     |
-|-------------------------|-------|-----------------|
-| [CDR](https://ocpi.dev) | 1     | New CDR object. |
+| Type                                                           | Card. | Description     |
+|----------------------------------------------------------------|-------|-----------------|
+| [CDR](/06-modules/05-cdrs/06-object-description.md#cdr-object) | 1     | New CDR object. |
 
 ##### Response Headers
 

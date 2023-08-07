@@ -467,7 +467,7 @@ This does not mean they have to be present in all request. There are situation/s
 shall be omitted, See: [Open Routing Request](#open-routing-request)
 
 Only requests/responses from Function Modules: such as: [Tokens](https://ocpi.dev),
-[Locations](https://ocpi.dev), [CDRs](https://ocpi.dev)
+[Locations](https://ocpi.dev), [CDRs](/06-modules/05-cdrs/01-intro.md)
 etc. SHALL be routed, so need the routing headers.
 
 The requests/responses to/from Configuration Modules:
@@ -521,7 +521,7 @@ MUST be used. (see below)
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
 data like [Tokens](https://ocpi.dev) and
 [Locations](https://ocpi.dev), but not so much for
-[CDRs](https://ocpi.dev) and [Sessions](https://ocpi.dev) as
+[CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](https://ocpi.dev) as
 these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.
 
 :::note

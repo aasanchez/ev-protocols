@@ -70,7 +70,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
 * [Charging Profiles](https://ocpi.dev)
 * [Preference based Smart Charging](https://ocpi.dev)
 * Improvements:
-  * [CDRs](https://ocpi.dev): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
+  * [CDRs](/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
     AuthorizationReference, CdrLocation, CdrToken
   * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
   * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much

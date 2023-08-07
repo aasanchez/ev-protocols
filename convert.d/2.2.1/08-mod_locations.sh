@@ -57,6 +57,8 @@ function fix_mod_locations() {
   gsed -i    "s|^#### Example: Opening Hours with exceptional closing.$|#### Example: Opening Hours with exceptional closing|gm" "$file"
   gsed -i    "s|^#### Example: Opening Hours with exceptional opening.$|#### Example: Opening Hours with exceptional opening|gm" "$file"
 
+  gsed -i "s|\[requirement that EVSEs are never deleted\](https\://ocpi\.dev)|requirement that EVSEs are never deleted|gm" "$file"
+
   gsed -i -e 's|":" Regex:.*|":" Regex: [Regex Test](https://regex101.com/r/xaMwu6/1) \||gm' "$file" ## Change because for some bizzare reason, I cant render properly code inside of a Markdown Table, I have to find a solution for this
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"

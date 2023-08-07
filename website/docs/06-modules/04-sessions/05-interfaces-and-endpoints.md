@@ -190,11 +190,11 @@ only. It is not allowed to use extra URL segments to try to PATCH fields of inne
 [Session](https://ocpi.dev) object directly.
 
 When a PATCH request contains the `charging_periods` field (inside a [Session](https://ocpi.dev) object),
-this SHALL be processed as a request to add all the [ChargingPeriod](https://ocpi.dev)
+this SHALL be processed as a request to add all the [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class)
 objects to the existing [Session](https://ocpi.dev) object. If the request `charging_periods` list is
 omitted (or contains an empty list), no changes SHALL be made to the existing list of `charging_periods`.
 
-If existing [ChargingPeriod](https://ocpi.dev) objects in a
+If existing [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) objects in a
 [Session](https://ocpi.dev) need to be replaced or removed, the Sender SHALL use the
 [PUT](https://ocpi.dev) method to replace the entire [Session](https://ocpi.dev) object
 (including all the `charging_periods`).
@@ -217,7 +217,7 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 ##### Example: adding a new ChargingPeriod
 
-PATCH used to add a new [ChargingPeriod](https://ocpi.dev) to the Session and updating
+PATCH used to add a new [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) to the Session and updating
 all related fields.
 
 ``` json
