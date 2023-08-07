@@ -1,11 +1,6 @@
 ---
 slug: ocpi-dev-is-alive
 title: OCPI.dev is Alive
-authors:
-  name: Alexis Sanchez
-  title: OCPI.dev team
-  url: https://github.com/aasanchez
-  image_url: https://github.com/aasanchez.png
 tags: [ocpi, launch]
 ---
 

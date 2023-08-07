@@ -20,8 +20,8 @@ The Commands module enables remote commands to be sent to a Location/EVSE. The f
 * `STOP_SESSION`
 * `UNLOCK_CONNECTOR`
 
-See [CommandType](https://ocpi.dev) for a description of the different commands. *Use the
-`UNLOCK_CONNECTOR` command with care, please read the note at [CommandType](https://ocpi.dev).*
+See [CommandType](/06-modules/08-commands/07-data-types.md#commandtype-enum) for a description of the different commands. *Use the
+`UNLOCK_CONNECTOR` command with care, please read the note at [CommandType](/06-modules/08-commands/07-data-types.md#commandtype-enum).*
 
 **Module dependency:** [Locations module](https://ocpi.dev), [Sessions
 module](https://ocpi.dev)

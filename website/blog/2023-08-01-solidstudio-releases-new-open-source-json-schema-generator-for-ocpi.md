@@ -1,11 +1,6 @@
 ---
 slug: solidstudio-releases-new-open-source-json-schema-generator-for-ocpi
 title: SolidStudio Releases New Open Source JSON Schema Generator for OCPI
-authors:
-  name: Alexis Sanchez
-  title: OCPI.dev team
-  url: https://github.com/aasanchez
-  image_url: https://github.com/aasanchez.png
 tags: [JSON Schema, OCPI, eMobility, open source, validation, assessment, compliance, quality, SolidStudio]
 ---
 

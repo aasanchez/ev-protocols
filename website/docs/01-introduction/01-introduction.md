@@ -77,7 +77,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
     more examples
   * [Locations](https://ocpi.dev): Multiple Tariffs, Lots of small improvements
   * [Tokens](https://ocpi.dev): Group_id, energy contract
-  * [Commands](https://ocpi.dev): Cancel Reservation added
+  * [Commands](/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
 
 ## OCPI is developed with support of
 

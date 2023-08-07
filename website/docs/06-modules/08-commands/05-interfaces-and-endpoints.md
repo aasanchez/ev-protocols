@@ -22,13 +22,13 @@ Examples:
 * `https://ocpi.server.com/commands/STOP_SESSION`
 * `https://server.com/ocpi/cpo/2.2.1/commands/RESERVE_NOW`
 
-| Method                   | Description                                                                           |
-|--------------------------|---------------------------------------------------------------------------------------|
-| GET                      | n/a                                                                                   |
-| [POST](https://ocpi.dev) | Send a command to the CPO, requesting the CPO to send the command to the Charge Point |
-| PUT                      | n/a                                                                                   |
-| PATCH                    | n/a                                                                                   |
-| DELETE                   | n/a                                                                                   |
+| Method                                                                     | Description                                                                           |
+|----------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| GET                                                                        | n/a                                                                                   |
+| [POST](/06-modules/08-commands/05-interfaces-and-endpoints.md#post-method) | Send a command to the CPO, requesting the CPO to send the command to the Charge Point |
+| PUT                                                                        | n/a                                                                                   |
+| PATCH                                                                      | n/a                                                                                   |
+| DELETE                                                                     | n/a                                                                                   |
 
 ### **POST** Method
 
@@ -36,9 +36,9 @@ Examples:
 
 The following parameter shall be provided as URL segments.
 
-| Parameter | Datatype                        | Required | Description                        |
-|-----------|---------------------------------|----------|------------------------------------|
-| command   | [CommandType](https://ocpi.dev) | yes      | Type of command that is requested. |
+| Parameter | Datatype                                                                 | Required | Description                        |
+|-----------|--------------------------------------------------------------------------|----------|------------------------------------|
+| command   | [CommandType](/06-modules/08-commands/07-data-types.md#commandtype-enum) | yes      | Type of command that is requested. |
 
 ### Request Body
 
@@ -46,22 +46,22 @@ Depending on the `command` parameter the body SHALL contain the applicable objec
 
 > Choice: one of five
 
-| Type                                  | Card. | Description                                                                                                                                      |
-|---------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| [CancelReservation](https://ocpi.dev) | 1     | CancelReservation object, for the `CANCEL_RESERVATION` command, with information needed to cancel an existing reservation.                       |
-| [ReserveNow](https://ocpi.dev)        | 1     | ReserveNow object, for the `RESERVE_NOW` command, with information needed to reserve a (specific) connector of a Charge Point for a given Token. |
-| [StartSession](https://ocpi.dev)      | 1     | StartSession object, for the `START_SESSION` command, with information needed to start a sessions.                                               |
-| [StopSession](https://ocpi.dev)       | 1     | StopSession object, for the `STOP_SESSION` command, with information needed to stop a sessions.                                                  |
-| [UnlockConnector](https://ocpi.dev)   | 1     | UnlockConnector object, for the `UNLOCK_CONNECTOR` command, with information needed to unlock a connector of a Charge Point.                     |
+| Type                                                                                           | Card. | Description                                                                                                                                      |
+|------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [CancelReservation](/06-modules/08-commands/06-object-description.md#cancelreservation-object) | 1     | CancelReservation object, for the `CANCEL_RESERVATION` command, with information needed to cancel an existing reservation.                       |
+| [ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object)               | 1     | ReserveNow object, for the `RESERVE_NOW` command, with information needed to reserve a (specific) connector of a Charge Point for a given Token. |
+| [StartSession](/06-modules/08-commands/06-object-description.md#startsession-object)           | 1     | StartSession object, for the `START_SESSION` command, with information needed to start a sessions.                                               |
+| [StopSession](/06-modules/08-commands/06-object-description.md#stopsession-object)             | 1     | StopSession object, for the `STOP_SESSION` command, with information needed to stop a sessions.                                                  |
+| [UnlockConnector](/06-modules/08-commands/06-object-description.md#unlockconnector-object)     | 1     | UnlockConnector object, for the `UNLOCK_CONNECTOR` command, with information needed to unlock a connector of a Charge Point.                     |
 
 ##### Response Data
 
 The response contains the direct response from the Receiver, not the response from the Charge Point itself, that will be
 sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.
 
-| Datatype                            | Card. | Description                                                                                                                                                                                                             |
-|-------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [CommandResponse](https://ocpi.dev) | 1     | Result of the command request, by the CPO (not the Charge Point). So this indicates if the CPO understood the command request and was able to send it to the Charge Point. This is not the response by the Charge Point |
+| Datatype                                                                                   | Card. | Description                                                                                                                                                                                                             |
+|--------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [CommandResponse](/06-modules/08-commands/06-object-description.md#commandresponse-object) | 1     | Result of the command request, by the CPO (not the Charge Point). So this indicates if the CPO understood the command request and was able to send it to the Charge Point. This is not the response by the Charge Point |
 
 ## Sender Interface
 
@@ -79,13 +79,13 @@ Example:
 * `https://www.server.com/ocpi/emsp/2.2.1/commands/{command}`
 * `https://ocpi.server.com/commands/{command}/{uid}`
 
-| Method                   | Description                                              |
-|--------------------------|----------------------------------------------------------|
-| GET                      | n/a                                                      |
-| [POST](https://ocpi.dev) | Receive the asynchronous response from the Charge Point. |
-| PUT                      | n/a                                                      |
-| PATCH                    | n/a                                                      |
-| DELETE                   | n/a                                                      |
+| Method                                                                       | Description                                              |
+|------------------------------------------------------------------------------|----------------------------------------------------------|
+| GET                                                                          | n/a                                                      |
+| [POST](/06-modules/08-commands/05-interfaces-and-endpoints.md#post-method-1) | Receive the asynchronous response from the Charge Point. |
+| PUT                                                                          | n/a                                                      |
+| PATCH                                                                        | n/a                                                      |
+| DELETE                                                                       | n/a                                                      |
 
 ### **POST** Method
 
@@ -103,6 +103,6 @@ Examples:
 
 ### Request Body
 
-| Datatype                          | Card. | Description                                           |
-|-----------------------------------|-------|-------------------------------------------------------|
-| [CommandResult](https://ocpi.dev) | 1     | Result of the command request, from the Charge Point. |
+| Datatype                                                                               | Card. | Description                                           |
+|----------------------------------------------------------------------------------------|-------|-------------------------------------------------------|
+| [CommandResult](/06-modules/08-commands/06-object-description.md#commandresult-object) | 1     | Result of the command request, from the Charge Point. |

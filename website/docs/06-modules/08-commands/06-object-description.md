@@ -26,18 +26,18 @@ successfully called. The eMSP might have had a glitch, HTTP 500 returned, was of
 be able to give a quick as possible response to another system or driver app. It is important for the eMSP to know the
 timeout on a certain command.
 
-| Property | Type                                                   | Card. | Description                                                                                                                                         |
-|----------|--------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| result   | [CommandResponseType](https://ocpi.dev)                | 1     | Response from the CPO on the command request.                                                                                                       |
-| timeout  | int                                                    | 1     | Timeout for this command in seconds. When the Result is not received within this timeout, the eMSP can assume that the message might never be send. |
-| message  | [DisplayText](/07-types/01-intro.md#displaytext-class) | \*    | Human-readable description of the result (if one can be provided), multiple languages can be provided.                                              |
+| Property | Type                                                                                     | Card. | Description                                                                                                                                         |
+|----------|------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| result   | [CommandResponseType](/06-modules/08-commands/07-data-types.md#commandresponsetype-enum) | 1     | Response from the CPO on the command request.                                                                                                       |
+| timeout  | int                                                                                      | 1     | Timeout for this command in seconds. When the Result is not received within this timeout, the eMSP can assume that the message might never be send. |
+| message  | [DisplayText](/07-types/01-intro.md#displaytext-class)                                   | \*    | Human-readable description of the result (if one can be provided), multiple languages can be provided.                                              |
 
 ## *CommandResult* Object
 
-| Property | Type                                                   | Card. | Description                                                                                            |
-|----------|--------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------|
-| result   | [CommandResultType](https://ocpi.dev)                  | 1     | Result of the command request as sent by the Charge Point to the CPO.                                  |
-| message  | [DisplayText](/07-types/01-intro.md#displaytext-class) | \*    | Human-readable description of the reason (if one can be provided), multiple languages can be provided. |
+| Property | Type                                                                                 | Card. | Description                                                                                            |
+|----------|--------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------|
+| result   | [CommandResultType](/06-modules/08-commands/07-data-types.md#commandresulttype-enum) | 1     | Result of the command request as sent by the Charge Point to the CPO.                                  |
+| message  | [DisplayText](/07-types/01-intro.md#displaytext-class)                               | \*    | Human-readable description of the reason (if one can be provided), multiple languages can be provided. |
 
 ## *ReserveNow* Object
 

@@ -187,10 +187,10 @@ A breakdown is as follows:
 
 ## ReservationRestrictionType *enum*
 
-| Value               | Description                                                                                                                                                                         |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| RESERVATION         | Used in Tariff Elements to describe costs for a reservation.                                                                                                                        |
-| RESERVATION_EXPIRES | Used in Tariff Elements to describe costs for a reservation that expires (i.e. driver does not start a charging session before [expiry_date](https://ocpi.dev) of the reservation). |
+| Value               | Description                                                                                                                                                                                                                           |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| RESERVATION         | Used in Tariff Elements to describe costs for a reservation.                                                                                                                                                                          |
+| RESERVATION_EXPIRES | Used in Tariff Elements to describe costs for a reservation that expires (i.e. driver does not start a charging session before [expiry_date](/06-modules/08-commands/06-object-description.md#reservenow-object) of the reservation). |
 
 :::note
 When a Tariff has both `RESERVATION` and `RESERVATION_EXPIRES` Tariff Elements, where both Tariff Elements have a

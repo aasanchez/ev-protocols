@@ -8,7 +8,7 @@ The ChargingProfile creation is a request to activate a charging profile on a ru
 
 Most Charge Points are hooked up to the internet via a relative slow wireless connection. To prevent long blocking
 calls, the ChargingProfile module is designed to work asynchronously. (similar to the
-[`Commands`](https://ocpi.dev) module.
+[`Commands`](/06-modules/08-commands/01-intro.md) module.
 
 The Sender (Typically SCSP) sends a request to a Receiver (Typically CPO), via the Receiver interface. The Receiver
 checks if it can send the request to a Charge Point and will respond to the request with a status, indicating if the

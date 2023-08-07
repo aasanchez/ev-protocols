@@ -27,21 +27,21 @@ WGS 84.
 
 The capabilities of an EVSE.
 
-| Value                            | Description                                                                                                                                                                                           |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CHARGING_PROFILE_CAPABLE         | The EVSE supports charging profiles.                                                                                                                                                                  |
-| CHARGING_PREFERENCES_CAPABLE     | The EVSE supports [charging preferences](https://ocpi.dev).                                                                                                                                           |
-| CHIP_CARD_SUPPORT                | EVSE has a payment terminal that supports chip cards.                                                                                                                                                 |
-| CONTACTLESS_CARD_SUPPORT         | EVSE has a payment terminal that supports contactless cards.                                                                                                                                          |
-| CREDIT_CARD_PAYABLE              | EVSE has a payment terminal that makes it possible to pay for charging using a credit card.                                                                                                           |
-| DEBIT_CARD_PAYABLE               | EVSE has a payment terminal that makes it possible to pay for charging using a debit card.                                                                                                            |
-| PED_TERMINAL                     | EVSE has a payment terminal with a pin-code entry device.                                                                                                                                             |
-| REMOTE_START_STOP_CAPABLE        | The EVSE can remotely be [started](https://ocpi.dev)/[stopped](https://ocpi.dev).                                                                                                                     |
-| RESERVABLE                       | The EVSE can be [reserved](https://ocpi.dev).                                                                                                                                                         |
-| RFID_READER                      | Charging at this EVSE can be authorized with an RFID token.                                                                                                                                           |
-| START_SESSION_CONNECTOR_REQUIRED | When a [StartSession](https://ocpi.dev) is sent to this EVSE, the MSP is required to add the optional `connector_id` field in the [StartSession](https://ocpi.dev) object.                            |
-| TOKEN_GROUP_CAPABLE              | This EVSE supports token groups, two or more tokens work as one, so that a session can be started with one token and stopped with another (handy when a card and key-fob are given to the EV-driver). |
-| UNLOCK_CAPABLE                   | Connectors have mechanical lock that can be requested by the eMSP to be [unlocked](https://ocpi.dev).                                                                                                 |
+| Value                            | Description                                                                                                                                                                                                                                                                        |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CHARGING_PROFILE_CAPABLE         | The EVSE supports charging profiles.                                                                                                                                                                                                                                               |
+| CHARGING_PREFERENCES_CAPABLE     | The EVSE supports [charging preferences](https://ocpi.dev).                                                                                                                                                                                                                        |
+| CHIP_CARD_SUPPORT                | EVSE has a payment terminal that supports chip cards.                                                                                                                                                                                                                              |
+| CONTACTLESS_CARD_SUPPORT         | EVSE has a payment terminal that supports contactless cards.                                                                                                                                                                                                                       |
+| CREDIT_CARD_PAYABLE              | EVSE has a payment terminal that makes it possible to pay for charging using a credit card.                                                                                                                                                                                        |
+| DEBIT_CARD_PAYABLE               | EVSE has a payment terminal that makes it possible to pay for charging using a debit card.                                                                                                                                                                                         |
+| PED_TERMINAL                     | EVSE has a payment terminal with a pin-code entry device.                                                                                                                                                                                                                          |
+| REMOTE_START_STOP_CAPABLE        | The EVSE can remotely be [started](/06-modules/08-commands/06-object-description.md#startsession-object)/[stopped](/06-modules/08-commands/06-object-description.md#stopsession-object).                                                                                           |
+| RESERVABLE                       | The EVSE can be [reserved](/06-modules/08-commands/06-object-description.md#reservenow-object).                                                                                                                                                                                    |
+| RFID_READER                      | Charging at this EVSE can be authorized with an RFID token.                                                                                                                                                                                                                        |
+| START_SESSION_CONNECTOR_REQUIRED | When a [StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) is sent to this EVSE, the MSP is required to add the optional `connector_id` field in the [StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) object. |
+| TOKEN_GROUP_CAPABLE              | This EVSE supports token groups, two or more tokens work as one, so that a session can be started with one token and stopped with another (handy when a card and key-fob are given to the EV-driver).                                                                              |
+| UNLOCK_CAPABLE                   | Connectors have mechanical lock that can be requested by the eMSP to be [unlocked](/06-modules/08-commands/06-object-description.md#unlockconnector-object).                                                                                                                       |
 
 When a Charge Point supports ad-hoc payments with a payment terminal, please use a combination of the following values
 to explain the possibilities of the terminal: CHIP_CARD_SUPPORT, CONTACTLESS_CARD_SUPPORT, CREDIT_CARD_PAYABLE,
@@ -49,7 +49,7 @@ DEBIT_CARD_PAYABLE, PED_TERMINAL.
 
 There are Charge Points in the field that do not yet support OCPP 2.x. If these Charge Points have multiple connectors
 per EVSE, the CPO needs to know which connector to start when receiving a
-[StartSession](https://ocpi.dev) for the given EVSE. If this is the case, the CPO
+[StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) for the given EVSE. If this is the case, the CPO
 should set the `START_SESSION_CONNECTOR_REQUIRED` capability on the given EVSE.
 
 ## ConnectorFormat *enum*

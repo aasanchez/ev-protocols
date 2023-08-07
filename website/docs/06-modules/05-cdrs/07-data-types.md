@@ -6,11 +6,11 @@ slug: /modules/cdrs/data-types
 
 ## AuthMethod *enum*
 
-| Value        | Description                                                                                                                                                             |
-|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AUTH_REQUEST | Authentication request has been sent to the eMSP.                                                                                                                       |
-| COMMAND      | Command like [StartSession](https://ocpi.dev) or [ReserveNow](https://ocpi.dev) used to start the Session, the Token provided in the Command was used as authorization. |
-| WHITELIST    | Whitelist used for authentication, no request to the eMSP has been performed.                                                                                           |
+| Value        | Description                                                                                                                                                                                                                                                                   |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AUTH_REQUEST | Authentication request has been sent to the eMSP.                                                                                                                                                                                                                             |
+| COMMAND      | Command like [StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) or [ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object) used to start the Session, the Token provided in the Command was used as authorization. |
+| WHITELIST    | Whitelist used for authentication, no request to the eMSP has been performed.                                                                                                                                                                                                 |
 
 ## CdrDimension *class*
 
