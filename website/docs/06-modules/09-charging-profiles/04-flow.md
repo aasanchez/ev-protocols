@@ -20,25 +20,25 @@ the ChargingProfile will be executed. The CPO will forward the result in a new P
 SCSP) ChargingProfile interface.
 
 The Sender (Typically SCSP) can send the Charging Profile to the EVSE via the CPO by using the [CPO PUT
-method](https://ocpi.dev) for an ongoing session. The Sender can request the current profile the
+method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) for an ongoing session. The Sender can request the current profile the
 EVSE has calculated, based on different inputs, and is planned to be used for the ongoing session by calling the [CPO
-GET method](https://ocpi.dev). The Sender has the ability to remove the Charging Profile for the
-session by calling the [CPO DELETE method](https://ocpi.dev)
+GET method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method). The Sender has the ability to remove the Charging Profile for the
+session by calling the [CPO DELETE method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method)
 
 When the Sender has (at least once) successfully sent a Charging Profile for an ongoing charging session, the Receiver
 (Typically CPO) SHALL keep the Sender updated with changes to the ActiveChargingProfile of that Session. If the Receiver
-is aware of any changes, he notifies the Sender by calling the [MSP PUT method](https://ocpi.dev).
+is aware of any changes, he notifies the Sender by calling the [MSP PUT method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1).
 The changes might be triggered by the CPO sending additional Charging Profiles, or the some local limit being applied to
 the Charge Point, and the Charge Point notifies the CPO of the Changes.
 
 The Receiver can cancel/remove an existing ChargingProfile, it can let the eMSP know by calling the [MSP PUT
-method](https://ocpi.dev)
+method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1)
 
 For calculating optimum ChargingProfiles it might be useful for the eMSP or SCSP to know the ChargingProfile that the
 Charge Point has planned for the Session: ActiveChargingProfile. The ActiveChargingProfile might differ from
 ChargingProfile requested via OCPI. There might be other limiting factors being taken into account by the CPO and or
 Charge Point, that limit the ChargingProfile. The ActiveChargingProfile profile can be requested by the Sender by
-calling the [CPO GET method](https://ocpi.dev) on the Charging Profile Receiver interface. The CPO
+calling the [CPO GET method](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) on the Charging Profile Receiver interface. The CPO
 will then ask the Charge Point for the planned ActiveChargingProfile. When that is received it is forwarded to the URL
 given by the eMSP or SCSP.
 
@@ -57,15 +57,15 @@ request.
 When a new [Session](https://ocpi.dev) is started, or when an update to an existing
 [Session](https://ocpi.dev) is available, the CPO sends the Session object to the eMSP
 or SCSP. The eMSP or SCSP calculates a Charging Profile and sends it to the CPO by calling the Charging Profiles
-[PUT](https://ocpi.dev) method on the Receiver interface.
+[PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Receiver interface.
 
 The CPO responds to the eMSP or SCSP, the response body will contain the response to the request, acknowledging the
 request was understood and can be forwarded to the Charge Point.
 
 The CPO sends the requests to the Charge Point. When the CPO receives a response from the Charge Point, that result is
-sent to the eMSP or SCSP by call the [POST](https://ocpi.dev) method, on the URL provided by the
-eMSP of SCSP in the [PUT](https://ocpi.dev) request, this call will contain a
-[ChargingProfileResult](https://ocpi.dev) Object.
+sent to the eMSP or SCSP by call the [POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the
+eMSP of SCSP in the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) request, this call will contain a
+[ChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
 
 ![Example of a SetChargingProfile](../../images/sd_charging_profile_set.svg)
@@ -80,18 +80,18 @@ When a new [Session](https://ocpi.dev) is started, or when an update to an exist
 [Session](https://ocpi.dev) is available, the CPO sends the Session object to the
 eMSP. The eMSP forwards the [Session](https://ocpi.dev) Object to the SCSP. The SCSP
 calculates a Charging Profile and sends it to the eMSP by calling the Charging Profiles
-[PUT](https://ocpi.dev) method on the Sender interface implemented by the eMSP. The eMSP forwards
-it to the CPO by calling the Charging Profiles [PUT](https://ocpi.dev) method on the Receiver
+[PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Sender interface implemented by the eMSP. The eMSP forwards
+it to the CPO by calling the Charging Profiles [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Receiver
 interface.
 
 The CPO responds to the eMSP, the response body will contain the response to the request, acknowledging the request was
 understood and can be forwarded to the Charge Point. The eMSP forwards this response to the SCSP.
 
 The CPO sends the requests to the Charge Point. When the CPO receives a response from the Charge Point, that result is
-sent to the eMSP by the [POST](https://ocpi.dev) method, on the URL provided by the eMSP in the
-[PUT](https://ocpi.dev) request from the eMSP. The eMSP forwards this result to the the URL
-provided by the SCSP in the [PUT](https://ocpi.dev) request of the SCSP, this call will contain a
-[ChargingProfileResult](https://ocpi.dev) Object.
+sent to the eMSP by the [POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the eMSP in the
+[PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) request from the eMSP. The eMSP forwards this result to the the URL
+provided by the SCSP in the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) request of the SCSP, this call will contain a
+[ChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
 
 ![Example of a SetChargingProfile via the MSP](../../images/sd_charging_profile_set_via_msp.svg)
@@ -101,15 +101,15 @@ provided by the SCSP in the [PUT](https://ocpi.dev) request of the SCSP, this ca
 
 The Sender might want to remove the charging profile, for example the EV driver has selected to switch to charging with
 the highest speed possible. The Sender can ask the CPO to remove the set charging profile. This can be done by calling
-the [DELETE](https://ocpi.dev) method on the Receiver interface.
+the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) method on the Receiver interface.
 
 The CPO responds to the eMSP or SCSP, the response body will contain the response to the request, acknowledging the
 request was understood and can be forwarded to the Charge Point.
 
 The CPO sends the clear requests to the Charge Point. When the CPO receives a response from the Charge Point, that
-result is sent to the eMSP by call the [POST](https://ocpi.dev) method, on the URL provided by the
-eMSP in the [DELETE](https://ocpi.dev) request of the eMSP, this call will contain a
-[ClearProfileResult](https://ocpi.dev) Object.
+result is sent to the eMSP by call the [POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the
+eMSP in the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) request of the eMSP, this call will contain a
+[ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object) Object.
 
 
 ![Example of a ClearChargingProfile](../../images/sd_charging_profile_clear.svg)
@@ -119,18 +119,18 @@ eMSP in the [DELETE](https://ocpi.dev) request of the eMSP, this call will conta
 
 The SCSP might want to remove the charging profile, for example the EV driver has selected to switch to charging with
 the highest speed possible. The SCSP can ask the eMSP to ask the CPO to remove the set charging profile. This can be
-done by calling the [DELETE](https://ocpi.dev) method on the eMSPs Charging Profile Receiver
-interface. The eMSP forwards this to the CPO by calling the [DELETE](https://ocpi.dev) method on
+done by calling the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) method on the eMSPs Charging Profile Receiver
+interface. The eMSP forwards this to the CPO by calling the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) method on
 the CPOs Charging Profile Receiver interface.
 
 The CPO responds to the eMSP, the response body will contain the response to the request, acknowledging the request was
 understood and can be forwarded to the Charge Point. The eMSP forwards this response to the SCSP.
 
 The CPO send the clear requests to the Charge Point. When the CPO receives a response from the Charge Point, that result
-is sent to the eMSP by call the [POST](https://ocpi.dev) method, on the URL provided by the eMSP
-in the [DELETE](https://ocpi.dev) request of the eMSP. The eMSP forwards this result to the the
-URL provided by the SCSP in the [DELETE](https://ocpi.dev) request of the SCSP, this call will
-contain a [ClearProfileResult](https://ocpi.dev) Object.
+is sent to the eMSP by call the [POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the eMSP
+in the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) request of the eMSP. The eMSP forwards this result to the the
+URL provided by the SCSP in the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) request of the SCSP, this call will
+contain a [ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object) Object.
 
 
 ![Example of a ClearChargingProfile via the MSP](../../images/sd_charging_profile_clear_via_msp.svg)
@@ -139,16 +139,16 @@ contain a [ClearProfileResult](https://ocpi.dev) Object.
 ## Example of a GET ActiveChargingProfile send by the Sender (typically the eMSP or SCSP)
 
 When the Sender wants to know the current planned charging profile for a session, the Sender can ask the CPO for the
-ActiveChargingProfile by calling the [GET](https://ocpi.dev) method on the Receiver interface.
+ActiveChargingProfile by calling the [GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) method on the Receiver interface.
 
 The CPO responds to the eMSP or SCSP, the response body will contain the response to the request, acknowledging the
 request was accepted and can be forwarded to the Charge Point.
 
 The CPO sends a message to the Charge Point to retrieve the current active charging profile. When the CPO receives a
 response from the Charge Point, that ActiveChargingProfile is sent to the eMSP by call the
-[POST](https://ocpi.dev) method, on the URL provided by the eMSP in the
-[GET](https://ocpi.dev) request of the eMSP, this call will contain a
-[ActiveChargingProfileResult](https://ocpi.dev) Object.
+[POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the eMSP in the
+[GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) request of the eMSP, this call will contain a
+[ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
 
 ![Example of a GET ActiveChargingProfile](../../images/sd_charging_profile_get.svg)
@@ -157,21 +157,21 @@ response from the Charge Point, that ActiveChargingProfile is sent to the eMSP b
 ## Example of a GET ActiveChargingProfile send by the SCSP via eMSP
 
 When the SCSP wants to known the current planned charging profile for a session, the SCSP can ask the the eMSP to ask
-the CPO for the ActiveChargingProfile by calling the [GET](https://ocpi.dev) method on the eMSPs
+the CPO for the ActiveChargingProfile by calling the [GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) method on the eMSPs
 Charging Profile Receiver interface. The eMSP forwards this to the CPO by calling the
-[GET](https://ocpi.dev) method on the CPOs Charging Profile Receiver interface.
+[GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) method on the CPOs Charging Profile Receiver interface.
 
 The CPO responds to the eMSP, the response body will contain the response to the request, acknowledging the request was
 accepted and can be forwarded to the Charge Point. The eMSP forwards this response to the SCSP.
 
 The CPO sends a message to the Charge Point to retrieve the current active charging profile. When the CPO receives a
 response from the Charge Point, that ActiveChargingProfile is sent to the eMSP by call the
-[POST](https://ocpi.dev) method, on the URL provided by the eMSP in the
-[GET](https://ocpi.dev) request of the eMSP, this call will contain a
-[ActiveChargingProfileResult](https://ocpi.dev) Object. The eMSP forwards
-this result to the the URL provided by the SCSP in the [GET](https://ocpi.dev) request of the SCSP,
+[POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) method, on the URL provided by the eMSP in the
+[GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) request of the eMSP, this call will contain a
+[ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object. The eMSP forwards
+this result to the the URL provided by the SCSP in the [GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method) request of the SCSP,
 this call will contain the same
-[ActiveChargingProfileResult](https://ocpi.dev) Object.
+[ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
 
 ![Example of a GET ActiveChargingProfile via the MSP](../../images/sd_charging_profile_get_via_msp.svg)
@@ -180,8 +180,8 @@ this call will contain the same
 ## Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile
 
 When the CPO knows the ActiveChargingProfile of a Charge Point has changed, the Receiver (typically the CPO) sends this
-update [ActiveChargingProfile](https://ocpi.dev) to the Sender (typically the eMSP
-or SCSP), by calling the [PUT](https://ocpi.dev) method on the Sender interface.
+update [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md#activechargingprofile-class) to the Sender (typically the eMSP
+or SCSP), by calling the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) method on the Sender interface.
 
 
 ![Example of an ActiveChargingProfile being send by the CPO](../../images/sd_charging_profile_updated.svg)
@@ -190,11 +190,11 @@ or SCSP), by calling the [PUT](https://ocpi.dev) method on the Sender interface.
 ## Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile to the SCSP via the eMSP
 
 When the CPO knows the ActiveChargingProfile of a Charge Point has changed, the Receiver (typically the CPO) sends this
-update [ActiveChargingProfile](https://ocpi.dev) to the Sender (SCSP), by calling
-the [PUT](https://ocpi.dev) method on the eMSPs Sender interface.
+update [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md#activechargingprofile-class) to the Sender (SCSP), by calling
+the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) method on the eMSPs Sender interface.
 
-The eMSP forwards this [ActiveChargingProfile](https://ocpi.dev) to the SCSP, by
-calling the [PUT](https://ocpi.dev) method on the SCSPs Sender interface.
+The eMSP forwards this [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md#activechargingprofile-class) to the SCSP, by
+calling the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) method on the SCSPs Sender interface.
 
 
 ![Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP](../../images/sd_charging_profile_updated_via_msp.svg)

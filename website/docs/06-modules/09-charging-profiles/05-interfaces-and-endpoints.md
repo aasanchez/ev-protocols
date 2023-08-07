@@ -14,13 +14,13 @@ Typically implemented by market roles like: CPO.
 
 Example endpoint structures:
 
-| Method                     | Description                                                          |
-|----------------------------|----------------------------------------------------------------------|
-| [GET](https://ocpi.dev)    | Gets the ActiveChargingProfile for a specific charging session.      |
-| POST                       | n/a                                                                  |
-| [PUT](https://ocpi.dev)    | Creates/updates a ChargingProfile for a specific charging session.   |
-| PATCH                      | n/a                                                                  |
-| [DELETE](https://ocpi.dev) | Cancels an existing ChargingProfile for a specific charging session. |
+| Method                                                                                  | Description                                                          |
+|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| [GET](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#get-method)       | Gets the ActiveChargingProfile for a specific charging session.      |
+| POST                                                                                    | n/a                                                                  |
+| [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method)       | Creates/updates a ChargingProfile for a specific charging session.   |
+| PATCH                                                                                   | n/a                                                                  |
+| [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#delete-method) | Cancels an existing ChargingProfile for a specific charging session. |
 
 ### **GET** Method
 
@@ -42,11 +42,11 @@ As it is not common to add a body to a GET request, all parameters are added to 
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                                   |
-|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| session_id   | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                                           |
-| duration     | int                                                 | yes      | Length of the requested ActiveChargingProfile in seconds Duration in seconds. \*                                                                                                              |
-| response_url | [URL](/07-types/01-intro.md#url-type)               | yes      | URL that the [ActiveChargingProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
+| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                                                                                                         |
+|--------------|-----------------------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| session_id   | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                                                                                                                 |
+| duration     | int                                                 | yes      | Length of the requested ActiveChargingProfile in seconds Duration in seconds. \*                                                                                                                                                                                    |
+| response_url | [URL](/07-types/01-intro.md#url-type)               | yes      | URL that the [ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) POST should be sent to. This URL might contain a unique ID to be able to distinguish between GET ActiveChargingProfile requests. |
 
 :::note
 duration: Balance the duration between maximizing the information gained and the data usage and computation to execute
@@ -59,9 +59,9 @@ added value diminishes with every change in the schedule.
 The response contains the direct response from the Receiver, not the response from the EVSE itself. That information
 will be sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.
 
-| Datatype                                    | Card. | Description                                                                                                                                                                                                                                                      |
-|---------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ChargingProfileResponse](https://ocpi.dev) | 1     | Result of the ActiveChargingProfile request, by the Receiver (Typically CPO), not the location/EVSE. So this indicates if the Receiver understood the ChargingProfile request and was able to send it to the EVSE. This is not the response by the Charge Point. |
+| Datatype                                                                                                            | Card. | Description                                                                                                                                                                                                                                                      |
+|---------------------------------------------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ChargingProfileResponse](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresponse-object) | 1     | Result of the ActiveChargingProfile request, by the Receiver (Typically CPO), not the location/EVSE. So this indicates if the Receiver understood the ChargingProfile request and was able to send it to the EVSE. This is not the response by the Charge Point. |
 
 ### **PUT** Method
 
@@ -87,18 +87,18 @@ The following parameter shall be provided as URL segments.
 
 The body contains a SetChargingProfile object, that contains the new ChargingProfile and a response URL.
 
-| Type                                   | Card. | Description                                                                                         |
-|----------------------------------------|-------|-----------------------------------------------------------------------------------------------------|
-| [SetChargingProfile](https://ocpi.dev) | 1     | SetChargingProfile object with information needed to set/update the Charging Profile for a session. |
+| Type                                                                                                      | Card. | Description                                                                                         |
+|-----------------------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------|
+| [SetChargingProfile](/06-modules/09-charging-profiles/06-object-description.md#setchargingprofile-object) | 1     | SetChargingProfile object with information needed to set/update the Charging Profile for a session. |
 
 ====== Response Data
 
 The response contains the direct response from the Receiver (Typically CPO), not the response from the EVSE itself, that
 will be sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.
 
-| Datatype                                    | Card. | Description                                                                                                                                                                                                                               |
-|---------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ChargingProfileResponse](https://ocpi.dev) | 1     | Result of the ChargingProfile PUT request, by the CPO (not the location/EVSE). So this indicates if the CPO understood the ChargingProfile PUT request and was able to send it to the EVSE. This is not the response by the Charge Point. |
+| Datatype                                                                                                            | Card. | Description                                                                                                                                                                                                                               |
+|---------------------------------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ChargingProfileResponse](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresponse-object) | 1     | Result of the ChargingProfile PUT request, by the CPO (not the location/EVSE). So this indicates if the CPO understood the ChargingProfile PUT request and was able to send it to the EVSE. This is not the response by the Charge Point. |
 
 ### **DELETE** Method
 
@@ -120,19 +120,19 @@ As it is not common to add a body to a DELETE request, all parameters are added 
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                       |
-|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| session_id   | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                               |
-| response_url | [URL](/07-types/01-intro.md#url-type)               | yes      | URL that the [ClearProfileResult](https://ocpi.dev) POST should be sent to. This URL might contain a unique ID to be able to distinguish between DELETE ChargingProfile requests. |
+| Parameter    | Datatype                                            | Required | Description                                                                                                                                                                                                                                          |
+|--------------|-----------------------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| session_id   | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | The unique id that identifies the session in the Receiver platform.                                                                                                                                                                                  |
+| response_url | [URL](/07-types/01-intro.md#url-type)               | yes      | URL that the [ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object) POST should be sent to. This URL might contain a unique ID to be able to distinguish between DELETE ChargingProfile requests. |
 
 ====== Response Data
 
 The response contains the direct response from the Receiver (typically CPO), not the response from the EVSE itself, that
 will be sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.
 
-| Datatype                                    | Card. | Description                                                                                                                                                                                                                                     |
-|---------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ChargingProfileResponse](https://ocpi.dev) | 1     | Result of the ChargingProfile DELETE request, by the CPO (not the location/EVSE). So this indicates if the CPO understood the ChargingProfile DELETE request and was able to send it to the EVSE. This is not the response by the Charge Point. |
+| Datatype                                                                                                            | Card. | Description                                                                                                                                                                                                                                     |
+|---------------------------------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ChargingProfileResponse](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresponse-object) | 1     | Result of the ChargingProfile DELETE request, by the CPO (not the location/EVSE). So this indicates if the CPO understood the ChargingProfile DELETE request and was able to send it to the EVSE. This is not the response by the Charge Point. |
 
 ## Sender Interface
 
@@ -140,14 +140,14 @@ Typically implemented by market roles like: SCSP.
 
 The Sender interface receives the asynchronous responses.
 
-| Method                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| GET                      | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| [POST](https://ocpi.dev) | Receive the asynchronous response from the Charge Point.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| [PUT](https://ocpi.dev)  | Receiver (typically CPO) can send an updated ActiveChargingProfile when other inputs have made changes to existing profile. When the Receiver (typically CPO) sends a update profile to the EVSE, for an other reason then the Sender (Typically SCSP) asking, the Sender SHALL post an update to this interface. When a local input influence the ActiveChargingProfile in the EVSE AND the Receiver (typically CPO) is made aware of this, the Receiver SHALL post an update to this interface. |
-| PUT                      | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| PATCH                    | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| DELETE                   | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Method                                                                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|-------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GET                                                                                 | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [POST](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#post-method) | Receive the asynchronous response from the Charge Point.                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) | Receiver (typically CPO) can send an updated ActiveChargingProfile when other inputs have made changes to existing profile. When the Receiver (typically CPO) sends a update profile to the EVSE, for an other reason then the Sender (Typically SCSP) asking, the Sender SHALL post an update to this interface. When a local input influence the ActiveChargingProfile in the EVSE AND the Receiver (typically CPO) is made aware of this, the Receiver SHALL post an update to this interface. |
+| PUT                                                                                 | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| PATCH                                                                               | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| DELETE                                                                              | n/a                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ### **POST** Method
 
@@ -177,12 +177,12 @@ The content of the request body depends on the original request by the eMSP to w
 
 ### Request Body
 
-| Datatype                                        | Card. | Description                                                             |
-|-------------------------------------------------|-------|-------------------------------------------------------------------------|
-| *Choice: one of three*                          |       |                                                                         |
-| [ActiveChargingProfileResult](https://ocpi.dev) | 1     | Result of the GET ActiveChargingProfile request, from the Charge Point. |
-| [ChargingProfileResult](https://ocpi.dev)       | 1     | Result of the PUT ChargingProfile request, from the Charge Point.       |
-| [ClearProfileResult](https://ocpi.dev)          | 1     | Result of the DELETE ChargingProfile request, from the Charge Point.    |
+| Datatype                                                                                                              | Card. | Description                                                             |
+|-----------------------------------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------|
+| *Choice: one of three*                                                                                                |       |                                                                         |
+| [ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) | 1     | Result of the GET ActiveChargingProfile request, from the Charge Point. |
+| [ChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object)       | 1     | Result of the PUT ChargingProfile request, from the Charge Point.       |
+| [ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object)             | 1     | Result of the DELETE ChargingProfile request, from the Charge Point.    |
 
 ### Response Body
 
@@ -226,9 +226,9 @@ The following parameter shall be provided as URL segments.
 The body contains the update ActiveChargingProfile, The ActiveChargingProfile is the charging profile as calculated by
 the EVSE.
 
-| Type                                      | Card. | Description                                                                                                                                                                          |
-|-------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [ActiveChargingProfile](https://ocpi.dev) | 1     | The new ActiveChargingProfile. If there is no longer any charging profile active, the ActiveChargingProfile SHALL reflect this by showing the maximum charging capacity of the EVSE. |
+| Type                                                                                                   | Card. | Description                                                                                                                                                                          |
+|--------------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md#activechargingprofile-class) | 1     | The new ActiveChargingProfile. If there is no longer any charging profile active, the ActiveChargingProfile SHALL reflect this by showing the maximum charging capacity of the EVSE. |
 
 ### Response Body
 

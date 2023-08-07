@@ -74,7 +74,7 @@ between modules. If there are dependencies between modules, it will be mentioned
 | Module                                                               | ModuleID         | Remark                                                                              |
 |----------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
 | [CDRs](/06-modules/05-cdrs/01-intro.md)                              | cdrs             |                                                                                     |
-| [Charging Profiles](https://ocpi.dev)                                | chargingprofiles |                                                                                     |
+| [Charging Profiles](/06-modules/09-charging-profiles/01-intro.md)    | chargingprofiles |                                                                                     |
 | [Commands](https://ocpi.dev)                                         | commands         |                                                                                     |
 | [Credentials & Registration](/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |
 | [Hub Client Info](https://ocpi.dev)                                  | hubclientinfo    |                                                                                     |
