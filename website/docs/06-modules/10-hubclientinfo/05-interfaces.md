@@ -15,13 +15,13 @@ Typically implemented by all parties connecting to a Hub.
 With this interface the Hub can push the ClientInfo information to a connected client (eMSP/CPO etc) Example endpoint
 structure: `/ocpi/cpo/2.0/clientinfo/{country_code}/{party_id}`
 
-| Method                  | Description                                                                   |
-|-------------------------|-------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Retrieve a ClientInfo object as it is stored in the connected clients system. |
-| POST                    | n/a                                                                           |
-| [PUT](https://ocpi.dev) | Push new/updated ClientInfo object to the connect client.                     |
-| PATCH                   | n/a                                                                           |
-| DELETE                  | n/a, Use [PUT](https://ocpi.dev), ClientInfo objects cannot be removed).      |
+| Method                                                          | Description                                                                                                      |
+|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/10-hubclientinfo/05-interfaces.md#get-method) | Retrieve a ClientInfo object as it is stored in the connected clients system.                                    |
+| POST                                                            | n/a                                                                                                              |
+| [PUT](/06-modules/10-hubclientinfo/05-interfaces.md#put-method) | Push new/updated ClientInfo object to the connect client.                                                        |
+| PATCH                                                           | n/a                                                                                                              |
+| DELETE                                                          | n/a, Use [PUT](/06-modules/10-hubclientinfo/05-interfaces.md#put-method), ClientInfo objects cannot be removed). |
 
 ### **GET** Method
 
@@ -42,10 +42,10 @@ The following parameters shall be provided as URL segments.
 
 The response contains the requested object.
 
-|                                |       |                                  |
-|--------------------------------|-------|----------------------------------|
-| Type                           | Card. | Description                      |
-| [ClientInfo](https://ocpi.dev) | 1     | The requested ClientInfo object. |
+|                                                                                       |       |                                  |
+|---------------------------------------------------------------------------------------|-------|----------------------------------|
+| Type                                                                                  | Card. | Description                      |
+| [ClientInfo](/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | 1     | The requested ClientInfo object. |
 
 ### **PUT** Method
 
@@ -55,10 +55,10 @@ New or updated ClientInfo objects are pushed from the Hub to a connected client.
 
 In the put request a the new or updated ClientInfo object is send.
 
-|                                |       |                                   |
-|--------------------------------|-------|-----------------------------------|
-| Type                           | Card. | Description                       |
-| [ClientInfo](https://ocpi.dev) | 1     | New or updated ClientInfo object. |
+|                                                                                       |       |                                   |
+|---------------------------------------------------------------------------------------|-------|-----------------------------------|
+| Type                                                                                  | Card. | Description                       |
+| [ClientInfo](/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | 1     | New or updated ClientInfo object. |
 
 ====== Request Parameters
 
@@ -89,13 +89,13 @@ Typically implemented by the Hub.
 
 This interface enables Receivers to request the current list of ClientInfo objects from the Sender, when needed.
 
-| Method                  | Description |
-|-------------------------|-------------|
-| [GET](https://ocpi.dev) |             |
-| POST                    | n/a         |
-| PUT                     | n/a         |
-| PATCH                   | n/a         |
-| DELETE                  | n/a         |
+| Method                                                            | Description |
+|-------------------------------------------------------------------|-------------|
+| [GET](/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1) |             |
+| POST                                                              | n/a         |
+| PUT                                                               | n/a         |
+| PATCH                                                             | n/a         |
+| DELETE                                                            | n/a         |
 
 ### **GET** Method
 
@@ -135,7 +135,7 @@ The endpoint response with list of valid ClientInfo objects, the header will con
 Any older information that is not specified in the response is considered as no longer valid. Each object must contain
 all required fields. Fields that are not specified may be considered as null values.
 
-|                                |       |                                               |
-|--------------------------------|-------|-----------------------------------------------|
-| Type                           | Card. | Description                                   |
-| [ClientInfo](https://ocpi.dev) | \*    | List of all (or matching) ClientInfo objects. |
+|                                                                                       |       |                                               |
+|---------------------------------------------------------------------------------------|-------|-----------------------------------------------|
+| Type                                                                                  | Card. | Description                                   |
+| [ClientInfo](/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | \*    | List of all (or matching) ClientInfo objects. |

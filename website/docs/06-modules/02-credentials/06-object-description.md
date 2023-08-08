@@ -38,7 +38,7 @@ from the OCPI `party_id` and/or the `country_code`.
 
 A Hub SHALL only reports itself as role: Hub. A Hub SHALL NOT report all the other connected parties as a role on the
 platform. A Hub SHALL report connected parties via the [HubClientInfo
-module](https://ocpi.dev).
+module](/06-modules/10-hubclientinfo/01-intro.md).
 
 ## Examples
 

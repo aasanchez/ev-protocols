@@ -7,23 +7,23 @@ slug: /modules/hubclientinfo/flow-and-lifecycle
 ## Push model
 
 When the Hub creates a new ClientInfo object they push it to the connected parties by calling
-[PUT](https://ocpi.dev) on the connected party ClientInfo endpoint with the newly created ClientInfo
+[PUT](/06-modules/10-hubclientinfo/05-interfaces.md#put-method) on the connected party ClientInfo endpoint with the newly created ClientInfo
 object.
 
 Any changes to ClientInfo in the Hub system are sent to the connected party system by calling the
-[PUT](https://ocpi.dev) method on the connected party ClientInfo endpoint with the updated ClientInfo.
+[PUT](/06-modules/10-hubclientinfo/05-interfaces.md#put-method) method on the connected party ClientInfo endpoint with the updated ClientInfo.
 
 When the Hub invalidates a ClientInfo object (deleting is not possible), the Hub will send the updated ClientInfo object
-(with the field: status set to SUSPENDED, by calling the [PUT](https://ocpi.dev) method on the connected
+(with the field: status set to SUSPENDED, by calling the [PUT](/06-modules/10-hubclientinfo/05-interfaces.md#put-method) method on the connected
 party ClientInfo endpoint with the updated ClientInfo object.
 
 When the connected party is not sure about the state or existence of a ClientInfo object in the Hub system, the
-connected party can call the [GET](https://ocpi.dev) to request to ClientInfo object from the Hub system.
+connected party can call the [GET](/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1) to request to ClientInfo object from the Hub system.
 
 ## Pull model
 
 When a connected party is not sure about the state of the list of known connected parties of a Hub, or wants to request
-the full list at the start-up of their system, the connected party can call the [GET](https://ocpi.dev) on
+the full list at the start-up of their system, the connected party can call the [GET](/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1) on
 the Hubs ClientInfo endpoint to receive all ClientInfo objects. This method is not for operational flow.
 
 ## Still alive check.

@@ -77,7 +77,7 @@ between modules. If there are dependencies between modules, it will be mentioned
 | [Charging Profiles](/06-modules/09-charging-profiles/01-intro.md)    | chargingprofiles |                                                                                     |
 | [Commands](/06-modules/08-commands/01-intro.md)                      | commands         |                                                                                     |
 | [Credentials & Registration](/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |
-| [Hub Client Info](https://ocpi.dev)                                  | hubclientinfo    |                                                                                     |
+| [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md)          | hubclientinfo    |                                                                                     |
 | [Locations](https://ocpi.dev)                                        | locations        |                                                                                     |
 | [Sessions](https://ocpi.dev)                                         | sessions         |                                                                                     |
 | [Tariffs](https://ocpi.dev)                                          | tariffs          |                                                                                     |

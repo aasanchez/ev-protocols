@@ -81,12 +81,13 @@ function links(){
   replace "(/06-modules/08-commands/07-data-types.md#commandresulttype-enum)"             "(#mod_commands_commandresulttype_enum)"                          "$file"
   replace "(/06-modules/08-commands/07-data-types.md#commandtype-enum)"                   "(#mod_commands_commandtype_enum)"                                "$file"
 
-  gsed -i 's|(#mod_hub_client_info.asciidoc#mod_hub_client_info_module)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_hub_client_info_client_get)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_hub_client_info_client_put)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_hub_client_info_hub_client_info_object)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_hub_client_info_hub_connection_type_enum)|(https://ocpi.dev)|g' "$file"
-  gsed -i 's|(#mod_hub_client_info_hub_get)|(https://ocpi.dev)|g' "$file"
+
+  replace "(/06-modules/10-hubclientinfo/01-intro.md)"                                "(#mod_hub_client_info.asciidoc#mod_hub_client_info_module)"  "$file"
+  replace "(/06-modules/10-hubclientinfo/05-interfaces.md#get-method)"                "(#mod_hub_client_info_client_get)"                           "$file"
+  replace "(/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1)"              "(#mod_hub_client_info_hub_get)"                              "$file"
+  replace "(/06-modules/10-hubclientinfo/05-interfaces.md#put-method)"                "(#mod_hub_client_info_client_put)"                           "$file"
+  replace "(/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object)" "(#mod_hub_client_info_hub_client_info_object)"               "$file"
+  replace "(/06-modules/10-hubclientinfo/07-data-types.md#connectionstatus-enum)"     "(#mod_hub_client_info_hub_connection_type_enum)"             "$file"
   
   gsed -i 's|(#mod_locations.asciidoc#mod_locations_businessdetails_class)|(https://ocpi.dev)|g' "$file"
   gsed -i 's|(#mod_locations.asciidoc#mod_locations_capability_enum)|(https://ocpi.dev)|g' "$file"

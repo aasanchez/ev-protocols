@@ -473,7 +473,7 @@ etc. SHALL be routed, so need the routing headers.
 The requests/responses to/from Configuration Modules:
 [Credentials](/06-modules/02-credentials/01-intro.md),
 [Versions](/06-modules/01-versions/01-intro.md) and [Hub Client
-Info](https://ocpi.dev) are not to be routed, and are for Platform-to-Platform
+Info](/06-modules/10-hubclientinfo/01-intro.md) are not to be routed, and are for Platform-to-Platform
 or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
 | HTTP Header            | Datatype                                           | Description                                                          |
