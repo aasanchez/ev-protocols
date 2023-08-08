@@ -53,11 +53,11 @@ an App etc. so whitelisting them has no advantages.
 Defines when authorization of a Token by the CPO is allowed.
 
 The validity of a Token has no influence on this. If a Token is: `valid = false`, when the `whitelist` field requires
-real-time authorization, the CPO SHALL do a [real-time authorization](https://ocpi.dev), the state of
+real-time authorization, the CPO SHALL do a [real-time authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization), the state of
 the Token might have changed.
 
-| Value           | Description                                                                                                                                                                                                                     |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ALWAYS          | Token always has to be whitelisted, [realtime authorization](https://ocpi.dev) is not possible/allowed. CPO shall always allow any use of this Token.                                                                           |
-| ALLOWED         | It is allowed to whitelist the token, [realtime authorization](https://ocpi.dev) is also allowed. The CPO may choose which version of authorization to use.                                                                     |
-| ALLOWED_OFFLINE | In normal situations [realtime authorization](https://ocpi.dev) shall be used. But when the CPO cannot get a response from the eMSP (communication between CPO and eMSP is offline), the CPO shall allow this Token to be used. |
+| Value           | Description                                                                                                                                                                                                                                                                                                  |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALWAYS          | Token always has to be whitelisted, [realtime authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) is not possible/allowed. CPO shall always allow any use of this Token.                                                                                                  |
+| ALLOWED         | It is allowed to whitelist the token, [realtime authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) is also allowed. The CPO may choose which version of authorization to use.                                                                                            |
+| ALLOWED_OFFLINE | In normal situations [realtime authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) shall be used. But when the CPO cannot get a response from the eMSP (communication between CPO and eMSP is offline), the CPO shall allow this Token to be used.                        |

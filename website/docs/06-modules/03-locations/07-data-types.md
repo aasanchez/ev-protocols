@@ -465,13 +465,13 @@ When `uid` is set, `type` SHALL also be set.
 
 When `visual_number` is set, `issuer` SHALL also be set.
 
-| Property      | Type                                                | Card. | Description                                                                                                            |
-|---------------|-----------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------|
-| uid           | [CiString](/07-types/01-intro.md#cistring-type)(36) | ?     | Unique ID by which this Token can be identified.                                                                       |
-| type          | [TokenType](https://ocpi.dev)                       | ?     | Type of the token.                                                                                                     |
-| visual_number | [string](/07-types/01-intro.md#string-type)(64)     | ?     | Visual readable number/identification as printed on the Token (RFID card).                                             |
-| issuer        | [string](/07-types/01-intro.md#string-type)(64)     | ?     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP. |
-| group_id      | [CiString](/07-types/01-intro.md#cistring-type)(36) | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one.                            |
+| Property      | Type                                                               | Card. | Description                                                                                                            |
+|---------------|--------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------|
+| uid           | [CiString](/07-types/01-intro.md#cistring-type)(36)                | ?     | Unique ID by which this Token can be identified.                                                                       |
+| type          | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | ?     | Type of the token.                                                                                                     |
+| visual_number | [string](/07-types/01-intro.md#string-type)(64)                    | ?     | Visual readable number/identification as printed on the Token (RFID card).                                             |
+| issuer        | [string](/07-types/01-intro.md#string-type)(64)                    | ?     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP. |
+| group_id      | [CiString](/07-types/01-intro.md#cistring-type)(36)                | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one.                            |
 
 ## RegularHours *class*
 

@@ -36,9 +36,9 @@ The eMSP can determine if an EVSE supports Charging Preferences by checking if t
 capabilities](/06-modules/03-locations/06-object-description.md#) contains:
 [CHARGING_PREFERENCES_CAPABLE](/06-modules/03-locations/07-data-types.md#capability-enum).
 
-Via [Tariffs](https://ocpi.dev) the CPO can give different Charging Preferences different
+Via [Tariffs](/06-modules/06-tariffs/06-object-description.md#tariff-object) the CPO can give different Charging Preferences different
 prices. A [Connector](/06-modules/03-locations/06-object-description.md#connector-object) can have multiple
-[Tariffs](https://ocpi.dev), one for each [ProfileType](/06-modules/04-sessions/07-data-types.md#profiletype-enum).
+[Tariffs](/06-modules/06-tariffs/06-object-description.md#tariff-object), one for each [ProfileType](/06-modules/04-sessions/07-data-types.md#profiletype-enum).
 
 ## Reservation
 

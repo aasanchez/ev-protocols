@@ -80,8 +80,8 @@ between modules. If there are dependencies between modules, it will be mentioned
 | [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md)          | hubclientinfo    |                                                                                     |
 | [Locations](/06-modules/03-locations/01-intro.md)                    | locations        |                                                                                     |
 | [Sessions](/06-modules/04-sessions/01-intro.md)                      | sessions         |                                                                                     |
-| [Tariffs](https://ocpi.dev)                                          | tariffs          |                                                                                     |
-| [Tokens](https://ocpi.dev)                                           | tokens           |                                                                                     |
+| [Tariffs](/06-modules/06-tariffs/01-intro.md)                        | tariffs          |                                                                                     |
+| [Tokens](/06-modules/07-tokens/01-intro.md)                          | tokens           |                                                                                     |
 
 ### VersionNumber *enum*
 

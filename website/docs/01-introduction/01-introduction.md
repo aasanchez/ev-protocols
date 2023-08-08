@@ -73,10 +73,10 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
   * [CDRs](/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
     AuthorizationReference, CdrLocation, CdrToken
   * [Sessions](/06-modules/04-sessions/06-object-description.md#session-object): VAT, CdrToken, How to add a Charging Period
-  * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
+  * [Tariffs](/06-modules/06-tariffs/06-object-description.md#tariff-object): Tariff types, Min/Max price, reservation tariff, Much
     more examples
   * [Locations](/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of small improvements
-  * [Tokens](https://ocpi.dev): Group_id, energy contract
+  * [Tokens](/06-modules/07-tokens/06-object-description.md#token-object): Group_id, energy contract
   * [Commands](/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
 
 ## OCPI is developed with support of

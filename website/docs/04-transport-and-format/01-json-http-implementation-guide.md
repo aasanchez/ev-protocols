@@ -29,8 +29,8 @@ HTTP header names are case-insensitive
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
 *credentials token*. [*Credentials tokens*](/06-modules/02-credentials/06-object-description.md#credentials-object) are exchanged via the
 [credentials module](/06-modules/02-credentials/01-intro.md). These are different *tokens* than the
-[Tokens](https://ocpi.dev) exchanged via the [Token
-Module](https://ocpi.dev): Tokens used by drivers to authorize charging. To prevent
+[Tokens](/06-modules/07-tokens/06-object-description.md#token-object) exchanged via the [Token
+Module](/06-modules/07-tokens/01-intro.md): Tokens used by drivers to authorize charging. To prevent
 confusion, when talking about the token used here in the HTTP Authorization header, call them: *Credentials Tokens*.
 
 After the literal *Token*, there SHALL be one space, followed by the *encoded token*. The encoded token is obtained by
@@ -466,7 +466,7 @@ When implementing OCPI these four headers SHALL be implemented for any request/r
 This does not mean they have to be present in all request. There are situation/special request where some headers can or
 shall be omitted, See: [Open Routing Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
 
-Only requests/responses from Function Modules: such as: [Tokens](https://ocpi.dev),
+Only requests/responses from Function Modules: such as: [Tokens](/06-modules/07-tokens/01-intro.md),
 [Locations](/06-modules/03-locations/01-intro.md), [CDRs](/06-modules/05-cdrs/01-intro.md)
 etc. SHALL be routed, so need the routing headers.
 
@@ -519,7 +519,7 @@ does not know the receiving party, an [Open Routing Request](/04-transport-and-f
 MUST be used. (see below)
 
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
-data like [Tokens](https://ocpi.dev) and
+data like [Tokens](/06-modules/07-tokens/01-intro.md) and
 [Locations](/06-modules/03-locations/01-intro.md), but not so much for
 [CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](/06-modules/04-sessions/01-intro.md) as
 these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.

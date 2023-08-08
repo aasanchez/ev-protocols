@@ -25,13 +25,13 @@ Example:
 
 * `https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678`
 
-| Method                    | Description                                                   |
-|---------------------------|---------------------------------------------------------------|
-| [GET](https://ocpi.dev)   | Retrieve a Token as it is stored in the CPO system.           |
-| POST                      | n/a                                                           |
-| [PUT](https://ocpi.dev)   | Push new/updated Token object to the CPO.                     |
-| [PATCH](https://ocpi.dev) | Notify the CPO of partial updates to a Token.                 |
-| DELETE                    | n/a, (Use [PUT](https://ocpi.dev), Tokens cannot be removed). |
+| Method                                                                     | Description                                                                                                  |
+|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/07-tokens/05-interfaces-and-endpoints.md#get-method)     | Retrieve a Token as it is stored in the CPO system.                                                          |
+| POST                                                                       | n/a                                                                                                          |
+| [PUT](/06-modules/07-tokens/05-interfaces-and-endpoints.md#put-method)     | Push new/updated Token object to the CPO.                                                                    |
+| [PATCH](/06-modules/07-tokens/05-interfaces-and-endpoints.md#patch-method) | Notify the CPO of partial updates to a Token.                                                                |
+| DELETE                                                                     | n/a, (Use [PUT](/06-modules/07-tokens/05-interfaces-and-endpoints.md#put-method), Tokens cannot be removed). |
 
 ### **GET** Method
 
@@ -45,20 +45,20 @@ The following parameters: `country_code`, `party_id`, `token_uid` have to be pro
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter    | Datatype                                            | Required | Description                                                                       |
-|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------|
-| country_code | [CiString](/07-types/01-intro.md#cistring-type)(2)  | yes      | Country code of the eMSP requesting this GET from the CPO system.                 |
-| party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP requesting this GET from the CPO system.       |
-| token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Token.uid of the Token object to retrieve.                                        |
-| type         | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token to retrieve. Default if omitted: [RFID](https://ocpi.dev) |
+| Parameter    | Datatype                                                           | Required | Description                                                                                                            |
+|--------------|--------------------------------------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------|
+| country_code | [CiString](/07-types/01-intro.md#cistring-type)(2)                 | yes      | Country code of the eMSP requesting this GET from the CPO system.                                                      |
+| party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)                 | yes      | Party ID (Provider ID) of the eMSP requesting this GET from the CPO system.                                            |
+| token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the Token object to retrieve.                                                                             |
+| type         | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token to retrieve. Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum) |
 
 ##### Response Data
 
 The response contains the requested object.
 
-| Type                      | Card. | Description                 |
-|---------------------------|-------|-----------------------------|
-| [Token](https://ocpi.dev) | 1     | The requested Token object. |
+| Type                                                                 | Card. | Description                 |
+|----------------------------------------------------------------------|-------|-----------------------------|
+| [Token](/06-modules/07-tokens/06-object-description.md#token-object) | 1     | The requested Token object. |
 
 ### **PUT** Method
 
@@ -68,9 +68,9 @@ New or updated Token objects are pushed from the eMSP to the CPO.
 
 In the put request a new or updated Token object is sent.
 
-| Type                      | Card. | Description                  |
-|---------------------------|-------|------------------------------|
-| [Token](https://ocpi.dev) | 1     | New or updated Token object. |
+| Type                                                                 | Card. | Description                  |
+|----------------------------------------------------------------------|-------|------------------------------|
+| [Token](/06-modules/07-tokens/06-object-description.md#token-object) | 1     | New or updated Token object. |
 
 ##### Request Parameters
 
@@ -78,12 +78,12 @@ The following parameters: `country_code`, `party_id`, `token_uid` have to be pro
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter    | Datatype                                            | Required | Description                                                                                                                                                     |
-|--------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| country_code | [CiString](/07-types/01-intro.md#cistring-type)(2)  | yes      | Country code of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `country_code` in the Token object being pushed.       |
-| party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `party_id` in the Token object being pushed. |
-| token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Token.uid of the (new) Token object (to replace).                                                                                                               |
-| type         | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token of the (new) Token object (to replace). Default if omitted: [RFID](https://ocpi.dev)                                                    |
+| Parameter    | Datatype                                                           | Required | Description                                                                                                                                                     |
+|--------------|--------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| country_code | [CiString](/07-types/01-intro.md#cistring-type)(2)                 | yes      | Country code of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `country_code` in the Token object being pushed.       |
+| party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)                 | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. This SHALL be the same value as the `party_id` in the Token object being pushed. |
+| token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the (new) Token object (to replace).                                                                                                               |
+| type         | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token of the (new) Token object (to replace). Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum)               |
 
 ##### Example: put a new Token
 
@@ -107,7 +107,7 @@ PUT To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
 ### **PATCH** Method
 
-Same as the [PUT](https://ocpi.dev) method, but only the fields/objects that have to be updated have to be
+Same as the [PUT](/06-modules/07-tokens/05-interfaces-and-endpoints.md#put-method) method, but only the fields/objects that have to be updated have to be
 present, other fields/objects that are not specified are considered unchanged.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
@@ -130,13 +130,13 @@ Typically implemented by market roles like: eMSP.
 This interface enables the Receiver to request the current list of Tokens, when needed. Via the POST method it is
 possible to authorize a single token.
 
-| Method                   | Description                     |
-|--------------------------|---------------------------------|
-| [GET](https://ocpi.dev)  |                                 |
-| [POST](https://ocpi.dev) | Real-time authorization request |
-| PUT                      | n/a                             |
-| PATCH                    | n/a                             |
-| DELETE                   | n/a                             |
+| Method                                                                   | Description                     |
+|--------------------------------------------------------------------------|---------------------------------|
+| [GET](/06-modules/07-tokens/05-interfaces-and-endpoints.md#get-method-1) |                                 |
+| [POST](/06-modules/07-tokens/05-interfaces-and-endpoints.md#post-method) | Real-time authorization request |
+| PUT                                                                      | n/a                             |
+| PATCH                                                                    | n/a                             |
+| DELETE                                                                   | n/a                             |
 
 ### **GET** Method
 
@@ -178,9 +178,9 @@ The endpoint response with list of valid Token objects, the header will contain 
 Any older information that is not specified in the response is considered as no longer valid. Each object must contain
 all required fields. Fields that are not specified may be considered as null values.
 
-| Type                      | Card. | Description         |
-|---------------------------|-------|---------------------|
-| [Token](https://ocpi.dev) | \*    | List of all tokens. |
+| Type                                                                 | Card. | Description         |
+|----------------------------------------------------------------------|-------|---------------------|
+| [Token](/06-modules/07-tokens/06-object-description.md#token-object) | \*    | List of all tokens. |
 
 ### **POST** Method
 
@@ -210,28 +210,28 @@ The parameter: `token_uid` has to be provided as URL segments.
 
 The parameter: `type` may be provided as an URL parameter
 
-| Parameter | Datatype                                            | Required | Description                                                                                           |
-|-----------|-----------------------------------------------------|----------|-------------------------------------------------------------------------------------------------------|
-| token_uid | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Token.uid of the Token for which authorization is requested.                                          |
-| type      | [TokenType](https://ocpi.dev)                       | no       | Token.type of the Token for which this authorization is. Default if omitted: [RFID](https://ocpi.dev) |
+| Parameter | Datatype                                                           | Required | Description                                                                                                                                |
+|-----------|--------------------------------------------------------------------|----------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| token_uid | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the Token for which authorization is requested.                                                                               |
+| type      | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token for which this authorization is. Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum) |
 
 ##### Request Body
 
-In the body an optional [LocationReferences](https://ocpi.dev) object can be given. The eMSP SHALL
+In the body an optional [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) object can be given. The eMSP SHALL
 then validate if the Token is allowed to be used at this Location, and if applicable: which of the Locations EVSEs. The
 object with valid Location and EVSEs will be returned in the response.
 
-| Type                                   | Card. | Description                                                           |
-|----------------------------------------|-------|-----------------------------------------------------------------------|
-| [LocationReferences](https://ocpi.dev) | ?     | Location and EVSEs for which the Token is requested to be authorized. |
+| Type                                                                                  | Card. | Description                                                           |
+|---------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------|
+| [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) | ?     | Location and EVSEs for which the Token is requested to be authorized. |
 
 ##### Response Data
 
 When the token is known by the Sender, the response SHALL contain a
-[AuthorizationInfo](https://ocpi.dev) object.
+[AuthorizationInfo](/06-modules/07-tokens/06-object-description.md#authorizationinfo-object) object.
 
 If the token is not known, the response SHALL contain the status code: `2004: Unknown Token`, and no `data` field.
 
-| Type                                  | Card. | Description                                                                                                                        |
-|---------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------|
-| [AuthorizationInfo](https://ocpi.dev) | 1     | Contains information about the authorization, if the Token is allowed to charge and optionally which EVSEs are allowed to be used. |
+| Type                                                                                         | Card. | Description                                                                                                                        |
+|----------------------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------|
+| [AuthorizationInfo](/06-modules/07-tokens/06-object-description.md#authorizationinfo-object) | 1     | Contains information about the authorization, if the Token is allowed to charge and optionally which EVSEs are allowed to be used. |

@@ -15,13 +15,13 @@ Typically implemented by market roles like: CPO.
 
 The Sender's Tariffs interface gives the Receiver the ability to request Tariffs information.
 
-| Method                  | Description                                                                                                                                                                         |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Returns Tariff objects from the CPO, last updated between the `{date_from}` and `{date_to}` ([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)) |
-| POST                    | n/a                                                                                                                                                                                 |
-| PUT                     | n/a                                                                                                                                                                                 |
-| PATCH                   | n/a                                                                                                                                                                                 |
-| DELETE                  | n/a                                                                                                                                                                                 |
+| Method                                                                  | Description                                                                                                                                                                         |
+|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/06-tariffs/05-interfaces-and-endpoints.md#get-method) | Returns Tariff objects from the CPO, last updated between the `{date_from}` and `{date_to}` ([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)) |
+| POST                                                                    | n/a                                                                                                                                                                                 |
+| PUT                                                                     | n/a                                                                                                                                                                                 |
+| PATCH                                                                   | n/a                                                                                                                                                                                 |
+| DELETE                                                                  | n/a                                                                                                                                                                                 |
 
 ### **GET** Method
 
@@ -61,9 +61,9 @@ The endpoint returns an object with a list of valid Tariffs, the header will con
 Any older information that is not specified in the response is considered no longer valid. Each object must contain all
 required fields. Fields that are not specified may be considered as null values.
 
-| Type                       | Card. | Description          |
-|----------------------------|-------|----------------------|
-| [Tariff](https://ocpi.dev) | \*    | List of all tariffs. |
+| Type                                                                    | Card. | Description          |
+|-------------------------------------------------------------------------|-------|----------------------|
+| [Tariff](/06-modules/06-tariffs/06-object-description.md#tariff-object) | \*    | List of all tariffs. |
 
 ## Receiver Interface
 
@@ -81,13 +81,13 @@ Example:
 
 * `https://www.server.com/ocpi/cpo/2.2.1/tariffs/BE/BEC/12`
 
-| Method                     | Description                                                                             |
-|----------------------------|-----------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev)    | Retrieve a Tariff as it is stored in the eMSP's system.                                 |
-| POST                       | n/a                                                                                     |
-| [PUT](https://ocpi.dev)    | Push new/updated Tariff object to the eMSP.                                             |
-| PATCH                      | n/a                                                                                     |
-| [DELETE](https://ocpi.dev) | Remove a Tariff object which is no longer in use and will not be used in future either. |
+| Method                                                                        | Description                                                                             |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| [GET](/06-modules/06-tariffs/05-interfaces-and-endpoints.md#get-method)       | Retrieve a Tariff as it is stored in the eMSP's system.                                 |
+| POST                                                                          | n/a                                                                                     |
+| [PUT](/06-modules/06-tariffs/05-interfaces-and-endpoints.md#put-method)       | Push new/updated Tariff object to the eMSP.                                             |
+| PATCH                                                                         | n/a                                                                                     |
+| [DELETE](/06-modules/06-tariffs/05-interfaces-and-endpoints.md#delete-method) | Remove a Tariff object which is no longer in use and will not be used in future either. |
 
 ### **GET** Method
 
@@ -109,9 +109,9 @@ The following parameters SHALL be provided as URL segments.
 
 The response contains the requested object.
 
-| Type                       | Card. | Description                  |
-|----------------------------|-------|------------------------------|
-| [Tariff](https://ocpi.dev) | 1     | The requested Tariff object. |
+| Type                                                                    | Card. | Description                  |
+|-------------------------------------------------------------------------|-------|------------------------------|
+| [Tariff](/06-modules/06-tariffs/06-object-description.md#tariff-object) | 1     | The requested Tariff object. |
 
 ### **PUT** Method
 
@@ -121,9 +121,9 @@ New or updated Tariff objects are pushed from the CPO to the eMSP.
 
 In the PUT request, the new or updated Tariff object is sent in the body.
 
-| Type                       | Card. | Description                   |
-|----------------------------|-------|-------------------------------|
-| [Tariff](https://ocpi.dev) | 1     | New or updated Tariff object. |
+| Type                                                                    | Card. | Description                   |
+|-------------------------------------------------------------------------|-------|-------------------------------|
+| [Tariff](/06-modules/06-tariffs/06-object-description.md#tariff-object) | 1     | New or updated Tariff object. |
 
 ##### Request Parameters
 
