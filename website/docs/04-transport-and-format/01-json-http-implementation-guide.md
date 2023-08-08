@@ -82,16 +82,16 @@ hours, not minutes, and to introduce some splay (randomize the length of the pol
 
 ## Request format
 
-The request method can be any of [GET](#get-method), POST, [PUT](#put-method),
-[PATCH](#patch-method) or DELETE. The OCPI protocol uses them in a way similar to REST APIs.
+The request method can be any of [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method), POST, [PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method),
+[PATCH](/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) or DELETE. The OCPI protocol uses them in a way similar to REST APIs.
 
-| Method                 | Description                                        |
-|------------------------|----------------------------------------------------|
-| [GET](#get-method)     | Fetches objects or information.                    |
-| POST                   | Creates new objects or information.                |
-| [PUT](#put-method)     | Updates existing objects or information.           |
-| [PATCH](#patch-method) | Partially updates existing objects or information. |
-| DELETE                 | Removes existing objects or information.           |
+| Method                                                                              | Description                                        |
+|-------------------------------------------------------------------------------------|----------------------------------------------------|
+| [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method)     | Fetches objects or information.                    |
+| POST                                                                                | Creates new objects or information.                |
+| [PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method)     | Updates existing objects or information.           |
+| [PATCH](/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) | Partially updates existing objects or information. |
+| DELETE                                                                              | Removes existing objects or information.           |
 
 The HTTP header: Content-Type SHALL be set to `application/json` for any request that contains a message body: POST, PUT
 and PATCH. When no body is present, probably in a GET or DELETE, then the Content-Type header MAY be omitted.
@@ -217,9 +217,9 @@ updated. Any fields (both required or optional) that are left out remain unchang
 
 The MIME-type of the request body is: `application/json` and may contain the data as documented for each endpoint.
 
-In case a PATCH request fails, the client is expected to call the [GET](#get-method) method to check the
+In case a PATCH request fails, the client is expected to call the [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) method to check the
 state of the object in the other party's system. If the object doesn't exist, the client should do a
-[PUT](#put-method).
+[PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method).
 
 ## Client Owned Object Push
 
@@ -464,7 +464,7 @@ four HTTP headers are to be added to any request/response to allow messages to b
 
 When implementing OCPI these four headers SHALL be implemented for any request/response to/from a Functional Module.
 This does not mean they have to be present in all request. There are situation/special request where some headers can or
-shall be omitted, See: [Open Routing Request](#open-routing-request)
+shall be omitted, See: [Open Routing Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
 
 Only requests/responses from Function Modules: such as: [Tokens](https://ocpi.dev),
 [Locations](https://ocpi.dev), [CDRs](/06-modules/05-cdrs/01-intro.md)
@@ -515,7 +515,7 @@ module, using its own party-id and country-code in the *OCPI-from-* headers. The
 country-code in the *OCPI-to-* headers.
 
 GET SHALL NOT be used in combination with Broadcast Push. If the requesting party wants to GET information of which it
-does not know the receiving party, an [Open Routing Request](#open-routing-request)
+does not know the receiving party, an [Open Routing Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
 MUST be used. (see below)
 
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
@@ -540,11 +540,11 @@ know the destination of a request, the *OCPI-to-* headers can be omitted in the 
 then decide to which party a request needs to be routed, or that it needs to be broadcasted if the destination cannot be
 determined.
 
-This has nothing to do with [Broadcast Push](#broadcast-push) though, as [Broadcast
-Push](#broadcast-push) only works for the [Push
-model](#pull-and-push), not for [GET](#get-method) requests.
+This has nothing to do with [Broadcast Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) though, as [Broadcast
+Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) only works for the [Push
+model](/04-transport-and-format/01-json-http-implementation-guide.md#pull-and-push), not for [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) requests.
 
-Open Routing Requests are possible for GET ([Not GET ALL](#get-all-via-hubs)), POST, PUT, PATCH and
+Open Routing Requests are possible for GET ([Not GET ALL](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs)), POST, PUT, PATCH and
 DELETE.
 
 
@@ -606,7 +606,7 @@ from one platform to another platform via a Hub.
 #### Party to Party Broadcast Push
 
 This table contains the description of which headers are required to be used for which message when a request is a
-[Broadcast Push](#broadcast-push) to the Hub.
+[Broadcast Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) to the Hub.
 
 | Name               | Route                      | TO Headers       | FROM Headers     |
 |--------------------|----------------------------|------------------|------------------|
@@ -622,7 +622,7 @@ This table contains the description of which headers are required to be used for
 #### Party to Party Open Routing Request
 
 This table contains the description of which headers are required to be used for which message when [the routing of a
-request needs to be determined by the Hub itself](#open-routing-request). For an
+request needs to be determined by the Hub itself](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request). For an
 Open Routing Request, the TO headers in the request from the requesting party to the Hub MUST be omitted.
 
 | Name          | Route                      | TO Headers       | FROM Headers     |
@@ -639,7 +639,7 @@ Open Routing Request, the TO headers in the request from the requesting party to
 ### GET All via Hubs (headers description)
 
 This table contains the description of which headers are required to be used when doing a [GET All via a
-Hub](#get-all-via-hubs). For a GET All via Hub: The HTTP Method SHALL be GET, The call is to a
+Hub](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs). For a GET All via Hub: The HTTP Method SHALL be GET, The call is to a
 Senders Interface, the TO headers in the request to the Hub has to be set to the Hub.
 
 | Name                      | Route                      | TO Headers       | FROM Headers     |

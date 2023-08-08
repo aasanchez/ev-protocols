@@ -10,7 +10,7 @@ An enum with possible responses to a [PUT Charging Preferences](https://ocpi.dev
 
 If a PUT with `ChargingPreferences` is received for an EVSE that does not have the capability
 `CHARGING_PREFERENCES_CAPABLE`, the receiver should respond with an HTTP status of 404 and an OCPI status code of 2001
-in the [OCPI response object](#response-format).
+in the [OCPI response object](/04-transport-and-format/01-json-http-implementation-guide.md#response-format).
 
 | Value                      | Description                                                                                                                 |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------|
