@@ -90,6 +90,8 @@ slug: /modules/charging-profiles
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i '/## Flow/d' "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
+  gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/02-smart-charging-topologies.md"
   echo "flavoring $file"
@@ -102,6 +104,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
   echo "flavoring $file"
@@ -114,6 +117,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
   echo "flavoring $file"
@@ -126,6 +130,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
@@ -139,6 +144,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
@@ -152,6 +158,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
@@ -165,6 +172,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   rm -rf "$ROOT/website/docs/14-mod_charging_profiles.md"
 }

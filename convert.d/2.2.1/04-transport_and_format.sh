@@ -120,6 +120,7 @@ E_O_HEADERS
   gsed -i -z "s|\*\*Example\:\*\*\s||gm" "$file"
 
   gsed -i "/^\`\`\`json$/,/^\`\`\`$/ s/^/    /" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
   echo "flavoring $file"
@@ -132,7 +133,7 @@ slug: unique-message-ids
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
-
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/04-transport-and-format/03-interface-endpoints.md"
   echo "flavoring $file"
@@ -145,7 +146,7 @@ slug: interface-endpoints
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
-
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/04-transport-and-format/04-offline-behaviour.md"
   echo "flavoring $file"
@@ -158,6 +159,7 @@ slug: offline-behaviour
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   rm "$ROOT/website/docs/04-transport_and_format.md"
 }

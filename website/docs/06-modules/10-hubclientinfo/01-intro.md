@@ -20,4 +20,3 @@ This module provides parties connected to a hub with the connection status of ot
 that they can communicate with. So, CPOs know which eMSP and other parties are online and vice versa.
 
 Unlike the usual OCPI modules, this module is between eMSP/CPO and Hub instead of between eMSP and CPO.
-

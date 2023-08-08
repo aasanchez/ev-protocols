@@ -24,9 +24,6 @@ HTTP header, not a copy of the X-Request-ID HTTP header taken from the incoming 
 When a Hub forwards a request to a party, the request SHALL contain the same X-Correlation-ID HTTP header (with the same
 value).
 
-
 ![Example sequence diagram of the uses of X-Request-ID and X-Correlation-ID in a peer-to-peer topology.](../images/unqiue_ids_pair2pair.svg)
-
-
 
 ![Example sequence diagram of the uses of X-Request-ID and X-Correlation-ID in a topology with a Hub.](../images/unqiue_ids_via_hub.svg)

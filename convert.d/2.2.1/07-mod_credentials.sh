@@ -62,6 +62,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i '/## Use cases/d' "$file"
   gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
+  gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
   echo "flavoring $file"

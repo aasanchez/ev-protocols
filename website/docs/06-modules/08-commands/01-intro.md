@@ -26,4 +26,3 @@ commands. *Use the `UNLOCK_CONNECTOR` command with care, please read the note at
 
 **Module dependency:** [Locations module](/06-modules/03-locations/01-intro.md), [Sessions
 module](/06-modules/04-sessions/01-intro.md)
-

@@ -23,22 +23,16 @@ Example of a `START_SESSION` that is accepted, but no new Session is started bec
 time-out. This is an example for Charge Point that allows a remote start when the cable is not yet plugged in. Some
 Charge Points even require this, there might, for example, be a latch in front of the socket to prevent vandalism.
 
-
 ![START_SESSION failed](../../images/command_start_session_timeout.svg)
-
 
 Example of a `START_SESSION` that is accepted, but no new Session is started because the EV is not plugged in, and this
 Charge Point does not allow a remote start without a cable already being plugged in.
 
-
 ![START_SESSION failed](../../images/command_start_session_no_cable.svg)
-
 
 Example of a `START_SESSION` that is accepted and results in a new Session.
 
-
 ![START_SESSION successful](../../images/command_start_session_succesful.svg)
-
 
 Example of a `START_SESSION` with a Token that is Whitelist: NEVER.
 
@@ -49,27 +43,19 @@ If needed, the Charge Point does an OCPP Authorize request to validate the Token
 only does an [realtime authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) when the
 OCPP Authorize request is for an RFID Token and the START_SESSION for this Token was received more then 15 minutes ago.
 
-
 ![START_SESSION whitelist NEVER](../../images/command_start_session_whitelist_never.svg)
-
 
 Example of a `UNLOCK_CONNECTOR` that fails because the Location is not known by the CPO.
 
-
 ![UNLOCK_CONNECTOR Unknown Location](../../images/command_unlock_unknow_location.svg)
-
 
 Example of a `RESERVE_NOW` that is rejected by the Charge Point.
 
-
 ![RESERVE_NEW rejected by Charge Point](../../images/command_reservenow_rejected.svg)
-
 
 Example of a successful `RESERVE_NOW`.
 
-
 ![Successful RESERVE_NOW](../../images/command_reservenow_successful.svg)
-
 
 Reservation canceled by the CPO. OCPI makes it possible for a CPO to cancel a reservation. This is not to be taken
 lightly. When a driver makes a reservation of a Charge Point/EVSE, he/she wants to be sure to have a charging location.
@@ -82,9 +68,7 @@ To Cancel a reservation the CPO call the Senders interface with the same URL as 
 
 The sequence diagram below continues after the sequence diagram above.
 
-
 ![Reservation canceled by the CPO](../../images/command_reservenow_canceled_by_cpo.svg)
-
 
 These examples use OCPP 1.6 based commands between CPO and Charge Point, but that is not a requirement for OCPI.
 

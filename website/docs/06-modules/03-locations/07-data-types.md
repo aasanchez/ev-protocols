@@ -309,9 +309,7 @@ Open 24 hours per day, 7 days a week, except for 25th of December 2018 between 0
 }
 ```
 
-
 ![24/7 open with exception closing.](../../images/location_hours_247_open_exception_closing.svg)
-
 
 ### Example: Opening Hours with exceptional closing
 
@@ -342,9 +340,7 @@ Regular opening hours between 01:00 and 06:00. With exceptional closing on 25th 
 }
 ```
 
-
 ![Opening Hours with exceptional closing.](../../images/location_hours_opening_hours_with_exceptional_closing.svg)
-
 
 ### Example: Opening Hours with exceptional opening
 
@@ -375,9 +371,7 @@ Regular opening hours between 00:00 and 04:00. With exceptional opening on 25th 
 }
 ```
 
-
 ![Opening Hours with exceptional opening.](../../images/location_hours_opening_hours_with_exceptional_opening.svg)
-
 
 ## Image *class*
 

@@ -17,4 +17,3 @@ requests.
 
 Every OCPI request is required to contain a credentials token in the [HTTP Authorization
 header](/04-transport-and-format/01-json-http-implementation-guide.md#authorization-header).
-

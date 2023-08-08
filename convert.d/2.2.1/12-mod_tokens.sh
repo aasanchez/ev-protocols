@@ -62,6 +62,7 @@ slug: /modules/tokens
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i '/## Flow and Lifecycle/d' "$file"
+  gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
   echo "flavoring $file"

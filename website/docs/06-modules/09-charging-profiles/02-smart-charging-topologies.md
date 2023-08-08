@@ -19,9 +19,7 @@ The most straight forward topology, the eMSP generates ChargingProfiles for its 
 eMSP *owns* the customer, so if the eMSP knows that its customer agrees with the eMSP manipulating the charging speed,
 the eMSP is free to do this.
 
-
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](../../images/topology_sc_emsp.svg)
-
 
 | Interface | Role |
 |-----------|------|
@@ -44,9 +42,7 @@ about eMSPs customers.
 
 From the CPO point of view, this topology is similar to the one above, the CPO will not know the difference.
 
-
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](../../images/topology_scsp_emsp.svg)
-
 
 | Connection  | Interface | Role |
 |-------------|-----------|------|
@@ -75,9 +71,7 @@ about eMSPs customers.
 
 In this topology, the eMSP is not aware that the CPO is using OCPI to receive Charging Profiles from the SCSP.
 
-
 ![Smart Charging Topology: The eMSP generates ChargingProfiles](../../images/topology_scsp_cpo.svg)
-
 
 | Interface | Role |
 |-----------|------|

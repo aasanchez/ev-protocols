@@ -6,9 +6,7 @@ slug: /modules/locations/object-description
 
 Location, EVSE and Connector have the following relation.
 
-
 ![Location class diagram](../../images/locations-class-diagram.svg)
-
 
 ## *Location* Object
 

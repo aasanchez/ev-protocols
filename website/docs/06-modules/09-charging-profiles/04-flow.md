@@ -72,9 +72,7 @@ method, on the URL provided by the eMSP of SCSP in the
 [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) request, this call will contain a
 [ChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
-
 ![Example of a SetChargingProfile](../../images/sd_charging_profile_set.svg)
-
 
 ## Example of a setting/updating a ChargingProfile by the SCSP via the eMSP
 
@@ -101,9 +99,7 @@ request from the eMSP. The eMSP forwards this result to the the URL provided by 
 contain a
 [ChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object) Object.
 
-
 ![Example of a SetChargingProfile via the MSP](../../images/sd_charging_profile_set_via_msp.svg)
-
 
 ## Example of a removing/clearing ChargingProfile sent by the Sender (typically the eMSP or SCSP)
 
@@ -122,9 +118,7 @@ eMSP in the [DELETE](/06-modules/09-charging-profiles/05-interfaces-and-endpoint
 this call will contain a
 [ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object) Object.
 
-
 ![Example of a ClearChargingProfile](../../images/sd_charging_profile_clear.svg)
-
 
 ## Example of a removing/clearing ChargingProfile send by the SCSP via the eMSP
 
@@ -147,9 +141,7 @@ forwards this result to the the URL provided by the SCSP in the
 will contain a [ClearProfileResult](/06-modules/09-charging-profiles/06-object-description.md#clearprofileresult-object)
 Object.
 
-
 ![Example of a ClearChargingProfile via the MSP](../../images/sd_charging_profile_clear_via_msp.svg)
-
 
 ## Example of a GET ActiveChargingProfile send by the Sender (typically the eMSP or SCSP)
 
@@ -168,9 +160,7 @@ call will contain a
 [ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object)
 Object.
 
-
 ![Example of a GET ActiveChargingProfile](../../images/sd_charging_profile_get.svg)
-
 
 ## Example of a GET ActiveChargingProfile send by the SCSP via eMSP
 
@@ -196,9 +186,7 @@ contain the same
 [ActiveChargingProfileResult](/06-modules/09-charging-profiles/06-object-description.md#chargingprofileresult-object)
 Object.
 
-
 ![Example of a GET ActiveChargingProfile via the MSP](../../images/sd_charging_profile_get_via_msp.svg)
-
 
 ## Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile
 
@@ -207,9 +195,7 @@ update [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md
 Sender (typically the eMSP or SCSP), by calling the
 [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) method on the Sender interface.
 
-
 ![Example of an ActiveChargingProfile being send by the CPO](../../images/sd_charging_profile_updated.svg)
-
 
 ## Example of the Receiver (typically the CPO) sending an updated ActiveChargingProfile to the SCSP via the eMSP
 
@@ -222,6 +208,5 @@ The eMSP forwards this
 [ActiveChargingProfile](/06-modules/09-charging-profiles/07-data-types.md#activechargingprofile-class) to the SCSP, by
 calling the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method-1) method on the SCSPs
 Sender interface.
-
 
 ![Example of an ActiveChargingProfile being sent by the CPO to the SCSP via the eMSP](../../images/sd_charging_profile_updated_via_msp.svg)

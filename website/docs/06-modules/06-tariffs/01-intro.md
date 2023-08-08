@@ -17,4 +17,3 @@ Functional Module
 :::
 
 The Tariffs module gives eMSPs information about the tariffs used by the CPO.
-

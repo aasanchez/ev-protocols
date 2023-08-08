@@ -85,6 +85,8 @@ slug: /modules/commands
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i '/## Flow/d' "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
+  gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
   echo "flavoring $file"
@@ -97,6 +99,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
@@ -110,6 +113,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
@@ -123,6 +127,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
@@ -136,6 +141,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i '/^$/N;/^\n$/D' "$file"
 
   rm -rf "$ROOT/website/docs/13-mod_commands.md"
 }
