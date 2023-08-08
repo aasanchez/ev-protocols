@@ -78,7 +78,7 @@ between modules. If there are dependencies between modules, it will be mentioned
 | [Commands](/06-modules/08-commands/01-intro.md)                      | commands         |                                                                                     |
 | [Credentials & Registration](/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |
 | [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md)          | hubclientinfo    |                                                                                     |
-| [Locations](https://ocpi.dev)                                        | locations        |                                                                                     |
+| [Locations](/06-modules/03-locations/01-intro.md)                    | locations        |                                                                                     |
 | [Sessions](https://ocpi.dev)                                         | sessions         |                                                                                     |
 | [Tariffs](https://ocpi.dev)                                          | tariffs          |                                                                                     |
 | [Tokens](https://ocpi.dev)                                           | tokens           |                                                                                     |

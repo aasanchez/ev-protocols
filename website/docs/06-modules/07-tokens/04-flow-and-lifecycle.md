@@ -48,7 +48,7 @@ minimum.
 
 :::note
 Real-time authorization might be asked for a charging location that is not published via the
-[Location](https://ocpi.dev) module, typically a private charger. In most cases this is expected to
+[Location](/06-modules/03-locations/01-intro.md) module, typically a private charger. In most cases this is expected to
 result in: `ALLOWED`.
 :::
 

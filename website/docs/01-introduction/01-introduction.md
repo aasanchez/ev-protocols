@@ -75,7 +75,7 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
   * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
   * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
     more examples
-  * [Locations](https://ocpi.dev): Multiple Tariffs, Lots of small improvements
+  * [Locations](/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of small improvements
   * [Tokens](https://ocpi.dev): Group_id, energy contract
   * [Commands](/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
 

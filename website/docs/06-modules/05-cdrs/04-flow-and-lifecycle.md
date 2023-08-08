@@ -9,7 +9,7 @@ charging session. Because a CDR is for billing purposes, it cannot be changed or
 are simply not allowed. Instead, a [Credit CDR](/06-modules/05-cdrs/04-flow-and-lifecycle.md#credit-cdrs) can be sent.
 
 CDRs may be sent for charging locations that have not been published via the
-[Location](https://ocpi.dev) module. This is typically for home chargers.
+[Location](/06-modules/03-locations/01-intro.md) module. This is typically for home chargers.
 
 ## Credit CDRs
 

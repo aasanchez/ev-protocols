@@ -9,7 +9,7 @@ Receiver during normal operation in order to keep the latency of updates low. Th
 when the connection between two parties is established for the first time, to retrieve the current list of Location
 objects with the current status, and when the Receiver is not 100% sure the Location cache is entirely up-to-date (i.e.
 to perform a full sync). The Receiver can also use the Sender [GET Object
-interface](https://ocpi.dev) to retrieve a specific Location, EVSE or Connector. This
+interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters) to retrieve a specific Location, EVSE or Connector. This
 feature might be used by an Receiver that wants information about a specific Location, but has not implemented the
 Receiver Locations interface (i.e. cannot receive Push).
 
@@ -17,20 +17,20 @@ Receiver Locations interface (i.e. cannot receive Push).
 
 Typically implemented by market roles like: CPO.
 
-| Method                  | Description |
-|-------------------------|-------------|
-| [GET](https://ocpi.dev) |             |
-| POST                    | n/a         |
-| PUT                     | n/a         |
-| PATCH                   | n/a         |
-| DELETE                  | n/a         |
+| Method                                                                    | Description |
+|---------------------------------------------------------------------------|-------------|
+| [GET](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method) |             |
+| POST                                                                      | n/a         |
+| PUT                                                                       | n/a         |
+| PATCH                                                                     | n/a         |
+| DELETE                                                                    | n/a         |
 
 ### **GET** Method
 
 Depending on the URL Segments provided, the GET request can either be used to retrieve information about a list of
-available Locations (with EVSEs and Connectors) at a CPO ([GET List](https://ocpi.dev)) or it
+available Locations (with EVSEs and Connectors) at a CPO ([GET List](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-list-request-parameters)) or it
 can be used to retrieve information about one specific Location, EVSE or Connector ([GET
-Object](https://ocpi.dev)).
+Object](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters)).
 
 ##### GET List: Request Parameters
 
@@ -71,9 +71,9 @@ information that is not specified in the response is considered no longer valid.
 response data provided by all the pages together is the new truth. Any old information not contained in any of the pages
 needs to be considered no longer valid.
 
-| Type                         | Card. | Description                             |
-|------------------------------|-------|-----------------------------------------|
-| [Location](https://ocpi.dev) | \*    | List of all Locations with valid EVSEs. |
+| Type                                                                          | Card. | Description                             |
+|-------------------------------------------------------------------------------|-------|-----------------------------------------|
+| [Location](/06-modules/03-locations/06-object-description.md#location-object) | \*    | List of all Locations with valid EVSEs. |
 
 ##### GET Object: Request Parameters
 
@@ -101,11 +101,11 @@ The response contains the requested object.
 
 Choice: one of three
 
-| Type                          | Card. | Description                                                |
-|-------------------------------|-------|------------------------------------------------------------|
-| [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
-| [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
-| [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
+| Type                                                                            | Card. | Description                                                |
+|---------------------------------------------------------------------------------|-------|------------------------------------------------------------|
+| [Location](/06-modules/03-locations/06-object-description.md#location-object)   | 1     | If a Location object was requested: the Location object.   |
+| [EVSE](/06-modules/03-locations/06-object-description.md#evse-object)           | 1     | If an EVSE object was requested: the EVSE object.          |
+| [Connector](/06-modules/03-locations/06-object-description.md#connector-object) | 1     | If a Connector object was requested: the Connector object. |
 
 ## Receiver Interface
 
@@ -126,20 +126,20 @@ Examples:
 * `https://server.com/ocpi/2.2.1/locations/BE/BEC/LOC1/3256`
 * `https://ocpi.server.com/2.2.1/locations/BE/BEC/LOC1/3256/1`
 
-| Method                    | Description                                                                                                                      |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev)   | Retrieve a Location as it is stored in the eMSP system.                                                                          |
-| POST                      | n/a *(use [PUT](https://ocpi.dev))*                                                                                              |
-| [PUT](https://ocpi.dev)   | Push new/updated Location, EVSE and/or Connector to the eMSP.                                                                    |
-| [PATCH](https://ocpi.dev) | Notify the eMSP of partial updates to a Location, EVSE or Connector (such as the status).                                        |
-| DELETE                    | n/a *(use [PATCH](https://ocpi.dev) to update the `status` to `REMOVED` as described in [Flow and Lifecycle](https://ocpi.dev))* |
+| Method                                                                        | Description                                                                                                                                                                                                           |
+|-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method-1)   | Retrieve a Location as it is stored in the eMSP system.                                                                                                                                                               |
+| POST                                                                          | n/a *(use [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method))*                                                                                                                                 |
+| [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method)     | Push new/updated Location, EVSE and/or Connector to the eMSP.                                                                                                                                                         |
+| [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) | Notify the eMSP of partial updates to a Location, EVSE or Connector (such as the status).                                                                                                                             |
+| DELETE                                                                        | n/a *(use [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) to update the `status` to `REMOVED` as described in [Flow and Lifecycle](/06-modules/03-locations/04-flow-and-lifecycle.md))* |
 
 ### **GET** Method
 
 If the CPO wants to check the status of a Location, EVSE or Connector object in the eMSP system, it might GET the object
 from the eMSP system for validation purposes. The CPO is the owner of the objects, so it would be illogical if the eMSP
 system had a different status or was missing an object. If a discrepancy is found, the CPO might push an update to the
-eMSP via a [PUT](https://ocpi.dev) or [PATCH](https://ocpi.dev) call.
+eMSP via a [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) call.
 
 ##### Request Parameters
 
@@ -159,23 +159,23 @@ The response contains the requested object.
 
 Choice: one of three
 
-| Type                          | Card. | Description                                                |
-|-------------------------------|-------|------------------------------------------------------------|
-| [Location](https://ocpi.dev)  | 1     | If a Location object was requested: the Location object.   |
-| [EVSE](https://ocpi.dev)      | 1     | If an EVSE object was requested: the EVSE object.          |
-| [Connector](https://ocpi.dev) | 1     | If a Connector object was requested: the Connector object. |
+| Type                                                                            | Card. | Description                                                |
+|---------------------------------------------------------------------------------|-------|------------------------------------------------------------|
+| [Location](/06-modules/03-locations/06-object-description.md#location-object)   | 1     | If a Location object was requested: the Location object.   |
+| [EVSE](/06-modules/03-locations/06-object-description.md#evse-object)           | 1     | If an EVSE object was requested: the EVSE object.          |
+| [Connector](/06-modules/03-locations/06-object-description.md#connector-object) | 1     | If a Connector object was requested: the Connector object. |
 
 ### **PUT** Method
 
 The CPO pushes available Location, EVSE or Connector objects to the eMSP. PUT can be used to send new Location objects
 to the eMSP but also to replace existing Locations.
 
-When the PUT only contains a [Connector](https://ocpi.dev) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](https://ocpi.dev) and [Location](https://ocpi.dev)
+When the PUT only contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
+`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
 Objects.
 
-When the PUT only contains a [EVSE](https://ocpi.dev) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [Location](https://ocpi.dev) Object.
+When the PUT only contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new
+`last_updated` value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
 ##### Request Parameters
 
@@ -183,7 +183,7 @@ This is an information Push message, the objects pushed will not be owned by the
 objects being pushed to an eMSP from different CPOs, the
 {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
 {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} have to be included in the URL (as URL segments,
-as described in the [Receiver Interface](https://ocpi.dev)).
+as described in the [Receiver Interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-interface)).
 
 | Parameter    | Datatype                                            | Required | Description                                                                                                                                                   |
 |--------------|-----------------------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -197,18 +197,18 @@ as described in the [Receiver Interface](https://ocpi.dev)).
 
 The request body contains the new/updated object.
 
-When the PUT contains a [Connector](https://ocpi.dev) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](https://ocpi.dev) and [Location](https://ocpi.dev)
+When the PUT contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
+`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
 Objects.
 
-When the PUT contains a [EVSE](https://ocpi.dev) Object, the Receiver SHALL also set the new `last_updated`
-value on the parent [Location](https://ocpi.dev) Object.
+When the PUT contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new `last_updated`
+value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
-| Type                          | Card. | Description                                           |
-|-------------------------------|-------|-------------------------------------------------------|
-| [Location](https://ocpi.dev)  | 1     | New Location object, or Location object to replace.   |
-| [EVSE](https://ocpi.dev)      | 1     | New EVSE object, or EVSE object to replace.           |
-| [Connector](https://ocpi.dev) | 1     | New Connector object, or Connector object to replace. |
+| Type                                                                            | Card. | Description                                           |
+|---------------------------------------------------------------------------------|-------|-------------------------------------------------------|
+| [Location](/06-modules/03-locations/06-object-description.md#location-object)   | 1     | New Location object, or Location object to replace.   |
+| [EVSE](/06-modules/03-locations/06-object-description.md#evse-object)           | 1     | New EVSE object, or EVSE object to replace.           |
+| [Connector](/06-modules/03-locations/06-object-description.md#connector-object) | 1     | New Connector object, or Connector object to replace. |
 
 ##### Example: add an EVSE
 
@@ -244,18 +244,18 @@ PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
 ### **PATCH** Method
 
-Same as the [PUT](https://ocpi.dev) method, but only the fields/objects that have to be updated have to be
+Same as the [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) method, but only the fields/objects that have to be updated have to be
 present. Other fields/objects that are not specified as part of the request are considered unchanged. Therefore, this
 method is not suitable to remove information shared earlier.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
-When the PATCH is on a [Connector](https://ocpi.dev) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](https://ocpi.dev) and [Location](https://ocpi.dev)
+When the PATCH is on a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
+`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
 Objects.
 
-When the PATCH is on a [EVSE](https://ocpi.dev) Object, the Receiver SHALL also set the new `last_updated`
-value on the parent [Location](https://ocpi.dev) Object.
+When the PATCH is on a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new `last_updated`
+value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
 ##### Example: a simple status update
 

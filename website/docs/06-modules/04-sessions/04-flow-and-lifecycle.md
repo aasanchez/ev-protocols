@@ -33,11 +33,11 @@ time. Via a [PUT](https://ocpi.dev) request on the Sender Interface, during an o
 send [Charging Preferences](https://ocpi.dev) on behalf of the driver.
 
 The eMSP can determine if an EVSE supports Charging Preferences by checking if the [EVSE
-capabilities](https://ocpi.dev) contains:
-[CHARGING_PREFERENCES_CAPABLE](https://ocpi.dev).
+capabilities](/06-modules/03-locations/06-object-description.md#) contains:
+[CHARGING_PREFERENCES_CAPABLE](/06-modules/03-locations/07-data-types.md#capability-enum).
 
 Via [Tariffs](https://ocpi.dev) the CPO can give different Charging Preferences different
-prices. A [Connector](https://ocpi.dev) can have multiple
+prices. A [Connector](/06-modules/03-locations/06-object-description.md#connector-object) can have multiple
 [Tariffs](https://ocpi.dev), one for each [ProfileType](https://ocpi.dev).
 
 ## Reservation

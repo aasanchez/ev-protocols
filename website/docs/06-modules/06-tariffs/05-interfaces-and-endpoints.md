@@ -166,7 +166,7 @@ Delete a Tariff object which is not used any more and will not be used in the fu
 
 :::note
 Before deleting a Tariff object, it is RECOMMENDED to ensure that the Tariff object is not referenced by any [Connector
-object](https://ocpi.dev) within the `tariff_ids`.
+object](/06-modules/03-locations/06-object-description.md#connector-object) within the `tariff_ids`.
 :::
 
 ##### Request Parameters

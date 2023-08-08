@@ -17,11 +17,11 @@ WGS 84.
 
 ## BusinessDetails *class*
 
-| Property | Type                                             | Card. | Description                        |
-|----------|--------------------------------------------------|-------|------------------------------------|
-| name     | [string](/07-types/01-intro.md#string-type)(100) | 1     | Name of the operator.              |
-| website  | [URL](/07-types/01-intro.md#url-type)            | ?     | Link to the operator's website.    |
-| logo     | [Image](https://ocpi.dev)                        | ?     | Image link to the operator's logo. |
+| Property | Type                                                           | Card. | Description                        |
+|----------|----------------------------------------------------------------|-------|------------------------------------|
+| name     | [string](/07-types/01-intro.md#string-type)(100)               | 1     | Name of the operator.              |
+| website  | [URL](/07-types/01-intro.md#url-type)                          | ?     | Link to the operator's website.    |
+| logo     | [Image](/06-modules/03-locations/07-data-types.md#image-class) | ?     | Image link to the operator's logo. |
 
 ## Capability *enum*
 
@@ -113,13 +113,13 @@ The socket or plug standard of the charging point.
 This type is used to specify the energy mix and environmental impact of the supplied energy at a location or in a
 tariff.
 
-| Property            | Type                                            | Card. | Description                                                                                     |
-|---------------------|-------------------------------------------------|-------|-------------------------------------------------------------------------------------------------|
-| is_green_energy     | boolean                                         | 1     | True if 100% from regenerative sources. (CO2 and nuclear waste is zero)                         |
-| energy_sources      | [EnergySource](https://ocpi.dev)                | \*    | Key-value pairs (enum + percentage) of energy sources of this location's tariff.                |
-| environ_impact      | [EnvironmentalImpact](https://ocpi.dev)         | \*    | Key-value pairs (enum + percentage) of nuclear waste and CO2 exhaust of this location's tariff. |
-| supplier_name       | [string](/07-types/01-intro.md#string-type)(64) | ?     | Name of the energy supplier, delivering the energy for this location or tariff.\*               |
-| energy_product_name | [string](/07-types/01-intro.md#string-type)(64) | ?     | Name of the energy suppliers product/tariff plan used at this location.\*                       |
+| Property            | Type                                                                                       | Card. | Description                                                                                     |
+|---------------------|--------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------|
+| is_green_energy     | boolean                                                                                    | 1     | True if 100% from regenerative sources. (CO2 and nuclear waste is zero)                         |
+| energy_sources      | [EnergySource](/06-modules/03-locations/07-data-types.md#energysource-class)               | \*    | Key-value pairs (enum + percentage) of energy sources of this location's tariff.                |
+| environ_impact      | [EnvironmentalImpact](/06-modules/03-locations/07-data-types.md#environmentalimpact-class) | \*    | Key-value pairs (enum + percentage) of nuclear waste and CO2 exhaust of this location's tariff. |
+| supplier_name       | [string](/07-types/01-intro.md#string-type)(64)                                            | ?     | Name of the energy supplier, delivering the energy for this location or tariff.\*               |
+| energy_product_name | [string](/07-types/01-intro.md#string-type)(64)                                            | ?     | Name of the energy suppliers product/tariff plan used at this location.\*                       |
 
 *\* These fields can be used to look up energy qualification or to show it directly to the customer (for well-known
 brands like Greenpeace Energy, etc.)*
@@ -196,10 +196,10 @@ brands like Greenpeace Energy, etc.)*
 
 Key-value pairs (enum + percentage) of energy sources. All given values of all categories should add up to 100 percent.
 
-| Property   | Type                                        | Card. | Description                                   |
-|------------|---------------------------------------------|-------|-----------------------------------------------|
-| source     | [EnergySourceCategory](https://ocpi.dev)    | 1     | The type of energy source.                    |
-| percentage | [number](/07-types/01-intro.md#number-type) | 1     | Percentage of this source (0-100) in the mix. |
+| Property   | Type                                                                                        | Card. | Description                                   |
+|------------|---------------------------------------------------------------------------------------------|-------|-----------------------------------------------|
+| source     | [EnergySourceCategory](/06-modules/03-locations/07-data-types.md#energysourcecategory-enum) | 1     | The type of energy source.                    |
+| percentage | [number](/07-types/01-intro.md#number-type)                                                 | 1     | Percentage of this source (0-100) in the mix. |
 
 ## EnergySourceCategory *enum*
 
@@ -220,10 +220,10 @@ Categories of energy sources.
 
 Amount of waste produced/emitted per kWh.
 
-| Property | Type                                            | Card. | Description                                      |
-|----------|-------------------------------------------------|-------|--------------------------------------------------|
-| category | [EnvironmentalImpactCategory](https://ocpi.dev) | 1     | The environmental impact category of this value. |
-| amount   | [number](/07-types/01-intro.md#number-type)     | 1     | Amount of this portion in g/kWh.                 |
+| Property | Type                                                                                                      | Card. | Description                                      |
+|----------|-----------------------------------------------------------------------------------------------------------|-------|--------------------------------------------------|
+| category | [EnvironmentalImpactCategory](/06-modules/03-locations/07-data-types.md#environmentalimpactcategory-enum) | 1     | The environmental impact category of this value. |
+| amount   | [number](/07-types/01-intro.md#number-type)                                                               | 1     | Amount of this portion in g/kWh.                 |
 
 ## EnvironmentalImpactCategory *enum*
 
@@ -286,12 +286,12 @@ precision. More is always better. Seven decimal places gives approximately 1cm p
 
 Opening and access hours of the location.
 
-| Property             | Type                                  | Card. | Description                                                                                                                                                                                                    |
-|----------------------|---------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| twentyfourseven      | boolean                               | 1     | True to represent 24 hours a day and 7 days a week, except the given exceptions.                                                                                                                               |
-| regular_hours        | [RegularHours](https://ocpi.dev)      | \*    | Regular hours, weekday-based. Only to be used if `twentyfourseven=false`, then this field needs to contain at least one [RegularHours](https://ocpi.dev) object.                                               |
-| exceptional_openings | [ExceptionalPeriod](https://ocpi.dev) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is operating/accessible. Additional to `regular_hours`. May overlap regular rules.                                              |
-| exceptional_closings | [ExceptionalPeriod](https://ocpi.dev) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is not operating/accessible. Overwriting `regular_hours` and `exceptional_openings`. Should not overlap `exceptional_openings`. |
+| Property             | Type                                                                                   | Card. | Description                                                                                                                                                                                                    |
+|----------------------|----------------------------------------------------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| twentyfourseven      | boolean                                                                                | 1     | True to represent 24 hours a day and 7 days a week, except the given exceptions.                                                                                                                               |
+| regular_hours        | [RegularHours](/06-modules/03-locations/07-data-types.md#regularhours-class)           | \*    | Regular hours, weekday-based. Only to be used if `twentyfourseven=false`, then this field needs to contain at least one [RegularHours](/06-modules/03-locations/07-data-types.md#regularhours-class) object.   |
+| exceptional_openings | [ExceptionalPeriod](/06-modules/03-locations/07-data-types.md#exceptionalperiod-class) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is operating/accessible. Additional to `regular_hours`. May overlap regular rules.                                              |
+| exceptional_closings | [ExceptionalPeriod](/06-modules/03-locations/07-data-types.md#exceptionalperiod-class) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is not operating/accessible. Overwriting `regular_hours` and `exceptional_openings`. Should not overlap `exceptional_openings`. |
 
 ### Example: 24/7 open with exceptional closing
 
@@ -396,14 +396,14 @@ Logo Dimensions: The recommended dimensions for logos are exactly 512 pixels in 
 of logos should be exactly 128 pixels in width and height. If not squared, thumbnails should have the same orientation
 as the original.
 
-| Property  | Type                                             | Card. | Description                                                                  |
-|-----------|--------------------------------------------------|-------|------------------------------------------------------------------------------|
-| url       | [URL](/07-types/01-intro.md#url-type)            | 1     | URL from where the image data can be fetched through a web browser.          |
-| thumbnail | [URL](/07-types/01-intro.md#url-type)            | ?     | URL from where a thumbnail of the image can be fetched through a webbrowser. |
-| category  | [ImageCategory](https://ocpi.dev)                | 1     | Describes what the image is used for.                                        |
-| type      | [CiString](/07-types/01-intro.md#string-type)(4) | 1     | Image type like: gif, jpeg, png, svg.                                        |
-| width     | int(5)                                           | ?     | Width of the full scale image.                                               |
-| height    | int(5)                                           | ?     | Height of the full scale image.                                              |
+| Property  | Type                                                                          | Card. | Description                                                                  |
+|-----------|-------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------|
+| url       | [URL](/07-types/01-intro.md#url-type)                                         | 1     | URL from where the image data can be fetched through a web browser.          |
+| thumbnail | [URL](/07-types/01-intro.md#url-type)                                         | ?     | URL from where a thumbnail of the image can be fetched through a webbrowser. |
+| category  | [ImageCategory](/06-modules/03-locations/07-data-types.md#imagecategory-enum) | 1     | Describes what the image is used for.                                        |
+| type      | [CiString](/07-types/01-intro.md#string-type)(4)                              | 1     | Image type like: gif, jpeg, png, svg.                                        |
+| width     | int(5)                                                                        | ?     | Width of the full scale image.                                               |
+| height    | int(5)                                                                        | ?     | Height of the full scale image.                                              |
 
 ## ImageCategory *enum*
 
@@ -566,11 +566,11 @@ This type is used to schedule status periods in the future. The eMSP can provide
 trip planning purposes. A period MAY have no end. Example: "This station will be running as of tomorrow. Today it is
 still planned and under construction."
 
-| Property     | Type                                            | Card. | Description                               |
-|--------------|-------------------------------------------------|-------|-------------------------------------------|
-| period_begin | [DateTime](/07-types/01-intro.md#datetime-type) | 1     | Begin of the scheduled period.            |
-| period_end   | [DateTime](/07-types/01-intro.md#datetime-type) | ?     | End of the scheduled period, if known.    |
-| status       | [Status](https://ocpi.dev)                      | 1     | Status value during the scheduled period. |
+| Property     | Type                                                            | Card. | Description                               |
+|--------------|-----------------------------------------------------------------|-------|-------------------------------------------|
+| period_begin | [DateTime](/07-types/01-intro.md#datetime-type)                 | 1     | Begin of the scheduled period.            |
+| period_end   | [DateTime](/07-types/01-intro.md#datetime-type)                 | ?     | End of the scheduled period, if known.    |
+| status       | [Status](/06-modules/03-locations/07-data-types.md#status-enum) | 1     | Status value during the scheduled period. |
 
 :::note
 The scheduled status is purely informational. When the status actually changes, the CPO must push an update to the EVSEs
