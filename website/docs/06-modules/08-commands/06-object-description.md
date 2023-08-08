@@ -59,16 +59,16 @@ If this is an OCPP Charge Point, the Charge Point decides if it needs to validat
   authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this.
 
 * If this Token is of type `RFID`, the CPO SHALL NOT do a [realtime
-  authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token at the given
-  EVSE/Charge Point within 15 minutes after having received this `ReserveNow`.
+  authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token at
+  the given EVSE/Charge Point within 15 minutes after having received this `ReserveNow`.
 
-The eMSP MAY use Tokens that have not been pushed via the [Token](/06-modules/07-tokens/01-intro.md) module.
-This is especially likely with tokens fof types `AD_HOC_USER` or `APP_USER`. Such Tokens are only used in commands sent
-by an eMSP and never presented locally at the Charge Point by a Driver like `RFID` Tokens.
+The eMSP MAY use Tokens that have not been pushed via the [Token](/06-modules/07-tokens/01-intro.md) module. This is
+especially likely with tokens fof types `AD_HOC_USER` or `APP_USER`. Such Tokens are only used in commands sent by an
+eMSP and never presented locally at the Charge Point by a Driver like `RFID` Tokens.
 
 Unknown Tokens received by the CPO in the `ReserveNow` Object don't need to be stored in the
-[Token](/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via
-`ReserveNow`, the same `Token` does not have to be returned in a Token GET request from the eMSP.
+[Token](/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via `ReserveNow`, the
+same `Token` does not have to be returned in a Token GET request from the eMSP.
 
 An eMSP sending a `ReserveNow` SHALL only use Tokens that are owned by this eMSP. Using Tokens of other eMSPs is not
 allowed.
@@ -102,19 +102,19 @@ If this is an OCPP Charge Point, the Charge Point decides if it needs to validat
   authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this .
 
 * If this Token is of type: `RFID`, the CPO SHALL NOT do a [realtime
-  authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token at the given
-  EVSE/Charge Point within 15 minutes after having received this `StartSession`. (This means that if the driver decided
-  to use his RFID within 15 minutes at the same Charge Point, because the app is not working somehow, the RFID is
-  already authorized)
+  authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token at
+  the given EVSE/Charge Point within 15 minutes after having received this `StartSession`. (This means that if the
+  driver decided to use his RFID within 15 minutes at the same Charge Point, because the app is not working somehow, the
+  RFID is already authorized)
 
-The eMSP MAY use Tokens that have not been pushed via the [Token](/06-modules/07-tokens/01-intro.md) module,
-especially `AD_HOC_USER` or `APP_USER` Tokens are only used by commands send by an eMSP. As these are never used locally
-at the Charge Point like `RFID`.
+The eMSP MAY use Tokens that have not been pushed via the [Token](/06-modules/07-tokens/01-intro.md) module, especially
+`AD_HOC_USER` or `APP_USER` Tokens are only used by commands send by an eMSP. As these are never used locally at the
+Charge Point like `RFID`.
 
 Unknown Tokens received by the CPO in the `StartSession` Object don't need to be stored in the
-[Token](/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via
-`StartSession`, the same `Token` does not have to be returned in a Token GET request from the eMSP. However, the
-information of the Token SHALL be put in the `Session` and `CDR`.
+[Token](/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via `StartSession`,
+the same `Token` does not have to be returned in a Token GET request from the eMSP. However, the information of the
+Token SHALL be put in the `Session` and `CDR`.
 
 An eMSP sending a `StartSession` SHALL only use Token that are owned by this eMSP in `StartSession`, using Tokens of
 other eMSPs is not allowed.

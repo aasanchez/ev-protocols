@@ -39,8 +39,8 @@ done
 
 . ./convert.d/2.2.1/01-introduction.sh
 pre_introduction
+links "ocpi/introduction.asciidoc"
 pandoc2markdown "01-introduction"
-links "website/docs/01-introduction.md"
 common_cleaning "website/docs/01-introduction.md"
 fix_introduction
 flavored_introduction
@@ -49,8 +49,8 @@ echo ""
 
 . ./convert.d/2.2.1/02-terminology.sh
 pre_terminology
+links "ocpi/terminology.asciidoc"
 pandoc2markdown "02-terminology"
-links "website/docs/02-terminology.md"
 common_cleaning "website/docs/02-terminology.md"
 fix_terminology
 flavored_terminology
@@ -59,18 +59,17 @@ echo ""
 
 . ./convert.d/2.2.1/03-topology.sh
 pre_topology
+links "ocpi/topology.asciidoc"
 pandoc2markdown "03-topology"
-links "website/docs/03-topology.md"
 common_cleaning "website/docs/03-topology.md"
 fix_topology
-
 
 echo ""
 
 . ./convert.d/2.2.1/04-transport_and_format.sh
 pre_transport_and_format
+links "ocpi/transport_and_format.asciidoc"
 pandoc2markdown "04-transport_and_format"
-links "website/docs/04-transport_and_format.md"
 common_cleaning "website/docs/04-transport_and_format.md"
 fix_transport_and_format
 flavored_transport_and_format
@@ -87,8 +86,8 @@ echo ""
 mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
 . ./convert.d/2.2.1/06-mod_versions.sh
 pre_mod_versions
+links "ocpi/mod_versions.asciidoc"
 pandoc2markdown "06-mod_versions"
-links "website/docs/06-mod_versions.md"
 common_cleaning "website/docs/06-mod_versions.md"
 fix_mod_versions
 flavored_mod_versions
@@ -98,8 +97,8 @@ echo ""
 mv ocpi/credentials.asciidoc ocpi/mod_credentials.asciidoc
 . ./convert.d/2.2.1/07-mod_credentials.sh
 pre_mod_credentials
+links "ocpi/mod_credentials.asciidoc"
 pandoc2markdown "07-mod_credentials"
-links "website/docs/07-mod_credentials.md"
 common_cleaning "website/docs/07-mod_credentials.md"
 fix_mod_credentials
 flavored_mod_credentials
@@ -108,8 +107,8 @@ echo ""
 
 . ./convert.d/2.2.1/08-mod_locations.sh
 pre_mod_locations
+links "ocpi/mod_locations.asciidoc"
 pandoc2markdown "08-mod_locations"
-links "website/docs/08-mod_locations.md"
 common_cleaning "website/docs/08-mod_locations.md"
 fix_mod_locations
 flavored_mod_locations
@@ -118,8 +117,8 @@ echo ""
 
 . ./convert.d/2.2.1/09-mod_sessions.sh
 pre_mod_sessions
+links "ocpi/mod_sessions.asciidoc"
 pandoc2markdown "09-mod_sessions"
-links "website/docs/09-mod_sessions.md"
 common_cleaning "website/docs/09-mod_sessions.md"
 fix_mod_sessions
 flavored_mod_sessions
@@ -128,8 +127,8 @@ echo ""
 
 . ./convert.d/2.2.1/10-mod_cdrs.sh
 pre_mod_cdrs
+links "ocpi/mod_cdrs.asciidoc"
 pandoc2markdown "10-mod_cdrs"
-links "website/docs/10-mod_cdrs.md"
 common_cleaning "website/docs/10-mod_cdrs.md"
 fix_mod_cdrs
 flavored_mod_cdrs
@@ -138,8 +137,8 @@ echo ""
 
 . ./convert.d/2.2.1/11-mod_tariffs.sh
 pre_mod_tariffs
+links "ocpi/mod_tariffs.asciidoc"
 pandoc2markdown "11-mod_tariffs"
-links "website/docs/11-mod_tariffs.md"
 common_cleaning "website/docs/11-mod_tariffs.md"
 fix_mod_tariffs
 flavored_mod_tariffs
@@ -148,8 +147,8 @@ echo ""
 
 . ./convert.d/2.2.1/12-mod_tokens.sh
 pre_mod_tokens
+links "ocpi/mod_tokens.asciidoc"
 pandoc2markdown "12-mod_tokens"
-links "website/docs/12-mod_tokens.md"
 common_cleaning "website/docs/12-mod_tokens.md"
 fix_mod_tokens
 flavored_mod_tokens
@@ -158,8 +157,8 @@ echo ""
 
 . ./convert.d/2.2.1/13-mod_commands.sh
 pre_mod_commands
+links "ocpi/mod_commands.asciidoc"
 pandoc2markdown "13-mod_commands"
-links "website/docs/13-mod_commands.md"
 common_cleaning "website/docs/13-mod_commands.md"
 fix_mod_commands
 flavored_mod_commands
@@ -168,8 +167,8 @@ echo ""
 
 . ./convert.d/2.2.1/14-mod_charging_profiles.sh
 pre_mod_charging_profiles
+links "ocpi/mod_charging_profiles.asciidoc"
 pandoc2markdown "14-mod_charging_profiles"
-links "website/docs/14-mod_charging_profiles.md"
 common_cleaning "website/docs/14-mod_charging_profiles.md"
 fix_mod_charging_profiles
 flavored_mod_charging-profiles
@@ -178,8 +177,8 @@ echo ""
 
 . ./convert.d/2.2.1/15-mod_hub_client_info.sh
 pre_mod_hub_client_info
+links "ocpi/mod_hub_client_info.asciidoc"
 pandoc2markdown "15-mod_hub_client_info"
-links "website/docs/15-mod_hub_client_info.md"
 common_cleaning "website/docs/15-mod_hub_client_info.md"
 fix_mod_hub_client_info
 flavored_mod_hubclientinfo
@@ -188,8 +187,8 @@ echo ""
 
 . ./convert.d/2.2.1/16-types.sh
 pre_types
+links "ocpi/types.asciidoc"
 pandoc2markdown "16-types"
-links "website/docs/16-types.md"
 common_cleaning "website/docs/16-types.md"
 fix_types
 

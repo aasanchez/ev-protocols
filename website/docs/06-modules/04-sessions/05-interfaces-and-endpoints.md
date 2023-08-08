@@ -85,7 +85,8 @@ The following parameter has to be provided as URL segments.
 
 ##### Request Body
 
-In the body, a [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) object has to be provided.
+In the body, a [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) object
+has to be provided.
 
 | Type                                                                                               | Card. | Description                                                  |
 |----------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
@@ -93,7 +94,8 @@ In the body, a [ChargingPreferences](/06-modules/04-sessions/06-object-descripti
 
 ##### Response Data
 
-The response contains a [ChargingPreferencesResponse](/06-modules/04-sessions/07-data-types.md#chargingpreferencesresponse-enum) value.
+The response contains a
+[ChargingPreferencesResponse](/06-modules/04-sessions/07-data-types.md#chargingpreferencesresponse-enum) value.
 
 | Type                                                                                                     | Card. | Description                                       |
 |----------------------------------------------------------------------------------------------------------|-------|---------------------------------------------------|
@@ -103,8 +105,9 @@ The response contains a [ChargingPreferencesResponse](/06-modules/04-sessions/07
 
 Typically implemented by market roles like: eMSP and SCSP.
 
-Sessions are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so
-the endpoints need to contain the required extra fields:
+Sessions are [Client Owned
+Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the endpoints need
+to contain the required extra fields:
 {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
 {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
@@ -152,13 +155,16 @@ The response contains the requested Session object.
 
 Inform the eMSP's system about a new/updated Session object in the CPO's system.
 
-When a PUT request is received for an existing [Session](/06-modules/04-sessions/06-object-description.md#session-object) object (the object is PUT to the
-same URL), The newly received [Session](/06-modules/04-sessions/06-object-description.md#session-object) object SHALL replace the existing object.
+When a PUT request is received for an existing
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object (the object is PUT to the same URL),
+The newly received [Session](/06-modules/04-sessions/06-object-description.md#session-object) object SHALL replace the
+existing object.
 
 Any `charging_periods` from the existing object SHALL be replaced by the `charging_periods` from the newly received
-[Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the new [Session](/06-modules/04-sessions/06-object-description.md#session-object) object does not
-contain `charging_periods` (field is omitted or contains any empty list), the `charging_periods` of the existing object
-SHALL be removed (replaced by the new empty list).
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the new
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object does not contain `charging_periods`
+(field is omitted or contains any empty list), the `charging_periods` of the existing object SHALL be removed (replaced
+by the new empty list).
 
 ##### Request Body
 
@@ -180,28 +186,33 @@ The following parameters shall be provided as URL segments.
 
 ### **PATCH** Method
 
-Same as the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method, but only the fields/objects that need to be updated have to be
-present. Fields/objects which are not specified are considered unchanged.
+Same as the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method, but only the
+fields/objects that need to be updated have to be present. Fields/objects which are not specified are considered
+unchanged.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
-The PATCH method of the Session Receiver interface works on the entire [Session](/06-modules/04-sessions/06-object-description.md#session-object) object
-only. It is not allowed to use extra URL segments to try to PATCH fields of inner objects of the
+The PATCH method of the Session Receiver interface works on the entire
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object only. It is not allowed to use extra
+URL segments to try to PATCH fields of inner objects of the
 [Session](/06-modules/04-sessions/06-object-description.md#session-object) object directly.
 
-When a PATCH request contains the `charging_periods` field (inside a [Session](/06-modules/04-sessions/06-object-description.md#session-object) object),
-this SHALL be processed as a request to add all the [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class)
-objects to the existing [Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the request `charging_periods` list is
-omitted (or contains an empty list), no changes SHALL be made to the existing list of `charging_periods`.
+When a PATCH request contains the `charging_periods` field (inside a
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object), this SHALL be processed as a request
+to add all the [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) objects to the existing
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the request `charging_periods`
+list is omitted (or contains an empty list), no changes SHALL be made to the existing list of `charging_periods`.
 
 If existing [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) objects in a
-[Session](/06-modules/04-sessions/06-object-description.md#session-object) need to be replaced or removed, the Sender SHALL use the
-[PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method to replace the entire [Session](/06-modules/04-sessions/06-object-description.md#session-object) object
-(including all the `charging_periods`).
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) need to be replaced or removed, the Sender
+SHALL use the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method to replace the entire
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object (including all the
+`charging_periods`).
 
 ##### Example: update the total cost
 
-Patching the `total_cost` needs to be done on the [Session](/06-modules/04-sessions/06-object-description.md#session-object) Object.
+Patching the `total_cost` needs to be done on the
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) Object.
 
 ``` json
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
@@ -217,8 +228,8 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 ##### Example: adding a new ChargingPeriod
 
-PATCH used to add a new [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) to the Session and updating
-all related fields.
+PATCH used to add a new [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) to the Session and
+updating all related fields.
 
 ``` json
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101

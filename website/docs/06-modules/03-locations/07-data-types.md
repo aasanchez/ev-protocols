@@ -49,8 +49,8 @@ DEBIT_CARD_PAYABLE, PED_TERMINAL.
 
 There are Charge Points in the field that do not yet support OCPP 2.x. If these Charge Points have multiple connectors
 per EVSE, the CPO needs to know which connector to start when receiving a
-[StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) for the given EVSE. If this is the case, the CPO
-should set the `START_SESSION_CONNECTOR_REQUIRED` capability on the given EVSE.
+[StartSession](/06-modules/08-commands/06-object-description.md#startsession-object) for the given EVSE. If this is the
+case, the CPO should set the `START_SESSION_CONNECTOR_REQUIRED` capability on the given EVSE.
 
 ## ConnectorFormat *enum*
 

@@ -6,7 +6,8 @@ slug: /modules/sessions/data-types
 
 ## ChargingPreferencesResponse *enum*
 
-An enum with possible responses to a [PUT Charging Preferences](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method) request.
+An enum with possible responses to a [PUT Charging
+Preferences](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method) request.
 
 If a PUT with `ChargingPreferences` is received for an EVSE that does not have the capability
 `CHARGING_PREFERENCES_CAPABLE`, the receiver should respond with an HTTP status of 404 and an OCPI status code of 2001

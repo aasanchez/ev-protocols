@@ -58,8 +58,8 @@ small as possible and mention them clearly in your offering.
 
 ### Example Tariff
 
-Example Tariff to explain the `step_size` when switching from one [Tariff Element](/06-modules/06-tariffs/07-data-types.md#tariffelement-class) to
-another:
+Example Tariff to explain the `step_size` when switching from one [Tariff
+Element](/06-modules/06-tariffs/07-data-types.md#tariffelement-class) to another:
 
 * Charging fee of € 1.20 per hour (excl. VAT) before 17:00 with a `step_size` of 30 minutes (1800 seconds)
 * Charging fee of € 2.40 per hour (excl. VAT) after 17:00 with a `step_size` of 15 minutes (900 seconds)
@@ -163,11 +163,12 @@ That leads to a session fee of € 1.30. A breakdown is as follows:
 ##### Example: switching to Free-of-Charge Tariff Element
 
 When parking becomes free after 20:00, there will not be an active
-[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) [Price Component](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) nor a
-[`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Price Component. So the last parking period that needs to be paid, which
-is before 20:00, will be billed according to the `step_size` of the
-[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) [`PriceComponent`](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) before
-20:00.
+[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) [Price
+Component](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) nor a
+[`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Price Component. So the last parking period
+that needs to be paid, which is before 20:00, will be billed according to the `step_size` of the
+[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)
+[`PriceComponent`](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) before 20:00.
 
 An EV driver plugs in at 19:40 and charges for 12 minutes (`TIME`). They then stop charging but stay plugged in for 20
 more minutes (`PARKING_TIME`). The total session time is therefore 32 minutes.
@@ -194,8 +195,8 @@ A breakdown is as follows:
 
 :::note
 When a Tariff has both `RESERVATION` and `RESERVATION_EXPIRES` Tariff Elements, where both Tariff Elements have a
-[TIME](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Price Component, then the time based cost of an expired reservation will
-be calculated based on the `RESERVATION_EXPIRES` Tariff Element.
+[TIME](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Price Component, then the time based cost of an
+expired reservation will be calculated based on the `RESERVATION_EXPIRES` Tariff Element.
 :::
 
 ## TariffElement *class*
@@ -204,8 +205,9 @@ A Tariff Element is a group of Price Components that share a set of restrictions
 
 That the Price Components share the same restrictions does not mean that at any time, they either all apply or all do
 not apply. The reason is that applicable Price Components are looked up separately for each dimension, as described
-under the [Tariff object](/06-modules/06-tariffs/06-object-description.md#tariff-object). Therefore it is possible that a Price Component for one dimension
-is found in a Tariff Element that occurs earlier in the list of Tariff Elements than for another dimension.
+under the [Tariff object](/06-modules/06-tariffs/06-object-description.md#tariff-object). Therefore it is possible that
+a Price Component for one dimension is found in a Tariff Element that occurs earlier in the list of Tariff Elements than
+for another dimension.
 
 | Property         | Type                                                                                   | Card. | Description                                                                                             |
 |------------------|----------------------------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------|

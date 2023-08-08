@@ -9,9 +9,9 @@ Receiver during normal operation in order to keep the latency of updates low. Th
 when the connection between two parties is established for the first time, to retrieve the current list of Location
 objects with the current status, and when the Receiver is not 100% sure the Location cache is entirely up-to-date (i.e.
 to perform a full sync). The Receiver can also use the Sender [GET Object
-interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters) to retrieve a specific Location, EVSE or Connector. This
-feature might be used by an Receiver that wants information about a specific Location, but has not implemented the
-Receiver Locations interface (i.e. cannot receive Push).
+interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters) to retrieve a specific
+Location, EVSE or Connector. This feature might be used by an Receiver that wants information about a specific Location,
+but has not implemented the Receiver Locations interface (i.e. cannot receive Push).
 
 ## Sender Interface
 
@@ -28,8 +28,9 @@ Typically implemented by market roles like: CPO.
 ### **GET** Method
 
 Depending on the URL Segments provided, the GET request can either be used to retrieve information about a list of
-available Locations (with EVSEs and Connectors) at a CPO ([GET List](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-list-request-parameters)) or it
-can be used to retrieve information about one specific Location, EVSE or Connector ([GET
+available Locations (with EVSEs and Connectors) at a CPO ([GET
+List](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-list-request-parameters)) or it can be used to
+retrieve information about one specific Location, EVSE or Connector ([GET
 Object](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters)).
 
 ##### GET List: Request Parameters
@@ -111,8 +112,9 @@ Choice: one of three
 
 Typically implemented by market roles like: eMSP and NSP.
 
-Locations are [Client Owned Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so
-the end-points need to contain the required extra fields:
+Locations are [Client Owned
+Objects](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the end-points need
+to contain the required extra fields:
 {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
 {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
@@ -139,7 +141,8 @@ Examples:
 If the CPO wants to check the status of a Location, EVSE or Connector object in the eMSP system, it might GET the object
 from the eMSP system for validation purposes. The CPO is the owner of the objects, so it would be illogical if the eMSP
 system had a different status or was missing an object. If a discrepancy is found, the CPO might push an update to the
-eMSP via a [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) call.
+eMSP via a [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or
+[PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) call.
 
 ##### Request Parameters
 
@@ -170,20 +173,23 @@ Choice: one of three
 The CPO pushes available Location, EVSE or Connector objects to the eMSP. PUT can be used to send new Location objects
 to the eMSP but also to replace existing Locations.
 
-When the PUT only contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
-Objects.
+When the PUT only contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the
+Receiver SHALL also set the new `last_updated` value on the parent
+[EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Objects.
 
-When the PUT only contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
+When the PUT only contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver
+SHALL also set the new `last_updated` value on the parent
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
 ##### Request Parameters
 
 This is an information Push message, the objects pushed will not be owned by the eMSP. To make distinctions between
 objects being pushed to an eMSP from different CPOs, the
 {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
-{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} have to be included in the URL (as URL segments,
-as described in the [Receiver Interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-interface)).
+{[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} have to be included in the URL
+(as URL segments, as described in the [Receiver
+Interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-interface)).
 
 | Parameter    | Datatype                                            | Required | Description                                                                                                                                                   |
 |--------------|-----------------------------------------------------|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -197,12 +203,14 @@ as described in the [Receiver Interface](/06-modules/03-locations/05-interfaces-
 
 The request body contains the new/updated object.
 
-When the PUT contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
-Objects.
+When the PUT contains a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the
+Receiver SHALL also set the new `last_updated` value on the parent
+[EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Objects.
 
-When the PUT contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new `last_updated`
-value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
+When the PUT contains a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL
+also set the new `last_updated` value on the parent
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
 | Type                                                                            | Card. | Description                                           |
 |---------------------------------------------------------------------------------|-------|-------------------------------------------------------|
@@ -244,18 +252,20 @@ PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
 ### **PATCH** Method
 
-Same as the [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) method, but only the fields/objects that have to be updated have to be
-present. Other fields/objects that are not specified as part of the request are considered unchanged. Therefore, this
-method is not suitable to remove information shared earlier.
+Same as the [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) method, but only the
+fields/objects that have to be updated have to be present. Other fields/objects that are not specified as part of the
+request are considered unchanged. Therefore, this method is not suitable to remove information shared earlier.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
-When the PATCH is on a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the Receiver SHALL also set the new
-`last_updated` value on the parent [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and [Location](/06-modules/03-locations/06-object-description.md#location-object)
-Objects.
+When the PATCH is on a [Connector](/06-modules/03-locations/06-object-description.md#connector-object) Object, the
+Receiver SHALL also set the new `last_updated` value on the parent
+[EVSE](/06-modules/03-locations/06-object-description.md#evse-object) and
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Objects.
 
-When the PATCH is on a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL also set the new `last_updated`
-value on the parent [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
+When the PATCH is on a [EVSE](/06-modules/03-locations/06-object-description.md#evse-object) Object, the Receiver SHALL
+also set the new `last_updated` value on the parent
+[Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
 ##### Example: a simple status update
 

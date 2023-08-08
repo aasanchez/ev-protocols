@@ -13,8 +13,9 @@ cache is still correct.
 Typically implemented by market roles like: CPO.
 
 With this interface the Sender can push the Token information to the Receiver. Tokens is a [Client Owned
-Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the end-points need to contain
-the required extra fields: {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
+Object](/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push), so the end-points need
+to contain the required extra fields:
+{[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
 {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)}.
 
 Endpoint structure definition:
@@ -107,8 +108,8 @@ PUT To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
 ### **PATCH** Method
 
-Same as the [PUT](/06-modules/07-tokens/05-interfaces-and-endpoints.md#put-method) method, but only the fields/objects that have to be updated have to be
-present, other fields/objects that are not specified are considered unchanged.
+Same as the [PUT](/06-modules/07-tokens/05-interfaces-and-endpoints.md#put-method) method, but only the fields/objects
+that have to be updated have to be present, other fields/objects that are not specified are considered unchanged.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
@@ -159,8 +160,8 @@ If additional parameters: `{date_from}` and/or `{date_to}` are provided, only To
 given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
 
 This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
-[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters. This request
-is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
+[pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
+This request is [paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it supports the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request) related URL parameters.
 
 | Parameter | Datatype                                        | Required | Description                                                                                      |
@@ -217,9 +218,9 @@ The parameter: `type` may be provided as an URL parameter
 
 ##### Request Body
 
-In the body an optional [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) object can be given. The eMSP SHALL
-then validate if the Token is allowed to be used at this Location, and if applicable: which of the Locations EVSEs. The
-object with valid Location and EVSEs will be returned in the response.
+In the body an optional [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) object can
+be given. The eMSP SHALL then validate if the Token is allowed to be used at this Location, and if applicable: which of
+the Locations EVSEs. The object with valid Location and EVSEs will be returned in the response.
 
 | Type                                                                                  | Card. | Description                                                           |
 |---------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------|

@@ -8,9 +8,10 @@ slug: /modules/cdrs/object-description
 
 The *CDR* object describes the charging session and its costs, how these costs are composed, etc.
 
-The CDR object is different from the [Session](/06-modules/04-sessions/06-object-description.md#session-object) object. The
-[Session](/06-modules/04-sessions/06-object-description.md#session-object) object is dynamic as it reflects the current state of the
-charging session. The information is meant to be viewed by the driver while the charging session is ongoing.
+The CDR object is different from the [Session](/06-modules/04-sessions/06-object-description.md#session-object) object.
+The [Session](/06-modules/04-sessions/06-object-description.md#session-object) object is dynamic as it reflects the
+current state of the charging session. The information is meant to be viewed by the driver while the charging session is
+ongoing.
 
 The CDR on the other hand can be thought of as *sealed*, preserving the information valid at the moment in time the
 underlying session was started. This is a requirement of the main use case for CDRs, namely invoicing. If e.g. a street
@@ -23,12 +24,13 @@ of the charging session.
 
 ### ChargingPeriod
 
-A CPO SHALL at least start (and add) a [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) every
-moment/event that has relevance for the total costs of a CDR. During a charging session, different parameters change all
-the time, like the amount of energy used, or the time of day. These changes can result in another Price Component of the
-Tariff becoming active. When another Price Component becomes active, the CPO SHALL add a new Charging Period with at
-least all the relevant information for the change to the other Price Component. The CPO is allowed to add more
-*in-between* Charging Periods to a CDR though.
+A CPO SHALL at least start (and add) a
+[ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) every moment/event that has relevance for
+the total costs of a CDR. During a charging session, different parameters change all the time, like the amount of energy
+used, or the time of day. These changes can result in another Price Component of the Tariff becoming active. When
+another Price Component becomes active, the CPO SHALL add a new Charging Period with at least all the relevant
+information for the change to the other Price Component. The CPO is allowed to add more *in-between* Charging Periods to
+a CDR though.
 
 Examples of additional Charging Periods that are required to be added because another Price Component is becoming
 active:
@@ -51,25 +53,26 @@ session for the [TariffDimensionType](/06-modules/06-tariffs/07-data-types.md#ta
 
 `step_size` is not taken into account when switching time based paying for charging to paying for parking (charging has
 stopped but EV still connected). Example: `step_size` for both charging
-([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) and parking is 5 minutes. After 21 minutes of
-charging, the EV is full but remains connected for 7 more minutes. The cost of charging will be calculated based on 21
-minutes (not 25). The cost of parking will be calculated based on 10 minutes (`step_size` is 5).
+([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) and parking is 5 minutes. After 21 minutes
+of charging, the EV is full but remains connected for 7 more minutes. The cost of charging will be calculated based on
+21 minutes (not 25). The cost of parking will be calculated based on 10 minutes (`step_size` is 5).
 
 `step_size` is not taken into account when switching from (for example) one
-[`ENERGY`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) based tariff element to another. This is also
-true when switch from one ([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) based tariff element to
-another ([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) based tariff element, and one
-[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) tariff element to another
+[`ENERGY`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) based tariff element to another. This is
+also true when switch from one ([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) based tariff
+element to another ([`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum)) based tariff element,
+and one [`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) tariff element to another
 [`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) based tariff element. Example: when
 charging is more expensive after 17:00. The `step_size` of the tariff before 17:00 will not be used when charging starts
 before 17:00 and ends after 17:00. Only the `step_size` of the tariff
-([PriceComponent](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class)) after 17:00 is taken into account, for the
-total of the same amount for the session.
+([PriceComponent](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class)) after 17:00 is taken into account, for
+the total of the same amount for the session.
 
 The `step_size` for the [PriceComponent](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) that is used to
-calculate the cost of such a *last* [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) SHALL be used. If the `step_size`
-differs for the different [TariffElements](/06-modules/06-tariffs/07-data-types.md#tariffelement-class), the `step_size` of
-the last relevant [PriceComponent](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) is used.
+calculate the cost of such a *last* [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) SHALL be
+used. If the `step_size` differs for the different
+[TariffElements](/06-modules/06-tariffs/07-data-types.md#tariffelement-class), the `step_size` of the last relevant
+[PriceComponent](/06-modules/06-tariffs/07-data-types.md#pricecomponent-class) is used.
 
 The `step_size` is not taken into account when switching between two Tariffs Example: A driver selects a different
 [Charging Preference](/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
@@ -89,12 +92,12 @@ charging. The `step_size` rounds this up to 30 minutes total, so 24 minutes afte
 round the minutes after 17:00 to 30 minutes, which would have made a total of 36 minutes.
 
 In the cases that [`TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) and
-[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Tariff Elements are both used, `step_size`
-is only taken into account for the total parking duration\` Example: Time spent charging costs € 1.00 per hour and time
-spent parking (not charging) costs € 2.00 per hour. Both Price Components have a `step_size` of 10 minutes. If a driver
-charges 21 minutes, and keeps his EV connected while it is full for another 16 minutes, then the step_size rounds the
-parking duration up to 20 minutes, making it a total of 41 minutes. Note that the charging duration is not rounded up,
-as it is followed by another time based period.
+[`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) Tariff Elements are both used,
+`step_size` is only taken into account for the total parking duration\` Example: Time spent charging costs € 1.00 per
+hour and time spent parking (not charging) costs € 2.00 per hour. Both Price Components have a `step_size` of 10
+minutes. If a driver charges 21 minutes, and keeps his EV connected while it is full for another 16 minutes, then the
+step_size rounds the parking duration up to 20 minutes, making it a total of 41 minutes. Note that the charging duration
+is not rounded up, as it is followed by another time based period.
 
 | Property                   | Type                                                                        | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |----------------------------|-----------------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -141,8 +144,9 @@ flag used in queries is much faster than simple string comparison of references.
 
 :::note
 Different `authorization_reference` values might happen when for example a
-[ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object) had a different `authorization_reference` then the
-value returned by a [real-time authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization).
+[ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object) had a different
+`authorization_reference` then the value returned by a [real-time
+authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization).
 :::
 
 :::note

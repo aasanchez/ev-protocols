@@ -19,12 +19,13 @@ properties.
 
 Locations may be shown in apps or on websites etc. when the flag: `publish` is set to `true`. Locations that have this
 flag set to `false` SHALL not be shown in an app or on a website etc. unless it is to the owner of a
-[Token](/06-modules/07-tokens/06-object-description.md#token-object) in the `publish_allowed_to` list. Even parties like NSP or eMSP
-that do not *own* this Token MAY show this location on an app or website, but only to the owner of that Token. If the
-user of their app/website has provided information about his/her [Token](/06-modules/07-tokens/06-object-description.md#token-object),
-And that information matches all the fields of one of the [PublishToken](/06-modules/03-locations/07-data-types.md#publishtokentype-class) tokens in
-the list, then they are allowed to show this location to their user. It is not allowed in OCPI to use a Token that is
-not *owned* by the eMSP itself to start a charging session.
+[Token](/06-modules/07-tokens/06-object-description.md#token-object) in the `publish_allowed_to` list. Even parties like
+NSP or eMSP that do not *own* this Token MAY show this location on an app or website, but only to the owner of that
+Token. If the user of their app/website has provided information about his/her
+[Token](/06-modules/07-tokens/06-object-description.md#token-object), And that information matches all the fields of one
+of the [PublishToken](/06-modules/03-locations/07-data-types.md#publishtokentype-class) tokens in the list, then they
+are allowed to show this location to their user. It is not allowed in OCPI to use a Token that is not *owned* by the
+eMSP itself to start a charging session.
 
 | Property             | Type                                                                                           | Card. | Description                                                                                                                                                                                                                                                                                                        |
 |----------------------|------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -283,11 +284,12 @@ Typical examples where this is useful:
   `group_id` for this.
 
 The locations SHALL NOT be published to the general public. Only selected
-[Tokens](/06-modules/07-tokens/06-object-description.md#token-object) can see (and control) the Charge Points via eMSP app.
+[Tokens](/06-modules/07-tokens/06-object-description.md#token-object) can see (and control) the Charge Points via eMSP
+app.
 
 * `publish` = `false`
-* `publish_allowed_to` contains list with information of [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) that are
-  allowed to be shown the `Location`.
+* `publish_allowed_to` contains list with information of
+  [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) that are allowed to be shown the `Location`.
 * `parking_type` = `UNDERGROUND_GARAGE` (but could also be `PARKING_GARAGE`, `ON_DRIVEWAY` or `PARKING_LOT`)
 
 ``` json
@@ -349,11 +351,12 @@ The locations SHALL NOT be published to the general public. Only selected
 This is an example of a private/home charge point that needs to be controlled via an eMSP App.
 
 The locations SHALL NOT be published to the general public. Only the owner, identified by his/her
-[Token](/06-modules/07-tokens/06-object-description.md#token-object) can see (and control) the Charge Points via an eMSP app.
+[Token](/06-modules/07-tokens/06-object-description.md#token-object) can see (and control) the Charge Points via an eMSP
+app.
 
 * `publish` = `false`
-* `publish_allowed_to` contains the information of the [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) of the
-  owner.
+* `publish_allowed_to` contains the information of the
+  [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) of the owner.
 * `parking_type` = not used, not relevant, owner knows where his Charge Point is.
 
 ``` json
@@ -497,8 +500,8 @@ If the EV is left in the parking garage overnight, the car will still be charged
 ## *EVSE* Object
 
 The *EVSE* object describes the part that controls the power supply to a single EV in a single session. It always
-belongs to a [Location](/06-modules/03-locations/06-object-description.md#location-object) object. The object only contains directions to get from the
-location itself to the EVSE (i.e. *floor*, *physical_reference* or *directions*).
+belongs to a [Location](/06-modules/03-locations/06-object-description.md#location-object) object. The object only
+contains directions to get from the location itself to the EVSE (i.e. *floor*, *physical_reference* or *directions*).
 
 When the directional properties of an EVSE are insufficient to reach the EVSE from the *Location* point, then it
 typically indicates that the EVSE should be put in a different *Location* object (sometimes with the same address but
@@ -509,7 +512,7 @@ at the time.
 
 | Property             | Type                                                                                    | Card. | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |----------------------|-----------------------------------------------------------------------------------------|-------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| uid                  | [CiString](/07-types/01-intro.md#cistring-type)(36)                                     | 1     | Uniquely identifies the EVSE within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed. This is the *technical* identification of the EVSE, not to be used as *human readable* identification, use the field `evse_id` for that. This field is named `uid` instead of `id`, because `id` could be confused with `evse_id` which is an eMI3 defined field. Note that in order to fulfill both the requirement that an EVSE's `uid` be unique within a CPO's platform and the [requirement that EVSEs are never deleted](#evse_delete_with_status_update), a CPO will typically want to avoid using identifiers of the physical hardware for this `uid` property. If they do use such a physical identifier, they will find themselves breaking the uniqueness requirement for `uid` when the same physical EVSE is redeployed at another Location. |
+| uid                  | [CiString](/07-types/01-intro.md#cistring-type)(36)                                     | 1     | Uniquely identifies the EVSE within the CPOs platform (and suboperator platforms). This field can never be changed, modified or renamed. This is the *technical* identification of the EVSE, not to be used as *human readable* identification, use the field `evse_id` for that. This field is named `uid` instead of `id`, because `id` could be confused with `evse_id` which is an eMI3 defined field. Note that in order to fulfill both the requirement that an EVSE's `uid` be unique within a CPO's platform and the [requirement that EVSEs are never deleted](/evse_delete_with_status_update), a CPO will typically want to avoid using identifiers of the physical hardware for this `uid` property. If they do use such a physical identifier, they will find themselves breaking the uniqueness requirement for `uid` when the same physical EVSE is redeployed at another Location. |
 | evse_id              | [CiString](/07-types/01-intro.md#cistring-type)(48)                                     | ?     | Compliant with the following specification for EVSE ID from "eMI3 standard version V1.0" (<http://emi3group.com/documents-links/>) "Part 2: business objects." Optional because: if an `evse_id` is to be re-used in the real world, the `evse_id` can be removed from an EVSE object if the `status` is set to `REMOVED`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | status               | [Status](/06-modules/03-locations/07-data-types.md#status-enum)                         | 1     | Indicates the current status of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | status_schedule      | [StatusSchedule](/06-modules/03-locations/07-data-types.md#statusschedule-class)        | \*    | Indicates a planned status update of the EVSE.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |

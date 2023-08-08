@@ -27,11 +27,11 @@ HTTP header names are case-insensitive
 :::
 
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
-*credentials token*. [*Credentials tokens*](/06-modules/02-credentials/06-object-description.md#credentials-object) are exchanged via the
-[credentials module](/06-modules/02-credentials/01-intro.md). These are different *tokens* than the
+*credentials token*. [*Credentials tokens*](/06-modules/02-credentials/06-object-description.md#credentials-object) are
+exchanged via the [credentials module](/06-modules/02-credentials/01-intro.md). These are different *tokens* than the
 [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) exchanged via the [Token
-Module](/06-modules/07-tokens/01-intro.md): Tokens used by drivers to authorize charging. To prevent
-confusion, when talking about the token used here in the HTTP Authorization header, call them: *Credentials Tokens*.
+Module](/06-modules/07-tokens/01-intro.md): Tokens used by drivers to authorize charging. To prevent confusion, when
+talking about the token used here in the HTTP Authorization header, call them: *Credentials Tokens*.
 
 After the literal *Token*, there SHALL be one space, followed by the *encoded token*. The encoded token is obtained by
 encoding the credentials token to an octet sequence with UTF-8 and then encoding that octet sequence with Base64
@@ -58,10 +58,10 @@ Authorization header to link the request to the correct requesting party's accou
 If the header is missing or the credentials token doesn't match any known party then the server SHALL respond with an
 HTTP `401 * Unauthorized` status code.
 
-When a server receives a request with a valid [`CREDENTIALS_TOKEN_A`](/06-modules/02-credentials/03-use-cases.md#registration),
-on another module than: [`credentials`](/06-modules/02-credentials/01-intro.md) or
-[`versions`](/06-modules/01-versions/01-intro.md), the server SHALL respond with an HTTP
-`401 * Unauthorized` status code.
+When a server receives a request with a valid
+[`CREDENTIALS_TOKEN_A`](/06-modules/02-credentials/03-use-cases.md#registration), on another module than:
+[`credentials`](/06-modules/02-credentials/01-intro.md) or [`versions`](/06-modules/01-versions/01-intro.md), the server
+SHALL respond with an HTTP `401 * Unauthorized` status code.
 
 ## Pull and Push
 
@@ -82,8 +82,10 @@ hours, not minutes, and to introduce some splay (randomize the length of the pol
 
 ## Request format
 
-The request method can be any of [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method), POST, [PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method),
-[PATCH](/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) or DELETE. The OCPI protocol uses them in a way similar to REST APIs.
+The request method can be any of [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method), POST,
+[PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method),
+[PATCH](/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) or DELETE. The OCPI protocol uses
+them in a way similar to REST APIs.
 
 | Method                                                                              | Description                                        |
 |-------------------------------------------------------------------------------------|----------------------------------------------------|
@@ -217,8 +219,9 @@ updated. Any fields (both required or optional) that are left out remain unchang
 
 The MIME-type of the request body is: `application/json` and may contain the data as documented for each endpoint.
 
-In case a PATCH request fails, the client is expected to call the [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) method to check the
-state of the object in the other party's system. If the object doesn't exist, the client should do a
+In case a PATCH request fails, the client is expected to call the
+[GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) method to check the state of the object
+in the other party's system. If the object doesn't exist, the client should do a
 [PUT](/04-transport-and-format/01-json-http-implementation-guide.md#put-method).
 
 ## Client Owned Object Push
@@ -237,11 +240,11 @@ The distinction between objects from different CPOs/eMSPs is made based on a
 {[country_code](/06-modules/02-credentials/06-object-description.md#credentials-object)} and
 {[party_id](/06-modules/02-credentials/06-object-description.md#credentials-object)}. The
 [country_code's](/06-modules/02-credentials/06-object-description.md#credentials-object) and
-[party_id's](/06-modules/02-credentials/06-object-description.md#credentials-object) of the parties on the other platform are received
-during the [credentials](/06-modules/02-credentials/01-intro.md) handshake in the
+[party_id's](/06-modules/02-credentials/06-object-description.md#credentials-object) of the parties on the other
+platform are received during the [credentials](/06-modules/02-credentials/01-intro.md) handshake in the
 [CredentialsRoles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class). The roles exchanged during the
-[credentials](/06-modules/02-credentials/01-intro.md) handshake provide the server with details needed
-to determine which URLs a client might use.
+[credentials](/06-modules/02-credentials/01-intro.md) handshake provide the server with details needed to determine
+which URLs a client might use.
 
 Client Owned Object URL definition: `{base-ocpi-url}/{end-point}/{country-code}/{party-id}/{object-id}`
 
@@ -262,12 +265,12 @@ When a client tries to access an object with a URL that has a different
 [country_code](/06-modules/02-credentials/06-object-description.md#credentials-object) and/or
 [party_id](/06-modules/02-credentials/06-object-description.md#credentials-object) than one of the
 [CredentialsRoles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class) given during the
-[credentials](/06-modules/02-credentials/01-intro.md) handshake, it is allowed to respond with an HTTP
-`404` status code, this way blocking client access to objects that do not belong to them.
+[credentials](/06-modules/02-credentials/01-intro.md) handshake, it is allowed to respond with an HTTP `404` status
+code, this way blocking client access to objects that do not belong to them.
 
 When a client pushes a Client Owned Object, but the `object-id` in the URL is different from the id in the object being
-pushed, server implementations are advised to return an [OCPI status
-code](/05-status-codes/05-status-codes.md): [2001](/05-status-codes/05-status-codes.md).
+pushed, server implementations are advised to return an [OCPI status code](/05-status-codes/05-status-codes.md):
+[2001](/05-status-codes/05-status-codes.md).
 
 ## Client Owned Object Pull
 
@@ -464,17 +467,17 @@ four HTTP headers are to be added to any request/response to allow messages to b
 
 When implementing OCPI these four headers SHALL be implemented for any request/response to/from a Functional Module.
 This does not mean they have to be present in all request. There are situation/special request where some headers can or
-shall be omitted, See: [Open Routing Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
+shall be omitted, See: [Open Routing
+Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
 
 Only requests/responses from Function Modules: such as: [Tokens](/06-modules/07-tokens/01-intro.md),
-[Locations](/06-modules/03-locations/01-intro.md), [CDRs](/06-modules/05-cdrs/01-intro.md)
-etc. SHALL be routed, so need the routing headers.
+[Locations](/06-modules/03-locations/01-intro.md), [CDRs](/06-modules/05-cdrs/01-intro.md) etc. SHALL be routed, so need
+the routing headers.
 
-The requests/responses to/from Configuration Modules:
-[Credentials](/06-modules/02-credentials/01-intro.md),
-[Versions](/06-modules/01-versions/01-intro.md) and [Hub Client
-Info](/06-modules/10-hubclientinfo/01-intro.md) are not to be routed, and are for Platform-to-Platform
-or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
+The requests/responses to/from Configuration Modules: [Credentials](/06-modules/02-credentials/01-intro.md),
+[Versions](/06-modules/01-versions/01-intro.md) and [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md) are not
+to be routed, and are for Platform-to-Platform or Platform-to-Hub communication. Thus routing headers SHALL NOT be used
+with these modules.
 
 | HTTP Header            | Datatype                                           | Description                                                          |
 |------------------------|----------------------------------------------------|----------------------------------------------------------------------|
@@ -515,14 +518,13 @@ module, using its own party-id and country-code in the *OCPI-from-* headers. The
 country-code in the *OCPI-to-* headers.
 
 GET SHALL NOT be used in combination with Broadcast Push. If the requesting party wants to GET information of which it
-does not know the receiving party, an [Open Routing Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
-MUST be used. (see below)
+does not know the receiving party, an [Open Routing
+Request](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request) MUST be used. (see below)
 
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
-data like [Tokens](/06-modules/07-tokens/01-intro.md) and
-[Locations](/06-modules/03-locations/01-intro.md), but not so much for
-[CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](/06-modules/04-sessions/01-intro.md) as
-these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.
+data like [Tokens](/06-modules/07-tokens/01-intro.md) and [Locations](/06-modules/03-locations/01-intro.md), but not so
+much for [CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](/06-modules/04-sessions/01-intro.md) as these pieces of
+information are specific to only one party and are possibly even protected by GDPR or other laws.
 
 :::note
 For "Client Owned Objects", the party-id and country-code in the URL segments will still be the original party-id and
@@ -540,12 +542,14 @@ know the destination of a request, the *OCPI-to-* headers can be omitted in the 
 then decide to which party a request needs to be routed, or that it needs to be broadcasted if the destination cannot be
 determined.
 
-This has nothing to do with [Broadcast Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) though, as [Broadcast
+This has nothing to do with [Broadcast
+Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) though, as [Broadcast
 Push](/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) only works for the [Push
-model](/04-transport-and-format/01-json-http-implementation-guide.md#pull-and-push), not for [GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) requests.
+model](/04-transport-and-format/01-json-http-implementation-guide.md#pull-and-push), not for
+[GET](/04-transport-and-format/01-json-http-implementation-guide.md#get-method) requests.
 
-Open Routing Requests are possible for GET ([Not GET ALL](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs)), POST, PUT, PATCH and
-DELETE.
+Open Routing Requests are possible for GET ([Not GET
+ALL](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs)), POST, PUT, PATCH and DELETE.
 
 
 ![Example sequence diagram of a open routing GET from a CPO via the Hub](../images/sd_get_openrouting.svg)
@@ -622,8 +626,9 @@ This table contains the description of which headers are required to be used for
 #### Party to Party Open Routing Request
 
 This table contains the description of which headers are required to be used for which message when [the routing of a
-request needs to be determined by the Hub itself](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request). For an
-Open Routing Request, the TO headers in the request from the requesting party to the Hub MUST be omitted.
+request needs to be determined by the Hub
+itself](/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request). For an Open Routing
+Request, the TO headers in the request from the requesting party to the Hub MUST be omitted.
 
 | Name          | Route                      | TO Headers       | FROM Headers     |
 |---------------|----------------------------|------------------|------------------|
@@ -639,8 +644,9 @@ Open Routing Request, the TO headers in the request from the requesting party to
 ### GET All via Hubs (headers description)
 
 This table contains the description of which headers are required to be used when doing a [GET All via a
-Hub](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs). For a GET All via Hub: The HTTP Method SHALL be GET, The call is to a
-Senders Interface, the TO headers in the request to the Hub has to be set to the Hub.
+Hub](/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs). For a GET All via Hub: The HTTP
+Method SHALL be GET, The call is to a Senders Interface, the TO headers in the request to the Hub has to be set to the
+Hub.
 
 | Name                      | Route                      | TO Headers       | FROM Headers     |
 |---------------------------|----------------------------|------------------|------------------|

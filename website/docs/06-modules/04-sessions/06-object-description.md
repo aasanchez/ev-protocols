@@ -56,8 +56,9 @@ description](/06-modules/05-cdrs/06-object-description.md#step_size).
 
 :::note
 Different `authorization_reference` values might happen when for example a
-[ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object) had a different `authorization_reference` then the
-value returned by a [real-time authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization).
+[ReserveNow](/06-modules/08-commands/06-object-description.md#reservenow-object) had a different
+`authorization_reference` then the value returned by a [real-time
+authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization).
 :::
 
 ### Examples

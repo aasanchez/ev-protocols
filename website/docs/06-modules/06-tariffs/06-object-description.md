@@ -279,9 +279,9 @@ charging.
 
 This tariff has an end date: 30 June 2019, which is typically used when a tariff is going to be replaced by a new
 tariff. A [Connector](/06-modules/03-locations/06-object-description.md#connector-object) of a
-[Location](/06-modules/03-locations/06-object-description.md#location-object) can have multiple Tariffs (IDs) assigned. By assigning
-both, the old and the new tariff ID, they will automatically be replaced. It is not required to update all Locations at
-the same time, the old tariff can also be removed later.
+[Location](/06-modules/03-locations/06-object-description.md#location-object) can have multiple Tariffs (IDs) assigned.
+By assigning both, the old and the new tariff ID, they will automatically be replaced. It is not required to update all
+Locations at the same time, the old tariff can also be removed later.
 
 For a charging session where 50 kWh are charged, this tariff will result in costs of € 10.00 (excl. VAT) or € 11.00
 (incl. VAT) due to the price limit. If only 30 kWh were charged, the costs would be € 8.00 (excl. VAT) and € 8.85 (incl.
@@ -501,8 +501,8 @@ This examples shows the use of `tariff_alt_url`.
 
 This examples shows a `PROFILE_CHEAP` tariff, which is a smart charging tariff. Drivers are able to select this tariff
 by setting the `profile_type` in their [Charging
-Preferences](/06-modules/04-sessions/06-object-description.md#set-charging-preferences) to `CHEAP`. In such case, the price might not
-be fixed, but depend on the real-time energy prices. To explain this to the driver, a short text inside
+Preferences](/06-modules/04-sessions/06-object-description.md#set-charging-preferences) to `CHEAP`. In such case, the
+price might not be fixed, but depend on the real-time energy prices. To explain this to the driver, a short text inside
 `tariff_alt_text` might not be the best solution. Showing a graph could be better. Therefore it is also possible to
 provide an URL in `tariff_alt_url` to a site that explains the tariff better and in more detail.
 
@@ -932,8 +932,9 @@ A breakdown is as follows:
   * Billed per 1 Wh
 
 This example is very similar to [Tariff example with reservation
-price](/06-modules/06-tariffs/06-object-description.md#tariff-example-with-reservation-price) with the difference that expired reservations cost
-something and that reservation time is billed per 10 minutes. Also, the price for reservation is different.
+price](/06-modules/06-tariffs/06-object-description.md#tariff-example-with-reservation-price) with the difference that
+expired reservations cost something and that reservation time is billed per 10 minutes. Also, the price for reservation
+is different.
 
 For a charging session that was started 22 minutes after the reservation time, where the driver charges 20 kWh, this
 tariff will result in costs of € 6.50 (excl. VAT) or € 7.30 (incl. VAT). Because the reservation fee is billed per 10
@@ -1032,8 +1033,9 @@ A breakdown of this scenario is as follows:
   * Billed per 1 Wh
 
 This example is very similar to [Tariff example with reservation
-price](/06-modules/06-tariffs/06-object-description.md#tariff-example-with-reservation-price) with the difference that expired reservations cost
-something and that reservation time is billed per 10 minutes. Also, the price for reservation is different.
+price](/06-modules/06-tariffs/06-object-description.md#tariff-example-with-reservation-price) with the difference that
+expired reservations cost something and that reservation time is billed per 10 minutes. Also, the price for reservation
+is different.
 
 For a charging session that was started 22 minutes after the reservation time, where the driver charges 20 kWh, this
 tariff will result in costs of € 7.00 (excl. VAT) or € 7.90 (incl. VAT). Because the reservation fee is billed per 10
