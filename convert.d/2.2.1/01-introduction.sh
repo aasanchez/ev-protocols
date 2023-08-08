@@ -27,7 +27,17 @@ function pre_introduction(){
   gsed -i 's|Vattenfall|https://vattenfall.com[Vattenfall]|g' "$file"
   gsed -i 's|Involtum|https://www.involtum.com[Involtum]|g' "$file"
   gsed -i 's|EON|https://www.eon.com[EON]|g' "$file"
-
+  gsed -i 's|Eneco Mobility|https://www.eneco-emobility.com[Eneco Mobility]|g' "$file"
+  gsed -i 's|Google|https://www.google.com[Google]|g' "$file"
+  gsed -i 's|Jedlix|https://www.jedlix.com/[Jedlix]|g' "$file"
+  gsed -i 's|XXIMO|https://www.xximo.com[XXIMO]|g' "$file"
+  gsed -i 's|Mnemonics|https://www.mnemonic.io[Mnemonics]|g' "$file"
+  gsed -i 's||[]|g' "$file"
+  gsed -i 's||[]|g' "$file"
+  gsed -i 's||[]|g' "$file"
+  gsed -i 's||[]|g' "$file"
+  gsed -i 's||[]|g' "$file"
+  gsed -i 's||[]|g' "$file"
 }
 
 function fix_introduction() {
