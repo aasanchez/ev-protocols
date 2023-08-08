@@ -8,13 +8,13 @@ slug: /modules/sessions/interfaces-and-endpoints
 
 Typically implemented by market roles like: CPO.
 
-| Method                  | Description                                                                                                                                                                               |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev) | Fetch Session objects of charging sessions last updated between the `{date_from}` and `{date_to}`([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)). |
-| POST                    | n/a                                                                                                                                                                                       |
-| [PUT](https://ocpi.dev) | Setting Charging Preferences of an ongoing session.                                                                                                                                       |
-| PATCH                   | n/a                                                                                                                                                                                       |
-| DELETE                  | n/a                                                                                                                                                                                       |
+| Method                                                                   | Description                                                                                                                                                                               |
+|--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [GET](/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method) | Fetch Session objects of charging sessions last updated between the `{date_from}` and `{date_to}`([paginated](/04-transport-and-format/01-json-http-implementation-guide.md#pagination)). |
+| POST                                                                     | n/a                                                                                                                                                                                       |
+| [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method) | Setting Charging Preferences of an ongoing session.                                                                                                                                       |
+| PATCH                                                                    | n/a                                                                                                                                                                                       |
+| DELETE                                                                   | n/a                                                                                                                                                                                       |
 
 ### **GET** Method
 
@@ -54,10 +54,10 @@ the [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#p
 Any older information that is not specified in the response is considered no longer valid. Each object must contain all
 required fields. Fields that are not specified may be considered as null values.
 
-|                             |       |                                                            |
-|-----------------------------|-------|------------------------------------------------------------|
-| Datatype                    | Card. | Description                                                |
-| [Session](https://ocpi.dev) | \*    | List of Session objects that match the request parameters. |
+|                                                                            |       |                                                            |
+|----------------------------------------------------------------------------|-------|------------------------------------------------------------|
+| Datatype                                                                   | Card. | Description                                                |
+| [Session](/06-modules/04-sessions/06-object-description.md#session-object) | \*    | List of Session objects that match the request parameters. |
 
 ### **PUT** Method
 
@@ -85,19 +85,19 @@ The following parameter has to be provided as URL segments.
 
 ##### Request Body
 
-In the body, a [ChargingPreferences](https://ocpi.dev) object has to be provided.
+In the body, a [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) object has to be provided.
 
-| Type                                    | Card. | Description                                                  |
-|-----------------------------------------|-------|--------------------------------------------------------------|
-| [ChargingPreferences](https://ocpi.dev) | 1     | Updated Charging Preferences of the driver for this Session. |
+| Type                                                                                               | Card. | Description                                                  |
+|----------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
+| [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) | 1     | Updated Charging Preferences of the driver for this Session. |
 
 ##### Response Data
 
-The response contains a [ChargingPreferencesResponse](https://ocpi.dev) value.
+The response contains a [ChargingPreferencesResponse](/06-modules/04-sessions/07-data-types.md#chargingpreferencesresponse-enum) value.
 
-| Type                                            | Card. | Description                                       |
-|-------------------------------------------------|-------|---------------------------------------------------|
-| [ChargingPreferencesResponse](https://ocpi.dev) | 1     | Response to the Charging Preferences PUT request. |
+| Type                                                                                                     | Card. | Description                                       |
+|----------------------------------------------------------------------------------------------------------|-------|---------------------------------------------------|
+| [ChargingPreferencesResponse](/06-modules/04-sessions/07-data-types.md#chargingpreferencesresponse-enum) | 1     | Response to the Charging Preferences PUT request. |
 
 ## Receiver Interface
 
@@ -116,13 +116,13 @@ Example:
 
 * `https://www.server.com/ocpi/emsp/2.2.1/sessions/BE/BEC/1234`
 
-| Method                    | Description                                                                               |
-|---------------------------|-------------------------------------------------------------------------------------------|
-| [GET](https://ocpi.dev)   | Retrieve a Session object from the eMSP's system with Session.id equal to `{session_id}`. |
-| POST                      | n/a                                                                                       |
-| [PUT](https://ocpi.dev)   | Send a new/updated Session object to the eMSP.                                            |
-| [PATCH](https://ocpi.dev) | Update the Session object with Session.id equal to `{session_id}`.                        |
-| DELETE                    | n/a                                                                                       |
+| Method                                                                       | Description                                                                               |
+|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| [GET](/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method-1)   | Retrieve a Session object from the eMSP's system with Session.id equal to `{session_id}`. |
+| POST                                                                         | n/a                                                                                       |
+| [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1)   | Send a new/updated Session object to the eMSP.                                            |
+| [PATCH](/06-modules/04-sessions/05-interfaces-and-endpoints.md#patch-method) | Update the Session object with Session.id equal to `{session_id}`.                        |
+| DELETE                                                                       | n/a                                                                                       |
 
 ### **GET** Method
 
@@ -143,20 +143,20 @@ The following parameters shall be provided as URL segments.
 
 The response contains the requested Session object.
 
-|                             |       |                           |
-|-----------------------------|-------|---------------------------|
-| Datatype                    | Card. | Description               |
-| [Session](https://ocpi.dev) | 1     | Requested Session object. |
+|                                                                            |       |                           |
+|----------------------------------------------------------------------------|-------|---------------------------|
+| Datatype                                                                   | Card. | Description               |
+| [Session](/06-modules/04-sessions/06-object-description.md#session-object) | 1     | Requested Session object. |
 
 ### **PUT** Method
 
 Inform the eMSP's system about a new/updated Session object in the CPO's system.
 
-When a PUT request is received for an existing [Session](https://ocpi.dev) object (the object is PUT to the
-same URL), The newly received [Session](https://ocpi.dev) object SHALL replace the existing object.
+When a PUT request is received for an existing [Session](/06-modules/04-sessions/06-object-description.md#session-object) object (the object is PUT to the
+same URL), The newly received [Session](/06-modules/04-sessions/06-object-description.md#session-object) object SHALL replace the existing object.
 
 Any `charging_periods` from the existing object SHALL be replaced by the `charging_periods` from the newly received
-[Session](https://ocpi.dev) object. If the new [Session](https://ocpi.dev) object does not
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the new [Session](/06-modules/04-sessions/06-object-description.md#session-object) object does not
 contain `charging_periods` (field is omitted or contains any empty list), the `charging_periods` of the existing object
 SHALL be removed (replaced by the new empty list).
 
@@ -164,9 +164,9 @@ SHALL be removed (replaced by the new empty list).
 
 The request contains the new or updated Session object.
 
-| Type                        | Card. | Description                    |
-|-----------------------------|-------|--------------------------------|
-| [Session](https://ocpi.dev) | 1     | New or updated Session object. |
+| Type                                                                       | Card. | Description                    |
+|----------------------------------------------------------------------------|-------|--------------------------------|
+| [Session](/06-modules/04-sessions/06-object-description.md#session-object) | 1     | New or updated Session object. |
 
 ##### Request Parameters
 
@@ -180,28 +180,28 @@ The following parameters shall be provided as URL segments.
 
 ### **PATCH** Method
 
-Same as the [PUT](https://ocpi.dev) method, but only the fields/objects that need to be updated have to be
+Same as the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method, but only the fields/objects that need to be updated have to be
 present. Fields/objects which are not specified are considered unchanged.
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
-The PATCH method of the Session Receiver interface works on the entire [Session](https://ocpi.dev) object
+The PATCH method of the Session Receiver interface works on the entire [Session](/06-modules/04-sessions/06-object-description.md#session-object) object
 only. It is not allowed to use extra URL segments to try to PATCH fields of inner objects of the
-[Session](https://ocpi.dev) object directly.
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object directly.
 
-When a PATCH request contains the `charging_periods` field (inside a [Session](https://ocpi.dev) object),
+When a PATCH request contains the `charging_periods` field (inside a [Session](/06-modules/04-sessions/06-object-description.md#session-object) object),
 this SHALL be processed as a request to add all the [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class)
-objects to the existing [Session](https://ocpi.dev) object. If the request `charging_periods` list is
+objects to the existing [Session](/06-modules/04-sessions/06-object-description.md#session-object) object. If the request `charging_periods` list is
 omitted (or contains an empty list), no changes SHALL be made to the existing list of `charging_periods`.
 
 If existing [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) objects in a
-[Session](https://ocpi.dev) need to be replaced or removed, the Sender SHALL use the
-[PUT](https://ocpi.dev) method to replace the entire [Session](https://ocpi.dev) object
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) need to be replaced or removed, the Sender SHALL use the
+[PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) method to replace the entire [Session](/06-modules/04-sessions/06-object-description.md#session-object) object
 (including all the `charging_periods`).
 
 ##### Example: update the total cost
 
-Patching the `total_cost` needs to be done on the [Session](https://ocpi.dev) Object.
+Patching the `total_cost` needs to be done on the [Session](/06-modules/04-sessions/06-object-description.md#session-object) Object.
 
 ``` json
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101

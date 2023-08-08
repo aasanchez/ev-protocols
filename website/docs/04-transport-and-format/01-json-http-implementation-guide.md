@@ -521,7 +521,7 @@ MUST be used. (see below)
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
 data like [Tokens](https://ocpi.dev) and
 [Locations](/06-modules/03-locations/01-intro.md), but not so much for
-[CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](https://ocpi.dev) as
+[CDRs](/06-modules/05-cdrs/01-intro.md) and [Sessions](/06-modules/04-sessions/01-intro.md) as
 these pieces of information are specific to only one party and are possibly even protected by GDPR or other laws.
 
 :::note

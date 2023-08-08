@@ -8,8 +8,8 @@ slug: /modules/cdrs/object-description
 
 The *CDR* object describes the charging session and its costs, how these costs are composed, etc.
 
-The CDR object is different from the [Session](https://ocpi.dev) object. The
-[Session](https://ocpi.dev) object is dynamic as it reflects the current state of the
+The CDR object is different from the [Session](/06-modules/04-sessions/06-object-description.md#session-object) object. The
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) object is dynamic as it reflects the current state of the
 charging session. The information is meant to be viewed by the driver while the charging session is ongoing.
 
 The CDR on the other hand can be thought of as *sealed*, preserving the information valid at the moment in time the
@@ -72,8 +72,8 @@ differs for the different [TariffElements](https://ocpi.dev), the `step_size` of
 the last relevant [PriceComponent](https://ocpi.dev) is used.
 
 The `step_size` is not taken into account when switching between two Tariffs Example: A driver selects a different
-[Charging Preference](https://ocpi.dev)
-[`profile_type`](https://ocpi.dev) during an ongoing charging session, the
+[Charging Preference](/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
+[`profile_type`](/06-modules/04-sessions/07-data-types.md#profiletype-enum) during an ongoing charging session, the
 different profile might have a different tariff.
 
 The `step_size` uses the total amount of a certain unit used during a session, not only the last ChargingPeriod. In

@@ -54,8 +54,8 @@ request.
 
 ## Example of setting/updating a ChargingProfile by the Sender (typically the SCSP or eMSP)
 
-When a new [Session](https://ocpi.dev) is started, or when an update to an existing
-[Session](https://ocpi.dev) is available, the CPO sends the Session object to the eMSP
+When a new [Session](/06-modules/04-sessions/06-object-description.md#session-object) is started, or when an update to an existing
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) is available, the CPO sends the Session object to the eMSP
 or SCSP. The eMSP or SCSP calculates a Charging Profile and sends it to the CPO by calling the Charging Profiles
 [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Receiver interface.
 
@@ -76,9 +76,9 @@ eMSP of SCSP in the [PUT](/06-modules/09-charging-profiles/05-interfaces-and-end
 When a new Session is started, the CPO sends the Session object to the eMSP, the eMSP forwards the Session object to the
 SCSP.
 
-When a new [Session](https://ocpi.dev) is started, or when an update to an existing
-[Session](https://ocpi.dev) is available, the CPO sends the Session object to the
-eMSP. The eMSP forwards the [Session](https://ocpi.dev) Object to the SCSP. The SCSP
+When a new [Session](/06-modules/04-sessions/06-object-description.md#session-object) is started, or when an update to an existing
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) is available, the CPO sends the Session object to the
+eMSP. The eMSP forwards the [Session](/06-modules/04-sessions/06-object-description.md#session-object) Object to the SCSP. The SCSP
 calculates a Charging Profile and sends it to the eMSP by calling the Charging Profiles
 [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Sender interface implemented by the eMSP. The eMSP forwards
 it to the CPO by calling the Charging Profiles [PUT](/06-modules/09-charging-profiles/05-interfaces-and-endpoints.md#put-method) method on the Receiver

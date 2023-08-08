@@ -26,7 +26,7 @@ When the CPO wants to delete an EVSE from the list of active EVSEs, they MUST up
 `REMOVED` and call the [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) on the eMSP system. A
 Location without any valid EVSE object can be considered expired and should no longer be displayed. There is no way to
 entirely delete Locations, EVSEs and Connectors as there are other modules like
-[`sessions`](https://ocpi.dev) that depend on them. If it was possible to remove
+[`sessions`](/06-modules/04-sessions/01-intro.md) that depend on them. If it was possible to remove
 these objects, those links would no longer work.
 
 When the CPO is not sure about the state or existence of a Location, EVSE or Connector object in the eMSP's system, the

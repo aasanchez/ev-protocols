@@ -24,5 +24,5 @@ See [CommandType](/06-modules/08-commands/07-data-types.md#commandtype-enum) for
 `UNLOCK_CONNECTOR` command with care, please read the note at [CommandType](/06-modules/08-commands/07-data-types.md#commandtype-enum).*
 
 **Module dependency:** [Locations module](/06-modules/03-locations/01-intro.md), [Sessions
-module](https://ocpi.dev)
+module](/06-modules/04-sessions/01-intro.md)
 

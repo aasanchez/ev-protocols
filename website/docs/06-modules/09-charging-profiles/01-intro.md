@@ -45,7 +45,7 @@ OCPI provides the means for SCSPs to do this. Parties doing this have to adhere 
 setup contracts etc. Local laws might oblige explicit consent from the driver etc.
 :::
 
-**Module dependency:** [Sessions module](https://ocpi.dev)
+**Module dependency:** [Sessions module](/06-modules/04-sessions/01-intro.md)
 
 ## Smart Charging Topologies
 
@@ -80,8 +80,8 @@ agreed to use OCPI as the interface.
 
 The eMSP *owns* the customer, so if the eMSP knows that its customer agrees with the eMSP manipulating the charging
 speed, the eMSP is free to do this. The eMSP can forward OCPI
-[Session](https://ocpi.dev) Objects to the SCSP. the SCSP can act on the
-received/updated [Session](https://ocpi.dev) Objects, by sending Charging Profile
+[Session](/06-modules/04-sessions/06-object-description.md#session-object) Objects to the SCSP. the SCSP can act on the
+received/updated [Session](/06-modules/04-sessions/06-object-description.md#session-object) Objects, by sending Charging Profile
 commands via the eMSP to the CPO.
 
 The eMSP and SCSP have to take into account that they have to oblige to local privacy laws when exchanging information
@@ -111,8 +111,8 @@ simple as a sticker on the Charge Point, or might even be part of the tariff tex
 
 The CPO might generate ChargingProfiles themselves, but as OCPI is then not used this is not part of this document.
 
-The CPO can forward OCPI [Session](https://ocpi.dev) Objects to the SCSP. the SCSP can
-act on the received/updated [Session](https://ocpi.dev) Objects, by sending Charging
+The CPO can forward OCPI [Session](/06-modules/04-sessions/06-object-description.md#session-object) Objects to the SCSP. the SCSP can
+act on the received/updated [Session](/06-modules/04-sessions/06-object-description.md#session-object) Objects, by sending Charging
 Profile commands to the CPO.
 
 The CPO and SCSP have to take into account that they have to oblige to local privacy laws when exchanging information

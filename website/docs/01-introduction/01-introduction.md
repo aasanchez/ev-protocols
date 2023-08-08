@@ -68,11 +68,11 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
   * [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md)
 * [Support Platforms with multiple/different roles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class)
 * [Charging Profiles](/06-modules/09-charging-profiles/01-intro.md)
-* [Preference based Smart Charging](https://ocpi.dev)
+* [Preference based Smart Charging](/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
 * Improvements:
   * [CDRs](/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration law/Eichrecht support, Session_id,
     AuthorizationReference, CdrLocation, CdrToken
-  * [Sessions](https://ocpi.dev): VAT, CdrToken, How to add a Charging Period
+  * [Sessions](/06-modules/04-sessions/06-object-description.md#session-object): VAT, CdrToken, How to add a Charging Period
   * [Tariffs](https://ocpi.dev): Tariff types, Min/Max price, reservation tariff, Much
     more examples
   * [Locations](/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of small improvements
