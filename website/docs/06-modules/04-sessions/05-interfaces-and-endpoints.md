@@ -31,7 +31,7 @@ Examples:
 * `https://www.server.com/ocpi/2.2.1/sessions/?date_from=2019-01-29T12:00:00&limit=100`
 * `https://www.server.com/ocpi/cpo/2.2.1/sessions/?offset=50&limit=100`
 
-##### Request Parameters
+#### Request Parameters
 
 Only Sessions with `last_update` between the given `{date_from}` (including) and `{date_to}` (excluding) will be
 returned.
@@ -46,7 +46,7 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 | offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                             |
 | limit     | int                                             | no       | Maximum number of objects to GET.                                                                  |
 
-##### Response Data
+#### Response Data
 
 The response contains a list of Session objects that match the given parameters in the request, the header will contain
 the [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
@@ -75,7 +75,7 @@ Examples:
 The `/charging_preferences` URL suffix is required when setting Charging Preferences.
 :::
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameter has to be provided as URL segments.
 
@@ -83,7 +83,7 @@ The following parameter has to be provided as URL segments.
 |------------|-----------------------------------------------------|----------|-----------------------------------------------------------------------------|
 | session_id | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Session.id of the Session for which the Charging Preferences are to be set. |
 
-##### Request Body
+#### Request Body
 
 In the body, a [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) object
 has to be provided.
@@ -92,7 +92,7 @@ has to be provided.
 |----------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------|
 | [ChargingPreferences](/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) | 1     | Updated Charging Preferences of the driver for this Session. |
 
-##### Response Data
+#### Response Data
 
 The response contains a
 [ChargingPreferencesResponse](/06-modules/04-sessions/07-data-types.md#chargingpreferencesresponse-enum) value.
@@ -132,7 +132,7 @@ Example:
 The CPO system might request the current version of a Session object from the eMSP's system to, for example, validate
 the state, or because the CPO has received an error during a PATCH operation.
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters shall be provided as URL segments.
 
@@ -142,7 +142,7 @@ The following parameters shall be provided as URL segments.
 | party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the CPO performing the GET on the eMSP's system. |
 | session_id   | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | id of the Session object to get from the eMSP's system.                    |
 
-##### Response Data
+#### Response Data
 
 The response contains the requested Session object.
 
@@ -166,7 +166,7 @@ Any `charging_periods` from the existing object SHALL be replaced by the `chargi
 (field is omitted or contains any empty list), the `charging_periods` of the existing object SHALL be removed (replaced
 by the new empty list).
 
-##### Request Body
+#### Request Body
 
 The request contains the new or updated Session object.
 
@@ -174,7 +174,7 @@ The request contains the new or updated Session object.
 |----------------------------------------------------------------------------|-------|--------------------------------|
 | [Session](/06-modules/04-sessions/06-object-description.md#session-object) | 1     | New or updated Session object. |
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters shall be provided as URL segments.
 
@@ -209,7 +209,7 @@ SHALL use the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-m
 [Session](/06-modules/04-sessions/06-object-description.md#session-object) object (including all the
 `charging_periods`).
 
-##### Example: update the total cost
+#### Example: update the total cost
 
 Patching the `total_cost` needs to be done on the
 [Session](/06-modules/04-sessions/06-object-description.md#session-object) Object.
@@ -226,7 +226,7 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 }
 ```
 
-##### Example: adding a new ChargingPeriod
+#### Example: adding a new ChargingPeriod
 
 PATCH used to add a new [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) to the Session and
 updating all related fields.

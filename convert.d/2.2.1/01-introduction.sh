@@ -32,12 +32,12 @@ function pre_introduction(){
   gsed -i 's|Jedlix|https://www.jedlix.com/[Jedlix]|g' "$file"
   gsed -i 's|XXIMO|https://www.xximo.com[XXIMO]|g' "$file"
   gsed -i 's|Mnemonics|https://www.mnemonic.io[Mnemonics]|g' "$file"
-  gsed -i 's||[]|g' "$file"
-  gsed -i 's||[]|g' "$file"
-  gsed -i 's||[]|g' "$file"
-  gsed -i 's||[]|g' "$file"
-  gsed -i 's||[]|g' "$file"
-  gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
+  # gsed -i 's||[]|g' "$file"
 }
 
 function fix_introduction() {
@@ -80,7 +80,7 @@ function flavored_introduction(){
   tempfile="$file.tmp"
 
   echo "$file ocpi.dev flavored"
-  gsed -i -z "s/For more information on detailed changes see \[changelog\](https:\/\/ocpi\.dev)\.\n\n//gm" "$file"
+  gsed -i '/For more information on detailed changes see/d' "$file"
 
   splitInH2 "$file"
   

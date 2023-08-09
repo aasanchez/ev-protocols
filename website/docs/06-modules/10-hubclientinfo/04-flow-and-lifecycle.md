@@ -29,7 +29,7 @@ the full list at the start-up of their system, the connected party can call the
 [GET](/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1) on the Hubs ClientInfo endpoint to receive all
 ClientInfo objects. This method is not for operational flow.
 
-## Still alive check.
+## Still alive check
 
 The hubs needs to determine if a connection is still "alive".
 

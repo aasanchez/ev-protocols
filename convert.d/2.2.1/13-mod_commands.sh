@@ -113,6 +113,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^##### /#### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"

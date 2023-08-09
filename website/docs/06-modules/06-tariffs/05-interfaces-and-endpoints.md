@@ -38,7 +38,7 @@ Examples:
 * `https://www.server.com/ocpi/2.2.1/tariffs/?date_from=2019-01-29T12:00:00&limit=100`
 * `https://www.server.com/ocpi/cpo/2.2.1/tariffs/?offset=50&limit=100`
 
-##### Request Parameters
+#### Request Parameters
 
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only Tariffs with `last_updated` between the
 given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
@@ -53,7 +53,7 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 | offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                            |
 | limit     | int                                             | no       | Maximum number of objects to GET.                                                                 |
 
-##### Response Data
+#### Response Data
 
 The endpoint returns an object with a list of valid Tariffs, the header will contain the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
@@ -97,7 +97,7 @@ If the CPO wants to check the status of a Tariff in the eMSP's system, it might 
 for validation purposes. After all, the CPO is the owner of the object, so it would be illogical if the eMSP's system
 had a different status or was missing the object entirely.
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters SHALL be provided as URL segments.
 
@@ -107,7 +107,7 @@ The following parameters SHALL be provided as URL segments.
 | party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the CPO performing the GET request on the eMSP's system. |
 | tariff_id    | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Tariff.id of the Tariff object to retrieve.                                        |
 
-##### Response Data
+#### Response Data
 
 The response contains the requested object.
 
@@ -119,7 +119,7 @@ The response contains the requested object.
 
 New or updated Tariff objects are pushed from the CPO to the eMSP.
 
-##### Request Body
+#### Request Body
 
 In the PUT request, the new or updated Tariff object is sent in the body.
 
@@ -127,7 +127,7 @@ In the PUT request, the new or updated Tariff object is sent in the body.
 |-------------------------------------------------------------------------|-------|-------------------------------|
 | [Tariff](/06-modules/06-tariffs/06-object-description.md#tariff-object) | 1     | New or updated Tariff object. |
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters SHALL be provided as URL segments.
 
@@ -137,7 +137,7 @@ The following parameters SHALL be provided as URL segments.
 | party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3)  | yes      | Party ID (Provider ID) of the CPO performing the PUT request on the eMSP's system. This SHALL be the same value as the `party_id` in the Tariff object being pushed. |
 | tariff_id    | [CiString](/07-types/01-intro.md#cistring-type)(36) | yes      | Tariff.id of the Tariff object to create or replace.                                                                                                                 |
 
-##### Example: New Tariff € 2 per hour charging time (not parking)
+#### Example: New Tariff € 2 per hour charging time (not parking)
 
 ```json
 PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12
@@ -171,7 +171,7 @@ Before deleting a Tariff object, it is RECOMMENDED to ensure that the Tariff obj
 object](/06-modules/03-locations/06-object-description.md#connector-object) within the `tariff_ids`.
 :::
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters SHALL be provided as URL segments.
 

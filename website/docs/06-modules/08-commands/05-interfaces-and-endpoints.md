@@ -32,7 +32,7 @@ Examples:
 
 ### **POST** Method
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameter shall be provided as URL segments.
 
@@ -54,7 +54,7 @@ Depending on the `command` parameter the body SHALL contain the applicable objec
 | [StopSession](/06-modules/08-commands/06-object-description.md#stopsession-object)             | 1     | StopSession object, for the `STOP_SESSION` command, with information needed to stop a sessions.                                                  |
 | [UnlockConnector](/06-modules/08-commands/06-object-description.md#unlockconnector-object)     | 1     | UnlockConnector object, for the `UNLOCK_CONNECTOR` command, with information needed to unlock a connector of a Charge Point.                     |
 
-##### Response Data
+#### Response Data
 
 The response contains the direct response from the Receiver, not the response from the Charge Point itself, that will be
 sent via an asynchronous POST on the Sender interface if this response is `ACCEPTED`.

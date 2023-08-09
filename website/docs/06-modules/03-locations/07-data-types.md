@@ -126,7 +126,7 @@ brands like Greenpeace Energy, etc.)*
 
 ### Examples
 
-##### Simple
+#### Simple
 
 ``` json
 {
@@ -136,7 +136,7 @@ brands like Greenpeace Energy, etc.)*
 }
 ```
 
-##### Tariff energy provider name
+#### Tariff energy provider name
 
 ``` json
 {
@@ -148,7 +148,7 @@ brands like Greenpeace Energy, etc.)*
 }
 ```
 
-##### Complete
+#### Complete
 
 ``` json
 {

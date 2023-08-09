@@ -59,8 +59,6 @@ The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 
 During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
 minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
 
-For more information on detailed changes see \<<https://ocpi.dev,changelog>\>.
-
 ## OCPI 2.2
 
 OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
@@ -84,8 +82,6 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
     improvements
   * [Tokens](/06-modules/07-tokens/06-object-description.md#token-object): Group_id, energy contract
   * [Commands](/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
-
-For more information on detailed changes see \<<https://ocpi.dev,changelog>\>.
 
 ## OCPI is developed with support of
 

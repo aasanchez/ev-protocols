@@ -33,7 +33,7 @@ List](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-list-request-p
 retrieve information about one specific Location, EVSE or Connector ([GET
 Object](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-object-request-parameters)).
 
-##### GET List: Request Parameters
+#### GET List: Request Parameters
 
 Endpoint structure definition:
 
@@ -62,7 +62,7 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 | offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                              |
 | limit     | int                                             | no       | Maximum number of objects to GET.                                                                   |
 
-##### GET List: Response Data
+#### GET List: Response Data
 
 This endpoint returns a list of Location objects. The header will contain the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
@@ -76,7 +76,7 @@ needs to be considered no longer valid.
 |-------------------------------------------------------------------------------|-------|-----------------------------------------|
 | [Location](/06-modules/03-locations/06-object-description.md#location-object) | \*    | List of all Locations with valid EVSEs. |
 
-##### GET Object: Request Parameters
+#### GET Object: Request Parameters
 
 Endpoint structure definition for retrieving a Location, EVSE or Connector:
 
@@ -96,7 +96,7 @@ The following parameters can be provided as URL segments in the same order.
 | evse_uid     | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Evse.uid, required when requesting an EVSE or Connector object. |
 | connector_id | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Connector.id, required when requesting a Connector object.      |
 
-##### GET Object: Response Data
+#### GET Object: Response Data
 
 The response contains the requested object.
 
@@ -144,7 +144,7 @@ system had a different status or was missing an object. If a discrepancy is foun
 eMSP via a [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or
 [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) call.
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters can be provided as URL segments.
 
@@ -156,7 +156,7 @@ The following parameters can be provided as URL segments.
 | evse_uid     | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Evse.uid, required when requesting an EVSE or Connector object.         |
 | connector_id | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Connector.id, required when requesting a Connector object.              |
 
-##### Response Data
+#### Response Data
 
 The response contains the requested object.
 
@@ -182,7 +182,7 @@ When the PUT only contains a [EVSE](/06-modules/03-locations/06-object-descripti
 SHALL also set the new `last_updated` value on the parent
 [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
-##### Request Parameters
+#### Request Parameters
 
 This is an information Push message, the objects pushed will not be owned by the eMSP. To make distinctions between
 objects being pushed to an eMSP from different CPOs, the
@@ -199,7 +199,7 @@ Interface](/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-inte
 | evse_uid     | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Evse.uid, required when an EVSE or Connector object is pushed.                                                                                                |
 | connector_id | [CiString](/07-types/01-intro.md#cistring-type)(36) | no       | Connector.id, required when a Connector object is pushed.                                                                                                     |
 
-##### Request Body
+#### Request Body
 
 The request body contains the new/updated object.
 
@@ -218,7 +218,7 @@ also set the new `last_updated` value on the parent
 | [EVSE](/06-modules/03-locations/06-object-description.md#evse-object)           | 1     | New EVSE object, or EVSE object to replace.           |
 | [Connector](/06-modules/03-locations/06-object-description.md#connector-object) | 1     | New Connector object, or Connector object to replace. |
 
-##### Example: add an EVSE
+#### Example: add an EVSE
 
 To add an *EVSE*, simply put the full object in an update message, including all its required fields. Since the id will
 be new to the eMSP's system, the receiving party will know that it is a new object. When not all required fields are
@@ -267,7 +267,7 @@ When the PATCH is on a [EVSE](/06-modules/03-locations/06-object-description.md#
 also set the new `last_updated` value on the parent
 [Location](/06-modules/03-locations/06-object-description.md#location-object) Object.
 
-##### Example: a simple status update
+#### Example: a simple status update
 
 This is the most common type of update message. It is used to notify eMSPs that the status of an EVSE changed. In this
 case it is the EVSE with uid `3255` of the Location with id `1012`.
@@ -281,7 +281,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
 }
 ```
 
-##### Example: change the location name
+#### Example: change the location name
 
 In this example the name of the Location with id `1012` is being updated.
 
@@ -295,7 +295,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
 }
 ```
 
-##### Example: set tariff update
+#### Example: set tariff update
 
 In this example Connector `2` of EVSE `1` of Location `1012` receives a new pricing scheme.
 
@@ -310,7 +310,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/
 }
 ```
 
-##### Example: delete an EVSE
+#### Example: delete an EVSE
 
 An EVSE can be deleted by updating its `status` property.
 

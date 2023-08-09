@@ -37,7 +37,7 @@ Examples:
 
 Fetch CDRs from the CPO's system.
 
-##### Request Parameters
+#### Request Parameters
 
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only CDRs with `last_updated` between the given
 `{date_from}` (including) and `{date_to}` (excluding) will be returned.
@@ -52,7 +52,7 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 | offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                         |
 | limit     | int                                             | no       | Maximum number of objects to GET.                                                              |
 
-##### Response Data
+#### Response Data
 
 The endpoint returns a list of CDRs matching the given parameters in the GET request, the header will contain the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
@@ -92,12 +92,12 @@ Example:
 
 * `https://www.server.com/ocpi/2.2.1/cdrs/1234`
 
-##### Response URL
+#### Response URL
 
 To retrieve an existing URL from the eMSP's system, the URL, returned in the response to a POST of a new CDR, has to be
 used.
 
-##### Response Data
+#### Response Data
 
 The endpoint returns the requested CDR, if it exists.
 
@@ -120,7 +120,7 @@ Example:
 
 * `https://www.server.com/ocpi/2.2.1/cdrs/`
 
-##### Request Body
+#### Request Body
 
 In the POST request the new CDR object is sent.
 
@@ -128,7 +128,7 @@ In the POST request the new CDR object is sent.
 |----------------------------------------------------------------|-------|-----------------|
 | [CDR](/06-modules/05-cdrs/06-object-description.md#cdr-object) | 1     | New CDR object. |
 
-##### Response Headers
+#### Response Headers
 
 The response should contain the URL to the just created CDR object in the eMSP's system.
 

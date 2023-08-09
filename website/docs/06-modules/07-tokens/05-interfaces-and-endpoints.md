@@ -40,7 +40,7 @@ If the eMSP wants to check the status of a Token in the CPO system it might GET 
 validation purposes. The eMSP is the owner of the objects, so it would be illogical if the CPO system had a different
 status or was missing an object.
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters: `country_code`, `party_id`, `token_uid` have to be provided as URL segments.
 
@@ -53,7 +53,7 @@ The parameter: `type` may be provided as an URL parameter
 | token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the Token object to retrieve.                                                                             |
 | type         | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token to retrieve. Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum) |
 
-##### Response Data
+#### Response Data
 
 The response contains the requested object.
 
@@ -65,7 +65,7 @@ The response contains the requested object.
 
 New or updated Token objects are pushed from the eMSP to the CPO.
 
-##### Request Body
+#### Request Body
 
 In the put request a new or updated Token object is sent.
 
@@ -73,7 +73,7 @@ In the put request a new or updated Token object is sent.
 |----------------------------------------------------------------------|-------|------------------------------|
 | [Token](/06-modules/07-tokens/06-object-description.md#token-object) | 1     | New or updated Token object. |
 
-##### Request Parameters
+#### Request Parameters
 
 The following parameters: `country_code`, `party_id`, `token_uid` have to be provided as URL segments.
 
@@ -86,7 +86,7 @@ The parameter: `type` may be provided as an URL parameter
 | token_uid    | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the (new) Token object (to replace).                                                                                                               |
 | type         | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token of the (new) Token object (to replace). Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum)               |
 
-##### Example: put a new Token
+#### Example: put a new Token
 
 ``` json
 PUT To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
@@ -113,7 +113,7 @@ that have to be updated have to be present, other fields/objects that are not sp
 
 Any request to the PATCH method SHALL contain the `last_updated` field.
 
-##### Example: invalidate a Token
+#### Example: invalidate a Token
 
 ``` json
 PATCH To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
@@ -154,7 +154,7 @@ Examples:
 * `https://www.server.com/ocpi/2.2.1/tokens/?date_from=2019-01-29T12:00:00&limit=100`
 * `https://www.server.com/ocpi/emsp/2.2.1/tokens/?offset=50&limit=100`
 
-##### Request Parameters
+#### Request Parameters
 
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only Tokens with (`last_updated`) between the
 given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
@@ -171,7 +171,7 @@ This request is [paginated](/04-transport-and-format/01-json-http-implementation
 | offset    | int                                             | no       | The offset of the first object returned. Default is 0.                                           |
 | limit     | int                                             | no       | Maximum number of objects to GET.                                                                |
 
-##### Response Data
+#### Response Data
 
 The endpoint response with list of valid Token objects, the header will contain the
 [pagination](/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related headers.
@@ -205,7 +205,7 @@ When the eMSP receives a *real-time* authorization request from a CPO that conta
 LocationReferences provided) to determine if the Token might be used, the eMSP SHALL respond with the OCPI status:
 [2002](/05-status-codes/05-status-codes.md#2xxx-client-errors)
 
-##### Request Parameters
+#### Request Parameters
 
 The parameter: `token_uid` has to be provided as URL segments.
 
@@ -216,7 +216,7 @@ The parameter: `type` may be provided as an URL parameter
 | token_uid | [CiString](/07-types/01-intro.md#cistring-type)(36)                | yes      | Token.uid of the Token for which authorization is requested.                                                                               |
 | type      | [TokenType](/06-modules/07-tokens/07-data-types.md#tokentype-enum) | no       | Token.type of the Token for which this authorization is. Default if omitted: [RFID](/06-modules/07-tokens/07-data-types.md#tokentype-enum) |
 
-##### Request Body
+#### Request Body
 
 In the body an optional [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) object can
 be given. The eMSP SHALL then validate if the Token is allowed to be used at this Location, and if applicable: which of
@@ -226,7 +226,7 @@ the Locations EVSEs. The object with valid Location and EVSEs will be returned i
 |---------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------|
 | [LocationReferences](/06-modules/07-tokens/07-data-types.md#locationreferences-class) | ?     | Location and EVSEs for which the Token is requested to be authorized. |
 
-##### Response Data
+#### Response Data
 
 When the token is known by the Sender, the response SHALL contain a
 [AuthorizationInfo](/06-modules/07-tokens/06-object-description.md#authorizationinfo-object) object.

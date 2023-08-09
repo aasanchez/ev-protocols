@@ -60,7 +60,6 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i '/## Scenarios/d' "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
-  gsed -i '/^$/N;/^\n$/D;:a;$!{N;ba};s/\(\n\{2,\}\)/\n\n/g' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/03-scenarios.md"
@@ -86,6 +85,7 @@ E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
+  gsed -i "s/^## Still alive check./## Still alive check/gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces.md"

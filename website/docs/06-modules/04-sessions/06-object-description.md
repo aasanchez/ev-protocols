@@ -63,7 +63,7 @@ authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authoriz
 
 ### Examples
 
-##### Simple Session example of just starting a session
+#### Simple Session example of just starting a session
 
 ``` json
 {
@@ -92,7 +92,7 @@ authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authoriz
 }
 ```
 
-##### Simple Session example of a short finished session
+#### Simple Session example of a short finished session
 
 ``` json
 {

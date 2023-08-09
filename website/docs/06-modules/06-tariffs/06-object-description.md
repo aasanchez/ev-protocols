@@ -99,7 +99,7 @@ fees they want to include in communication with their customer.
 In the following section, a few different pricing strategies will be explained with some Tariff examples. For
 simplicity, we will use the euro as the currency in all of the examples if not mentioned otherwise.
 
-##### Simple Tariff example € 0.25 per kWh$
+#### Simple Tariff example € 0.25 per kWh$
 
 * Energy
   * € 0.25 per kWh (excl. VAT)
@@ -130,7 +130,7 @@ This tariff will result in costs of € 5.00 (excl. VAT) or € 5.50 (incl. VAT)
 }
 ```
 
-##### Tariff example € 0.25 per kWh + start fee
+#### Tariff example € 0.25 per kWh + start fee
 
 * Start or transaction fee
   * € 0.50 (excl. VAT)
@@ -170,7 +170,7 @@ This tariff will result in total cost of € 5.50 (excl. VAT) or € 6.10 (incl.
 }
 ```
 
-##### Tariff example € 0.25 per kWh + minimum price
+#### Tariff example € 0.25 per kWh + minimum price
 
 * Minimum price
   * € 0.50 (excl. VAT)
@@ -211,7 +211,7 @@ This is different from a start fee as can be seen when compared to the example a
 }
 ```
 
-##### Tariff example € 0.25 per kWh + parking fee + start fee
+#### Tariff example € 0.25 per kWh + parking fee + start fee
 
 * Start or transaction fee
   * € 0.50 (excl. VAT)
@@ -264,7 +264,7 @@ charging.
 }
 ```
 
-##### Tariff example € 0.25 per kWh + start fee + max price + tariff end date
+#### Tariff example € 0.25 per kWh + start fee + max price + tariff end date
 
 * Maximum price
   * € 10 (excl. VAT)
@@ -320,7 +320,7 @@ VAT), as the start fee combined with the energy costs would be lower than the de
 }
 ```
 
-##### Simple Tariff example € 2 per hour
+#### Simple Tariff example € 2 per hour
 
 An example of a tariff where the driver does not pay per kWh, but for the time of using the Charge Point.
 
@@ -356,7 +356,7 @@ For a charging session of 2.5 hours, this tariff will result in costs of € 5.0
 }
 ```
 
-##### Simple Tariff example € 3 per hour, € 5 per hour parking
+#### Simple Tariff example € 3 per hour, € 5 per hour parking
 
 Example of a tariff where the driver pays for the time of using the Charge Point, but pays more when the car is no
 longer charging, to discourage the EV driver of leaving his EV connected when it is already full.
@@ -403,7 +403,7 @@ the driver has to pay for 45 minutes of parking even though they left 42 minutes
 }
 ```
 
-##### Ad-Hoc simple Tariff example with multiple languages
+#### Ad-Hoc simple Tariff example with multiple languages
 
 For ad-hoc charging (paying for charging without a contract), the Tariff Elements are not as important. The eMSP is not
 involved when a driver uses ad-hoc payment at the Charge Point, so no CDR is sent to an eMSP. Having a good human
@@ -449,7 +449,7 @@ For a charging session of 2.5 hours, this tariff will result in costs of € 4.7
 }
 ```
 
-##### Ad-Hoc Tariff example not possible with OCPI
+#### Ad-Hoc Tariff example not possible with OCPI
 
 For this example, the credit card start tariff is € 0.50, but when using a debit card it is only € 0.25.
 
@@ -495,7 +495,7 @@ discount in the final CDR of € 0.25, nobody is likely to complain. The `tariff
 }
 ```
 
-##### Simple Tariff example with alternative URL
+#### Simple Tariff example with alternative URL
 
 This examples shows the use of `tariff_alt_url`.
 
@@ -570,7 +570,7 @@ as follows:
 }
 ```
 
-##### Complex Tariff example
+#### Complex Tariff example
 
 * Start or transaction fee
   * € 2.50 (excl. VAT)
@@ -745,7 +745,7 @@ The charging time is again not affected by step_size because it is followed by p
 }
 ```
 
-##### Free of Charge Tariff example
+#### Free of Charge Tariff example
 
 In this example no VAT is given because it is not necessary (as the `price` is `0.00`). This might not always be the
 case though and it is of course permitted to add a VAT, even if the `price` is set to zero.
@@ -771,7 +771,7 @@ case though and it is of course permitted to add a VAT, even if the `price` is s
 }
 ```
 
-##### Tariff example with reservation price
+#### Tariff example with reservation price
 
 * Reservation
   * € 5.00 per hour (excl. VAT)
@@ -838,7 +838,7 @@ A breakdown is as follows:
 }
 ```
 
-##### Tariff example with reservation price and fee
+#### Tariff example with reservation price and fee
 
 * Reservation
   * € 2.00 reservation fee (excl. VAT)
@@ -915,7 +915,7 @@ A breakdown is as follows:
 }
 ```
 
-##### Tariff example with reservation price and expire fee
+#### Tariff example with reservation price and expire fee
 
 * Reservation
   * € 4.00 reservation expiration fee (excl. VAT) (*billed when a reservation expires and is not followed by a charging
@@ -1017,7 +1017,7 @@ A breakdown of this scenario is as follows:
 }
 ```
 
-##### Tariff example with reservation time and expire time
+#### Tariff example with reservation time and expire time
 
 * Reservation
   * € 3.00 per hour (excl. VAT)

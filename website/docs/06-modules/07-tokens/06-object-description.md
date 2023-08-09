@@ -43,7 +43,7 @@ it is adviced to not used a group_id longer then 20.
 
 ### Examples
 
-##### Simple APP_USER example
+#### Simple APP_USER example
 
 ``` json
 {
@@ -59,7 +59,7 @@ it is adviced to not used a group_id longer then 20.
 }
 ```
 
-##### Full RFID example
+#### Full RFID example
 
 ``` json
 {

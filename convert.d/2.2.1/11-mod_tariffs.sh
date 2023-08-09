@@ -116,6 +116,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^##### /#### /gm" "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
@@ -129,6 +130,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^##### /#### /gm" "$file"
 
   file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
