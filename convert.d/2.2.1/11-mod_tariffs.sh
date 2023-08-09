@@ -144,6 +144,7 @@ E_O_HEADERS
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
+  gsed -i "s/^##### /#### /gm" "$file"
 
   rm -rf "$ROOT/website/docs/11-mod_tariffs.md"
 }

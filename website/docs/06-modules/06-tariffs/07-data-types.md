@@ -126,7 +126,7 @@ Element](/06-modules/06-tariffs/07-data-types.md#tariffelement-class) to another
 }
 ```
 
-##### Example: switching to different Tariff Element \#1
+#### Example: switching to different Tariff Element \#1
 
 An EV driver plugs in at 16:55 and charges for 10 minutes (`TIME`). They then stop charging but stay plugged in for 2
 more minutes (`PARKING_TIME`). The total session time is therefore 12 minutes. The parking time of 2 minutes is rounded
@@ -143,7 +143,7 @@ A breakdown is as follows:
 | Time          | 15 minutes | 1.00 per hour | 0.25        |
 | Total         |            |               | 0.55        |
 
-##### Example: switching to different Tariff Element \#2
+#### Example: switching to different Tariff Element \#2
 
 An EV driver plugs in at 16:35 and charges for 35 minutes (`TIME`). After that they immediately unplug and leave without
 parking time.
@@ -160,7 +160,7 @@ That leads to a session fee of € 1.30. A breakdown is as follows:
 | Charging time | 20 minutes | 2.40 per hour | 0.80        |
 | Total         |            |               | 1.30        |
 
-##### Example: switching to Free-of-Charge Tariff Element
+#### Example: switching to Free-of-Charge Tariff Element
 
 When parking becomes free after 20:00, there will not be an active
 [`PARKING_TIME`](/06-modules/06-tariffs/07-data-types.md#tariffdimensiontype-enum) [Price
