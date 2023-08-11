@@ -25,6 +25,8 @@ but using PATCH mode, only actual changes should be pushed. Providers who do not
 [GET](/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method) on the CPOs Locations endpoint to receive the
 updates.
 
+## Delete with status update
+
 When the CPO wants to delete an EVSE from the list of active EVSEs, they MUST update the EVSE's `status` field to
 `REMOVED` and call the [PUT](/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or
 [PATCH](/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) on the eMSP system. A Location without any

@@ -9,6 +9,8 @@ function pre_mod_locations(){
   gsed -i '/^.Diagram showing a representation of the example Opening Hours with exceptional closing$/d' "$file"
   gsed -i '/^.Diagram showing a representation of the example Opening Hours with exceptional opening.$/d' "$file"
   gsed -i -z 's/schedule applies.\n\n/schedule applies.\n\n\[options="header"\]\n/' "$file"
+  gsed -i -z 's/\[\[evse_delete_with_status_update\]\]/\[\[evse_delete_with_status_update\]\]\n==== Delete with status update/' "$file"
+
 }
 
 function fix_mod_locations() {

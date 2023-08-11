@@ -60,6 +60,7 @@ function links(){
   replace "<<06-modules/03-locations/01-intro.md,"                                                  "<<mod_locations.asciidoc," "$file"
   replace "<<06-modules/03-locations/01-intro.md,"                                                  "<<mod_locations_locations_module," "$file"
   replace "<<06-modules/03-locations/04-flow-and-lifecycle.md,"                                     "<<mod_locations_flow_and_lifecycle," "$file"
+  replace "<<06-modules/03-locations/04-flow-and-lifecycle.md#delete-with-status-update,"           "<<evse_delete_with_status_update," "$file"
   replace "<<06-modules/03-locations/05-interfaces-and-endpoints.md#get-list-request-parameters,"   "<<mod_locations_get_list_request_parameters," "$file"
   replace "<<06-modules/03-locations/05-interfaces-and-endpoints.md#get-method,"                    "<<mod_locations_get_method," "$file"
   replace "<<06-modules/03-locations/05-interfaces-and-endpoints.md#get-method-1,"                  "<<mod_locations_get_method_eMSP," "$file"
