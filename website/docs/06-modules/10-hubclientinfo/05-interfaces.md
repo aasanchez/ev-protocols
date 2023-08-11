@@ -72,7 +72,7 @@ The following parameters shall be provided as URL segments.
 
 ====== Example: put a new ClientInfo object
 
-``` json
+```json
 PUT To URL: https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL
 
 {

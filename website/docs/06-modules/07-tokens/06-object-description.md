@@ -45,7 +45,7 @@ it is adviced to not used a group_id longer then 20.
 
 #### Simple APP_USER example
 
-``` json
+```json
 {
   "country_code": "DE",
   "party_id": "TNM",
@@ -61,7 +61,7 @@ it is adviced to not used a group_id longer then 20.
 
 #### Full RFID example
 
-``` json
+```json
 {
   "country_code": "DE",
   "party_id": "TNM",

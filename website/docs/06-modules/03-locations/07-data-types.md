@@ -128,7 +128,7 @@ brands like Greenpeace Energy, etc.)*
 
 #### Simple
 
-``` json
+```json
 {
   "energy_mix": {
     "is_green_energy": true
@@ -138,7 +138,7 @@ brands like Greenpeace Energy, etc.)*
 
 #### Tariff energy provider name
 
-``` json
+```json
 {
   "energy_mix": {
     "is_green_energy": true,
@@ -150,7 +150,7 @@ brands like Greenpeace Energy, etc.)*
 
 #### Complete
 
-``` json
+```json
 {
   "energy_mix": {
     "is_green_energy": false,
@@ -297,7 +297,7 @@ Opening and access hours of the location.
 
 Open 24 hours per day, 7 days a week, except for 25th of December 2018 between 03:00 and 05:00.
 
-``` json
+```json
 {
   "twentyfourseven": true,
   "exceptional_closings": [
@@ -316,7 +316,7 @@ Open 24 hours per day, 7 days a week, except for 25th of December 2018 between 0
 Regular opening hours between 01:00 and 06:00. With exceptional closing on 25th of December 2018 between 03:00 and
 05:00.
 
-``` json
+```json
 {
   "twentyfourseven": false,
   "regular_hours": [
@@ -347,7 +347,7 @@ Regular opening hours between 01:00 and 06:00. With exceptional closing on 25th 
 Regular opening hours between 00:00 and 04:00. With exceptional opening on 25th of December 2018 between 05:00 and
 07:00.
 
-``` json
+```json
 {
   "twentyfourseven": false,
   "regular_hours": [
@@ -482,7 +482,7 @@ Regular recurring operation or access hours.
 Operating on weekdays from 8am till 8pm with one exceptional opening on 22/6/2014 and one exceptional closing the Monday
 after:
 
-``` json
+```json
 {
   "opening_times": {
     "regular_hours": [

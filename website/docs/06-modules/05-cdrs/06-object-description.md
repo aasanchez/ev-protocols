@@ -158,7 +158,7 @@ the CPO could send a CDR where the `start_date_time` and/or `end_date_time` are 
 
 ### Example of a CDR
 
-``` json
+```json
 {
   "country_code": "BE",
   "party_id": "BEC",

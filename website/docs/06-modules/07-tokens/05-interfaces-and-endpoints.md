@@ -88,7 +88,7 @@ The parameter: `type` may be provided as an URL parameter
 
 #### Example: put a new Token
 
-``` json
+```json
 PUT To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
 {
@@ -115,7 +115,7 @@ Any request to the PATCH method SHALL contain the `last_updated` field.
 
 #### Example: invalidate a Token
 
-``` json
+```json
 PATCH To URL: https://www.server.com/ocpi/cpo/2.2.1/tokens/NL/TNM/012345678
 
 {

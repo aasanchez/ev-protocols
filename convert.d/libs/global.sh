@@ -49,4 +49,5 @@ function common_cleaning(){
   gsed -i "s/“/\"/gm" "$file"
   gsed -i "s/”/\"/gm" "$file"
   gsed -i "s|](#|](/|gm" "$file"
+  gsed -i "s|\`\`\` json|\`\`\`json|gm" "$file"
 }

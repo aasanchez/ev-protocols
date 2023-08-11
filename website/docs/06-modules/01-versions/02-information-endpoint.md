@@ -45,7 +45,7 @@ Fetch all supported OCPI versions of this CPO or eMSP.
 
 ### Example
 
-``` json
+```json
 [
   {
     "version": "2.1.1",

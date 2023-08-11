@@ -66,7 +66,7 @@ agreement with the CPO. Or the Charge Point has an ad-hoc payment possibility
 * `parking_type` = `ON_STREET` but could also be another value.
 * `EVSE.parking_restrictions` not used.
 
-``` json
+```json
 {
   "country_code": "BE",
   "party_id": "BEC",
@@ -169,7 +169,7 @@ building, office buildings, etc.
 * `parking_type` = `PARKING_LOT` (but could also be `PARKING_GARAGE`, `ON_DRIVEWAY` or `UNDERGROUND_GARAGE`)
 * `EVSE.parking_restrictions` = `CUSTOMERS`
 
-``` json
+```json
 {
   "country_code": "NL",
   "party_id": "ALF",
@@ -228,7 +228,7 @@ In case the EV driver is not billed for charging, there is, in such a case, no r
 * `parking_type` = not used\`
 * `EVSE.parking_restrictions` = `CUSTOMERS` May still be useful so a support desk can also tell this to a customer.
 
-``` json
+```json
 {
   "country_code": "NL",
   "party_id": "ALF",
@@ -290,7 +290,7 @@ app.
   [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) that are allowed to be shown the `Location`.
 * `parking_type` = `UNDERGROUND_GARAGE` (but could also be `PARKING_GARAGE`, `ON_DRIVEWAY` or `PARKING_LOT`)
 
-``` json
+```json
 {
   "country_code": "NL",
   "party_id": "ALL",
@@ -357,7 +357,7 @@ app.
   [Tokens](/06-modules/07-tokens/06-object-description.md#token-object) of the owner.
 * `parking_type` = not used, not relevant, owner knows where his Charge Point is.
 
-``` json
+```json
 {
   "country_code": "DE",
   "party_id": "ALL",
@@ -414,7 +414,7 @@ If the EV is left in the parking garage overnight, the car will still be charged
 * `opening_times` is used.
 * `charging_when_closed` = `true`
 
-``` json
+```json
 {
   "country_code": "SE",
   "party_id": "EVC",

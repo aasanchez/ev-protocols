@@ -214,7 +214,7 @@ SHALL use the [PUT](/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-m
 Patching the `total_cost` needs to be done on the
 [Session](/06-modules/04-sessions/06-object-description.md#session-object) Object.
 
-``` json
+```json
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 {
@@ -231,7 +231,7 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 PATCH used to add a new [ChargingPeriod](/06-modules/05-cdrs/07-data-types.md#chargingperiod-class) to the Session and
 updating all related fields.
 
-``` json
+```json
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 {

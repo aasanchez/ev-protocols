@@ -114,7 +114,7 @@ Fetch information about the supported endpoints and their URLs for this OCPI ver
 
 Simple version details example: CPO with only 2 modules.
 
-``` json
+```json
 {
   "version": "2.2",
   "endpoints": [
@@ -136,7 +136,7 @@ Simple version details example: party with both CPO and eMSP with only 2 modules
 
 In this case the `credentials module is not defined twice as this module is the same for all roles.
 
-``` json
+```json
 {
   "version": "2.2",
   "endpoints": [

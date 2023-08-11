@@ -65,7 +65,7 @@ authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authoriz
 
 #### Simple Session example of just starting a session
 
-``` json
+```json
 {
   "country_code": "NL",
   "party_id": "STK",
@@ -94,7 +94,7 @@ authorization](/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authoriz
 
 #### Simple Session example of a short finished session
 
-``` json
+```json
 {
   "country_code": "BE",
   "party_id": "BEC",

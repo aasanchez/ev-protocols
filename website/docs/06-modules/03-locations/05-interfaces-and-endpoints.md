@@ -224,7 +224,7 @@ To add an *EVSE*, simply put the full object in an update message, including all
 be new to the eMSP's system, the receiving party will know that it is a new object. When not all required fields are
 specified, the object may be discarded.
 
-``` json
+```json
 PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
 {
@@ -272,7 +272,7 @@ also set the new `last_updated` value on the parent
 This is the most common type of update message. It is used to notify eMSPs that the status of an EVSE changed. In this
 case it is the EVSE with uid `3255` of the Location with id `1012`.
 
-``` json
+```json
 PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
 
 {
@@ -285,7 +285,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255
 
 In this example the name of the Location with id `1012` is being updated.
 
-``` json
+```json
 PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
 
 
@@ -299,7 +299,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012
 
 In this example Connector `2` of EVSE `1` of Location `1012` receives a new pricing scheme.
 
-``` json
+```json
 PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/2
 
 {
@@ -314,7 +314,7 @@ PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3255/
 
 An EVSE can be deleted by updating its `status` property.
 
-``` json
+```json
 PATCH To URL: https://www.server.com/ocpi/emsp/2.2.1/locations/NL/TNM/1012/3256
 
 {
