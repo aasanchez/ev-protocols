@@ -92,3 +92,11 @@ evRoaming4EU project and its partners:
 ECISS project and its partners:
 
 ![ECISS logo](../images/eciss_logo.png)
+
+## Copyright
+
+This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International Public License.
+
+Copyright © 2014 - 2023 EVRoaming Foundation. All rights reserved.
+
+Originally published as "OCPI v2.2.1" at [OCPI Downloads](https://evroaming.org/downloads/).

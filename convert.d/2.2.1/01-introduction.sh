@@ -107,4 +107,15 @@ function flavored_introduction(){
 
   gsed -i 's|^## Introduction and background$|# ⚡ OCPI|g' "$file"
 
+  cat <<E_O_COPY >> "$file"
+
+## Copyright
+
+This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International Public License.
+
+Copyright © 2014 - 2023 EVRoaming Foundation. All rights reserved.
+
+Originally published as "OCPI v2.2.1" at [OCPI Downloads](https://evroaming.org/downloads/).
+E_O_COPY
+
 }
