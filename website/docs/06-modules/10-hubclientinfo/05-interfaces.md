@@ -29,7 +29,7 @@ If the Hub wants to check the status of a ClientInfo object in the connected cli
 the connected clients system for validation purposes. The Hub is the owner of the objects, so it would be illogical if
 the connected client system had a different status or was missing an object.
 
-====== Request Parameters
+#### Request Parameters
 
 The following parameters shall be provided as URL segments.
 
@@ -38,7 +38,7 @@ The following parameters shall be provided as URL segments.
 | country_code | [CiString](/07-types/01-intro.md#cistring-type)(2) | yes      | Country code of the requested ClientInfo object.           |
 | party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the requested ClientInfo object. |
 
-====== Response Data
+#### Response Data
 
 The response contains the requested object.
 
@@ -51,7 +51,7 @@ The response contains the requested object.
 
 New or updated ClientInfo objects are pushed from the Hub to a connected client.
 
-====== Request Body
+#### Request Body
 
 In the put request a the new or updated ClientInfo object is send.
 
@@ -60,7 +60,7 @@ In the put request a the new or updated ClientInfo object is send.
 | Type                                                                                  | Card. | Description                       |
 | [ClientInfo](/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | 1     | New or updated ClientInfo object. |
 
-====== Request Parameters
+#### Request Parameters
 
 The following parameters shall be provided as URL segments.
 
@@ -70,7 +70,7 @@ The following parameters shall be provided as URL segments.
 | country_code | [CiString](/07-types/01-intro.md#cistring-type)(2) | yes      | Country code of the eMSP sending this PUT request to the CPO system.           |
 | party_id     | [CiString](/07-types/01-intro.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. |
 
-====== Example: put a new ClientInfo object
+#### Example: put a new ClientInfo object
 
 ```json
 PUT To URL: https://www.server.com/ocpi/cpo/2.0/clientinfo/NL/ALL
