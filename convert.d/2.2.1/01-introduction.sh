@@ -32,25 +32,19 @@ function pre_introduction(){
   gsed -i 's|Jedlix|https://www.jedlix.com/[Jedlix]|g' "$file"
   gsed -i 's|XXIMO|https://www.xximo.com[XXIMO]|g' "$file"
   gsed -i 's|Mnemonics|https://www.mnemonic.io[Mnemonics]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
-  # gsed -i 's||[]|g' "$file"
 }
 
 function fix_introduction() {
 
-  rm -rf "$ROOT/website/docs/01-introduction"
-  mkdir -p "$ROOT/website/docs/01-introduction"
+  rm -rf "$ROOT/website/docs/ocpi/01-introduction"
+  mkdir -p "$ROOT/website/docs/ocpi/01-introduction"
 
-  mv "$ROOT/website/docs/01-introduction.md" "$ROOT/website/docs/01-introduction/01-introduction.md"
+  mv "$ROOT/website/docs/ocpi/01-introduction.md" "$ROOT/website/docs/ocpi/01-introduction/01-introduction.md"
 
-  file="$ROOT/website/docs/01-introduction/01-introduction.md"
+  file="$ROOT/website/docs/ocpi/01-introduction/01-introduction.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 1\nslug: /\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 1\nslug: /ocpi\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
   gsed -i -z 's/\n\n  - /\n  \* /gm' "$file"
   gsed -i -z 's/\n\n- /\n* /gm' "$file"
@@ -76,7 +70,7 @@ function fix_introduction() {
 # to optimize accessibility and usability for web-based formats.
 # This function preserves the content and definitions without modification.
 function flavored_introduction(){
-  file="$ROOT/website/docs/01-introduction/01-introduction.md"
+  file="$ROOT/website/docs/ocpi/01-introduction/01-introduction.md"
   tempfile="$file.tmp"
 
   echo "$file EV-protocols flavored"
@@ -97,7 +91,7 @@ function flavored_introduction(){
       "$ROOT/tmp/newfile.md" \
       > "$file"
 
-  echo -e "---\nid: introduction\nslug: /\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: introduction\nslug: /ocpi\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i 's|^### OCPI|\n## OCPI|g' "$file"

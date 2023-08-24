@@ -91,7 +91,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'docs',
+            sidebarId: 'ocpi',
             position: 'left',
             label: 'OCPI'
           },
@@ -121,12 +121,7 @@ const config = {
               {
                 label: 'Docs',
                 to: '/docs'
-              }
-            ]
-          },
-          {
-            title: 'Community',
-            items: [
+              },
               {
                 label: 'Stack Overflow',
                 href: 'https://stackoverflow.com/questions/tagged/ocpi'
@@ -134,23 +129,23 @@ const config = {
               {
                 label: 'Reddit',
                 href: 'https://www.reddit.com/r/ocpi/'
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/aNgzgdUT'
               }
             ]
           },
           {
-            title: 'More',
+            title: 'OCPP',
             items: [
               {
-                label: 'Blog',
-                to: '/blog'
+                label: 'Docs',
+                to: '/docs'
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/aasanchez/EV-protocols'
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/ocpp'
+              },
+              {
+                label: 'Reddit',
+                href: 'https://www.reddit.com/r/ocpp/'
               }
             ]
           }

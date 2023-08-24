@@ -6,8 +6,8 @@ function pandoc2markdown(){
 
   format="gfm"
   echo "Processing $file to $format"
-  cp "$ROOT/ocpi/$file.asciidoc" "$ROOT/website/docs/$file.asciidoc"
-  asciidoc -b docbook "$ROOT/website/docs/$file.asciidoc"
-  pandoc -f docbook -t $format --wrap=auto --columns=120 "$ROOT/website/docs/$file.xml" -o "$ROOT/website/docs/$number-$file.md"
-  rm "$ROOT/website/docs/$file.asciidoc" "$ROOT/website/docs/$file.xml"
+  cp "$ROOT/ocpi/$file.asciidoc" "$ROOT/website/docs/ocpi/$file.asciidoc"
+  asciidoc -b docbook "$ROOT/website/docs/ocpi/$file.asciidoc"
+  pandoc -f docbook -t $format --wrap=auto --columns=120 "$ROOT/website/docs/ocpi/$file.xml" -o "$ROOT/website/docs/ocpi/$number-$file.md"
+  rm "$ROOT/website/docs/ocpi/$file.asciidoc" "$ROOT/website/docs/ocpi/$file.xml"
 }

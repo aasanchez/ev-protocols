@@ -1,8 +1,52 @@
 ---
-id: introduction
-slug: /
+sidebar_position: 1
+slug: /ocpi
 ---
-# ⚡ OCPI
+# OCPI
+
+## OCPI 2.2.1-d2
+
+In the OCPI Development Working Group at the EV Roaming Foundation we are always tracking unclarities in the
+specification and making changes to the specification document to fix these for later versions. We noticed that the OCPI
+2.2.1 documentation had accumulated so many clarifications since the formal release of 2.2.1 that it is worthwhile to
+make a new "documentation release", OCPI 2.2.1-d2. This release does not change the requirements compared to OCPI 2.2.1.
+The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 but do so more clearly.
+
+## OCPI 2.2.1
+
+During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
+minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
+
+For more information on detailed changes see \<<https://EV-protocols,changelog>\>.
+
+## OCPI 2.2
+
+OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
+
+### Changes/New functionality
+
+* Support for Hubs
+  * [Message routing headers](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#message-routing)
+  * [Hub Client Info](/ocpi/06-modules/10-hubclientinfo/01-intro.md)
+* [Support Platforms with multiple/different
+  roles](/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class)
+* [Charging Profiles](/ocpi/06-modules/09-charging-profiles/01-intro.md)
+* [Preference based Smart Charging](/ocpi/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
+* Improvements:
+  * [CDRs](/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration law/Eichrecht
+    support, Session_id, AuthorizationReference, CdrLocation, CdrToken
+  * [Sessions](/ocpi/06-modules/04-sessions/06-object-description.md#session-object): VAT, CdrToken, How to add a
+    Charging Period
+  * [Tariffs](/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object): Tariff types, Min/Max price,
+    reservation tariff, Much more examples
+  * [Locations](/ocpi/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of small
+    improvements
+  * [Tokens](/ocpi/06-modules/07-tokens/06-object-description.md#token-object): Group_id, energy contract
+  * [Commands](/ocpi/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
+
+For more information on detailed changes see \<<https://EV-protocols,changelog>\>.
+
+## Introduction and background
 
 The Open Charge Point Interface (OCPI) enables a scalable, automated EV roaming setup between Charge Point Operators and
 e-Mobility Service Providers. It supports authorization, charge point information exchange (including live status
@@ -46,44 +90,7 @@ progress and ensure development and results.
 This document describes a combined set of standards based on the work done in the past. Next to that, the evolution of
 these standards and their use are taken into account and some elements have been updated to match nowadays use.
 
-## OCPI 2.2.1-d2
-
-In the OCPI Development Working Group at the EV Roaming Foundation we are always tracking unclarities in the
-specification and making changes to the specification document to fix these for later versions. We noticed that the OCPI
-2.2.1 documentation had accumulated so many clarifications since the formal release of 2.2.1 that it is worthwhile to
-make a new "documentation release", OCPI 2.2.1-d2. This release does not change the requirements compared to OCPI 2.2.1.
-The purpose of OCPI 2.2.1-d2 is to document the same requirements as OCPI 2.2.1 but do so more clearly.
-
-## OCPI 2.2.1
-
-During implementation of OCPI 2.2 some issues where found that required updating the protocol to fix them. These are all
-minor changes, so most OCPI 2.2 implementations would need no, or only minor changes, to upgrade to OCPI 2.2.1.
-
-## OCPI 2.2
-
-OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
-
-### Changes/New functionality
-
-* Support for Hubs
-  * [Message routing headers](/04-transport-and-format/01-json-http-implementation-guide.md#message-routing)
-  * [Hub Client Info](/06-modules/10-hubclientinfo/01-intro.md)
-* [Support Platforms with multiple/different roles](/06-modules/02-credentials/07-data-types.md#credentialsrole-class)
-* [Charging Profiles](/06-modules/09-charging-profiles/01-intro.md)
-* [Preference based Smart Charging](/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
-* Improvements:
-  * [CDRs](/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration law/Eichrecht
-    support, Session_id, AuthorizationReference, CdrLocation, CdrToken
-  * [Sessions](/06-modules/04-sessions/06-object-description.md#session-object): VAT, CdrToken, How to add a Charging
-    Period
-  * [Tariffs](/06-modules/06-tariffs/06-object-description.md#tariff-object): Tariff types, Min/Max price, reservation
-    tariff, Much more examples
-  * [Locations](/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of small
-    improvements
-  * [Tokens](/06-modules/07-tokens/06-object-description.md#token-object): Group_id, energy contract
-  * [Commands](/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation added
-
-## OCPI is developed with support of
+### OCPI is developed with support of
 
 evRoaming4EU project and its partners:
 
@@ -93,10 +100,4 @@ ECISS project and its partners:
 
 ![ECISS logo](../images/eciss_logo.png)
 
-## Copyright
-
-This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International Public License.
-
-Copyright © 2014 - 2023 EVRoaming Foundation. All rights reserved.
-
-Originally published as "OCPI v2.2.1" at [OCPI Downloads](https://evroaming.org/downloads/).
+The latest version of this specification can be found here: [OCPI Github Repository](https://github.com/ocpi/ocpi)

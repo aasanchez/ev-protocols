@@ -14,7 +14,7 @@ function replace(){
   gsed -i "s/#$4/#$slug/g" "$2"
 }
 
-DIR="$ROOT/website/docs"
+DIR="$ROOT/website/docs/ocpi"
 markdown_files=$(find "$DIR" -name "*.md" | sort)
 
 merged_file="website/static/ocpi.md"
