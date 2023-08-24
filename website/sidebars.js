@@ -38,7 +38,7 @@ const sidebars = {
         'ocpi/transport-and-format/offline-behaviour'
       ]
     },
-    // 'ocpi/status-codes/status-codes',
+    'ocpi/status-codes/status-codes',
     // {
     //   type: 'category',
     //   label: '📦 Modules',

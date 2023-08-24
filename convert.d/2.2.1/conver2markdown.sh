@@ -76,12 +76,12 @@ flavored_transport_and_format
 
 echo ""
 
-# . ./convert.d/2.2.1/05-status_codes.sh
-# pandoc2markdown "05-status_codes"
-# common_cleaning "website/docs/ocpi/05-status_codes.md"
-# fix_status_codes
+. ./convert.d/2.2.1/05-status_codes.sh
+pandoc2markdown "05-status_codes"
+common_cleaning "website/docs/ocpi/05-status_codes.md"
+fix_status_codes
 
-# echo ""
+echo ""
 
 # mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
 # . ./convert.d/2.2.1/06-mod_versions.sh
