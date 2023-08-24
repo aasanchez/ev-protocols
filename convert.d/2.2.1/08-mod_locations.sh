@@ -72,7 +72,7 @@ function fix_mod_locations() {
 function flavored_mod_locations() {
   file="$ROOT/website/docs/08-mod_locations.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="03-locations"
   splitInH2 "$file"
 

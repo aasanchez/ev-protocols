@@ -38,7 +38,7 @@ function fix_mod_cdrs() {
 function flavored_mod_cdrs() {
   file="$ROOT/website/docs/10-mod_cdrs.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="05-cdrs"
   splitInH2 "$file"
 

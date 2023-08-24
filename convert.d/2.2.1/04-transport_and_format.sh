@@ -69,7 +69,7 @@ function fix_transport_and_format() {
 flavored_transport_and_format() {
   file="$ROOT/website/docs/04-transport_and_format.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
 
   splitInH2 "$file"
 

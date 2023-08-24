@@ -14,35 +14,35 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/documents_document_documentation_format_paper_icon.svg').default,
     description: (
       <>
-        Providing a more practical and user-friendly way to access OCPI documentation.
+        Providing a more practical and user-friendly way to access EV Protocol documentation.
       </>
     )
   },
-  {
-    title: 'Making OCPI Accesible',
-    Svg: require('@site/static/img/ocpidev2.svg').default,
-    description: (
-      <>
-        More accessible OCPI documentation can help to accelerate the adoption of OCPI and make it easier for developers
-        to build interoperable EV charging solutions.
-      </>
-    )
-  },
-  {
-    title: 'EV Roaming Foundation',
-    Svg: require('@site/static/img/copyright_creator_document_legal_pencil_icon.svg').default,
-    description: (
-      <>
-        This site is not associated with EV Roaming Foundation, and recommends that users always
-        consult the official OCPI documentation in https://evroaming.org.
-      </>
-    )
-  }
+  // {
+  //   title: 'Making EV Protocols Accesible',
+  //   Svg: require('@site/static/img/ocpidev2.svg').default,
+  //   description: (
+  //     <>
+  //       More accessible OCPI documentation can help to accelerate the adoption of OCPI and make it easier for developers
+  //       to build interoperable EV charging solutions.
+  //     </>
+  //   )
+  // },
+  // {
+  //   title: 'Electrifying th',
+  //   Svg: require('@site/static/img/copyright_creator_document_legal_pencil_icon.svg').default,
+  //   description: (
+  //     <>
+  //       This site is not associated with EV Roaming Foundation, and recommends that users always
+  //       consult the official OCPI documentation in https://evroaming.org.
+  //     </>
+  //   )
+  // }
 ]
 
 function Feature ({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--12')}>
       <div className='text--center'>
         <Svg className={styles.featureSvg} role='img' />
       </div>

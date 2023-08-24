@@ -58,7 +58,7 @@ function fix_mod_commands() {
 function flavored_mod_commands() {
   file="$ROOT/website/docs/13-mod_commands.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="08-commands"
   splitInH2 "$file"
 

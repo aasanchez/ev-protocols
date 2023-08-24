@@ -234,6 +234,6 @@ function links(){
   replace "<<07-types/01-intro.md#string-type,"       "<<types_string_type," "$file"
   replace "<<07-types/01-intro.md#url-type,"          "<<types.asciidoc#types_url_type," "$file"
 
-  replace "<<https://ocpi.dev," "<<changelog.asciidoc#changelog_changelog," "$file"
+  replace "<<https://EV-protocols," "<<changelog.asciidoc#changelog_changelog," "$file"
 
 }

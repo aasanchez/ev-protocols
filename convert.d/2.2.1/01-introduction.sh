@@ -79,7 +79,7 @@ function flavored_introduction(){
   file="$ROOT/website/docs/01-introduction/01-introduction.md"
   tempfile="$file.tmp"
 
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   gsed -i '/For more information on detailed changes see/d' "$file"
 
   splitInH2 "$file"

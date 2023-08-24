@@ -6,12 +6,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'OCPI',
-  tagline: 'Open Charge Point Interface (unofficial) Documentation',
+  title: 'EV-Protocols',
+  tagline: 'EV Protocols References',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://ocpi.dev',
+  url: 'https://ev-protocols.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'aasanchez', // Usually your GitHub org/user name.
-  projectName: 'ocpi.dev', // Usually your repo name.
+  projectName: 'ev-protocols', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -39,7 +39,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aasanchez/ocpi.dev/tree/',
+          editUrl: 'https://github.com/aasanchez/ev-protocols/tree/',
           lastVersion: 'current',
           versions: {
             current: {
@@ -54,7 +54,7 @@ const config = {
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/aasanchez/ocpi.dev/tree/'
+          editUrl: 'https://github.com/aasanchez/ev-protocols/tree/'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
@@ -77,15 +77,15 @@ const config = {
         apiKey: 'eab176d227cbdd45996af10f5641926e',
         indexName: 'ocpi',
         contextualSearch: true,
-        externalUrlRegex: 'localhost:3000|ocpi.dev',
+        externalUrlRegex: 'localhost:3000|EV-protocols',
         searchParameters: {},
         searchPagePath: 'search'
       },
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'OCPI',
+        title: 'EV Protocols',
         logo: {
-          alt: 'OCPI.dev',
+          alt: 'EV-protocols',
           src: 'img/logo.png'
         },
         items: [
@@ -93,7 +93,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'docs',
             position: 'left',
-            label: 'Docs'
+            label: 'OCPI'
           },
           {
             to: '/blog',
@@ -106,7 +106,7 @@ const config = {
             dropdownActiveClassDisabled: true
           },
           {
-            href: 'https://github.com/aasanchez/ocpi.dev',
+            href: 'https://github.com/aasanchez/ev-protocols',
             label: 'GitHub',
             position: 'right'
           }
@@ -150,12 +150,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/aasanchez/ocpi.dev'
+                href: 'https://github.com/aasanchez/EV-protocols'
               }
             ]
           }
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} OCPI.dev`
+        copyright: `Copyright © ${new Date().getFullYear()} EV-protocols`
       },
       prism: {
         theme: lightCodeTheme,

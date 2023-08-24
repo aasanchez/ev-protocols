@@ -35,7 +35,7 @@ function fix_mod_tokens() {
 function flavored_mod_tokens() {
   file="$ROOT/website/docs/12-mod_tokens.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="07-tokens"
   splitInH2 "$file"
 

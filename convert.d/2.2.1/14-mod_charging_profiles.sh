@@ -63,7 +63,7 @@ function fix_mod_charging_profiles() {
 function flavored_mod_charging-profiles() {
   file="$ROOT/website/docs/14-mod_charging_profiles.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="09-charging-profiles"
   splitInH2 "$file"
 

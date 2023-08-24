@@ -33,7 +33,7 @@ function fix_mod_sessions() {
 function flavored_mod_sessions() {
   file="$ROOT/website/docs/09-mod_sessions.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="04-sessions"
   splitInH2 "$file"
 

@@ -34,7 +34,7 @@ function fix_mod_versions() {
 function flavored_mod_versions() {
   file="$ROOT/website/docs/06-mod_versions.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
 
   splitInH2 "$file"
 

@@ -28,7 +28,7 @@ export default function Home (): JSX.Element {
   const { siteConfig } = useDocusaurusContext()
   return (
     <Layout
-      title={`OCPI.dev ${siteConfig.title}`}
+      title={`EV-protocols ${siteConfig.title}`}
       description=''
     >
       <HomepageHeader />

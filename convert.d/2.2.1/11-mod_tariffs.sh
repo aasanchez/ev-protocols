@@ -63,7 +63,7 @@ function fix_mod_tariffs() {
 function flavored_mod_tariffs() {
   file="$ROOT/website/docs/11-mod_tariffs.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="06-tariffs"
   splitInH2 "$file"
 

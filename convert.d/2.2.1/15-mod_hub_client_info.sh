@@ -33,7 +33,7 @@ function fix_mod_hub_client_info() {
 function flavored_mod_hubclientinfo() {
   file="$ROOT/website/docs/15-mod_hub_client_info.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="10-hubclientinfo"
   splitInH2 "$file"
 

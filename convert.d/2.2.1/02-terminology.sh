@@ -32,7 +32,7 @@ function fix_terminology(){
 flavored_terminology() {
   file="$ROOT/website/docs/02-terminology.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
 
   splitInH2 "$file"
 

@@ -34,7 +34,7 @@ function fix_mod_credentials() {
 function flavored_mod_credentials() {
   file="$ROOT/website/docs/07-mod_credentials.md"
   tempfile="$file.tmp"
-  echo "$file ocpi.dev flavored"
+  echo "$file EV-protocols flavored"
   MODULE="02-credentials"
   splitInH2 "$file"
 
