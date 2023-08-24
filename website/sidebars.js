@@ -22,22 +22,22 @@ const sidebars = {
         'ocpi/terminology-and-definitions/data-retention'
       ]
     },
-    // 'ocpi/supported-topologies/supported-topologies',
-    // {
-    //   type: 'category',
-    //   label: '✏️ Transport and format',
-    //   link: {
-    //     type: 'generated-index',
-    //     slug: 'ocpi/transport-and-format'
-    //   },
-    //   collapsed: true,
-    //   items: [
-    //     'ocpi/transport-and-format/json-http-implementation-guide',
-    //     'ocpi/transport-and-format/unique-message-ids',
-    //     'ocpi/transport-and-format/interface-endpoints',
-    //     'ocpi/transport-and-format/offline-behaviour'
-    //   ]
-    // },
+    'ocpi/supported-topologies/supported-topologies',
+    {
+      type: 'category',
+      label: '✏️ Transport and format',
+      link: {
+        type: 'generated-index',
+        slug: 'ocpi/transport-and-format'
+      },
+      collapsed: true,
+      items: [
+        'ocpi/transport-and-format/json-http-implementation-guide',
+        'ocpi/transport-and-format/unique-message-ids',
+        'ocpi/transport-and-format/interface-endpoints',
+        'ocpi/transport-and-format/offline-behaviour'
+      ]
+    },
     // 'ocpi/status-codes/status-codes',
     // {
     //   type: 'category',

@@ -21,10 +21,10 @@ function pre_transport_and_format(){
 }
 
 function fix_transport_and_format() {
-  file="$ROOT/website/docs/04-transport_and_format.md"
+  file="$ROOT/website/docs/ocpi/04-transport_and_format.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nsidebar_position: 4\nslug: transport-and-format\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nsidebar_position: 4\nslug: /ocpi/transport-and-format\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i -z "s|======|######|gm" "$file"
@@ -67,21 +67,21 @@ function fix_transport_and_format() {
 }
 
 flavored_transport_and_format() {
-  file="$ROOT/website/docs/04-transport_and_format.md"
+  file="$ROOT/website/docs/ocpi/04-transport_and_format.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
 
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/04-transport-and-format"
-  mkdir -p "$ROOT/website/docs/04-transport-and-format"
+  rm -rf "$ROOT/website/docs/ocpi/04-transport-and-format"
+  mkdir -p "$ROOT/website/docs/ocpi/04-transport-and-format"
 
-  mv "$ROOT/tmp/jsonhttpimplementationguide.md" "$ROOT/website/docs/04-transport-and-format/01-json-http-implementation-guide.md"
-  mv "$ROOT/tmp/uniquemessageids.md"            "$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
-  mv "$ROOT/tmp/interfaceendpoints.md"          "$ROOT/website/docs/04-transport-and-format/03-interface-endpoints.md"
-  mv "$ROOT/tmp/offlinebehaviour.md"            "$ROOT/website/docs/04-transport-and-format/04-offline-behaviour.md"
+  mv "$ROOT/tmp/jsonhttpimplementationguide.md" "$ROOT/website/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md"
+  mv "$ROOT/tmp/uniquemessageids.md"            "$ROOT/website/docs/ocpi/04-transport-and-format/02-unique-message-ids.md"
+  mv "$ROOT/tmp/interfaceendpoints.md"          "$ROOT/website/docs/ocpi/04-transport-and-format/03-interface-endpoints.md"
+  mv "$ROOT/tmp/offlinebehaviour.md"            "$ROOT/website/docs/ocpi/04-transport-and-format/04-offline-behaviour.md"
 
-  file="$ROOT/website/docs/04-transport-and-format/01-json-http-implementation-guide.md"
+  file="$ROOT/website/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
@@ -122,7 +122,7 @@ E_O_HEADERS
   gsed -i "/^\`\`\`json$/,/^\`\`\`$/ s/^/    /" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/04-transport-and-format/02-unique-message-ids.md"
+  file="$ROOT/website/docs/ocpi/04-transport-and-format/02-unique-message-ids.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
@@ -135,7 +135,7 @@ E_O_HEADERS
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/04-transport-and-format/03-interface-endpoints.md"
+  file="$ROOT/website/docs/ocpi/04-transport-and-format/03-interface-endpoints.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
@@ -148,7 +148,7 @@ E_O_HEADERS
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/04-transport-and-format/04-offline-behaviour.md"
+  file="$ROOT/website/docs/ocpi/04-transport-and-format/04-offline-behaviour.md"
   echo "flavoring $file"
   gsed -i "s/^## /# /gm" "$file"
   cat <<E_O_HEADERS > "$file.tmp"
@@ -161,5 +161,5 @@ E_O_HEADERS
   gsed -i 's/](\.\/\([^)]*\))/](..\/\1)/g' "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  rm "$ROOT/website/docs/04-transport_and_format.md"
+  rm "$ROOT/website/docs/ocpi/04-transport_and_format.md"
 }

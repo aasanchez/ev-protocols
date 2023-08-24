@@ -54,7 +54,7 @@ flavored_terminology() {
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: requirement-keywords
-slug: /ocpi/requirement-keywords
+slug: requirement-keywords
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -64,7 +64,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: abbreviations
-slug: /ocpi/abbreviations
+slug: abbreviations
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -75,7 +75,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: ev-charging-market-roles
-slug: /ocpi/ev-charging-market-roles
+slug: ev-charging-market-roles
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -86,7 +86,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: terminology
-slug: /ocpi/terminology
+slug: terminology
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -97,7 +97,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: provider-and-operator-abbreviation
-slug: /ocpi/provider-and-operator-abbreviation
+slug: provider-and-operator-abbreviation
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -107,7 +107,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: charging-topology
-slug: /ocpi/charging-topology
+slug: charging-topology
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -119,7 +119,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: variable-names
-slug: /ocpi/variable-names
+slug: variable-names
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -129,7 +129,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: cardinality
-slug: /ocpi/cardinality
+slug: cardinality
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -140,7 +140,7 @@ E_O_HEADERS
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-retention
-slug: /ocpi/data-retention
+slug: data-retention
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"

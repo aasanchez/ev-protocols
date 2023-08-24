@@ -55,26 +55,26 @@ common_cleaning "website/docs/ocpi/02-terminology.md"
 fix_terminology
 flavored_terminology
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/03-topology.sh
-# pre_topology
-# links "ocpi/topology.asciidoc"
-# pandoc2markdown "03-topology"
-# common_cleaning "website/docs/ocpi/03-topology.md"
-# fix_topology
+. ./convert.d/2.2.1/03-topology.sh
+pre_topology
+links "ocpi/topology.asciidoc"
+pandoc2markdown "03-topology"
+common_cleaning "website/docs/ocpi/03-topology.md"
+fix_topology
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/04-transport_and_format.sh
-# pre_transport_and_format
-# links "ocpi/transport_and_format.asciidoc"
-# pandoc2markdown "04-transport_and_format"
-# common_cleaning "website/docs/ocpi/04-transport_and_format.md"
-# fix_transport_and_format
-# flavored_transport_and_format
+. ./convert.d/2.2.1/04-transport_and_format.sh
+pre_transport_and_format
+links "ocpi/transport_and_format.asciidoc"
+pandoc2markdown "04-transport_and_format"
+common_cleaning "website/docs/ocpi/04-transport_and_format.md"
+fix_transport_and_format
+flavored_transport_and_format
 
-# echo ""
+echo ""
 
 # . ./convert.d/2.2.1/05-status_codes.sh
 # pandoc2markdown "05-status_codes"

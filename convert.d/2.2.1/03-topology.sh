@@ -14,15 +14,15 @@ function pre_topology(){
 }
 
 function fix_topology() {
-  rm -rf "$ROOT/website/docs/03-supported-topologies"
-  mkdir -p "$ROOT/website/docs/03-supported-topologies"
+  rm -rf "$ROOT/website/docs/ocpi/03-supported-topologies"
+  mkdir -p "$ROOT/website/docs/ocpi/03-supported-topologies"
 
-  mv "$ROOT/website/docs/03-topology.md" "$ROOT/website/docs/03-supported-topologies/03-topology.md"
+  mv "$ROOT/website/docs/ocpi/03-topology.md" "$ROOT/website/docs/ocpi/03-supported-topologies/01-topology.md"
 
-  file="$ROOT/website/docs/03-supported-topologies/03-topology.md"
+  file="$ROOT/website/docs/ocpi/03-supported-topologies/01-topology.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nid: supported-topologies\nslug: /supported-topologies/\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: supported-topologies\nslug: /ocpi/supported-topologies\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i 's|^# Supported Topologies$|# 🕸️ Supported Topologies|g' "$file"
@@ -37,8 +37,6 @@ function fix_topology() {
   gsed -i "s|<img src=\"images/architecture_mutiple_platform_direct_modified.svg\" alt=\"peer-to-peer with mixed roles topology example\" />|![Multiple peer-to-peer](../images/architecture_mutiple_platform_direct_modified.svg)|g" "$file"
   gsed -i "s|<img src=\"images/architecture_hub_simple_modified.svg\" alt=\"Platforms connected via a Hub topology example\" />|![Platforms connected via a Hub topology example](../images/architecture_hub_simple_modified.svg)|g" "$file"
   gsed -i "s|<img src=\"images/architecture_hub_and_direct_modified.svg\" alt=\"Platforms connected via a Hub and directly topology example\" />|![Platforms connected via a Hub and directly topology example](../images/architecture_hub_and_direct_modified.svg)|g" "$file"
-
-  # gsed -i "s|(./02-terminology-and-definitions|(../02-terminology-and-definitions|g" "$file"
 
   gsed -i '/^$/N;/^\n$/D' "$file"
   gsed -i '${/^$/d}' "$file"
