@@ -2,26 +2,26 @@
 const sidebars = {
   ocpi: [
     'ocpi/introduction/introduction',
-    // {
-    //   type: 'category',
-    //   label: '📚 Terminology and Definitions',
-    //   link: {
-    //     type: 'generated-index',
-    //     slug: 'ocpi/terminology-and-definitions'
-    //   },
-    //   collapsed: true,
-    //   items: [
-    //     'ocpi/terminology-and-definitions/requirement-keywords',
-    //     'ocpi/terminology-and-definitions/abbreviations',
-    //     'ocpi/terminology-and-definitions/ev-charging-market-roles',
-    //     'ocpi/terminology-and-definitions/terminology',
-    //     'ocpi/terminology-and-definitions/provider-and-operator-abbreviation',
-    //     'ocpi/terminology-and-definitions/charging-topology',
-    //     'ocpi/terminology-and-definitions/variable-names',
-    //     'ocpi/terminology-and-definitions/cardinality',
-    //     'ocpi/terminology-and-definitions/data-retention'
-    //   ]
-    // },
+    {
+      type: 'category',
+      label: '📚 Terminology and Definitions',
+      link: {
+        type: 'generated-index',
+        slug: 'ocpi/terminology-and-definitions'
+      },
+      collapsed: true,
+      items: [
+        'ocpi/terminology-and-definitions/requirement-keywords',
+        'ocpi/terminology-and-definitions/abbreviations',
+        'ocpi/terminology-and-definitions/ev-charging-market-roles',
+        'ocpi/terminology-and-definitions/terminology',
+        'ocpi/terminology-and-definitions/provider-and-operator-abbreviation',
+        'ocpi/terminology-and-definitions/charging-topology',
+        'ocpi/terminology-and-definitions/variable-names',
+        'ocpi/terminology-and-definitions/cardinality',
+        'ocpi/terminology-and-definitions/data-retention'
+      ]
+    },
     // 'ocpi/supported-topologies/supported-topologies',
     // {
     //   type: 'category',

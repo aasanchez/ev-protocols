@@ -43,17 +43,17 @@ links "ocpi/introduction.asciidoc"
 pandoc2markdown "01-introduction"
 common_cleaning "website/docs/ocpi/01-introduction.md"
 fix_introduction
-# flavored_introduction
+flavored_introduction
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/02-terminology.sh
-# pre_terminology
-# links "ocpi/terminology.asciidoc"
-# pandoc2markdown "02-terminology"
-# common_cleaning "website/docs/ocpi/02-terminology.md"
-# fix_terminology
-# flavored_terminology
+. ./convert.d/2.2.1/02-terminology.sh
+pre_terminology
+links "ocpi/terminology.asciidoc"
+pandoc2markdown "02-terminology"
+common_cleaning "website/docs/ocpi/02-terminology.md"
+fix_terminology
+flavored_terminology
 
 # echo ""
 
@@ -192,7 +192,7 @@ fix_introduction
 # common_cleaning "website/docs/ocpi/16-types.md"
 # fix_types
 
-# cd "$ROOT"/ocpi || exit 0
+cd "$ROOT"/ocpi || exit 0
 
-# git reset --hard --quiet
-# git clean -xfd --quiet
+git reset --hard --quiet
+git clean -xfd --quiet
