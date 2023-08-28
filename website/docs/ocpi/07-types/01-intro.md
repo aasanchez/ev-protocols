@@ -1,7 +1,7 @@
 ---
 id: intro
 sidebar_position: 07
-slug: /types
+slug: /ocpi/types
 ---
 # 🔧 Types
 

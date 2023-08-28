@@ -14,7 +14,7 @@ function fix_types() {
   file="$ROOT/website/docs/ocpi/07-types/01-intro.md"
   tempfile="$file.tmp"
 
-  echo -e "---\nid: intro\nsidebar_position: 07\nslug: /types\n---" | cat - "$file" > "$tempfile"
+  echo -e "---\nid: intro\nsidebar_position: 07\nslug: /ocpi/types\n---" | cat - "$file" > "$tempfile"
   mv "$tempfile" "$file"
 
   gsed -i 's|^# Types$|# 🔧 Types|g' "$file"
