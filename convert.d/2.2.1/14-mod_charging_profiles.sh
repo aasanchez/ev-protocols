@@ -16,7 +16,7 @@ function pre_mod_charging_profiles(){
 }
 
 function fix_mod_charging_profiles() {
-  file="$ROOT/website/docs/14-mod_charging_profiles.md"
+  file="$ROOT/website/docs/ocpi/14-mod_charging_profiles.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: charging_profiles\nslug: modules/charging-profiles\n---" | cat - "$file" > "$tempfile"
@@ -61,31 +61,31 @@ function fix_mod_charging_profiles() {
 }
 
 function flavored_mod_charging-profiles() {
-  file="$ROOT/website/docs/14-mod_charging_profiles.md"
+  file="$ROOT/website/docs/ocpi/14-mod_charging_profiles.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
   MODULE="09-charging-profiles"
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/06-modules/09-charging-profiles"
-  mkdir -p "$ROOT/website/docs/06-modules/09-charging-profiles"
+  rm -rf "$ROOT/website/docs/ocpi/06-modules/09-charging-profiles"
+  mkdir -p "$ROOT/website/docs/ocpi/06-modules/09-charging-profiles"
 
-  mv "$ROOT/tmp/smartchargingtopologies.md" "$ROOT/website/docs/06-modules/$MODULE/02-smart-charging-topologies.md"
-  mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
-  mv "$ROOT/tmp/flow.md"                    "$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
-  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
-  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
-  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  mv "$ROOT/tmp/smartchargingtopologies.md" "$ROOT/website/docs/ocpi/06-modules/$MODULE/02-smart-charging-topologies.md"
+  mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/ocpi/06-modules/$MODULE/03-use-cases.md"
+  mv "$ROOT/tmp/flow.md"                    "$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow.md"
+  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
 
-  < "$file" gsed -n '1,/## Flow/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  < "$file" gsed -n '1,/## Flow/p' > "$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: intro
-slug: /modules/charging-profiles
+slug: /ocpi/modules/charging-profiles
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -93,12 +93,12 @@ E_O_HEADERS
   gsed -i '/^$/N;/^\n$/D' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/02-smart-charging-topologies.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/02-smart-charging-topologies.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: smart-charging-topologies
-slug: /modules/charging-profiles/smart-charging-topologies
+slug: smart-charging-topologies
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -106,12 +106,12 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/03-use-cases.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: use-cases
-slug: /modules/charging-profiles/use-cases
+slug: use-cases
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -119,12 +119,12 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: flow
-slug: /modules/charging-profiles/flow
+slug: flow
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -132,12 +132,12 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: interfaces-and-endpoints
-slug: /modules/charging-profiles/interfaces-and-endpoints
+slug: interfaces-and-endpoints
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -147,12 +147,12 @@ E_O_HEADERS
   gsed -i "s/^##### /#### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: object-description
-slug: /modules/charging-profiles/object-description
+slug: object-description
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -161,12 +161,12 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-types
-slug: /modules/charging-profiles/data-types
+slug: data-types
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -175,5 +175,5 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  rm -rf "$ROOT/website/docs/14-mod_charging_profiles.md"
+  rm -rf "$ROOT/website/docs/ocpi/14-mod_charging_profiles.md"
 }

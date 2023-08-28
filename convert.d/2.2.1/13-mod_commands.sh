@@ -14,7 +14,7 @@ function pre_mod_commands(){
 }
 
 function fix_mod_commands() {
-  file="$ROOT/website/docs/13-mod_commands.md"
+  file="$ROOT/website/docs/ocpi/13-mod_commands.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: commands\nslug: modules/commands\n---" | cat - "$file" > "$tempfile"
@@ -56,31 +56,31 @@ function fix_mod_commands() {
 }
 
 function flavored_mod_commands() {
-  file="$ROOT/website/docs/13-mod_commands.md"
+  file="$ROOT/website/docs/ocpi/13-mod_commands.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
   MODULE="08-commands"
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/06-modules/08-commands"
-  mkdir -p "$ROOT/website/docs/06-modules/08-commands"
+  rm -rf "$ROOT/website/docs/ocpi/06-modules/08-commands"
+  mkdir -p "$ROOT/website/docs/ocpi/06-modules/08-commands"
 
   # reserved
-  # mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
-  mv "$ROOT/tmp/flow.md"                    "$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
-  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
-  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
-  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  # mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/ocpi/06-modules/$MODULE/03-use-cases.md"
+  mv "$ROOT/tmp/flow.md"                    "$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow.md"
+  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
 
-  < "$file" gsed -n '1,/## Flow/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  < "$file" gsed -n '1,/## Flow/p' > "$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: intro
-slug: /modules/commands
+slug: /ocpi/modules/commands
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -88,12 +88,12 @@ E_O_HEADERS
   gsed -i '/^$/N;/^\n$/D' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/04-flow.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: flow
-slug: /modules/commands/flow
+slug: flow
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -101,12 +101,12 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: interfaces-and-endpoints
-slug: /modules/commands/interfaces-and-endpoints
+slug: interfaces-and-endpoints
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -116,12 +116,12 @@ E_O_HEADERS
   gsed -i "s/^##### /#### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: object-description
-slug: /modules/commands/object-description
+slug: object-description
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -130,12 +130,12 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-types
-slug: /modules/commands/data-types
+slug: data-types
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -144,5 +144,5 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  rm -rf "$ROOT/website/docs/13-mod_commands.md"
+  rm -rf "$ROOT/website/docs/ocpi/13-mod_commands.md"
 }

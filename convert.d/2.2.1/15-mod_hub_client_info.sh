@@ -6,7 +6,7 @@ function pre_mod_hub_client_info(){
 }
 
 function fix_mod_hub_client_info() {
-  file="$ROOT/website/docs/15-mod_hub_client_info.md"
+  file="$ROOT/website/docs/ocpi/15-mod_hub_client_info.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: hub_client_info\nslug: modules/hub-client-info\n---" | cat - "$file" > "$tempfile"
@@ -31,30 +31,30 @@ function fix_mod_hub_client_info() {
 }
 
 function flavored_mod_hubclientinfo() {
-  file="$ROOT/website/docs/15-mod_hub_client_info.md"
+  file="$ROOT/website/docs/ocpi/15-mod_hub_client_info.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
   MODULE="10-hubclientinfo"
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/06-modules/10-hubclientinfo"
-  mkdir -p "$ROOT/website/docs/06-modules/10-hubclientinfo"
+  rm -rf "$ROOT/website/docs/ocpi/06-modules/10-hubclientinfo"
+  mkdir -p "$ROOT/website/docs/ocpi/06-modules/10-hubclientinfo"
 
-  mv "$ROOT/tmp/scenarios.md"           "$ROOT/website/docs/06-modules/$MODULE/03-scenarios.md"
-  mv "$ROOT/tmp/flowandlifecycle.md"    "$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
-  mv "$ROOT/tmp/interfaces.md"          "$ROOT/website/docs/06-modules/$MODULE/05-interfaces.md"
-  mv "$ROOT/tmp/objectdescription.md"   "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
-  mv "$ROOT/tmp/datatypes.md"           "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  mv "$ROOT/tmp/scenarios.md"           "$ROOT/website/docs/ocpi/06-modules/$MODULE/03-scenarios.md"
+  mv "$ROOT/tmp/flowandlifecycle.md"    "$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  mv "$ROOT/tmp/interfaces.md"          "$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces.md"
+  mv "$ROOT/tmp/objectdescription.md"   "$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"           "$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
 
-  < "$file" gsed -n '1,/## Scenarios/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  < "$file" gsed -n '1,/## Scenarios/p' > "$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: intro
-slug: /modules/hubclientinfo
+slug: /ocpi/modules/hubclientinfo
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -62,24 +62,24 @@ E_O_HEADERS
   gsed -i '/^$/N;/^\n$/D' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/03-scenarios.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/03-scenarios.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: scenarios
-slug: /modules/hubclientinfo/scenarios
+slug: scenarios
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow-and-lifecycle.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: flow-and-lifecycle
-slug: /modules/hubclientinfo/flow-and-lifecycle
+slug: flow-and-lifecycle
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -88,12 +88,12 @@ E_O_HEADERS
   gsed -i "s/^## Still alive check./## Still alive check/gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: interfaces
-slug: /modules/hubclientinfo/interfaces
+slug: interfaces
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -104,12 +104,12 @@ E_O_HEADERS
   
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: object-description
-slug: /modules/hubclientinfo/object-description
+slug: object-description
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -117,12 +117,12 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-types
-slug: /modules/hubclientinfo/data-types
+slug: data-types
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -130,5 +130,5 @@ E_O_HEADERS
   gsed -i "s/^### /## /gm" "$file"
   gsed -i "s/^#### /### /gm" "$file"
 
-  rm -rf "$ROOT/website/docs/15-mod_hub_client_info.md"
+  rm -rf "$ROOT/website/docs/ocpi/15-mod_hub_client_info.md"
 }

@@ -125,65 +125,65 @@ flavored_mod_sessions
 
 echo ""
 
-# . ./convert.d/2.2.1/10-mod_cdrs.sh
-# pre_mod_cdrs
-# links "ocpi/mod_cdrs.asciidoc"
-# pandoc2markdown "10-mod_cdrs"
-# common_cleaning "website/docs/ocpi/10-mod_cdrs.md"
-# fix_mod_cdrs
-# flavored_mod_cdrs
+. ./convert.d/2.2.1/10-mod_cdrs.sh
+pre_mod_cdrs
+links "ocpi/mod_cdrs.asciidoc"
+pandoc2markdown "10-mod_cdrs"
+common_cleaning "website/docs/ocpi/10-mod_cdrs.md"
+fix_mod_cdrs
+flavored_mod_cdrs
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/11-mod_tariffs.sh
-# pre_mod_tariffs
-# links "ocpi/mod_tariffs.asciidoc"
-# pandoc2markdown "11-mod_tariffs"
-# common_cleaning "website/docs/ocpi/11-mod_tariffs.md"
-# fix_mod_tariffs
-# flavored_mod_tariffs
+. ./convert.d/2.2.1/11-mod_tariffs.sh
+pre_mod_tariffs
+links "ocpi/mod_tariffs.asciidoc"
+pandoc2markdown "11-mod_tariffs"
+common_cleaning "website/docs/ocpi/11-mod_tariffs.md"
+fix_mod_tariffs
+flavored_mod_tariffs
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/12-mod_tokens.sh
-# pre_mod_tokens
-# links "ocpi/mod_tokens.asciidoc"
-# pandoc2markdown "12-mod_tokens"
-# common_cleaning "website/docs/ocpi/12-mod_tokens.md"
-# fix_mod_tokens
-# flavored_mod_tokens
+. ./convert.d/2.2.1/12-mod_tokens.sh
+pre_mod_tokens
+links "ocpi/mod_tokens.asciidoc"
+pandoc2markdown "12-mod_tokens"
+common_cleaning "website/docs/ocpi/12-mod_tokens.md"
+fix_mod_tokens
+flavored_mod_tokens
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/13-mod_commands.sh
-# pre_mod_commands
-# links "ocpi/mod_commands.asciidoc"
-# pandoc2markdown "13-mod_commands"
-# common_cleaning "website/docs/ocpi/13-mod_commands.md"
-# fix_mod_commands
-# flavored_mod_commands
+. ./convert.d/2.2.1/13-mod_commands.sh
+pre_mod_commands
+links "ocpi/mod_commands.asciidoc"
+pandoc2markdown "13-mod_commands"
+common_cleaning "website/docs/ocpi/13-mod_commands.md"
+fix_mod_commands
+flavored_mod_commands
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/14-mod_charging_profiles.sh
-# pre_mod_charging_profiles
-# links "ocpi/mod_charging_profiles.asciidoc"
-# pandoc2markdown "14-mod_charging_profiles"
-# common_cleaning "website/docs/ocpi/14-mod_charging_profiles.md"
-# fix_mod_charging_profiles
-# flavored_mod_charging-profiles
+. ./convert.d/2.2.1/14-mod_charging_profiles.sh
+pre_mod_charging_profiles
+links "ocpi/mod_charging_profiles.asciidoc"
+pandoc2markdown "14-mod_charging_profiles"
+common_cleaning "website/docs/ocpi/14-mod_charging_profiles.md"
+fix_mod_charging_profiles
+flavored_mod_charging-profiles
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/15-mod_hub_client_info.sh
-# pre_mod_hub_client_info
-# links "ocpi/mod_hub_client_info.asciidoc"
-# pandoc2markdown "15-mod_hub_client_info"
-# common_cleaning "website/docs/ocpi/15-mod_hub_client_info.md"
-# fix_mod_hub_client_info
-# flavored_mod_hubclientinfo
+. ./convert.d/2.2.1/15-mod_hub_client_info.sh
+pre_mod_hub_client_info
+links "ocpi/mod_hub_client_info.asciidoc"
+pandoc2markdown "15-mod_hub_client_info"
+common_cleaning "website/docs/ocpi/15-mod_hub_client_info.md"
+fix_mod_hub_client_info
+flavored_mod_hubclientinfo
 
-# echo ""
+echo ""
 
 . ./convert.d/2.2.1/16-types.sh
 pre_types

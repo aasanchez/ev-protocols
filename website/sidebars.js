@@ -106,99 +106,99 @@ const sidebars = {
             'ocpi/modules/sessions/data-types'
           ]
         },
-    //     {
-    //       type: 'category',
-    //       label: '📊 CDRs',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/cdrs/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/cdrs/flow-and-lifecycle',
-    //         'ocpi/modules/cdrs/interfaces-and-endpoints',
-    //         'ocpi/modules/cdrs/object-description',
-    //         'ocpi/modules/cdrs/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '💰 Tariffs',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/tariffs/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/tariffs/flow-and-lifecycle',
-    //         'ocpi/modules/tariffs/interfaces-and-endpoints',
-    //         'ocpi/modules/tariffs/object-description',
-    //         'ocpi/modules/tariffs/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '👤 Tokens',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/tokens/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/tokens/flow-and-lifecycle',
-    //         'ocpi/modules/tokens/interfaces-and-endpoints',
-    //         'ocpi/modules/tokens/object-description',
-    //         'ocpi/modules/tokens/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '⚙️ Commands',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/commands/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/commands/flow',
-    //         'ocpi/modules/commands/interfaces-and-endpoints',
-    //         'ocpi/modules/commands/object-description',
-    //         'ocpi/modules/commands/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '🔌 ChargingProfiles',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/charging-profiles/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/charging-profiles/smart-charging-topologies',
-    //         'ocpi/modules/charging-profiles/use-cases',
-    //         'ocpi/modules/charging-profiles/flow',
-    //         'ocpi/modules/charging-profiles/interfaces-and-endpoints',
-    //         'ocpi/modules/charging-profiles/object-description',
-    //         'ocpi/modules/charging-profiles/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '⛓️ HubClientInfo',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/hubclientinfo/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/hubclientinfo/scenarios',
-    //         'ocpi/modules/hubclientinfo/flow-and-lifecycle',
-    //         'ocpi/modules/hubclientinfo/interfaces',
-    //         'ocpi/modules/hubclientinfo/object-description',
-    //         'ocpi/modules/hubclientinfo/data-types'
-    //       ]
-    //     },
+        {
+          type: 'category',
+          label: '📊 CDRs',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/cdrs/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/cdrs/flow-and-lifecycle',
+            'ocpi/modules/cdrs/interfaces-and-endpoints',
+            'ocpi/modules/cdrs/object-description',
+            'ocpi/modules/cdrs/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '💰 Tariffs',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/tariffs/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/tariffs/flow-and-lifecycle',
+            'ocpi/modules/tariffs/interfaces-and-endpoints',
+            'ocpi/modules/tariffs/object-description',
+            'ocpi/modules/tariffs/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '👤 Tokens',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/tokens/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/tokens/flow-and-lifecycle',
+            'ocpi/modules/tokens/interfaces-and-endpoints',
+            'ocpi/modules/tokens/object-description',
+            'ocpi/modules/tokens/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '⚙️ Commands',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/commands/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/commands/flow',
+            'ocpi/modules/commands/interfaces-and-endpoints',
+            'ocpi/modules/commands/object-description',
+            'ocpi/modules/commands/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔌 ChargingProfiles',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/charging-profiles/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/charging-profiles/smart-charging-topologies',
+            'ocpi/modules/charging-profiles/use-cases',
+            'ocpi/modules/charging-profiles/flow',
+            'ocpi/modules/charging-profiles/interfaces-and-endpoints',
+            'ocpi/modules/charging-profiles/object-description',
+            'ocpi/modules/charging-profiles/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '⛓️ HubClientInfo',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/hubclientinfo/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/hubclientinfo/scenarios',
+            'ocpi/modules/hubclientinfo/flow-and-lifecycle',
+            'ocpi/modules/hubclientinfo/interfaces',
+            'ocpi/modules/hubclientinfo/object-description',
+            'ocpi/modules/hubclientinfo/data-types'
+          ]
+        },
       ]
     },
     'ocpi/types/intro'
