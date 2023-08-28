@@ -25,7 +25,7 @@ function fix_types() {
   gsed -i "s|^\`\`\`\stext|\`\`\`text|gm" "$file"
   gsed -i -z "s|\`\`\`text\n{|\`\`\`json\n{|gm" "$file"
 
-  gsed -i -z "s|/ocpi/07-types/01-intro.md||gm" "$file"
+  # gsed -i -z "s|/ocpi/07-types/01-intro.md||gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

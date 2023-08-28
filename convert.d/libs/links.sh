@@ -33,9 +33,9 @@ function links(){
   replace "<<docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#response-format,"           "<<transport_and_format.asciidoc#transport_and_format_response_format," "$file"
   replace "<<docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#response-format,"           "<<transport_and_format_response_format," "$file"
 
-  replace "<<docs/ocpi/05-status-codes/05-status-codes.md#2xxx-client-errors,"  "<<status_codes.asciidoc#status_codes_2xxx_client_errors," "$file"
-  replace "<<docs/ocpi/05-status-codes/05-status-codes.md#3xxx-server-errors,"  "<<status_codes.asciidoc#status_codes_3xxx_server_errors," "$file"
-  replace "<<docs/ocpi/05-status-codes/05-status-codes.md,"                     "<<status_codes.asciidoc#status_codes_status_codes," "$file"
+  replace "<<docs/ocpi/05-status-codes/01-status-codes.md#2xxx-client-errors,"  "<<status_codes.asciidoc#status_codes_2xxx_client_errors," "$file"
+  replace "<<docs/ocpi/05-status-codes/01-status-codes.md#3xxx-server-errors,"  "<<status_codes.asciidoc#status_codes_3xxx_server_errors," "$file"
+  replace "<<docs/ocpi/05-status-codes/01-status-codes.md,"                     "<<status_codes.asciidoc#status_codes_status_codes," "$file"
 
   replace "<<docs/ocpi/06-modules/01-versions/01-intro.md,"                               "<<version_information_endpoint.asciidoc#versions_module," "$file"
   replace "<<docs/ocpi/06-modules/01-versions/02-information-endpoint.md#version-class,"  "<<version_information_endpoint_version_class," "$file"
@@ -234,6 +234,6 @@ function links(){
   replace "<<docs/ocpi/07-types/01-intro.md#string-type,"       "<<types_string_type," "$file"
   replace "<<docs/ocpi/07-types/01-intro.md#url-type,"          "<<types.asciidoc#types_url_type," "$file"
 
-  replace "<<https://EV-protocols," "<<changelog.asciidoc#changelog_changelog," "$file"
+  replace "<<https://ev-protocols," "<<changelog.asciidoc#changelog_changelog," "$file"
 
 }

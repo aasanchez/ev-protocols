@@ -59,7 +59,7 @@ once a month, in case it was not detected that the credentials where compromised
 ## Errors during registration
 
 When the server connects back to the client during the credentials registration, it might encounter problems. When this
-happens, the server should add the status code [3001](/docs/ocpi/05-status-codes/05-status-codes.md#3xxx-server-errors)
+happens, the server should add the status code [3001](/docs/ocpi/05-status-codes/01-status-codes.md#3xxx-server-errors)
 in the response to the POST from the client.
 
 ## Required endpoints not available
@@ -75,4 +75,4 @@ to send the POST request with credentials to the Receiver. Log a message/notify 
 administrator of the Receiver platform.
 
 In case the Receiver platform that cannot find the endpoints it expects, then it is expected to respond to the request
-with the status code [3003](/docs/ocpi/05-status-codes/05-status-codes.md#3xxx-server-errors).
+with the status code [3003](/docs/ocpi/05-status-codes/01-status-codes.md#3xxx-server-errors).
