@@ -40,9 +40,9 @@ The CPO should not check the Token in the START_SESSION, before sending it to th
 that the eMSP only sends valid Tokens in the START_SESSION object.
 
 If needed, the Charge Point does an OCPP Authorize request to validate the Token (proved via OCPP). In such case the CPO
-only does an \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime
-authorization\>when the OCPP Authorize request is for an RFID Token and the START_SESSION for this Token was received
-more then 15 minutes ago.
+only does an [realtime authorization](/docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization)
+when the OCPP Authorize request is for an RFID Token and the START_SESSION for this Token was received more then 15
+minutes ago.
 
 ![START_SESSION whitelist NEVER](../../images/command_start_session_whitelist_never.svg)
 

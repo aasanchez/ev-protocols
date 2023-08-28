@@ -15,13 +15,13 @@ Typically implemented by all parties connecting to a Hub.
 With this interface the Hub can push the ClientInfo information to a connected client (eMSP/CPO etc) Example endpoint
 structure: `/ocpi/cpo/2.0/clientinfo/{country_code}/{party_id}`
 
-| Method                                                                         | Description                                                                                                                     |
-|--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#get-method,GET\>\> | Retrieve a ClientInfo object as it is stored in the connected clients system.                                                   |
-| POST                                                                           | n/a                                                                                                                             |
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#put-method,PUT\>\> | Push new/updated ClientInfo object to the connect client.                                                                       |
-| PATCH                                                                          | n/a                                                                                                                             |
-| DELETE                                                                         | n/a, Use \<\</docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#put-method,PUT\>\>, ClientInfo objects cannot be removed). |
+| Method                                                                    | Description                                                                                                                |
+|---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| [GET](/docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#get-method) | Retrieve a ClientInfo object as it is stored in the connected clients system.                                              |
+| POST                                                                      | n/a                                                                                                                        |
+| [PUT](/docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#put-method) | Push new/updated ClientInfo object to the connect client.                                                                  |
+| PATCH                                                                     | n/a                                                                                                                        |
+| DELETE                                                                    | n/a, Use [PUT](/docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#put-method), ClientInfo objects cannot be removed). |
 
 ### **GET** Method
 
@@ -33,19 +33,19 @@ the connected client system had a different status or was missing an object.
 
 The following parameters shall be provided as URL segments.
 
-| Parameter    | Datatype                                                          | Required | Description                                                |
-|--------------|-------------------------------------------------------------------|----------|------------------------------------------------------------|
-| country_code | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(2) | yes      | Country code of the requested ClientInfo object.           |
-| party_id     | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(3) | yes      | Party ID (Provider ID) of the requested ClientInfo object. |
+| Parameter    | Datatype                                                     | Required | Description                                                |
+|--------------|--------------------------------------------------------------|----------|------------------------------------------------------------|
+| country_code | [CiString](/docs/ocpi/07-types/01-intro.md#cistring-type)(2) | yes      | Country code of the requested ClientInfo object.           |
+| party_id     | [CiString](/docs/ocpi/07-types/01-intro.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the requested ClientInfo object. |
 
 #### Response Data
 
 The response contains the requested object.
 
-|                                                                                                      |       |                                  |
-|------------------------------------------------------------------------------------------------------|-------|----------------------------------|
-| Type                                                                                                 | Card. | Description                      |
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object,ClientInfo\>\> | 1     | The requested ClientInfo object. |
+|                                                                                                 |       |                                  |
+|-------------------------------------------------------------------------------------------------|-------|----------------------------------|
+| Type                                                                                            | Card. | Description                      |
+| [ClientInfo](/docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | 1     | The requested ClientInfo object. |
 
 ### **PUT** Method
 
@@ -55,20 +55,20 @@ New or updated ClientInfo objects are pushed from the Hub to a connected client.
 
 In the put request a the new or updated ClientInfo object is send.
 
-|                                                                                                      |       |                                   |
-|------------------------------------------------------------------------------------------------------|-------|-----------------------------------|
-| Type                                                                                                 | Card. | Description                       |
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object,ClientInfo\>\> | 1     | New or updated ClientInfo object. |
+|                                                                                                 |       |                                   |
+|-------------------------------------------------------------------------------------------------|-------|-----------------------------------|
+| Type                                                                                            | Card. | Description                       |
+| [ClientInfo](/docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | 1     | New or updated ClientInfo object. |
 
 #### Request Parameters
 
 The following parameters shall be provided as URL segments.
 
-|              |                                                                   |          |                                                                                |
-|--------------|-------------------------------------------------------------------|----------|--------------------------------------------------------------------------------|
-| Parameter    | Datatype                                                          | Required | Description                                                                    |
-| country_code | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(2) | yes      | Country code of the eMSP sending this PUT request to the CPO system.           |
-| party_id     | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(3) | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. |
+|              |                                                              |          |                                                                                |
+|--------------|--------------------------------------------------------------|----------|--------------------------------------------------------------------------------|
+| Parameter    | Datatype                                                     | Required | Description                                                                    |
+| country_code | [CiString](/docs/ocpi/07-types/01-intro.md#cistring-type)(2) | yes      | Country code of the eMSP sending this PUT request to the CPO system.           |
+| party_id     | [CiString](/docs/ocpi/07-types/01-intro.md#cistring-type)(3) | yes      | Party ID (Provider ID) of the eMSP sending this PUT request to the CPO system. |
 
 #### Example: put a new ClientInfo object
 
@@ -89,13 +89,13 @@ Typically implemented by the Hub.
 
 This interface enables Receivers to request the current list of ClientInfo objects from the Sender, when needed.
 
-| Method                                                                           | Description |
-|----------------------------------------------------------------------------------|-------------|
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1,GET\>\> |             |
-| POST                                                                             | n/a         |
-| PUT                                                                              | n/a         |
-| PATCH                                                                            | n/a         |
-| DELETE                                                                           | n/a         |
+| Method                                                                      | Description |
+|-----------------------------------------------------------------------------|-------------|
+| [GET](/docs/ocpi/06-modules/10-hubclientinfo/05-interfaces.md#get-method-1) |             |
+| POST                                                                        | n/a         |
+| PUT                                                                         | n/a         |
+| PATCH                                                                       | n/a         |
+| DELETE                                                                      | n/a         |
 
 ### **GET** Method
 
@@ -117,28 +117,27 @@ Examples:
 If additional parameters: `{date_from}` and/or `{date_to}` are provided, only ClientInfo objects with (`last_updated`)
 between the given `{date_from}` (including) and `{date_to}` (excluding) will be returned.
 
-This request is \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#pagination,paginated\>\>, it
-supports the
-\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request,pagination\>\> related URL
-parameters.
+This request is [paginated](/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#pagination), it
+supports the [pagination](/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#paginated-request)
+related URL parameters.
 
-| Parameter | Datatype                                                       | Required | Description                                                                                          |
-|-----------|----------------------------------------------------------------|----------|------------------------------------------------------------------------------------------------------|
-| date_from | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>\> | no       | Only return ClientInfo that have `last_updated` after or equal to this Date/Time (inclusive).        |
-| date_to   | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>\> | no       | Only return ClientInfo that have `last_updated` up to this Date/Time, but not including (exclusive). |
-| offset    | int                                                            | no       | The offset of the first object returned. Default is 0.                                               |
-| limit     | int                                                            | no       | Maximum number of objects to GET.                                                                    |
+| Parameter | Datatype                                                  | Required | Description                                                                                          |
+|-----------|-----------------------------------------------------------|----------|------------------------------------------------------------------------------------------------------|
+| date_from | [DateTime](/docs/ocpi/07-types/01-intro.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` after or equal to this Date/Time (inclusive).        |
+| date_to   | [DateTime](/docs/ocpi/07-types/01-intro.md#datetime-type) | no       | Only return ClientInfo that have `last_updated` up to this Date/Time, but not including (exclusive). |
+| offset    | int                                                       | no       | The offset of the first object returned. Default is 0.                                               |
+| limit     | int                                                       | no       | Maximum number of objects to GET.                                                                    |
 
 ### Response Data
 
 The endpoint response with list of valid ClientInfo objects, the header will contain the
-\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response,pagination\>\> related
+[pagination](/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#paginated-response) related
 headers.
 
 Any older information that is not specified in the response is considered as no longer valid. Each object must contain
 all required fields. Fields that are not specified may be considered as null values.
 
-|                                                                                                      |       |                                               |
-|------------------------------------------------------------------------------------------------------|-------|-----------------------------------------------|
-| Type                                                                                                 | Card. | Description                                   |
-| \<\</docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object,ClientInfo\>\> | \*    | List of all (or matching) ClientInfo objects. |
+|                                                                                                 |       |                                               |
+|-------------------------------------------------------------------------------------------------|-------|-----------------------------------------------|
+| Type                                                                                            | Card. | Description                                   |
+| [ClientInfo](/docs/ocpi/06-modules/10-hubclientinfo/06-object-description.md#clientinfo-object) | \*    | List of all (or matching) ClientInfo objects. |

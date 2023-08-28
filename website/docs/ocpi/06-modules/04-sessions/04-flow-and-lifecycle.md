@@ -7,26 +7,26 @@ slug: flow-and-lifecycle
 ## Push model
 
 When the CPO creates a Session object they push it to the corresponding eMSP by calling
-\<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1,PUT\>\> on the eMSP's Sessions
-endpoint with the newly created Session object.
+[PUT](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method-1) on the eMSP's Sessions endpoint
+with the newly created Session object.
 
 Any changes to a Session in the CPO system are sent to the eMSP system by calling
-\<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#patch-method,PATCH\>\> on the eMSP's Sessions
-endpoint with the updated Session object.
+[PATCH](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#patch-method) on the eMSP's Sessions endpoint
+with the updated Session object.
 
 Sessions cannot be deleted, final status of a session is: `COMPLETED`.
 
 When the CPO is not sure about the state or existence of a Session object in the eMSP's system, the CPO can call
-\<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method-1,GET\>\> on the eMSP's Sessions
-endpoint to validate the Session object in the eMSP's system.
+[GET](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method-1) on the eMSP's Sessions endpoint to
+validate the Session object in the eMSP's system.
 
 ## Pull model
 
 eMSPs who do not support the Push model need to call
-\<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method,GET\>\> on the CPO's Sessions endpoint
-to receive a list of Sessions.
+[GET](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method) on the CPO's Sessions endpoint to
+receive a list of Sessions.
 
-This \<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method,GET\>\> method can also be used in
+This [GET](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#get-method) method can also be used in
 combination with the Push model to retrieve Sessions after the system (re-)connects to a CPO, to get a list Sessions
 *missed* during a downtime of the eMSP's system.
 
@@ -34,20 +34,20 @@ combination with the Push model to retrieve Sessions after the system (re-)conne
 
 For a lot of smart charging use cases, input from the driver is needed. The smart charging algorithms need to be able to
 give certain session priority over others. In other words they need to know how much energy an EV needs before what
-time. Via a \<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method,PUT\>\> request on the
-Sender Interface, during an ongoing session, the eMSP can send
-\<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#chargingpreferences-object,Charging Preferences\>\> on
-behalf of the driver.
+time. Via a [PUT](/docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method) request on the Sender
+Interface, during an ongoing session, the eMSP can send [Charging
+Preferences](/docs/ocpi/06-modules/04-sessions/06-object-description.md#chargingpreferences-object) on behalf of the
+driver.
 
-The eMSP can determine if an EVSE supports Charging Preferences by checking if the
-\<\</docs/ocpi/06-modules/03-locations/06-object-description.md#,EVSE capabilities\>\> contains:
-\<\</docs/ocpi/06-modules/03-locations/07-data-types.md#capability-enum,CHARGING_PREFERENCES_CAPABLE\>\>.
+The eMSP can determine if an EVSE supports Charging Preferences by checking if the [EVSE
+capabilities](/docs/ocpi/06-modules/03-locations/06-object-description.md#) contains:
+[CHARGING_PREFERENCES_CAPABLE](/docs/ocpi/06-modules/03-locations/07-data-types.md#capability-enum).
 
-Via \<\</docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object,Tariffs\>\> the CPO can give different
+Via [Tariffs](/docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object) the CPO can give different
 Charging Preferences different prices. A
-\<\</docs/ocpi/06-modules/03-locations/06-object-description.md#connector-object,Connector\>\> can have multiple
-\<\</docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object,Tariffs\>\>, one for each
-\<\</docs/ocpi/06-modules/04-sessions/07-data-types.md#profiletype-enum,ProfileType\>\>.
+[Connector](/docs/ocpi/06-modules/03-locations/06-object-description.md#connector-object) can have multiple
+[Tariffs](/docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object), one for each
+[ProfileType](/docs/ocpi/06-modules/04-sessions/07-data-types.md#profiletype-enum).
 
 ## Reservation
 

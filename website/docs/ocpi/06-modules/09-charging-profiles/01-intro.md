@@ -45,7 +45,7 @@ OCPI provides the means for SCSPs to do this. Parties doing this have to adhere 
 setup contracts etc. Local laws might oblige explicit consent from the driver etc.
 :::
 
-**Module dependency:** \<\</docs/ocpi/06-modules/04-sessions/01-intro.md,Sessions module\>\>
+**Module dependency:** [Sessions module](/docs/ocpi/06-modules/04-sessions/01-intro.md)
 
 ## Smart Charging Topologies
 
@@ -78,10 +78,9 @@ agreed to use OCPI as the interface.
 
 The eMSP *owns* the customer, so if the eMSP knows that its customer agrees with the eMSP manipulating the charging
 speed, the eMSP is free to do this. The eMSP can forward OCPI
-\<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>\> Objects to the SCSP. the SCSP
-can act on the received/updated
-\<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>\> Objects, by sending Charging
-Profile commands via the eMSP to the CPO.
+[Session](/docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object) Objects to the SCSP. the SCSP can
+act on the received/updated [Session](/docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object)
+Objects, by sending Charging Profile commands via the eMSP to the CPO.
 
 The eMSP and SCSP have to take into account that they have to oblige to local privacy laws when exchanging information
 about eMSPs customers.
@@ -108,9 +107,9 @@ simple as a sticker on the Charge Point, or might even be part of the tariff tex
 
 The CPO might generate ChargingProfiles themselves, but as OCPI is then not used this is not part of this document.
 
-The CPO can forward OCPI \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>\>
-Objects to the SCSP. the SCSP can act on the received/updated
-\<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>\> Objects, by sending Charging
+The CPO can forward OCPI [Session](/docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object) Objects to
+the SCSP. the SCSP can act on the received/updated
+[Session](/docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object) Objects, by sending Charging
 Profile commands to the CPO.
 
 The CPO and SCSP have to take into account that they have to oblige to local privacy laws when exchanging information

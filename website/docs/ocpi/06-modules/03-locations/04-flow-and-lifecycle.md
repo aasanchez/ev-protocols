@@ -4,41 +4,41 @@ slug: locations/flow-and-lifecycle
 ---
 # Flow and Lifecycle
 
-The Locations module has the
-\<\</docs/ocpi/06-modules/03-locations/06-object-description.md#location-object,Location\>as base object. Each
-Location can have multiple EVSEs (1:n) and each EVSE can have multiple Connectors (1:n). With the methods in the
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-interface,Receiver interface\>\>,
-Location data and status information can be shared with for example an eMSP and NSP. Updates can be made to a whole
-Location, but also only to an EVSE or a single Connector.
+The Locations module has the [Location](/docs/ocpi/06-modules/03-locations/06-object-description.md#location-object) as
+base object. Each Location can have multiple EVSEs (1:n) and each EVSE can have multiple Connectors (1:n). With the
+methods in the [Receiver
+interface](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#receiver-interface), Location data and
+status information can be shared with for example an eMSP and NSP. Updates can be made to a whole Location, but also
+only to an EVSE or a single Connector.
 
 When a CPO creates Location objects, it pushes them to connected eMSP by calling
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method,PUT\>on the Receivers Locations
-endpoint. eMSPs who do not support Push mode need to call
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method,GET\>on the CPOs Locations endpoint
-to receive the new object. This should be done regularly to stay up to date with the CPOs data, but not too often in
-order to keep the load low.
+[PUT](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) on the Receivers Locations endpoint.
+eMSPs who do not support Push mode need to call
+[GET](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method) on the CPOs Locations endpoint to
+receive the new object. This should be done regularly to stay up to date with the CPOs data, but not too often in order
+to keep the load low.
 
 If the CPO wants to replace a Location related object, they again push it to the eMSP systems by calling
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method,PUT\>on their Locations endpoint.
+[PUT](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) on their Locations endpoint.
 
 Any changes to a Location related object can also be pushed to connected eMSPs by calling the
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method,PATCH\>method on the eMSPs
-Locations endpoint, but using PATCH mode, only actual changes should be pushed. Providers who do not support Push mode
-need to call \<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method,GET\>on the CPOs
-Locations endpoint to receive the updates.
+[PATCH](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) method on the eMSPs Locations
+endpoint, but using PATCH mode, only actual changes should be pushed. Providers who do not support Push mode need to
+call [GET](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method) on the CPOs Locations endpoint
+to receive the updates.
 
 ## Delete with status update
 
 When the CPO wants to delete an EVSE from the list of active EVSEs, they MUST update the EVSE's `status` field to
-`REMOVED` and call the \<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method,PUT\>or
-\<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method,PATCH\>on the eMSP system. A
-Location without any valid EVSE object can be considered expired and should no longer be displayed. There is no way to
-entirely delete Locations, EVSEs and Connectors as there are other modules like
-\<\</docs/ocpi/06-modules/04-sessions/01-intro.md,`sessions`\>that depend on them. If it was possible to remove these
+`REMOVED` and call the [PUT](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#put-method) or
+[PATCH](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#patch-method) on the eMSP system. A Location
+without any valid EVSE object can be considered expired and should no longer be displayed. There is no way to entirely
+delete Locations, EVSEs and Connectors as there are other modules like
+[`sessions`](/docs/ocpi/06-modules/04-sessions/01-intro.md) that depend on them. If it was possible to remove these
 objects, those links would no longer work.
 
 When the CPO is not sure about the state or existence of a Location, EVSE or Connector object in the eMSP's system, the
-CPO can perform a \<\</docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method-1,GET\>request to
+CPO can perform a [GET](/docs/ocpi/06-modules/03-locations/05-interfaces-and-endpoints.md#get-method-1) request to
 validate the object in the eMSP's system.
 
 Private charging Locations, that are not to be used for public charging, SHALL NOT be published via OCPI.

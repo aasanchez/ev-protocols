@@ -66,26 +66,24 @@ OCPI 2.2 includes new functionality and improvements, compared to OCPI 2.1.1.
 ### Changes/New functionality
 
 * Support for Hubs
-  * \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#message-routing,Message routing
-    headers\>\>
-  * \<\</docs/ocpi/06-modules/10-hubclientinfo/01-intro.md,Hub Client Info\>\>
-* \<\</docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class,Support Platforms with
-  multiple/different roles, additional roles\>\>
-* \<\</docs/ocpi/06-modules/09-charging-profiles/01-intro.md,Charging Profiles\>\>
-* \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#set-charging-preferences,Preference based Smart
-  Charging\>\>
+  * [Message routing headers](/docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#message-routing)
+  * [Hub Client Info](/docs/ocpi/06-modules/10-hubclientinfo/01-intro.md)
+* [Support Platforms with multiple/different
+  roles](/docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class)
+* [Charging Profiles](/docs/ocpi/06-modules/09-charging-profiles/01-intro.md)
+* [Preference based Smart Charging](/docs/ocpi/06-modules/04-sessions/06-object-description.md#set-charging-preferences)
 * Improvements:
-  * \<\</docs/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object,CDRs\>\>: Credit CDRs, VAT, Calibration
+  * [CDRs](/docs/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object): Credit CDRs, VAT, Calibration
     law/Eichrecht support, Session_id, AuthorizationReference, CdrLocation, CdrToken
-  * \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Sessions\>\>: VAT, CdrToken, How to
-    add a Charging Period
-  * \<\</docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object,Tariffs\>\>: Tariff types, Min/Max
-    price, reservation tariff, Much more examples
-  * \<\</docs/ocpi/06-modules/03-locations/06-object-description.md#location-object,Locations\>\>: Multiple Tariffs,
-    Lots of small improvements
-  * \<\</docs/ocpi/06-modules/07-tokens/06-object-description.md#token-object,Tokens\>\>: Group_id, energy contract
-  * \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#cancelreservation-object,Commands\>\>: Cancel
-    Reservation added
+  * [Sessions](/docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object): VAT, CdrToken, How to add a
+    Charging Period
+  * [Tariffs](/docs/ocpi/06-modules/06-tariffs/06-object-description.md#tariff-object): Tariff types, Min/Max price,
+    reservation tariff, Much more examples
+  * [Locations](/docs/ocpi/06-modules/03-locations/06-object-description.md#location-object): Multiple Tariffs, Lots of
+    small improvements
+  * [Tokens](/docs/ocpi/06-modules/07-tokens/06-object-description.md#token-object): Group_id, energy contract
+  * [Commands](/docs/ocpi/06-modules/08-commands/06-object-description.md#cancelreservation-object): Cancel Reservation
+    added
 
 ## OCPI is developed with support of
 
