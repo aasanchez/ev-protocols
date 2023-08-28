@@ -6,11 +6,11 @@ slug: object-description
 
 ## Credentials object
 
-| Property | Type                                                                                      | Card. | Description                                                                                                                                                                                                                                   |
-|----------|-------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token    | [string](/ocpi/07-types/01-intro.md#string-type)(64)                                      | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
-| url      | [URL](/ocpi/07-types/01-intro.md#url-type)                                                | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
-| roles    | [CredentialsRole](/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class) | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
+| Property | Type                                                                                                | Card. | Description                                                                                                                                                                                                                                   |
+|----------|-----------------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token    | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64)                                      | 1     | The credentials token for the other party to authenticate in your system. It should only contain printable non-whitespace ASCII characters, that is, characters with Unicode code points from the range of U+0021 up to and including U+007E. |
+| url      | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>\>                                                | 1     | The URL to your API versions endpoint.                                                                                                                                                                                                        |
+| roles    | \<\</docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class,CredentialsRole\>\> | \+    | List of the roles this party provides.                                                                                                                                                                                                        |
 
 Every role needs a unique combination of: `role`, `party_id` and `country_code`.
 
@@ -18,15 +18,15 @@ A platform can have the same role more than once, each with its own unique `part
 when a CPO provides *white-label* services for *virtual* CPOs.
 
 One or more roles and thus `party_id` and `country_code` sets are provided here to inform a server about the `party_id`
-and `country_code` sets a client will use when pushing [Client Owned
-Objects](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push). This helps a
-server to determine the URLs a client will use when pushing a [Client Owned
-Object](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push). The `country_code`
-is added to make certain the URL used when pushing a [Client Owned
-Object](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push) is unique as there
-might be multiple parties in the world with the same `party_id`. The combination of `country_code` and `party_id` should
-always be unique though. A party operating in multiple countries can always use the home country of the company for all
-connections.
+and `country_code` sets a client will use when pushing
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push,Client Owned
+Objects\>\>. This helps a server to determine the URLs a client will use when pushing a
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push,Client Owned
+Object\>\>. The `country_code` is added to make certain the URL used when pushing a
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#client-owned-object-push,Client Owned
+Object\>\> is unique as there might be multiple parties in the world with the same `party_id`. The combination of
+`country_code` and `party_id` should always be unique though. A party operating in multiple countries can always use the
+home country of the company for all connections.
 
 For example: EVSE IDs can be pushed under the country and provider identification of a company, even if the EVSEs are
 actually located in a different country. This way it is not necessary to establish one OCPI connection per country a
@@ -37,8 +37,8 @@ used in the different OCPI modules. A party implementing OCPI MAY push EVSE IDs 
 from the OCPI `party_id` and/or the `country_code`.
 
 A Hub SHALL only reports itself as role: Hub. A Hub SHALL NOT report all the other connected parties as a role on the
-platform. A Hub SHALL report connected parties via the [HubClientInfo
-module](/ocpi/06-modules/10-hubclientinfo/01-intro.md).
+platform. A Hub SHALL report connected parties via the
+\<\</docs/ocpi/06-modules/10-hubclientinfo/01-intro.md,HubClientInfo module\>\>.
 
 ## Examples
 

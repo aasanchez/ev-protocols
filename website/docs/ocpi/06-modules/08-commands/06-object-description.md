@@ -12,10 +12,10 @@ contain the `reservation_id` that was given by the Sender to the `ReserveNow`.
 As there might be cost involved for a Reservation, canceling a reservation might still result in a CDR being send for
 the reservation.
 
-| Property       | Type                                                     | Card. | Description                                                                                                                                                               |
-|----------------|----------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| response_url   | [URL](/ocpi/07-types/01-intro.md#url-type)               | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between CancelReservation requests.                       |
-| reservation_id | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | Reservation id, unique for this reservation. If the Charge Point already has a reservation that matches this reservationId the Charge Point will replace the reservation. |
+| Property       | Type                                                               | Card. | Description                                                                                                                                                               |
+|----------------|--------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| response_url   | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                 | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between CancelReservation requests.                       |
+| reservation_id | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | Reservation id, unique for this reservation. If the Charge Point already has a reservation that matches this reservationId the Charge Point will replace the reservation. |
 
 ## *CommandResponse* Object
 
@@ -26,18 +26,18 @@ successfully called. The eMSP might have had a glitch, HTTP 500 returned, was of
 be able to give a quick as possible response to another system or driver app. It is important for the eMSP to know the
 timeout on a certain command.
 
-| Property | Type                                                                                          | Card. | Description                                                                                                                                         |
-|----------|-----------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| result   | [CommandResponseType](/ocpi/06-modules/08-commands/07-data-types.md#commandresponsetype-enum) | 1     | Response from the CPO on the command request.                                                                                                       |
-| timeout  | int                                                                                           | 1     | Timeout for this command in seconds. When the Result is not received within this timeout, the eMSP can assume that the message might never be send. |
-| message  | [DisplayText](/ocpi/07-types/01-intro.md#displaytext-class)                                   | \*    | Human-readable description of the result (if one can be provided), multiple languages can be provided.                                              |
+| Property | Type                                                                                                  | Card. | Description                                                                                                                                         |
+|----------|-------------------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| result   | \<\</docs/ocpi/06-modules/08-commands/07-data-types.md#commandresponsetype-enum,CommandResponseType\> | 1     | Response from the CPO on the command request.                                                                                                       |
+| timeout  | int                                                                                                   | 1     | Timeout for this command in seconds. When the Result is not received within this timeout, the eMSP can assume that the message might never be send. |
+| message  | \<\</docs/ocpi/07-types/01-intro.md#displaytext-class,DisplayText\>                                   | \*    | Human-readable description of the result (if one can be provided), multiple languages can be provided.                                              |
 
 ## *CommandResult* Object
 
-| Property | Type                                                                                      | Card. | Description                                                                                            |
-|----------|-------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------|
-| result   | [CommandResultType](/ocpi/06-modules/08-commands/07-data-types.md#commandresulttype-enum) | 1     | Result of the command request as sent by the Charge Point to the CPO.                                  |
-| message  | [DisplayText](/ocpi/07-types/01-intro.md#displaytext-class)                               | \*    | Human-readable description of the reason (if one can be provided), multiple languages can be provided. |
+| Property | Type                                                                                              | Card. | Description                                                                                            |
+|----------|---------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------|
+| result   | \<\</docs/ocpi/06-modules/08-commands/07-data-types.md#commandresulttype-enum,CommandResultType\> | 1     | Result of the command request as sent by the Charge Point to the CPO.                                  |
+| message  | \<\</docs/ocpi/07-types/01-intro.md#displaytext-class,DisplayText\>                               | \*    | Human-readable description of the reason (if one can be provided), multiple languages can be provided. |
 
 ## *ReserveNow* Object
 
@@ -55,20 +55,21 @@ provided before sending the request to the Charge Point.
 
 If this is an OCPP Charge Point, the Charge Point decides if it needs to validate the given Token, in such case:
 
-* If this Token is of type `AD_HOC_USER` or `APP_USER` the CPO SHALL NOT do a [realtime
-  authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this.
+* If this Token is of type `AD_HOC_USER` or `APP_USER` the CPO SHALL NOT do a
+  \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>at the
+  eMSP for this.
 
-* If this Token is of type `RFID`, the CPO SHALL NOT do a [realtime
-  authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token
-  at the given EVSE/Charge Point within 15 minutes after having received this `ReserveNow`.
+* If this Token is of type `RFID`, the CPO SHALL NOT do a
+  \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>at the
+  eMSP for this Token at the given EVSE/Charge Point within 15 minutes after having received this `ReserveNow`.
 
-The eMSP MAY use Tokens that have not been pushed via the [Token](/ocpi/06-modules/07-tokens/01-intro.md) module. This
-is especially likely with tokens fof types `AD_HOC_USER` or `APP_USER`. Such Tokens are only used in commands sent by an
-eMSP and never presented locally at the Charge Point by a Driver like `RFID` Tokens.
+The eMSP MAY use Tokens that have not been pushed via the \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Token\>\>
+module. This is especially likely with tokens fof types `AD_HOC_USER` or `APP_USER`. Such Tokens are only used in
+commands sent by an eMSP and never presented locally at the Charge Point by a Driver like `RFID` Tokens.
 
 Unknown Tokens received by the CPO in the `ReserveNow` Object don't need to be stored in the
-[Token](/ocpi/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via `ReserveNow`,
-the same `Token` does not have to be returned in a Token GET request from the eMSP.
+\<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Token\>module. In other words, when a Token has been received via
+`ReserveNow`, the same `Token` does not have to be returned in a Token GET request from the eMSP.
 
 An eMSP sending a `ReserveNow` SHALL only use Tokens that are owned by this eMSP. Using Tokens of other eMSPs is not
 allowed.
@@ -77,15 +78,15 @@ The `reservation_id` sent by the Sender (eMSP) to the Receiver (CPO) SHALL NOT b
 CPO SHALL make sure the Reservation ID sent to the Charge Point is unique and is not used by another Sender (eMSP). We
 don't want a Sender (eMSP) to replace or cancel a reservation of another Sender (eMSP).
 
-| Property                | Type                                                                      | Card. | Description                                                                                                                                                                                                                                                               |
-|-------------------------|---------------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| response_url            | [URL](/ocpi/07-types/01-intro.md#url-type)                                | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between ReserveNow requests.                                                                                                                              |
-| token                   | [Token](/ocpi/06-modules/07-tokens/06-object-description.md#token-object) | 1     | Token object for how to reserve this Charge Point (and specific EVSE).                                                                                                                                                                                                    |
-| expiry_date             | [DateTime](/ocpi/07-types/01-intro.md#datetime-type)                      | 1     | The Date/Time when this reservation ends, in UTC.                                                                                                                                                                                                                         |
-| reservation_id          | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | 1     | Reservation id, unique for this reservation. If the Receiver (typically CPO) Point already has a reservation that matches this reservationId for that Location it will replace the reservation.                                                                           |
-| location_id             | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | 1     | Location.id of the Location (belonging to the CPO this request is sent to) for which to reserve an EVSE.                                                                                                                                                                  |
-| evse_uid                | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | ?     | Optional EVSE.uid of the EVSE of this Location if a specific EVSE has to be reserved.                                                                                                                                                                                     |
-| authorization_reference | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant [Session](/ocpi/06-modules/04-sessions/06-object-description.md#session-object) and/or [CDR](/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object). |
+| Property                | Type                                                                              | Card. | Description                                                                                                                                                                                                                                                                                |
+|-------------------------|-----------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| response_url            | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                                | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between ReserveNow requests.                                                                                                                                               |
+| token                   | \<\</docs/ocpi/06-modules/07-tokens/06-object-description.md#token-object,Token\> | 1     | Token object for how to reserve this Charge Point (and specific EVSE).                                                                                                                                                                                                                     |
+| expiry_date             | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>                      | 1     | The Date/Time when this reservation ends, in UTC.                                                                                                                                                                                                                                          |
+| reservation_id          | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | 1     | Reservation id, unique for this reservation. If the Receiver (typically CPO) Point already has a reservation that matches this reservationId for that Location it will replace the reservation.                                                                                            |
+| location_id             | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | 1     | Location.id of the Location (belonging to the CPO this request is sent to) for which to reserve an EVSE.                                                                                                                                                                                   |
+| evse_uid                | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | ?     | Optional EVSE.uid of the EVSE of this Location if a specific EVSE has to be reserved.                                                                                                                                                                                                      |
+| authorization_reference | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>and/or \<\</docs/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object,CDR\>\>. |
 
 ## *StartSession* Object
 
@@ -98,35 +99,36 @@ provided before sending the request to the Charge Point.
 
 If this is an OCPP Charge Point, the Charge Point decides if it needs to validate the given Token, in such case:
 
-* If this Token is of type: `AD_HOC_USER` or `APP_USER` the CPO SHALL NOT do a [realtime
-  authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this .
+* If this Token is of type: `AD_HOC_USER` or `APP_USER` the CPO SHALL NOT do a
+  \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>at the
+  eMSP for this .
 
-* If this Token is of type: `RFID`, the CPO SHALL NOT do a [realtime
-  authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) at the eMSP for this Token
-  at the given EVSE/Charge Point within 15 minutes after having received this `StartSession`. (This means that if the
-  driver decided to use his RFID within 15 minutes at the same Charge Point, because the app is not working somehow, the
-  RFID is already authorized)
+* If this Token is of type: `RFID`, the CPO SHALL NOT do a
+  \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>at the
+  eMSP for this Token at the given EVSE/Charge Point within 15 minutes after having received this `StartSession`. (This
+  means that if the driver decided to use his RFID within 15 minutes at the same Charge Point, because the app is not
+  working somehow, the RFID is already authorized)
 
-The eMSP MAY use Tokens that have not been pushed via the [Token](/ocpi/06-modules/07-tokens/01-intro.md) module,
-especially `AD_HOC_USER` or `APP_USER` Tokens are only used by commands send by an eMSP. As these are never used locally
-at the Charge Point like `RFID`.
+The eMSP MAY use Tokens that have not been pushed via the \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Token\>\>
+module, especially `AD_HOC_USER` or `APP_USER` Tokens are only used by commands send by an eMSP. As these are never used
+locally at the Charge Point like `RFID`.
 
 Unknown Tokens received by the CPO in the `StartSession` Object don't need to be stored in the
-[Token](/ocpi/06-modules/07-tokens/01-intro.md) module. In other words, when a Token has been received via
+\<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Token\>module. In other words, when a Token has been received via
 `StartSession`, the same `Token` does not have to be returned in a Token GET request from the eMSP. However, the
 information of the Token SHALL be put in the `Session` and `CDR`.
 
 An eMSP sending a `StartSession` SHALL only use Token that are owned by this eMSP in `StartSession`, using Tokens of
 other eMSPs is not allowed.
 
-| Property                | Type                                                                      | Card. | Description                                                                                                                                                                                                                                                               |
-|-------------------------|---------------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| response_url            | [URL](/ocpi/07-types/01-intro.md#url-type)                                | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between StartSession requests.                                                                                                                            |
-| token                   | [Token](/ocpi/06-modules/07-tokens/06-object-description.md#token-object) | 1     | Token object the Charge Point has to use to start a new session. The Token provided in this request is authorized by the eMSP.                                                                                                                                            |
-| location_id             | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | 1     | Location.id of the Location (belonging to the CPO this request is sent to) on which a session is to be started.                                                                                                                                                           |
-| evse_uid                | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | ?     | Optional EVSE.uid of the EVSE of this Location on which a session is to be started. Required when `connector_id` is set.                                                                                                                                                  |
-| connector_id            | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | ?     | Optional Connector.id of the Connector of the EVSE on which a session is to be started. This field is required when the capability: [START_SESSION_CONNECTOR_REQUIRED](/ocpi/06-modules/03-locations/07-data-types.md#capability-enum) is set on the EVSE.                |
-| authorization_reference | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                  | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant [Session](/ocpi/06-modules/04-sessions/06-object-description.md#session-object) and/or [CDR](/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object). |
+| Property                | Type                                                                              | Card. | Description                                                                                                                                                                                                                                                                                |
+|-------------------------|-----------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| response_url            | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                                | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between StartSession requests.                                                                                                                                             |
+| token                   | \<\</docs/ocpi/06-modules/07-tokens/06-object-description.md#token-object,Token\> | 1     | Token object the Charge Point has to use to start a new session. The Token provided in this request is authorized by the eMSP.                                                                                                                                                             |
+| location_id             | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | 1     | Location.id of the Location (belonging to the CPO this request is sent to) on which a session is to be started.                                                                                                                                                                            |
+| evse_uid                | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | ?     | Optional EVSE.uid of the EVSE of this Location on which a session is to be started. Required when `connector_id` is set.                                                                                                                                                                   |
+| connector_id            | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | ?     | Optional Connector.id of the Connector of the EVSE on which a session is to be started. This field is required when the capability: \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#capability-enum,START_SESSION_CONNECTOR_REQUIRED\>is set on the EVSE.                          |
+| authorization_reference | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)                | ?     | Reference to the authorization given by the eMSP, when given, this reference will be provided in the relevant \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#session-object,Session\>and/or \<\</docs/ocpi/06-modules/05-cdrs/06-object-description.md#cdr-object,CDR\>\>. |
 
 :::note
 In case of an OCPP 1.x Charge Point, the EVSE ID should be mapped to the connector ID of a Charge Point. OCPP 1.x does
@@ -137,16 +139,16 @@ application note: "Multiple Connectors per EVSE in a OCPP 1.x implementation".
 
 ## *StopSession* Object
 
-| Property     | Type                                                     | Card. | Description                                                                                                                                   |
-|--------------|----------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| response_url | [URL](/ocpi/07-types/01-intro.md#url-type)               | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between StopSession requests. |
-| session_id   | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | Session.id of the Session that is requested to be stopped.                                                                                    |
+| Property     | Type                                                               | Card. | Description                                                                                                                                   |
+|--------------|--------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| response_url | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                 | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between StopSession requests. |
+| session_id   | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | Session.id of the Session that is requested to be stopped.                                                                                    |
 
 ## *UnlockConnector* Object
 
-| Property     | Type                                                     | Card. | Description                                                                                                                                       |
-|--------------|----------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| response_url | [URL](/ocpi/07-types/01-intro.md#url-type)               | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between UnlockConnector requests. |
-| location_id  | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | Location.id of the Location (belonging to the CPO this request is sent to) of which it is requested to unlock the connector.                      |
-| evse_uid     | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | EVSE.uid of the EVSE of this Location of which it is requested to unlock the connector.                                                           |
-| connector_id | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | Connector.id of the Connector of this Location of which it is requested to unlock.                                                                |
+| Property     | Type                                                               | Card. | Description                                                                                                                                       |
+|--------------|--------------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| response_url | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                 | 1     | URL that the CommandResult POST should be sent to. This URL might contain a unique ID to be able to distinguish between UnlockConnector requests. |
+| location_id  | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | Location.id of the Location (belonging to the CPO this request is sent to) of which it is requested to unlock the connector.                      |
+| evse_uid     | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | EVSE.uid of the EVSE of this Location of which it is requested to unlock the connector.                                                           |
+| connector_id | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | Connector.id of the Connector of this Location of which it is requested to unlock.                                                                |

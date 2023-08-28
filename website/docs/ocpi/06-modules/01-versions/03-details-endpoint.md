@@ -38,18 +38,18 @@ Both the CPO and the eMSP MUST implement this endpoint.
 
 ## Data
 
-| Property  | Type                                                                                    | Card. | Description                                     |
-|-----------|-----------------------------------------------------------------------------------------|-------|-------------------------------------------------|
-| version   | [VersionNumber](/ocpi/06-modules/01-versions/03-details-endpoint.md#versionnumber-enum) | 1     | The version number.                             |
-| endpoints | [Endpoint](/ocpi/06-modules/01-versions/03-details-endpoint.md#endpoint-class)          | \+    | A list of supported endpoints for this version. |
+| Property  | Type                                                                                              | Card. | Description                                     |
+|-----------|---------------------------------------------------------------------------------------------------|-------|-------------------------------------------------|
+| version   | \<\</docs/ocpi/06-modules/01-versions/03-details-endpoint.md#versionnumber-enum,VersionNumber\>\> | 1     | The version number.                             |
+| endpoints | \<\</docs/ocpi/06-modules/01-versions/03-details-endpoint.md#endpoint-class,Endpoint\>\>          | \+    | A list of supported endpoints for this version. |
 
 ### Endpoint *class*
 
-| Property   | Type                                                                                    | Card. | Description                              |
-|------------|-----------------------------------------------------------------------------------------|-------|------------------------------------------|
-| identifier | [ModuleID](/ocpi/06-modules/01-versions/03-details-endpoint.md#moduleid-enum)           | 1     | Endpoint identifier.                     |
-| role       | [InterfaceRole](/ocpi/06-modules/01-versions/03-details-endpoint.md#interfacerole-enum) | 1     | Interface role this endpoint implements. |
-| url        | [URL](/ocpi/07-types/01-intro.md#url-type)                                              | 1     | URL to the endpoint.                     |
+| Property   | Type                                                                                              | Card. | Description                              |
+|------------|---------------------------------------------------------------------------------------------------|-------|------------------------------------------|
+| identifier | \<\</docs/ocpi/06-modules/01-versions/03-details-endpoint.md#moduleid-enum,ModuleID\>\>           | 1     | Endpoint identifier.                     |
+| role       | \<\</docs/ocpi/06-modules/01-versions/03-details-endpoint.md#interfacerole-enum,InterfaceRole\>\> | 1     | Interface role this endpoint implements. |
+| url        | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>\>                                              | 1     | URL to the endpoint.                     |
 
 :::note
 for the **credentials** module, the value of the role property is not relevant as this module is the same for all roles.
@@ -67,21 +67,22 @@ role property of the Endpoint object for other platforms' credentials modules.
 ### ModuleID *enum*
 
 The Module identifiers for each endpoint are described in the beginning of each *Module* chapter. The following table
-contains the list of modules in this version of OCPI. Most modules (except [Credentials &
-Registration](/ocpi/06-modules/02-credentials/01-intro.md)) are optional, but there might be dependencies between
-modules. If there are dependencies between modules, it will be mentioned in the affected module description.
+contains the list of modules in this version of OCPI. Most modules (except
+\<\</docs/ocpi/06-modules/02-credentials/01-intro.md,Credentials & Registration\>\>) are optional, but there might be
+dependencies between modules. If there are dependencies between modules, it will be mentioned in the affected module
+description.
 
-| Module                                                                    | ModuleID         | Remark                                                                              |
-|---------------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
-| [CDRs](/ocpi/06-modules/05-cdrs/01-intro.md)                              | cdrs             |                                                                                     |
-| [Charging Profiles](/ocpi/06-modules/09-charging-profiles/01-intro.md)    | chargingprofiles |                                                                                     |
-| [Commands](/ocpi/06-modules/08-commands/01-intro.md)                      | commands         |                                                                                     |
-| [Credentials & Registration](/ocpi/06-modules/02-credentials/01-intro.md) | credentials      | Required for all implementations. The `role` field has no function for this module. |
-| [Hub Client Info](/ocpi/06-modules/10-hubclientinfo/01-intro.md)          | hubclientinfo    |                                                                                     |
-| [Locations](/ocpi/06-modules/03-locations/01-intro.md)                    | locations        |                                                                                     |
-| [Sessions](/ocpi/06-modules/04-sessions/01-intro.md)                      | sessions         |                                                                                     |
-| [Tariffs](/ocpi/06-modules/06-tariffs/01-intro.md)                        | tariffs          |                                                                                     |
-| [Tokens](/ocpi/06-modules/07-tokens/01-intro.md)                          | tokens           |                                                                                     |
+| Module                                                                              | ModuleID         | Remark                                                                              |
+|-------------------------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------|
+| \<\</docs/ocpi/06-modules/05-cdrs/01-intro.md,CDRs\>\>                              | cdrs             |                                                                                     |
+| \<\</docs/ocpi/06-modules/09-charging-profiles/01-intro.md,Charging Profiles\>\>    | chargingprofiles |                                                                                     |
+| \<\</docs/ocpi/06-modules/08-commands/01-intro.md,Commands\>\>                      | commands         |                                                                                     |
+| \<\</docs/ocpi/06-modules/02-credentials/01-intro.md,Credentials & Registration\>\> | credentials      | Required for all implementations. The `role` field has no function for this module. |
+| \<\</docs/ocpi/06-modules/10-hubclientinfo/01-intro.md,Hub Client Info\>\>          | hubclientinfo    |                                                                                     |
+| \<\</docs/ocpi/06-modules/03-locations/01-intro.md,Locations\>\>                    | locations        |                                                                                     |
+| \<\</docs/ocpi/06-modules/04-sessions/01-intro.md,Sessions\>\>                      | sessions         |                                                                                     |
+| \<\</docs/ocpi/06-modules/06-tariffs/01-intro.md,Tariffs\>\>                        | tariffs          |                                                                                     |
+| \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Tokens\>\>                          | tokens           |                                                                                     |
 
 ### VersionNumber *enum*
 
@@ -97,12 +98,12 @@ List of known versions.
 
 ### Custom Modules
 
-Parties are allowed to create custom modules or customized versions of the existing modules. To do so, the [ModuleID
-enum](/ocpi/06-modules/01-versions/03-details-endpoint.md#moduleid-enum) can be extended with additional custom
-moduleIDs. These custom moduleIDs MAY only be sent to parties with which there is an agreement to use a custom module.
-Do NOT send custom moduleIDs to parties you are not 100% sure will understand the custom moduleIDs. It is advised to use
-a prefix (e.g. country-code + party-id) for any custom moduleID, this ensures that the moduleID will not be used for any
-future module of OCPI.
+Parties are allowed to create custom modules or customized versions of the existing modules. To do so, the
+\<\</docs/ocpi/06-modules/01-versions/03-details-endpoint.md#moduleid-enum,ModuleID enum\>\> can be extended with
+additional custom moduleIDs. These custom moduleIDs MAY only be sent to parties with which there is an agreement to use
+a custom module. Do NOT send custom moduleIDs to parties you are not 100% sure will understand the custom moduleIDs. It
+is advised to use a prefix (e.g. country-code + party-id) for any custom moduleID, this ensures that the moduleID will
+not be used for any future module of OCPI.
 
 For example: `nltnm-tokens`
 

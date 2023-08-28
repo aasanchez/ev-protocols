@@ -27,11 +27,12 @@ HTTP header names are case-insensitive
 :::
 
 The literal *Token* indicates that the token-based authentication mechanism is used, in OCPI this is called the
-*credentials token*. [*Credentials tokens*](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object)
-are exchanged via the [credentials module](/ocpi/06-modules/02-credentials/01-intro.md). These are different *tokens*
-than the [Tokens](/ocpi/06-modules/07-tokens/06-object-description.md#token-object) exchanged via the [Token
-Module](/ocpi/06-modules/07-tokens/01-intro.md): Tokens used by drivers to authorize charging. To prevent confusion,
-when talking about the token used here in the HTTP Authorization header, call them: *Credentials Tokens*.
+*credentials token*. \<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,*Credentials
+tokens*\>\> are exchanged via the \<\</docs/ocpi/06-modules/02-credentials/01-intro.md,credentials module\>\>. These are
+different *tokens* than the \<\</docs/ocpi/06-modules/07-tokens/06-object-description.md#token-object,Tokens\>\>
+exchanged via the \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Token Module\>\>: Tokens used by drivers to authorize
+charging. To prevent confusion, when talking about the token used here in the HTTP Authorization header, call them:
+*Credentials Tokens*.
 
 After the literal *Token*, there SHALL be one space, followed by the *encoded token*. The encoded token is obtained by
 encoding the credentials token to an octet sequence with UTF-8 and then encoding that octet sequence with Base64
@@ -59,9 +60,10 @@ If the header is missing or the credentials token doesn't match any known party 
 HTTP `401 * Unauthorized` status code.
 
 When a server receives a request with a valid
-[`CREDENTIALS_TOKEN_A`](/ocpi/06-modules/02-credentials/03-use-cases.md#registration), on another module than:
-[`credentials`](/ocpi/06-modules/02-credentials/01-intro.md) or [`versions`](/ocpi/06-modules/01-versions/01-intro.md),
-the server SHALL respond with an HTTP `401 * Unauthorized` status code.
+\<\</docs/ocpi/06-modules/02-credentials/03-use-cases.md#registration,`CREDENTIALS_TOKEN_A`\>\>, on another module than:
+\<\</docs/ocpi/06-modules/02-credentials/01-intro.md,`credentials`\>\> or
+\<\</docs/ocpi/06-modules/01-versions/01-intro.md,`versions`\>\>, the server SHALL respond with an HTTP
+`401 * Unauthorized` status code.
 
 ## Pull and Push
 
@@ -82,18 +84,19 @@ hours, not minutes, and to introduce some splay (randomize the length of the pol
 
 ## Request format
 
-The request method can be any of [GET](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method),
-POST, [PUT](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method),
-[PATCH](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) or DELETE. The OCPI protocol
-uses them in a way similar to REST APIs.
+The request method can be any of
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method,GET\>\>, POST,
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method,PUT\>\>,
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#patch-method,PATCH\>\> or DELETE. The OCPI
+protocol uses them in a way similar to REST APIs.
 
-| Method                                                                                   | Description                                        |
-|------------------------------------------------------------------------------------------|----------------------------------------------------|
-| [GET](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method)     | Fetches objects or information.                    |
-| POST                                                                                     | Creates new objects or information.                |
-| [PUT](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method)     | Updates existing objects or information.           |
-| [PATCH](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#patch-method) | Partially updates existing objects or information. |
-| DELETE                                                                                   | Removes existing objects or information.           |
+| Method                                                                                             | Description                                        |
+|----------------------------------------------------------------------------------------------------|----------------------------------------------------|
+| \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method,GET\>\>     | Fetches objects or information.                    |
+| POST                                                                                               | Creates new objects or information.                |
+| \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method,PUT\>\>     | Updates existing objects or information.           |
+| \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#patch-method,PATCH\>\> | Partially updates existing objects or information. |
+| DELETE                                                                                             | Removes existing objects or information.           |
 
 The HTTP header: Content-Type SHALL be set to `application/json` for any request that contains a message body: POST, PUT
 and PATCH. When no body is present, probably in a GET or DELETE, then the Content-Type header MAY be omitted.
@@ -122,12 +125,12 @@ additional headers need to be added to the response.
 
 The following table lists all the parameters that have to be supported but might be omitted by a client request.
 
-| Parameter | Datatype                                             | Description                                                                                                                                                                                                                                             |
-|-----------|------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| date_from | [DateTime](/ocpi/07-types/01-intro.md#datetime-type) | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
-| date_to   | [DateTime](/ocpi/07-types/01-intro.md#datetime-type) | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
-| offset    | int                                                  | The offset of the first object returned. Default is 0 (the first object).                                                                                                                                                                               |
-| limit     | int                                                  | The maximum number of objects to GET. The server might decide to return fewer objects, either because there are no more objects, or the server limits the maximum number of objects to return. This is to prevent, for example, overloading the system. |
+| Parameter | Datatype                                                       | Description                                                                                                                                                                                                                                             |
+|-----------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| date_from | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>\> | Only return objects that have `last_updated` after or equal to this Date/Time (inclusive).                                                                                                                                                              |
+| date_to   | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>\> | Only return objects that have `last_updated` up to this Date/Time, but not including (exclusive).                                                                                                                                                       |
+| offset    | int                                                            | The offset of the first object returned. Default is 0 (the first object).                                                                                                                                                                               |
+| limit     | int                                                            | The maximum number of objects to GET. The server might decide to return fewer objects, either because there are no more objects, or the server limits the maximum number of objects to return. This is to prevent, for example, overloading the system. |
 
 The `date_from` is inclusive and `date_to` exclusive, this way, when sequential requests with to the same end-point are
 done, the next interval will have no overlap and the `date_from` of the next interval is simply the `date_to` of the
@@ -220,9 +223,9 @@ updated. Any fields (both required or optional) that are left out remain unchang
 The MIME-type of the request body is: `application/json` and may contain the data as documented for each endpoint.
 
 In case a PATCH request fails, the client is expected to call the
-[GET](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method) method to check the state of the
-object in the other party's system. If the object doesn't exist, the client should do a
-[PUT](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method).
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method,GET\>\> method to check the state
+of the object in the other party's system. If the object doesn't exist, the client should do a
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#put-method,PUT\>\>.
 
 ## Client Owned Object Push
 
@@ -237,14 +240,14 @@ might receive Tariff objects from multiple CPOs. They need to be able to make a 
 tariffs from different CPOs.
 
 The distinction between objects from different CPOs/eMSPs is made based on a
-{[country_code](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object)} and
-{[party_id](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object)}. The
-[country_code's](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object) and
-[party_id's](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object) of the parties on the other
-platform are received during the [credentials](/ocpi/06-modules/02-credentials/01-intro.md) handshake in the
-[CredentialsRoles](/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class). The roles exchanged during
-the [credentials](/ocpi/06-modules/02-credentials/01-intro.md) handshake provide the server with details needed to
-determine which URLs a client might use.
+{\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,country_code\>\>} and
+{\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,party_id\>\>}. The
+\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,country_code's\>\> and
+\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,party_id's\>\> of the parties on
+the other platform are received during the \<\</docs/ocpi/06-modules/02-credentials/01-intro.md,credentials\>\>
+handshake in the \<\</docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class,CredentialsRoles\>\>.
+The roles exchanged during the \<\</docs/ocpi/06-modules/02-credentials/01-intro.md,credentials\>\> handshake provide
+the server with details needed to determine which URLs a client might use.
 
 Client Owned Object URL definition: `{base-ocpi-url}/{end-point}/{country-code}/{party-id}/{object-id}`
 
@@ -262,43 +265,44 @@ owner* is provided at the beginning of every module that has a clear owner.
 ### Errors
 
 When a client tries to access an object with a URL that has a different
-[country_code](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object) and/or
-[party_id](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object) than one of the
-[CredentialsRoles](/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class) given during the
-[credentials](/ocpi/06-modules/02-credentials/01-intro.md) handshake, it is allowed to respond with an HTTP `404` status
-code, this way blocking client access to objects that do not belong to them.
+\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,country_code\>\> and/or
+\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,party_id\>\> than one of the
+\<\</docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class,CredentialsRoles\>\> given during the
+\<\</docs/ocpi/06-modules/02-credentials/01-intro.md,credentials\>\> handshake, it is allowed to respond with an HTTP
+`404` status code, this way blocking client access to objects that do not belong to them.
 
 When a client pushes a Client Owned Object, but the `object-id` in the URL is different from the id in the object being
-pushed, server implementations are advised to return an [OCPI status code](/ocpi/05-status-codes/05-status-codes.md):
-[2001](/ocpi/05-status-codes/05-status-codes.md).
+pushed, server implementations are advised to return an \<\</docs/ocpi/05-status-codes/05-status-codes.md,OCPI status
+code\>\>: \<\</docs/ocpi/05-status-codes/05-status-codes.md,2001\>\>.
 
 ## Client Owned Object Pull
 
 When doing a GET on the Sender interface of a module, the owner of an object can be determined by looking at the
-{[country_code](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object)} and
-{[party_id](/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object)} in the object itself.
+{\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,country_code\>\>} and
+{\<\</docs/ocpi/06-modules/02-credentials/06-object-description.md#credentials-object,party_id\>\>} in the object
+itself.
 
 When one or more objects, returned in the response, do not meet one of the
-[CredentialsRoles](/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class) given during the
-[credentials](/ocpi/06-modules/02-credentials/01-intro.md) handshake, these objects may be ignored.
+\<\</docs/ocpi/06-modules/02-credentials/07-data-types.md#credentialsrole-class,CredentialsRoles\>\> given during the
+\<\</docs/ocpi/06-modules/02-credentials/01-intro.md,credentials\>\> handshake, these objects may be ignored.
 
 ## Response format
 
 The content that is sent with all the response messages is an *application/json* type and contains a JSON object with
 the following properties:
 
-| Property       | Type                                                 | Card.   | Description                                                                                                                                                                                                   |
-|----------------|------------------------------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| data           | Array or Object or String                            | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?)         |
-| status_code    | int                                                  | 1       | OCPI status code, as listed in [Status Codes](/ocpi/05-status-codes/05-status-codes.md), indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits. |
-| status_message | [string](/ocpi/07-types/01-intro.md#string-type)     | ?       | An optional status message which may help when debugging.                                                                                                                                                     |
-| timestamp      | [DateTime](/ocpi/07-types/01-intro.md#datetime-type) | 1       | The time this message was generated.                                                                                                                                                                          |
+| Property       | Type                                                           | Card.   | Description                                                                                                                                                                                                             |
+|----------------|----------------------------------------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| data           | Array or Object or String                                      | \* or ? | Contains the actual response data object or list of objects from each request, depending on the cardinality of the response data, this is an array (card. \* or +), or a single object (card. 1 or ?)                   |
+| status_code    | int                                                            | 1       | OCPI status code, as listed in \<\</docs/ocpi/05-status-codes/05-status-codes.md,Status Codes\>\>, indicates how the request was handled. To avoid confusion with HTTP codes, OCPI status codes consist of four digits. |
+| status_message | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>     | ?       | An optional status message which may help when debugging.                                                                                                                                                               |
+| timestamp      | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>\> | 1       | The time this message was generated.                                                                                                                                                                                    |
 
 For brevity's sake, any further examples used in this specification will only contain the value of the "data" field. In
 reality, it will always have to be wrapped in the above response format.
 
-When a request cannot be accepted, the type response depends on the type of error. For more information see: [Status
-codes](/ocpi/05-status-codes/05-status-codes.md)
+When a request cannot be accepted, the type response depends on the type of error. For more information see:
+\<\</docs/ocpi/05-status-codes/05-status-codes.md,Status codes\>\>
 
 For errors on the HTTP layer, use HTTP error response codes, including the response format above, that contains more
 details. HTTP status codes are described on [w3.org](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
@@ -467,24 +471,26 @@ four HTTP headers are to be added to any request/response to allow messages to b
 
 When implementing OCPI these four headers SHALL be implemented for any request/response to/from a Functional Module.
 This does not mean they have to be present in all request. There are situation/special request where some headers can or
-shall be omitted, See: [Open Routing
-Request](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request)
+shall be omitted, See:
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request,Open Routing
+Request\>\>
 
-Only requests/responses from Function Modules: such as: [Tokens](/ocpi/06-modules/07-tokens/01-intro.md),
-[Locations](/ocpi/06-modules/03-locations/01-intro.md), [CDRs](/ocpi/06-modules/05-cdrs/01-intro.md) etc. SHALL be
-routed, so need the routing headers.
+Only requests/responses from Function Modules: such as: \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Tokens\>\>,
+\<\</docs/ocpi/06-modules/03-locations/01-intro.md,Locations\>\>, \<\</docs/ocpi/06-modules/05-cdrs/01-intro.md,CDRs\>\>
+etc. SHALL be routed, so need the routing headers.
 
-The requests/responses to/from Configuration Modules: [Credentials](/ocpi/06-modules/02-credentials/01-intro.md),
-[Versions](/ocpi/06-modules/01-versions/01-intro.md) and [Hub Client
-Info](/ocpi/06-modules/10-hubclientinfo/01-intro.md) are not to be routed, and are for Platform-to-Platform or
-Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
+The requests/responses to/from Configuration Modules:
+\<\</docs/ocpi/06-modules/02-credentials/01-intro.md,Credentials\>\>,
+\<\</docs/ocpi/06-modules/01-versions/01-intro.md,Versions\>\> and
+\<\</docs/ocpi/06-modules/10-hubclientinfo/01-intro.md,Hub Client Info\>\> are not to be routed, and are for
+Platform-to-Platform or Platform-to-Hub communication. Thus routing headers SHALL NOT be used with these modules.
 
-| HTTP Header            | Datatype                                                | Description                                                          |
-|------------------------|---------------------------------------------------------|----------------------------------------------------------------------|
-| OCPI-to-party-id       | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(3) | *party id* of the connected party this message is to be sent to.     |
-| OCPI-to-country-code   | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(2) | *country code* of the connected party this message is to be sent to. |
-| OCPI-from-party-id     | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(3) | *party id* of the connected party this message is sent from.         |
-| OCPI-from-country-code | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(2) | *country code* of the connected party this message is sent from.     |
+| HTTP Header            | Datatype                                                          | Description                                                          |
+|------------------------|-------------------------------------------------------------------|----------------------------------------------------------------------|
+| OCPI-to-party-id       | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(3) | *party id* of the connected party this message is to be sent to.     |
+| OCPI-to-country-code   | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(2) | *country code* of the connected party this message is to be sent to. |
+| OCPI-from-party-id     | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(3) | *party id* of the connected party this message is sent from.         |
+| OCPI-from-country-code | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(2) | *country code* of the connected party this message is sent from.     |
 
 :::note
 HTTP header names are case-insensitive
@@ -514,15 +520,16 @@ module, using its own party-id and country-code in the *OCPI-from-* headers. The
 country-code in the *OCPI-to-* headers.
 
 GET SHALL NOT be used in combination with Broadcast Push. If the requesting party wants to GET information of which it
-does not know the receiving party, an [Open Routing
-Request](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request) MUST be used. (see
-below)
+does not know the receiving party, an
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request,Open Routing
+Request\>\> MUST be used. (see below)
 
 Broadcast Push SHALL only be used with information that is meant to be sent to all other parties. It is useful to share
-data like [Tokens](/ocpi/06-modules/07-tokens/01-intro.md) and [Locations](/ocpi/06-modules/03-locations/01-intro.md),
-but not so much for [CDRs](/ocpi/06-modules/05-cdrs/01-intro.md) and
-[Sessions](/ocpi/06-modules/04-sessions/01-intro.md) as these pieces of information are specific to only one party and
-are possibly even protected by GDPR or other laws.
+data like \<\</docs/ocpi/06-modules/07-tokens/01-intro.md,Tokens\>\> and
+\<\</docs/ocpi/06-modules/03-locations/01-intro.md,Locations\>\>, but not so much for
+\<\</docs/ocpi/06-modules/05-cdrs/01-intro.md,CDRs\>\> and
+\<\</docs/ocpi/06-modules/04-sessions/01-intro.md,Sessions\>\> as these pieces of information are specific to only one
+party and are possibly even protected by GDPR or other laws.
 
 :::note
 For "Client Owned Objects", the party-id and country-code in the URL segments will still be the original party-id and
@@ -538,14 +545,15 @@ know the destination of a request, the *OCPI-to-* headers can be omitted in the 
 then decide to which party a request needs to be routed, or that it needs to be broadcasted if the destination cannot be
 determined.
 
-This has nothing to do with [Broadcast
-Push](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) though, as [Broadcast
-Push](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) only works for the [Push
-model](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#pull-and-push), not for
-[GET](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method) requests.
+This has nothing to do with
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push,Broadcast Push\>\> though, as
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push,Broadcast Push\>\> only works
+for the \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#pull-and-push,Push model\>\>, not
+for \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-method,GET\>\> requests.
 
-Open Routing Requests are possible for GET ([Not GET
-ALL](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs)), POST, PUT, PATCH and DELETE.
+Open Routing Requests are possible for GET
+(\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs,Not GET ALL\>\>), POST,
+PUT, PATCH and DELETE.
 
 ![Example sequence diagram of a open routing GET from a CPO via the Hub](../images/sd_get_openrouting.svg)
 
@@ -598,7 +606,8 @@ from one platform to another platform via a Hub.
 #### Party to Party Broadcast Push
 
 This table contains the description of which headers are required to be used for which message when a request is a
-[Broadcast Push](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push) to the Hub.
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#broadcast-push,Broadcast Push\>\> to the
+Hub.
 
 | Name               | Route                      | TO Headers       | FROM Headers     |
 |--------------------|----------------------------|------------------|------------------|
@@ -611,10 +620,10 @@ This table contains the description of which headers are required to be used for
 
 #### Party to Party Open Routing Request
 
-This table contains the description of which headers are required to be used for which message when [the routing of a
-request needs to be determined by the Hub
-itself](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request). For an Open Routing
-Request, the TO headers in the request from the requesting party to the Hub MUST be omitted.
+This table contains the description of which headers are required to be used for which message when
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#open-routing-request,the routing of a
+request needs to be determined by the Hub itself\>\>. For an Open Routing Request, the TO headers in the request from
+the requesting party to the Hub MUST be omitted.
 
 | Name          | Route                      | TO Headers       | FROM Headers     |
 |---------------|----------------------------|------------------|------------------|
@@ -627,10 +636,10 @@ Request, the TO headers in the request from the requesting party to the Hub MUST
 
 ### GET All via Hubs (headers description)
 
-This table contains the description of which headers are required to be used when doing a [GET All via a
-Hub](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs). For a GET All via Hub: The
-HTTP Method SHALL be GET, The call is to a Senders Interface, the TO headers in the request to the Hub has to be set to
-the Hub.
+This table contains the description of which headers are required to be used when doing a
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#get-all-via-hubs,GET All via a Hub\>\>. For
+a GET All via Hub: The HTTP Method SHALL be GET, The call is to a Senders Interface, the TO headers in the request to
+the Hub has to be set to the Hub.
 
 | Name                      | Route                      | TO Headers       | FROM Headers     |
 |---------------------------|----------------------------|------------------|------------------|

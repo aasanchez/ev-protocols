@@ -15,5 +15,6 @@ Configuration Module
 The credentials module is used to exchange the credentials token that has to be used by parties for authorization of
 requests.
 
-Every OCPI request is required to contain a credentials token in the [HTTP Authorization
-header](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#authorization-header).
+Every OCPI request is required to contain a credentials token in the
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#authorization-header,HTTP Authorization
+header\>\>.

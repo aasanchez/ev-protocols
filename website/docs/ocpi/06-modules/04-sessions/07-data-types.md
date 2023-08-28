@@ -6,12 +6,13 @@ slug: data-types
 
 ## ChargingPreferencesResponse *enum*
 
-An enum with possible responses to a [PUT Charging
-Preferences](/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method) request.
+An enum with possible responses to a \<\</docs/ocpi/06-modules/04-sessions/05-interfaces-and-endpoints.md#put-method,
+PUT Charging Preferences\>\> request.
 
 If a PUT with `ChargingPreferences` is received for an EVSE that does not have the capability
 `CHARGING_PREFERENCES_CAPABLE`, the receiver should respond with an HTTP status of 404 and an OCPI status code of 2001
-in the [OCPI response object](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#response-format).
+in the \<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#response-format, OCPI response
+object\>\>.
 
 | Value                      | Description                                                                                                                 |
 |----------------------------|-----------------------------------------------------------------------------------------------------------------------------|

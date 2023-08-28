@@ -9,39 +9,39 @@ slug: locations/data-types
 This class defines an additional geo location that is relevant for the Charge Point. The geodetic system to be used is
 WGS 84.
 
-| Property  | Type                                                        | Card. | Description                                                                                                                              |
-|-----------|-------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------|
-| latitude  | [string](/ocpi/07-types/01-intro.md#string-type)(10)        | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`                    |
-| longitude | [string](/ocpi/07-types/01-intro.md#string-type)(11)        | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}`                 |
-| name      | [DisplayText](/ocpi/07-types/01-intro.md#displaytext-class) | ?     | Name of the point in local language or as written at the location. For example the street name of a parking lot entrance or it's number. |
+| Property  | Type                                                                | Card. | Description                                                                                                                              |
+|-----------|---------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------------------------|
+| latitude  | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(10)      | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`                    |
+| longitude | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(11)      | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}`                 |
+| name      | \<\</docs/ocpi/07-types/01-intro.md#displaytext-class,DisplayText\> | ?     | Name of the point in local language or as written at the location. For example the street name of a parking lot entrance or it's number. |
 
 ## BusinessDetails *class*
 
-| Property | Type                                                                | Card. | Description                        |
-|----------|---------------------------------------------------------------------|-------|------------------------------------|
-| name     | [string](/ocpi/07-types/01-intro.md#string-type)(100)               | 1     | Name of the operator.              |
-| website  | [URL](/ocpi/07-types/01-intro.md#url-type)                          | ?     | Link to the operator's website.    |
-| logo     | [Image](/ocpi/06-modules/03-locations/07-data-types.md#image-class) | ?     | Image link to the operator's logo. |
+| Property | Type                                                                        | Card. | Description                        |
+|----------|-----------------------------------------------------------------------------|-------|------------------------------------|
+| name     | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(100)             | 1     | Name of the operator.              |
+| website  | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                          | ?     | Link to the operator's website.    |
+| logo     | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#image-class,Image\> | ?     | Image link to the operator's logo. |
 
 ## Capability *enum*
 
 The capabilities of an EVSE.
 
-| Value                            | Description                                                                                                                                                                                                                                                                                  |
-|----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CHARGING_PROFILE_CAPABLE         | The EVSE supports charging profiles.                                                                                                                                                                                                                                                         |
-| CHARGING_PREFERENCES_CAPABLE     | The EVSE supports [charging preferences](/ocpi/06-modules/04-sessions/06-object-description.md#set-charging-preferences).                                                                                                                                                                    |
-| CHIP_CARD_SUPPORT                | EVSE has a payment terminal that supports chip cards.                                                                                                                                                                                                                                        |
-| CONTACTLESS_CARD_SUPPORT         | EVSE has a payment terminal that supports contactless cards.                                                                                                                                                                                                                                 |
-| CREDIT_CARD_PAYABLE              | EVSE has a payment terminal that makes it possible to pay for charging using a credit card.                                                                                                                                                                                                  |
-| DEBIT_CARD_PAYABLE               | EVSE has a payment terminal that makes it possible to pay for charging using a debit card.                                                                                                                                                                                                   |
-| PED_TERMINAL                     | EVSE has a payment terminal with a pin-code entry device.                                                                                                                                                                                                                                    |
-| REMOTE_START_STOP_CAPABLE        | The EVSE can remotely be [started](/ocpi/06-modules/08-commands/06-object-description.md#startsession-object)/[stopped](/ocpi/06-modules/08-commands/06-object-description.md#stopsession-object).                                                                                           |
-| RESERVABLE                       | The EVSE can be [reserved](/ocpi/06-modules/08-commands/06-object-description.md#reservenow-object).                                                                                                                                                                                         |
-| RFID_READER                      | Charging at this EVSE can be authorized with an RFID token.                                                                                                                                                                                                                                  |
-| START_SESSION_CONNECTOR_REQUIRED | When a [StartSession](/ocpi/06-modules/08-commands/06-object-description.md#startsession-object) is sent to this EVSE, the MSP is required to add the optional `connector_id` field in the [StartSession](/ocpi/06-modules/08-commands/06-object-description.md#startsession-object) object. |
-| TOKEN_GROUP_CAPABLE              | This EVSE supports token groups, two or more tokens work as one, so that a session can be started with one token and stopped with another (handy when a card and key-fob are given to the EV-driver).                                                                                        |
-| UNLOCK_CAPABLE                   | Connectors have mechanical lock that can be requested by the eMSP to be [unlocked](/ocpi/06-modules/08-commands/06-object-description.md#unlockconnector-object).                                                                                                                            |
+| Value                            | Description                                                                                                                                                                                                                                                                                                |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CHARGING_PROFILE_CAPABLE         | The EVSE supports charging profiles.                                                                                                                                                                                                                                                                       |
+| CHARGING_PREFERENCES_CAPABLE     | The EVSE supports \<\</docs/ocpi/06-modules/04-sessions/06-object-description.md#set-charging-preferences,charging preferences\>\>.                                                                                                                                                                        |
+| CHIP_CARD_SUPPORT                | EVSE has a payment terminal that supports chip cards.                                                                                                                                                                                                                                                      |
+| CONTACTLESS_CARD_SUPPORT         | EVSE has a payment terminal that supports contactless cards.                                                                                                                                                                                                                                               |
+| CREDIT_CARD_PAYABLE              | EVSE has a payment terminal that makes it possible to pay for charging using a credit card.                                                                                                                                                                                                                |
+| DEBIT_CARD_PAYABLE               | EVSE has a payment terminal that makes it possible to pay for charging using a debit card.                                                                                                                                                                                                                 |
+| PED_TERMINAL                     | EVSE has a payment terminal with a pin-code entry device.                                                                                                                                                                                                                                                  |
+| REMOTE_START_STOP_CAPABLE        | The EVSE can remotely be \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#startsession-object,started\>\>/\<\</docs/ocpi/06-modules/08-commands/06-object-description.md#stopsession-object,stopped\>\>.                                                                                     |
+| RESERVABLE                       | The EVSE can be \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#reservenow-object,reserved\>\>.                                                                                                                                                                                             |
+| RFID_READER                      | Charging at this EVSE can be authorized with an RFID token.                                                                                                                                                                                                                                                |
+| START_SESSION_CONNECTOR_REQUIRED | When a \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#startsession-object,StartSession\>is sent to this EVSE, the MSP is required to add the optional `connector_id` field in the \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#startsession-object,StartSession\>object. |
+| TOKEN_GROUP_CAPABLE              | This EVSE supports token groups, two or more tokens work as one, so that a session can be started with one token and stopped with another (handy when a card and key-fob are given to the EV-driver).                                                                                                      |
+| UNLOCK_CAPABLE                   | Connectors have mechanical lock that can be requested by the eMSP to be \<\</docs/ocpi/06-modules/08-commands/06-object-description.md#unlockconnector-object,unlocked\>\>.                                                                                                                                |
 
 When a Charge Point supports ad-hoc payments with a payment terminal, please use a combination of the following values
 to explain the possibilities of the terminal: CHIP_CARD_SUPPORT, CONTACTLESS_CARD_SUPPORT, CREDIT_CARD_PAYABLE,
@@ -49,8 +49,8 @@ DEBIT_CARD_PAYABLE, PED_TERMINAL.
 
 There are Charge Points in the field that do not yet support OCPP 2.x. If these Charge Points have multiple connectors
 per EVSE, the CPO needs to know which connector to start when receiving a
-[StartSession](/ocpi/06-modules/08-commands/06-object-description.md#startsession-object) for the given EVSE. If this is
-the case, the CPO should set the `START_SESSION_CONNECTOR_REQUIRED` capability on the given EVSE.
+\<\</docs/ocpi/06-modules/08-commands/06-object-description.md#startsession-object,StartSession\>for the given EVSE.
+If this is the case, the CPO should set the `START_SESSION_CONNECTOR_REQUIRED` capability on the given EVSE.
 
 ## ConnectorFormat *enum*
 
@@ -113,13 +113,13 @@ The socket or plug standard of the charging point.
 This type is used to specify the energy mix and environmental impact of the supplied energy at a location or in a
 tariff.
 
-| Property            | Type                                                                                            | Card. | Description                                                                                     |
-|---------------------|-------------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------|
-| is_green_energy     | boolean                                                                                         | 1     | True if 100% from regenerative sources. (CO2 and nuclear waste is zero)                         |
-| energy_sources      | [EnergySource](/ocpi/06-modules/03-locations/07-data-types.md#energysource-class)               | \*    | Key-value pairs (enum + percentage) of energy sources of this location's tariff.                |
-| environ_impact      | [EnvironmentalImpact](/ocpi/06-modules/03-locations/07-data-types.md#environmentalimpact-class) | \*    | Key-value pairs (enum + percentage) of nuclear waste and CO2 exhaust of this location's tariff. |
-| supplier_name       | [string](/ocpi/07-types/01-intro.md#string-type)(64)                                            | ?     | Name of the energy supplier, delivering the energy for this location or tariff.\*               |
-| energy_product_name | [string](/ocpi/07-types/01-intro.md#string-type)(64)                                            | ?     | Name of the energy suppliers product/tariff plan used at this location.\*                       |
+| Property            | Type                                                                                                    | Card. | Description                                                                                     |
+|---------------------|---------------------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------|
+| is_green_energy     | boolean                                                                                                 | 1     | True if 100% from regenerative sources. (CO2 and nuclear waste is zero)                         |
+| energy_sources      | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#energysource-class,EnergySource\>               | \*    | Key-value pairs (enum + percentage) of energy sources of this location's tariff.                |
+| environ_impact      | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#environmentalimpact-class,EnvironmentalImpact\> | \*    | Key-value pairs (enum + percentage) of nuclear waste and CO2 exhaust of this location's tariff. |
+| supplier_name       | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64)                                          | ?     | Name of the energy supplier, delivering the energy for this location or tariff.\*               |
+| energy_product_name | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64)                                          | ?     | Name of the energy suppliers product/tariff plan used at this location.\*                       |
 
 *\* These fields can be used to look up energy qualification or to show it directly to the customer (for well-known
 brands like Greenpeace Energy, etc.)*
@@ -196,10 +196,10 @@ brands like Greenpeace Energy, etc.)*
 
 Key-value pairs (enum + percentage) of energy sources. All given values of all categories should add up to 100 percent.
 
-| Property   | Type                                                                                             | Card. | Description                                   |
-|------------|--------------------------------------------------------------------------------------------------|-------|-----------------------------------------------|
-| source     | [EnergySourceCategory](/ocpi/06-modules/03-locations/07-data-types.md#energysourcecategory-enum) | 1     | The type of energy source.                    |
-| percentage | [number](/ocpi/07-types/01-intro.md#number-type)                                                 | 1     | Percentage of this source (0-100) in the mix. |
+| Property   | Type                                                                                                     | Card. | Description                                   |
+|------------|----------------------------------------------------------------------------------------------------------|-------|-----------------------------------------------|
+| source     | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#energysourcecategory-enum,EnergySourceCategory\> | 1     | The type of energy source.                    |
+| percentage | \<\</docs/ocpi/07-types/01-intro.md#number-type,number\>                                                 | 1     | Percentage of this source (0-100) in the mix. |
 
 ## EnergySourceCategory *enum*
 
@@ -220,10 +220,10 @@ Categories of energy sources.
 
 Amount of waste produced/emitted per kWh.
 
-| Property | Type                                                                                                           | Card. | Description                                      |
-|----------|----------------------------------------------------------------------------------------------------------------|-------|--------------------------------------------------|
-| category | [EnvironmentalImpactCategory](/ocpi/06-modules/03-locations/07-data-types.md#environmentalimpactcategory-enum) | 1     | The environmental impact category of this value. |
-| amount   | [number](/ocpi/07-types/01-intro.md#number-type)                                                               | 1     | Amount of this portion in g/kWh.                 |
+| Property | Type                                                                                                                   | Card. | Description                                      |
+|----------|------------------------------------------------------------------------------------------------------------------------|-------|--------------------------------------------------|
+| category | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#environmentalimpactcategory-enum,EnvironmentalImpactCategory\> | 1     | The environmental impact category of this value. |
+| amount   | \<\</docs/ocpi/07-types/01-intro.md#number-type,number\>                                                               | 1     | Amount of this portion in g/kWh.                 |
 
 ## EnvironmentalImpactCategory *enum*
 
@@ -238,10 +238,10 @@ Categories of environmental impact values.
 
 Specifies one exceptional period for opening or access hours.
 
-| Property     | Type                                                 | Card. | Description                                                                             |
-|--------------|------------------------------------------------------|-------|-----------------------------------------------------------------------------------------|
-| period_begin | [DateTime](/ocpi/07-types/01-intro.md#datetime-type) | 1     | Begin of the exception. In UTC, `time_zone` field can be used to convert to local time. |
-| period_end   | [DateTime](/ocpi/07-types/01-intro.md#datetime-type) | 1     | End of the exception. In UTC, `time_zone` field can be used to convert to local time.   |
+| Property     | Type                                                         | Card. | Description                                                                             |
+|--------------|--------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------|
+| period_begin | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\> | 1     | Begin of the exception. In UTC, `time_zone` field can be used to convert to local time. |
+| period_end   | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\> | 1     | End of the exception. In UTC, `time_zone` field can be used to convert to local time.   |
 
 ## Facility *enum*
 
@@ -272,10 +272,10 @@ Specifies one exceptional period for opening or access hours.
 
 This class defines the geo location of the Charge Point. The geodetic system to be used is WGS 84.
 
-| Property  | Type                                                 | Card. | Description                                                                                                              |
-|-----------|------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------|
-| latitude  | [string](/ocpi/07-types/01-intro.md#string-type)(10) | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`    |
-| longitude | [string](/ocpi/07-types/01-intro.md#string-type)(11) | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}` |
+| Property  | Type                                                           | Card. | Description                                                                                                              |
+|-----------|----------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------|
+| latitude  | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(10) | 1     | Latitude of the point in decimal degree. Example: 50.770774. Decimal separator: "." Regex: `-?[0-9]{1,2}\.[0-9]{5,7}`    |
+| longitude | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(11) | 1     | Longitude of the point in decimal degree. Example: -126.104965. Decimal separator: "." Regex: `-?[0-9]{1,3}\.[0-9]{5,7}` |
 
 :::note
 Five decimal places is seen as a minimum for GPS coordinates of the Charge Point as this gives approximately 1 meter
@@ -286,12 +286,12 @@ precision. More is always better. Seven decimal places gives approximately 1cm p
 
 Opening and access hours of the location.
 
-| Property             | Type                                                                                        | Card. | Description                                                                                                                                                                                                       |
-|----------------------|---------------------------------------------------------------------------------------------|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| twentyfourseven      | boolean                                                                                     | 1     | True to represent 24 hours a day and 7 days a week, except the given exceptions.                                                                                                                                  |
-| regular_hours        | [RegularHours](/ocpi/06-modules/03-locations/07-data-types.md#regularhours-class)           | \*    | Regular hours, weekday-based. Only to be used if `twentyfourseven=false`, then this field needs to contain at least one [RegularHours](/ocpi/06-modules/03-locations/07-data-types.md#regularhours-class) object. |
-| exceptional_openings | [ExceptionalPeriod](/ocpi/06-modules/03-locations/07-data-types.md#exceptionalperiod-class) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is operating/accessible. Additional to `regular_hours`. May overlap regular rules.                                                 |
-| exceptional_closings | [ExceptionalPeriod](/ocpi/06-modules/03-locations/07-data-types.md#exceptionalperiod-class) | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is not operating/accessible. Overwriting `regular_hours` and `exceptional_openings`. Should not overlap `exceptional_openings`.    |
+| Property             | Type                                                                                                | Card. | Description                                                                                                                                                                                                              |
+|----------------------|-----------------------------------------------------------------------------------------------------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| twentyfourseven      | boolean                                                                                             | 1     | True to represent 24 hours a day and 7 days a week, except the given exceptions.                                                                                                                                         |
+| regular_hours        | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#regularhours-class,RegularHours\>           | \*    | Regular hours, weekday-based. Only to be used if `twentyfourseven=false`, then this field needs to contain at least one \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#regularhours-class,RegularHours\>object. |
+| exceptional_openings | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#exceptionalperiod-class,ExceptionalPeriod\> | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is operating/accessible. Additional to `regular_hours`. May overlap regular rules.                                                        |
+| exceptional_closings | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#exceptionalperiod-class,ExceptionalPeriod\> | \*    | Exceptions for specified calendar dates, time-range based. Periods the station is not operating/accessible. Overwriting `regular_hours` and `exceptional_openings`. Should not overlap `exceptional_openings`.           |
 
 ### Example: 24/7 open with exceptional closing
 
@@ -390,14 +390,14 @@ Logo Dimensions: The recommended dimensions for logos are exactly 512 pixels in 
 of logos should be exactly 128 pixels in width and height. If not squared, thumbnails should have the same orientation
 as the original.
 
-| Property  | Type                                                                               | Card. | Description                                                                  |
-|-----------|------------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------|
-| url       | [URL](/ocpi/07-types/01-intro.md#url-type)                                         | 1     | URL from where the image data can be fetched through a web browser.          |
-| thumbnail | [URL](/ocpi/07-types/01-intro.md#url-type)                                         | ?     | URL from where a thumbnail of the image can be fetched through a webbrowser. |
-| category  | [ImageCategory](/ocpi/06-modules/03-locations/07-data-types.md#imagecategory-enum) | 1     | Describes what the image is used for.                                        |
-| type      | [CiString](/ocpi/07-types/01-intro.md#string-type)(4)                              | 1     | Image type like: gif, jpeg, png, svg.                                        |
-| width     | int(5)                                                                             | ?     | Width of the full scale image.                                               |
-| height    | int(5)                                                                             | ?     | Height of the full scale image.                                              |
+| Property  | Type                                                                                       | Card. | Description                                                                  |
+|-----------|--------------------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------|
+| url       | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                                         | 1     | URL from where the image data can be fetched through a web browser.          |
+| thumbnail | \<\</docs/ocpi/07-types/01-intro.md#url-type,URL\>                                         | ?     | URL from where a thumbnail of the image can be fetched through a webbrowser. |
+| category  | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#imagecategory-enum,ImageCategory\> | 1     | Describes what the image is used for.                                        |
+| type      | \<\</docs/ocpi/07-types/01-intro.md#string-type,CiString\>\>(4)                            | 1     | Image type like: gif, jpeg, png, svg.                                        |
+| width     | int(5)                                                                                     | ?     | Width of the full scale image.                                               |
+| height    | int(5)                                                                                     | ?     | Height of the full scale image.                                              |
 
 ## ImageCategory *enum*
 
@@ -459,23 +459,23 @@ When `uid` is set, `type` SHALL also be set.
 
 When `visual_number` is set, `issuer` SHALL also be set.
 
-| Property      | Type                                                                    | Card. | Description                                                                                                            |
-|---------------|-------------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------|
-| uid           | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                | ?     | Unique ID by which this Token can be identified.                                                                       |
-| type          | [TokenType](/ocpi/06-modules/07-tokens/07-data-types.md#tokentype-enum) | ?     | Type of the token.                                                                                                     |
-| visual_number | [string](/ocpi/07-types/01-intro.md#string-type)(64)                    | ?     | Visual readable number/identification as printed on the Token (RFID card).                                             |
-| issuer        | [string](/ocpi/07-types/01-intro.md#string-type)(64)                    | ?     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP. |
-| group_id      | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36)                | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one.                            |
+| Property      | Type                                                                            | Card. | Description                                                                                                            |
+|---------------|---------------------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------------------------------|
+| uid           | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)              | ?     | Unique ID by which this Token can be identified.                                                                       |
+| type          | \<\</docs/ocpi/06-modules/07-tokens/07-data-types.md#tokentype-enum,TokenType\> | ?     | Type of the token.                                                                                                     |
+| visual_number | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64)                  | ?     | Visual readable number/identification as printed on the Token (RFID card).                                             |
+| issuer        | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64)                  | ?     | Issuing company, most of the times the name of the company printed on the token (RFID card), not necessarily the eMSP. |
+| group_id      | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36)              | ?     | This ID groups a couple of tokens. This can be used to make two or more tokens work as one.                            |
 
 ## RegularHours *class*
 
 Regular recurring operation or access hours.
 
-| Property     | Type                                                | Card. | Description                                                                                                                                                                                                         |
-|--------------|-----------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| weekday      | int(1)                                              | 1     | Number of day in the week, from Monday (1) till Sunday (7)                                                                                                                                                          |
-| period_begin | [string](/ocpi/07-types/01-intro.md#string-type)(5) | 1     | Begin of the regular period, in local time, given in hours and minutes. Must be in 24h format with leading zeros. Example: "18:15". Hour/Minute separator: ":" Regex: [Regex Test](https://regex101.com/r/xaMwu6/1) |
-| period_end   | [string](/ocpi/07-types/01-intro.md#string-type)(5) | 1     | End of the regular period, in local time, syntax as for `period_begin`. Must be later than `period_begin`.                                                                                                          |
+| Property     | Type                                                          | Card. | Description                                                                                                                                                                                                         |
+|--------------|---------------------------------------------------------------|-------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| weekday      | int(1)                                                        | 1     | Number of day in the week, from Monday (1) till Sunday (7)                                                                                                                                                          |
+| period_begin | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(5) | 1     | Begin of the regular period, in local time, given in hours and minutes. Must be in 24h format with leading zeros. Example: "18:15". Hour/Minute separator: ":" Regex: [Regex Test](https://regex101.com/r/xaMwu6/1) |
+| period_end   | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(5) | 1     | End of the regular period, in local time, syntax as for `period_begin`. Must be later than `period_begin`.                                                                                                          |
 
 ### Example
 
@@ -560,11 +560,11 @@ This type is used to schedule status periods in the future. The eMSP can provide
 trip planning purposes. A period MAY have no end. Example: "This station will be running as of tomorrow. Today it is
 still planned and under construction."
 
-| Property     | Type                                                                 | Card. | Description                               |
-|--------------|----------------------------------------------------------------------|-------|-------------------------------------------|
-| period_begin | [DateTime](/ocpi/07-types/01-intro.md#datetime-type)                 | 1     | Begin of the scheduled period.            |
-| period_end   | [DateTime](/ocpi/07-types/01-intro.md#datetime-type)                 | ?     | End of the scheduled period, if known.    |
-| status       | [Status](/ocpi/06-modules/03-locations/07-data-types.md#status-enum) | 1     | Status value during the scheduled period. |
+| Property     | Type                                                                         | Card. | Description                               |
+|--------------|------------------------------------------------------------------------------|-------|-------------------------------------------|
+| period_begin | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>                 | 1     | Begin of the scheduled period.            |
+| period_end   | \<\</docs/ocpi/07-types/01-intro.md#datetime-type,DateTime\>                 | ?     | End of the scheduled period, if known.    |
+| status       | \<\</docs/ocpi/06-modules/03-locations/07-data-types.md#status-enum,Status\> | 1     | Status value during the scheduled period. |
 
 :::note
 The scheduled status is purely informational. When the status actually changes, the CPO must push an update to the EVSEs

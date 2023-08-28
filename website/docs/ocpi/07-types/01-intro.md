@@ -34,10 +34,10 @@ Example of how timestamps shall be formatted in OCPI, other formats/patterns are
 
 ## DisplayText *class*
 
-| Property | Type                        | Card. | Description                                                       |
-|----------|-----------------------------|-------|-------------------------------------------------------------------|
-| language | [string](#string-type)(2)   | 1     | Language Code ISO 639-1.                                          |
-| text     | [string](#string-type)(512) | 1     | Text to be displayed to a end user. No markup, html etc. allowed. |
+| Property | Type                                  | Card. | Description                                                       |
+|----------|---------------------------------------|-------|-------------------------------------------------------------------|
+| language | \<\</docs#string-type,string\>\>(2)   | 1     | Language Code ISO 639-1.                                          |
+| text     | \<\</docs#string-type,string\>\>(512) | 1     | Text to be displayed to a end user. No markup, html etc. allowed. |
 
 Example:
 
@@ -55,10 +55,10 @@ large amount* of digits.
 
 ## Price *class*
 
-| Property | Type                   | Card. | Description               |
-|----------|------------------------|-------|---------------------------|
-| excl_vat | [number](#number-type) | 1     | Price/Cost excluding VAT. |
-| incl_vat | [number](#number-type) | ?     | Price/Cost including VAT. |
+| Property | Type                             | Card. | Description               |
+|----------|----------------------------------|-------|---------------------------|
+| excl_vat | \<\</docs#number-type,number\>\> | 1     | Price/Cost excluding VAT. |
+| incl_vat | \<\</docs#number-type,number\>\> | ?     | Price/Cost including VAT. |
 
 ## Role *enum*
 

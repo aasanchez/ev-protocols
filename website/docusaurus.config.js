@@ -120,7 +120,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs'
+                to: '/docs/ocpi'
               },
               {
                 label: 'Stack Overflow',
@@ -137,7 +137,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs'
+                to: '/docs/ocpi/'
               },
               {
                 label: 'Stack Overflow',

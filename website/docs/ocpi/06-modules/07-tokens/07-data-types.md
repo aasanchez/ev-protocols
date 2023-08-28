@@ -19,19 +19,19 @@ slug: data-types
 Information about a energy contract that belongs to a Token so a driver could use his/her own energy contract when
 charging at a Charge Point.
 
-| Property      | Type                                                 | Card. | Description                                                                  |
-|---------------|------------------------------------------------------|-------|------------------------------------------------------------------------------|
-| supplier_name | [string](/ocpi/07-types/01-intro.md#string-type)(64) | 1     | Name of the energy supplier for this token.                                  |
-| contract_id   | [string](/ocpi/07-types/01-intro.md#string-type)(64) | ?     | Contract ID at the energy supplier, that belongs to the owner of this token. |
+| Property      | Type                                                           | Card. | Description                                                                  |
+|---------------|----------------------------------------------------------------|-------|------------------------------------------------------------------------------|
+| supplier_name | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64) | 1     | Name of the energy supplier for this token.                                  |
+| contract_id   | \<\</docs/ocpi/07-types/01-intro.md#string-type,string\>\>(64) | ?     | Contract ID at the energy supplier, that belongs to the owner of this token. |
 
 ## LocationReferences *class*
 
 References to location details.
 
-| Property    | Type                                                     | Card. | Description                                                                                    |
-|-------------|----------------------------------------------------------|-------|------------------------------------------------------------------------------------------------|
-| location_id | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | 1     | Unique identifier for the location.                                                            |
-| evse_uids   | [CiString](/ocpi/07-types/01-intro.md#cistring-type)(36) | \*    | Unique identifiers for EVSEs within the CPO's platform for the EVSE within the given location. |
+| Property    | Type                                                               | Card. | Description                                                                                    |
+|-------------|--------------------------------------------------------------------|-------|------------------------------------------------------------------------------------------------|
+| location_id | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | 1     | Unique identifier for the location.                                                            |
+| evse_uids   | \<\</docs/ocpi/07-types/01-intro.md#cistring-type,CiString\>\>(36) | \*    | Unique identifiers for EVSEs within the CPO's platform for the EVSE within the given location. |
 
 ## TokenType *enum*
 
@@ -53,12 +53,12 @@ an App etc. so whitelisting them has no advantages.
 Defines when authorization of a Token by the CPO is allowed.
 
 The validity of a Token has no influence on this. If a Token is: `valid = false`, when the `whitelist` field requires
-real-time authorization, the CPO SHALL do a [real-time
-authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization), the state of the Token
-might have changed.
+real-time authorization, the CPO SHALL do a
+\<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,real-time authorization\>\>, the
+state of the Token might have changed.
 
-| Value           | Description                                                                                                                                                                                                                                                                                                            |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ALWAYS          | Token always has to be whitelisted, [realtime authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) is not possible/allowed. CPO shall always allow any use of this Token.                                                                                                       |
-| ALLOWED         | It is allowed to whitelist the token, [realtime authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) is also allowed. The CPO may choose which version of authorization to use.                                                                                                 |
-| ALLOWED_OFFLINE | In normal situations [realtime authorization](/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization) shall be used. But when the CPO cannot get a response from the eMSP (communication between CPO and eMSP is offline), the CPO shall allow this Token to be used.                             |
+| Value           | Description                                                                                                                                                                                                                                                                                                                                |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ALWAYS          | Token always has to be whitelisted, \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>\> is not possible/allowed. CPO shall always allow any use of this Token.                                                                                                                 |
+| ALLOWED         | It is allowed to whitelist the token, \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>\> is also allowed. The CPO may choose which version of authorization to use.                                                                                                           |
+| ALLOWED_OFFLINE | In normal situations \<\</docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-time-authorization,realtime authorization\>\> shall be used. But when the CPO cannot get a response from the eMSP (communication between CPO and eMSP is offline), the CPO shall allow this Token to be used.                                       |

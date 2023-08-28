@@ -5,11 +5,11 @@ slug: /ocpi/supported-topologies
 # 🕸️ Supported Topologies
 
 OCPI started as a bilateral protocol, for peer-to-peer communication. Soon parties started to use OCPI via Hubs, but
-OCPI 2.1.1 and earlier were not designed for that. OCPI 2.2 introduced a solution for this: [message
-routing](/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#message-routing).
+OCPI 2.1.1 and earlier were not designed for that. OCPI 2.2 introduced a solution for this:
+\<\</docs/ocpi/04-transport-and-format/01-json-http-implementation-guide.md#message-routing,message routing\>\>.
 
-OCPI 2.2 introduced Platforms that connect via OCPI instead of CPO and eMSP, more on this in: [EV Charging Market
-Roles](/ocpi/02-terminology-and-definitions/03-ev-charging-market-roles.md)
+OCPI 2.2 introduced Platforms that connect via OCPI instead of CPO and eMSP, more on this in:
+\<\</docs/ocpi/02-terminology-and-definitions/03-ev-charging-market-roles.md,EV Charging Market Roles\>\>
 
 ## Peer-to-peer
 
