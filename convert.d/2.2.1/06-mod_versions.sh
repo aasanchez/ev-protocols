@@ -6,7 +6,7 @@ function pre_mod_versions(){
 }
 
 function fix_mod_versions() {
-  file="$ROOT/website/docs/06-mod_versions.md"
+  file="$ROOT/website/docs/ocpi/06-mod_versions.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: versions\nslug: modules/versiones\n---" | cat - "$file" > "$tempfile"
@@ -32,21 +32,21 @@ function fix_mod_versions() {
 }
 
 function flavored_mod_versions() {
-  file="$ROOT/website/docs/06-mod_versions.md"
+  file="$ROOT/website/docs/ocpi/06-mod_versions.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
 
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/06-modules/01-versions"
-  mkdir -p "$ROOT/website/docs/06-modules/01-versions"
+  rm -rf "$ROOT/website/docs/ocpi/06-modules/01-versions"
+  mkdir -p "$ROOT/website/docs/ocpi/06-modules/01-versions"
 
-  mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/06-modules/01-versions/02-information-endpoint.md"
-  mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/06-modules/01-versions/03-details-endpoint.md"
+  mv "$ROOT/tmp/versioninformationendpoint.md" "$ROOT/website/docs/ocpi/06-modules/01-versions/02-information-endpoint.md"
+  mv "$ROOT/tmp/versiondetailsendpoint.md"     "$ROOT/website/docs/ocpi/06-modules/01-versions/03-details-endpoint.md"
 
-  < "$file" gsed -n '1,/## Version information endpoint/p' > "$ROOT/website/docs/06-modules/01-versions/01-intro.md"
+  < "$file" gsed -n '1,/## Version information endpoint/p' > "$ROOT/website/docs/ocpi/06-modules/01-versions/01-intro.md"
 
-  file="$ROOT/website/docs/06-modules/01-versions/01-intro.md"
+  file="$ROOT/website/docs/ocpi/06-modules/01-versions/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   gsed -i "s/^## /# /gm" "$file"
@@ -55,7 +55,7 @@ function flavored_mod_versions() {
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: intro
-slug: /modules/versions
+slug: /ocpi/modules/versions
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -64,11 +64,11 @@ E_O_HEADERS
   gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
   gsed -i -z 's/versions.\n\n/versions.\n/gm' "$file"
 
-  file="$ROOT/website/docs/06-modules/01-versions/02-information-endpoint.md"
+  file="$ROOT/website/docs/ocpi/06-modules/01-versions/02-information-endpoint.md"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: information-endpoint
-slug: /modules/versions/information-endpoint
+slug: information-endpoint
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -78,11 +78,11 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i "s/^## Version/### Version/gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/01-versions/03-details-endpoint.md"
+  file="$ROOT/website/docs/ocpi/06-modules/01-versions/03-details-endpoint.md"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: details-endpoint
-slug: /modules/versions/details-endpoint
+slug: details-endpoint
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -93,6 +93,6 @@ E_O_HEADERS
   gsed -i "s/^### Data/## Data/gm" "$file"
   gsed -i "s/^### GET/## GET/gm" "$file"
 
-  rm -rf "$ROOT/website/docs/06-mod_versions.md"
+  rm -rf "$ROOT/website/docs/ocpi/06-mod_versions.md"
 
 }

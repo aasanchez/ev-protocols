@@ -83,47 +83,47 @@ fix_status_codes
 
 echo ""
 
-# mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
-# . ./convert.d/2.2.1/06-mod_versions.sh
-# pre_mod_versions
-# links "ocpi/mod_versions.asciidoc"
-# pandoc2markdown "06-mod_versions"
-# common_cleaning "website/docs/ocpi/06-mod_versions.md"
-# fix_mod_versions
-# flavored_mod_versions
+mv ocpi/version_information_endpoint.asciidoc ocpi/mod_versions.asciidoc
+. ./convert.d/2.2.1/06-mod_versions.sh
+pre_mod_versions
+links "ocpi/mod_versions.asciidoc"
+pandoc2markdown "06-mod_versions"
+common_cleaning "website/docs/ocpi/06-mod_versions.md"
+fix_mod_versions
+flavored_mod_versions
 
-# echo ""
+echo ""
 
-# mv ocpi/credentials.asciidoc ocpi/mod_credentials.asciidoc
-# . ./convert.d/2.2.1/07-mod_credentials.sh
-# pre_mod_credentials
-# links "ocpi/mod_credentials.asciidoc"
-# pandoc2markdown "07-mod_credentials"
-# common_cleaning "website/docs/ocpi/07-mod_credentials.md"
-# fix_mod_credentials
-# flavored_mod_credentials
+mv ocpi/credentials.asciidoc ocpi/mod_credentials.asciidoc
+. ./convert.d/2.2.1/07-mod_credentials.sh
+pre_mod_credentials
+links "ocpi/mod_credentials.asciidoc"
+pandoc2markdown "07-mod_credentials"
+common_cleaning "website/docs/ocpi/07-mod_credentials.md"
+fix_mod_credentials
+flavored_mod_credentials
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/08-mod_locations.sh
-# pre_mod_locations
-# links "ocpi/mod_locations.asciidoc"
-# pandoc2markdown "08-mod_locations"
-# common_cleaning "website/docs/ocpi/08-mod_locations.md"
-# fix_mod_locations
-# flavored_mod_locations
+. ./convert.d/2.2.1/08-mod_locations.sh
+pre_mod_locations
+links "ocpi/mod_locations.asciidoc"
+pandoc2markdown "08-mod_locations"
+common_cleaning "website/docs/ocpi/08-mod_locations.md"
+fix_mod_locations
+flavored_mod_locations
 
-# echo ""
+echo ""
 
-# . ./convert.d/2.2.1/09-mod_sessions.sh
-# pre_mod_sessions
-# links "ocpi/mod_sessions.asciidoc"
-# pandoc2markdown "09-mod_sessions"
-# common_cleaning "website/docs/ocpi/09-mod_sessions.md"
-# fix_mod_sessions
-# flavored_mod_sessions
+. ./convert.d/2.2.1/09-mod_sessions.sh
+pre_mod_sessions
+links "ocpi/mod_sessions.asciidoc"
+pandoc2markdown "09-mod_sessions"
+common_cleaning "website/docs/ocpi/09-mod_sessions.md"
+fix_mod_sessions
+flavored_mod_sessions
 
-# echo ""
+echo ""
 
 # . ./convert.d/2.2.1/10-mod_cdrs.sh
 # pre_mod_cdrs
@@ -185,12 +185,12 @@ echo ""
 
 # echo ""
 
-# . ./convert.d/2.2.1/16-types.sh
-# pre_types
-# links "ocpi/types.asciidoc"
-# pandoc2markdown "16-types"
-# common_cleaning "website/docs/ocpi/16-types.md"
-# fix_types
+. ./convert.d/2.2.1/16-types.sh
+pre_types
+links "ocpi/types.asciidoc"
+pandoc2markdown "16-types"
+common_cleaning "website/docs/ocpi/16-types.md"
+fix_types
 
 cd "$ROOT"/ocpi || exit 0
 

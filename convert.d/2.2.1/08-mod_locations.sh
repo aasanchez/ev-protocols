@@ -14,7 +14,7 @@ function pre_mod_locations(){
 }
 
 function fix_mod_locations() {
-  file="$ROOT/website/docs/08-mod_locations.md"
+  file="$ROOT/website/docs/ocpi/08-mod_locations.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: locations\nslug: modules/locations\n---" | cat - "$file" > "$tempfile"
@@ -70,31 +70,31 @@ function fix_mod_locations() {
 }
 
 function flavored_mod_locations() {
-  file="$ROOT/website/docs/08-mod_locations.md"
+  file="$ROOT/website/docs/ocpi/08-mod_locations.md"
   tempfile="$file.tmp"
   echo "$file EV-protocols flavored"
   MODULE="03-locations"
   splitInH2 "$file"
 
-  rm -rf "$ROOT/website/docs/06-modules/03-locations"
-  mkdir -p "$ROOT/website/docs/06-modules/03-locations"
+  rm -rf "$ROOT/website/docs/ocpi/06-modules/03-locations"
+  mkdir -p "$ROOT/website/docs/ocpi/06-modules/03-locations"
 
   # reserved
-  # mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/06-modules/$MODULE/03-use-cases.md"
-  mv "$ROOT/tmp/flowandlifecycle.md"        "$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
-  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
-  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
-  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  # mv "$ROOT/tmp/usecases.md"                "$ROOT/website/docs/ocpi/06-modules/$MODULE/03-use-cases.md"
+  mv "$ROOT/tmp/flowandlifecycle.md"        "$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  mv "$ROOT/tmp/interfacesandendpoints.md"  "$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  mv "$ROOT/tmp/objectdescription.md"       "$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
+  mv "$ROOT/tmp/datatypes.md"               "$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
 
-  < "$file" gsed -n '1,/## Flow and Lifecycle/p' > "$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  < "$file" gsed -n '1,/## Flow and Lifecycle/p' > "$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/01-intro.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/01-intro.md"
   echo "flavoring $file"
   gsed -i '1,4d' "$file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: intro
-slug: /modules/locations
+slug: /ocpi/modules/locations
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -102,24 +102,24 @@ E_O_HEADERS
   gsed -i '/^[[:space:]]*$/{N; /^\n\n$/d}' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/04-flow-and-lifecycle.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/04-flow-and-lifecycle.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: flow-and-lifecycle
-slug: /modules/locations/flow-and-lifecycle
+slug: locations/flow-and-lifecycle
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
   gsed -i "s/^## /# /gm" "$file"
   gsed -i "s/^### /## /gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/05-interfaces-and-endpoints.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/05-interfaces-and-endpoints.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: interfaces-and-endpoints
-slug: /modules/locations/interfaces-and-endpoints
+slug: locations/interfaces-and-endpoints
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -128,12 +128,12 @@ E_O_HEADERS
   gsed -i "s/^#### /### /gm" "$file"
   gsed -i "s/^##### /#### /gm" "$file"
 
-  file="$ROOT/website/docs/06-modules/$MODULE/06-object-description.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/06-object-description.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: object-description
-slug: /modules/locations/object-description
+slug: locations/object-description
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -143,12 +143,12 @@ E_O_HEADERS
   gsed -i '/^$/N;/^\n$/D' "$file"
   gsed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' -e 'P;D' "$file"
   
-  file="$ROOT/website/docs/06-modules/$MODULE/07-data-types.md"
+  file="$ROOT/website/docs/ocpi/06-modules/$MODULE/07-data-types.md"
   echo "flavoring $file"
   cat <<E_O_HEADERS > "$file.tmp"
 ---
 id: data-types
-slug: /modules/locations/data-types
+slug: locations/data-types
 ---
 E_O_HEADERS
   cat "$file" >> "$file.tmp" && mv "$file.tmp" "$file"
@@ -158,5 +158,5 @@ E_O_HEADERS
   gsed -i "s/^##### /#### /gm" "$file"
   gsed -i '/^$/N;/^\n$/D' "$file"
 
-  rm -rf "$ROOT/website/docs/08-mod_locations.md"
+  rm -rf "$ROOT/website/docs/ocpi/08-mod_locations.md"
 }

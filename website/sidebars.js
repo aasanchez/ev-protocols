@@ -39,73 +39,73 @@ const sidebars = {
       ]
     },
     'ocpi/status-codes/status-codes',
-    // {
-    //   type: 'category',
-    //   label: '📦 Modules',
-    //   link: {
-    //     type: 'generated-index',
-    //     slug: 'ocpi/modules'
-    //   },
-    //   collapsed: true,
-    //   items: [
-    //     {
-    //       type: 'category',
-    //       label: '🇻 Versions',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/versions/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/versions/information-endpoint',
-    //         'ocpi/modules/versions/details-endpoint'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '🔐 Credentials',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/credentials/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/credentials/use-cases',
-    //         'ocpi/modules/credentials/interfaces-and-endpoints',
-    //         'ocpi/modules/credentials/object-description',
-    //         'ocpi/modules/credentials/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '🗺️ Locations',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/locations/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/locations/flow-and-lifecycle',
-    //         'ocpi/modules/locations/interfaces-and-endpoints',
-    //         'ocpi/modules/locations/object-description',
-    //         'ocpi/modules/locations/data-types'
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: '🍪 Sessions',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'ocpi/modules/sessions/intro'
-    //       },
-    //       collapsed: true,
-    //       items: [
-    //         'ocpi/modules/sessions/flow-and-lifecycle',
-    //         'ocpi/modules/sessions/interfaces-and-endpoints',
-    //         'ocpi/modules/sessions/object-description',
-    //         'ocpi/modules/sessions/data-types'
-    //       ]
-    //     },
+    {
+      type: 'category',
+      label: '📦 Modules',
+      link: {
+        type: 'generated-index',
+        slug: 'ocpi/modules'
+      },
+      collapsed: true,
+      items: [
+        {
+          type: 'category',
+          label: '🇻 Versions',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/versions/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/versions/information-endpoint',
+            'ocpi/modules/versions/details-endpoint'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🔐 Credentials',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/credentials/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/credentials/use-cases',
+            'ocpi/modules/credentials/interfaces-and-endpoints',
+            'ocpi/modules/credentials/object-description',
+            'ocpi/modules/credentials/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🗺️ Locations',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/locations/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/locations/flow-and-lifecycle',
+            'ocpi/modules/locations/interfaces-and-endpoints',
+            'ocpi/modules/locations/object-description',
+            'ocpi/modules/locations/data-types'
+          ]
+        },
+        {
+          type: 'category',
+          label: '🍪 Sessions',
+          link: {
+            type: 'doc',
+            id: 'ocpi/modules/sessions/intro'
+          },
+          collapsed: true,
+          items: [
+            'ocpi/modules/sessions/flow-and-lifecycle',
+            'ocpi/modules/sessions/interfaces-and-endpoints',
+            'ocpi/modules/sessions/object-description',
+            'ocpi/modules/sessions/data-types'
+          ]
+        },
     //     {
     //       type: 'category',
     //       label: '📊 CDRs',
@@ -199,10 +199,13 @@ const sidebars = {
     //         'ocpi/modules/hubclientinfo/data-types'
     //       ]
     //     },
-    //   ]
-    // },
-    // 'ocpi/types/intro'
-  ]
+      ]
+    },
+    'ocpi/types/intro'
+  ],
+  // ocpp:[
+  //   'ocpp/ocpp',
+  // ]
 }
 
 module.exports = sidebars

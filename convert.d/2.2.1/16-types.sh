@@ -6,12 +6,12 @@ function pre_types(){
 }
 
 function fix_types() {
-  rm -rf "$ROOT/website/docs/07-types"
-  mkdir -p "$ROOT/website/docs/07-types"
+  rm -rf "$ROOT/website/docs/ocpi/07-types"
+  mkdir -p "$ROOT/website/docs/ocpi/07-types"
 
-  mv "$ROOT/website/docs/16-types.md" "$ROOT/website/docs/07-types/01-intro.md"
+  mv "$ROOT/website/docs/ocpi/16-types.md" "$ROOT/website/docs/ocpi/07-types/01-intro.md"
 
-  file="$ROOT/website/docs/07-types/01-intro.md"
+  file="$ROOT/website/docs/ocpi/07-types/01-intro.md"
   tempfile="$file.tmp"
 
   echo -e "---\nid: intro\nsidebar_position: 07\nslug: /types\n---" | cat - "$file" > "$tempfile"
@@ -24,6 +24,8 @@ function fix_types() {
   
   gsed -i "s|^\`\`\`\stext|\`\`\`text|gm" "$file"
   gsed -i -z "s|\`\`\`text\n{|\`\`\`json\n{|gm" "$file"
+
+  gsed -i -z "s|/ocpi/07-types/01-intro.md||gm" "$file"
 
   docker container run -i darkriszty/prettify-md < "$file" > "$tempfile"
   mv "$tempfile" "$file"

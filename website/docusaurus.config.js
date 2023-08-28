@@ -77,7 +77,7 @@ const config = {
         apiKey: 'eab176d227cbdd45996af10f5641926e',
         indexName: 'ocpi',
         contextualSearch: true,
-        externalUrlRegex: 'localhost:3000|EV-protocols',
+        externalUrlRegex: 'localhost:3000|ev-protocols',
         searchParameters: {},
         searchPagePath: 'search'
       },
