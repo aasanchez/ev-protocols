@@ -154,8 +154,8 @@ PUT To URL: https://www.server.com/ocpi/emsp/2.2.1/tariffs/NL/TNM/12
       "price_components": [
         {
           "type": "TIME",
-          "price": 2,
-          "vat": 10,
+          "price": 2.00,
+          "vat": 10.0,
           "step_size": 300
         }
       ]

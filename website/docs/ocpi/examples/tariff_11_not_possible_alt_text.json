@@ -19,13 +19,13 @@
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.4,
-          "vat": 25,
+          "price": 0.40,
+          "vat": 25.0,
           "step_size": 1
         },
         {
           "type": "TIME",
-          "price": 1.9,
+          "price": 1.90,
           "vat": 5.2,
           "step_size": 300
         }

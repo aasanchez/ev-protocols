@@ -206,8 +206,8 @@ the CPO could send a CDR where the `start_date_time` and/or `end_date_time` are 
           "price_components": [
             {
               "type": "TIME",
-              "price": 2,
-              "vat": 10,
+              "price": 2.00,
+              "vat": 10.0,
               "step_size": 300
             }
           ]
@@ -229,14 +229,14 @@ the CPO could send a CDR where the `start_date_time` and/or `end_date_time` are 
     }
   ],
   "total_cost": {
-    "excl_vat": 4,
-    "incl_vat": 4.4
+    "excl_vat": 4.00,
+    "incl_vat": 4.40
   },
   "total_energy": 15.342,
   "total_time": 1.973,
   "total_time_cost": {
-    "excl_vat": 4,
-    "incl_vat": 4.4
+    "excl_vat": 4.00,
+    "incl_vat": 4.40
   },
   "last_updated": "2015-06-29T22:01:13Z"
 }

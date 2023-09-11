@@ -9,8 +9,8 @@
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0,
-          "vat": 20,
+          "price": 0.00,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -23,7 +23,7 @@
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -35,8 +35,8 @@
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.4,
-          "vat": 20,
+          "price": 0.40,
+          "vat": 20.0,
           "step_size": 1
         }
       ]

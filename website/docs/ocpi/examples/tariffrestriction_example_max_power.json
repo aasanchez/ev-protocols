@@ -9,13 +9,13 @@
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.2,
-          "vat": 20,
+          "price": 0.20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
       "restrictions": {
-        "max_power": 16
+        "max_power": 16.00
       }
     },
     {
@@ -23,20 +23,20 @@
         {
           "type": "ENERGY",
           "price": 0.35,
-          "vat": 20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
       "restrictions": {
-        "max_power": 32
+        "max_power": 32.00
       }
     },
     {
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         }
       ]

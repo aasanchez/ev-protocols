@@ -71,7 +71,7 @@ authorization](/docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-tim
   "party_id": "STK",
   "id": "101",
   "start_date_time": "2020-03-09T10:17:09Z",
-  "kwh": 0,
+  "kwh": 0.0,
   "cdr_token": {
     "country_code": "NL",
     "party_id": "TST",
@@ -153,7 +153,7 @@ authorization](/docs/ocpi/06-modules/07-tokens/04-flow-and-lifecycle.md#real-tim
     }
   ],
   "total_cost": {
-    "excl_vat": 8.5,
+    "excl_vat": 8.50,
     "incl_vat": 9.35
   },
   "status": "COMPLETED",

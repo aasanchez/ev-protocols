@@ -224,7 +224,7 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 {
   "total_cost": {
-    "excl_vat": 0.6,
+    "excl_vat": 0.60,
     "incl_vat": 0.66
   },
   "last_updated": "2019-06-23T08:11:00Z"
@@ -240,7 +240,7 @@ Session and updating all related fields.
 PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
 
 {
-  "kwh": 15,
+  "kwh": 15.00,
   "charging_periods": [
     {
       "start_date_time": "2019-06-23T08:16:02Z",
@@ -253,7 +253,7 @@ PATCH https://www.server.com/ocpi/cpo/2.2.1/sessions/NL/TNM/101
     }
   ],
   "total_cost": {
-    "excl_vat": 0.8,
+    "excl_vat": 0.80,
     "incl_vat": 0.88
   },
   "last_updated": "2019-06-23T08:16:02Z"

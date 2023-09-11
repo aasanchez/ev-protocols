@@ -121,7 +121,7 @@ This tariff will result in costs of € 5.00 (excl. VAT) or € 5.50 (incl. VAT)
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -154,14 +154,14 @@ This tariff will result in total cost of € 5.50 (excl. VAT) or € 6.10 (incl.
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -193,7 +193,7 @@ This is different from a start fee as can be seen when compared to the example a
   "id": "20",
   "currency": "EUR",
   "min_price": {
-    "excl_vat": 0.5,
+    "excl_vat": 0.50,
     "incl_vat": 0.55
   },
   "elements": [
@@ -202,7 +202,7 @@ This is different from a start fee as can be seen when compared to the example a
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -242,20 +242,20 @@ charging.
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         },
         {
           "type": "PARKING_TIME",
-          "price": 2,
-          "vat": 20,
+          "price": 2.00,
+          "vat": 20.0,
           "step_size": 900
         }
       ]
@@ -295,22 +295,22 @@ VAT), as the start fee combined with the energy costs would be lower than the de
   "id": "16",
   "currency": "EUR",
   "max_price": {
-    "excl_vat": 10,
-    "incl_vat": 11
+    "excl_vat": 10.00,
+    "incl_vat": 11.00
   },
   "elements": [
     {
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -346,8 +346,8 @@ For a charging session of 2.5 hours, this tariff will result in costs of € 5.0
       "price_components": [
         {
           "type": "TIME",
-          "price": 2,
-          "vat": 10,
+          "price": 2.00,
+          "vat": 10.0,
           "step_size": 60
         }
       ]
@@ -387,14 +387,14 @@ the driver has to pay for 45 minutes of parking even though they left 42 minutes
       "price_components": [
         {
           "type": "TIME",
-          "price": 3,
-          "vat": 10,
+          "price": 3.00,
+          "vat": 10.0,
           "step_size": 60
         },
         {
           "type": "PARKING_TIME",
-          "price": 5,
-          "vat": 20,
+          "price": 5.00,
+          "vat": 20.0,
           "step_size": 300
         }
       ]
@@ -439,7 +439,7 @@ For a charging session of 2.5 hours, this tariff will result in costs of € 4.7
       "price_components": [
         {
           "type": "TIME",
-          "price": 1.9,
+          "price": 1.90,
           "vat": 5.2,
           "step_size": 300
         }
@@ -479,13 +479,13 @@ discount in the final CDR of € 0.25, nobody is likely to complain. The `tariff
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.4,
-          "vat": 25,
+          "price": 0.40,
+          "vat": 25.0,
           "step_size": 1
         },
         {
           "type": "TIME",
-          "price": 1.9,
+          "price": 1.90,
           "vat": 5.2,
           "step_size": 300
         }
@@ -554,14 +554,14 @@ as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 100
         }
       ]
@@ -647,8 +647,8 @@ The charging time is again not affected by step_size because it is followed by p
       "price_components": [
         {
           "type": "FLAT",
-          "price": 2.5,
-          "vat": 15,
+          "price": 2.50,
+          "vat": 15.0,
           "step_size": 1
         }
       ]
@@ -657,26 +657,26 @@ The charging time is again not affected by step_size because it is followed by p
       "price_components": [
         {
           "type": "TIME",
-          "price": 1,
-          "vat": 20,
+          "price": 1.00,
+          "vat": 20.0,
           "step_size": 900
         }
       ],
       "restrictions": {
-        "max_current": 32
+        "max_current": 32.00
       }
     },
     {
       "price_components": [
         {
           "type": "TIME",
-          "price": 2,
-          "vat": 20,
+          "price": 2.00,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
       "restrictions": {
-        "min_current": 32,
+        "min_current": 32.00,
         "day_of_week": [
           "MONDAY",
           "TUESDAY",
@@ -691,12 +691,12 @@ The charging time is again not affected by step_size because it is followed by p
         {
           "type": "TIME",
           "price": 1.25,
-          "vat": 20,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
       "restrictions": {
-        "min_current": 32,
+        "min_current": 32.00,
         "day_of_week": [
           "SATURDAY",
           "SUNDAY"
@@ -707,8 +707,8 @@ The charging time is again not affected by step_size because it is followed by p
       "price_components": [
         {
           "type": "PARKING_TIME",
-          "price": 5,
-          "vat": 10,
+          "price": 5.00,
+          "vat": 10.0,
           "step_size": 300
         }
       ],
@@ -728,8 +728,8 @@ The charging time is again not affected by step_size because it is followed by p
       "price_components": [
         {
           "type": "PARKING_TIME",
-          "price": 6,
-          "vat": 10,
+          "price": 6.00,
+          "vat": 10.0,
           "step_size": 300
         }
       ],
@@ -762,7 +762,7 @@ case though and it is of course permitted to add a VAT, even if the `price` is s
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0,
+          "price": 0.00,
           "step_size": 0
         }
       ]
@@ -809,8 +809,8 @@ A breakdown is as follows:
       "price_components": [
         {
           "type": "TIME",
-          "price": 5,
-          "vat": 20,
+          "price": 5.00,
+          "vat": 20.0,
           "step_size": 60
         }
       ],
@@ -822,14 +822,14 @@ A breakdown is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -880,14 +880,14 @@ A breakdown is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 2,
-          "vat": 20,
+          "price": 2.00,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "TIME",
-          "price": 5,
-          "vat": 20,
+          "price": 5.00,
+          "vat": 20.0,
           "step_size": 300
         }
       ],
@@ -899,14 +899,14 @@ A breakdown is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -975,8 +975,8 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 4,
-          "vat": 20,
+          "price": 4.00,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -988,8 +988,8 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "TIME",
-          "price": 2,
-          "vat": 20,
+          "price": 2.00,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
@@ -1001,14 +1001,14 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]
@@ -1074,8 +1074,8 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "TIME",
-          "price": 6,
-          "vat": 20,
+          "price": 6.00,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
@@ -1087,8 +1087,8 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "TIME",
-          "price": 3,
-          "vat": 20,
+          "price": 3.00,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
@@ -1100,14 +1100,14 @@ A breakdown of this scenario is as follows:
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]

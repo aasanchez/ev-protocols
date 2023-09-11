@@ -9,7 +9,7 @@
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]

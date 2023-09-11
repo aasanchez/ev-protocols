@@ -76,12 +76,12 @@ Element](/docs/ocpi/06-modules/06-tariffs/07-data-types.md#tariffelement-class) 
       "price_components": [
         {
           "type": "TIME",
-          "price": 1.2,
+          "price": 1.20,
           "step_size": 1800
         },
         {
           "type": "PARKING_TIME",
-          "price": 1,
+          "price": 1.00,
           "step_size": 900
         }
       ],
@@ -94,12 +94,12 @@ Element](/docs/ocpi/06-modules/06-tariffs/07-data-types.md#tariffelement-class) 
       "price_components": [
         {
           "type": "TIME",
-          "price": 2.4,
+          "price": 2.40,
           "step_size": 900
         },
         {
           "type": "PARKING_TIME",
-          "price": 1,
+          "price": 1.00,
           "step_size": 900
         }
       ],
@@ -112,7 +112,7 @@ Element](/docs/ocpi/06-modules/06-tariffs/07-data-types.md#tariffelement-class) 
       "price_components": [
         {
           "type": "TIME",
-          "price": 2.4,
+          "price": 2.40,
           "step_size": 900
         }
       ],
@@ -280,13 +280,13 @@ following components:
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.2,
-          "vat": 20,
+          "price": 0.20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
       "restrictions": {
-        "max_power": 16
+        "max_power": 16.00
       }
     },
     {
@@ -294,20 +294,20 @@ following components:
         {
           "type": "ENERGY",
           "price": 0.35,
-          "vat": 20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
       "restrictions": {
-        "max_power": 32
+        "max_power": 32.00
       }
     },
     {
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         }
       ]
@@ -347,8 +347,8 @@ composed of the following components:
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0,
-          "vat": 20,
+          "price": 0.00,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -361,7 +361,7 @@ composed of the following components:
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 20,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -373,8 +373,8 @@ composed of the following components:
       "price_components": [
         {
           "type": "ENERGY",
-          "price": 0.4,
-          "vat": 20,
+          "price": 0.40,
+          "vat": 20.0,
           "step_size": 1
         }
       ]

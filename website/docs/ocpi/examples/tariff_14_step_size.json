@@ -8,12 +8,12 @@
       "price_components": [
         {
           "type": "TIME",
-          "price": 1.2,
+          "price": 1.20,
           "step_size": 1800
         },
         {
           "type": "PARKING_TIME",
-          "price": 1,
+          "price": 1.00,
           "step_size": 900
         }
       ],
@@ -26,12 +26,12 @@
       "price_components": [
         {
           "type": "TIME",
-          "price": 2.4,
+          "price": 2.40,
           "step_size": 900
         },
         {
           "type": "PARKING_TIME",
-          "price": 1,
+          "price": 1.00,
           "step_size": 900
         }
       ],
@@ -44,7 +44,7 @@
       "price_components": [
         {
           "type": "TIME",
-          "price": 2.4,
+          "price": 2.40,
           "step_size": 900
         }
       ],

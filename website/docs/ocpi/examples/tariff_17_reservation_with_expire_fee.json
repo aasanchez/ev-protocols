@@ -8,8 +8,8 @@
       "price_components": [
         {
           "type": "FLAT",
-          "price": 4,
-          "vat": 20,
+          "price": 4.00,
+          "vat": 20.0,
           "step_size": 1
         }
       ],
@@ -21,8 +21,8 @@
       "price_components": [
         {
           "type": "TIME",
-          "price": 2,
-          "vat": 20,
+          "price": 2.00,
+          "vat": 20.0,
           "step_size": 600
         }
       ],
@@ -34,14 +34,14 @@
       "price_components": [
         {
           "type": "FLAT",
-          "price": 0.5,
-          "vat": 20,
+          "price": 0.50,
+          "vat": 20.0,
           "step_size": 1
         },
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]

@@ -4,7 +4,7 @@
   "id": "20",
   "currency": "EUR",
   "min_price": {
-    "excl_vat": 0.5,
+    "excl_vat": 0.50,
     "incl_vat": 0.55
   },
   "elements": [
@@ -13,7 +13,7 @@
         {
           "type": "ENERGY",
           "price": 0.25,
-          "vat": 10,
+          "vat": 10.0,
           "step_size": 1
         }
       ]

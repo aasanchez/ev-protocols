@@ -19,7 +19,7 @@
       "price_components": [
         {
           "type": "TIME",
-          "price": 1.9,
+          "price": 1.90,
           "vat": 5.2,
           "step_size": 300
         }
