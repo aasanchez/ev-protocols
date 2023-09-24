@@ -203,9 +203,9 @@ const sidebars = {
     },
     'ocpi/types/intro'
   ],
-  // ocpp:[
-  //   'ocpp/ocpp',
-  // ]
+  ocpp:[
+    'ocpp/scope/scope',
+  ]
 }
 
 module.exports = sidebars

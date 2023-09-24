@@ -137,7 +137,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/ocpi/'
+                to: '/docs/ocpp'
               },
               {
                 label: 'Stack Overflow',
