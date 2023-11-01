@@ -1,35 +1,37 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github')
-const darkCodeTheme = require('prism-react-renderer/themes/dracula')
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'EV-Protocols',
-  tagline: 'EV Protocols References',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://ev-protocols.com',
+  url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'aasanchez', // Usually your GitHub org/user name.
-  projectName: 'ev-protocols', // Usually your repo name.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en']
+    locales: ['en'],
   },
 
   presets: [
@@ -38,125 +40,102 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/aasanchez/ev-protocols/tree/',
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: '2.2.1',
-              path: ''
-            }
-          }
-        },
-        gtag: {
-          trackingID: 'G-T3L8Q7QCG3',
-          anonymizeIP: true
+          sidebarPath: './sidebars.js',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/aasanchez/ev-protocols/tree/'
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: './src/css/custom.css',
         },
-        sitemap: {
-          changefreq: 'weekly',
-          priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml'
-        }
-      })
-    ]
+      }),
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      algolia: {
-        appId: 'JLVRZRP9N9',
-        apiKey: 'eab176d227cbdd45996af10f5641926e',
-        indexName: 'ocpi',
-        contextualSearch: true,
-        externalUrlRegex: 'localhost:3000|ev-protocols',
-        searchParameters: {},
-        searchPagePath: 'search'
-      },
+      // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'EV Protocols',
+        title: 'My Site',
         logo: {
-          alt: 'EV-protocols',
-          src: 'img/logo.png'
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'ocpi',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'OCPI'
+            label: 'Tutorial',
           },
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            to: '/blog',
-            label: 'Blog',
-            position: 'left'
-          },
-          {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            dropdownActiveClassDisabled: true
-          },
-          {
-            href: 'https://github.com/aasanchez/ev-protocols',
+            href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
-            position: 'right'
-          }
-        ]
+            position: 'right',
+          },
+        ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'OCPI',
+            title: 'Docs',
             items: [
               {
-                label: 'Docs',
-                to: '/docs/ocpi'
+                label: 'Tutorial',
+                to: '/docs/intro',
               },
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/ocpi'
-              },
-              {
-                label: 'Reddit',
-                href: 'https://www.reddit.com/r/ocpi/'
-              }
-            ]
+            ],
           },
           {
-            title: 'OCPP',
+            title: 'Community',
             items: [
               {
-                label: 'Docs',
-                to: '/docs/ocpp'
-              },
-              {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/ocpp'
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: 'Reddit',
-                href: 'https://www.reddit.com/r/ocpp/'
-              }
-            ]
-          }
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
+              },
+            ],
+          },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} EV-protocols`
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
-      }
-    })
-}
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+      },
+    }),
+};
 
-module.exports = config
+export default config;
