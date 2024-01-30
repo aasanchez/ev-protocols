@@ -29,7 +29,7 @@ help:
 default: server
 
 bootstrap: ## is used solely for fulfilling dependencies of the project
-	@echo "is used solely for fulfilling dependencies of the project"
+	@cd $(current-dir)/site; npm install
 
 setup: bootstrap ## is used to set up a project in an initial state
 	@echo "is used to set up a project in an initial state"
@@ -38,7 +38,7 @@ update: setup ## is used to update the project after a fresh pull
 	@echo "is used to update the project after a fresh pull"
 
 server: setup ## is used to start the application
-	@echo "is used to start the application"
+	@cd $(current-dir)/site; npm run start
 
 test: ## is used to run the test suite of the application
 	@echo "is used to run the test suite of the application"
