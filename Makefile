@@ -28,11 +28,11 @@ help:
 
 default: server
 
-bootstrap: ## is used solely for fulfilling dependencies of the project
-	@cd $(current-dir)/site; npm install
+# bootstrap: ## is used solely for fulfilling dependencies of the project
+# 	@cd $(current-dir)/site; npm install
 
-setup: bootstrap ## is used to set up a project in an initial state
-	@echo "is used to set up a project in an initial state"
+setup: ## is used to set up a project in an initial state
+	@cd $(current-dir)/site; npm install
 
 update: setup ## is used to update the project after a fresh pull
 	@echo "is used to update the project after a fresh pull"
@@ -44,4 +44,4 @@ test: ## is used to run the test suite of the application
 	@echo "is used to run the test suite of the application"
 
 clean: ## is used to reset the infrastructure o an inditial state
-	@echo "is used to reset the infrastructure o an inditial state"
+	@git clean -xfd
