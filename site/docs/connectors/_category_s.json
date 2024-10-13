@@ -1,0 +1,12 @@
+{
+  "label": "Connectors",
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "EV Connectors"
+  },
+  "customProps": {
+    "description": "EV Connectors"
+  }
+}

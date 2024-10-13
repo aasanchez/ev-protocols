@@ -45,3 +45,6 @@ test: ## is used to run the test suite of the application
 
 clean: ## is used to reset the infrastructure o an inditial state
 	@git clean -xfd
+
+ochp: ## is used to reset the infrastructure o an inditial state
+	@./scripts.d/ochp.sh

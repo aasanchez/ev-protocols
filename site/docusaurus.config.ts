@@ -74,9 +74,15 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'protocolsSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Protocols',
+        },
+        {
+          type: 'docSidebar',
+          sidebarId: 'connectorsSidebar',
+          position: 'left',
+          label: 'Connectors',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
@@ -90,11 +96,11 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Protocols',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Gireve - eMIP',
+              href: 'https://www.gireve.com/'
             },
           ],
         },
