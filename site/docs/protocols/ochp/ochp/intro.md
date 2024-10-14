@@ -1,2 +1,0 @@
-# Open Clearing House Protocol
-

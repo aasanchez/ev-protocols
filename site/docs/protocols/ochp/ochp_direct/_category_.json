@@ -1,0 +1,12 @@
+{
+  "label": "OCHPdirect",
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "title": "OCHP - Open Clearing House Protocol (Direct Extension)"
+  },
+  "customProps": {
+    "description": "Open Clearing House Protocol direct"
+  }
+}
