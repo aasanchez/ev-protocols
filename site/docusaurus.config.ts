@@ -105,6 +105,19 @@ const config: Config = {
           ],
         },
         {
+          title: 'Connectors',
+          items: [
+            {
+              label: 'CHAdeMO',
+              href: 'https://www.chademo.com/'
+            },
+            {
+              label: 'NACS',
+              href: 'https://www.tesla.com/NACS'
+            },
+          ],
+        },
+        {
           title: 'Community',
           items: [
             {
