@@ -1,7 +1,7 @@
 {
   "label": "OCHP",
   "collapsible": true,
-  "collapsed": false,
+  "collapsed": true,
   "link": {
     "type": "generated-index",
     "title": "OCPH - Open Clearing House Protocol"
