@@ -1,3 +1,7 @@
+---
+slug: /protocols/ochp/ochp/abbreviations
+id: abbreviations
+---
 # Abbreviations
 
 | Abbreviation |                    Meaning                     |

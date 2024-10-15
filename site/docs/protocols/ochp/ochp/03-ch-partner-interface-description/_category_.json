@@ -1,0 +1,10 @@
+{
+  "label": "CH-Partner Interface description",
+  "position": 4,
+  "collapsible": true,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "ch-partner-interface-description"
+  }
+}
